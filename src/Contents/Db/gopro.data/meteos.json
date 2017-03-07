@@ -1,0 +1,23 @@
+[
+    {
+        "idMeteo": 1,
+        "nomMeteo": "Talus",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idMeteo": 2,
+        "nomMeteo": "Bord de route",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idMeteo": 3,
+        "nomMeteo": "Mi-Versant",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    }
+]

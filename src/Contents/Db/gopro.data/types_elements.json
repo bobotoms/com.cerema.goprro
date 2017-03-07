@@ -1,0 +1,442 @@
+[
+    {
+        "idType": 34,
+        "nomElement": "Câble d’amarrage de rive supérieure"
+    },
+    {
+        "idType": 43,
+        "nomElement": "Câbles d’amarrage de rive inférieure"
+    },
+    {
+        "idType": 41,
+        "nomElement": "Câbles des pièces de frein"
+    },
+    {
+        "idType": 40,
+        "nomElement": "Câbles de haubanage supplémentaires"
+    },
+    {
+        "idType": 7,
+        "nomElement": "Ancrage de haubanage amont"
+    },
+    {
+        "idType": 8,
+        "nomElement": "Ancrage de haubanage aval"
+    },
+    {
+        "idType": 9,
+        "nomElement": "Ancrage de haubanage supplémentaire"
+    },
+    {
+        "idType": 21,
+        "nomElement": "Bavette"
+    },
+    {
+        "idType": 84,
+        "nomElement": "Nappe de bavette"
+    },
+    {
+        "idType": 74,
+        "nomElement": "Liaisons bavette-filet"
+    },
+    {
+        "idType": 37,
+        "nomElement": "Câbles de haubanage amont"
+    },
+    {
+        "idType": 38,
+        "nomElement": "Câbles de haubanage aval"
+    },
+    {
+        "idType": 39,
+        "nomElement": "Câbles de haubanage latéraux"
+    },
+    {
+        "idType": 42,
+        "nomElement": "Câbles d’amarrage de bavette"
+    },
+    {
+        "idType": 15,
+        "nomElement": "Ancrage d’amarrage amont"
+    },
+    {
+        "idType": 17,
+        "nomElement": "Ancrage latéraux (câble de rive et câble de pied)"
+    },
+    {
+        "idType": 13,
+        "nomElement": "Ancrage de poteau"
+    },
+    {
+        "idType": 10,
+        "nomElement": "Ancrage de pièces-frein"
+    },
+    {
+        "idType": 4,
+        "nomElement": "Ancrage de bavette"
+    },
+    {
+        "idType": 36,
+        "nomElement": "câble tressé"
+    },
+    {
+        "idType": 81,
+        "nomElement": "Montant"
+    },
+    {
+        "idType": 28,
+        "nomElement": "Câble de déport"
+    },
+    {
+        "idType": 29,
+        "nomElement": "Câble de pieuvre"
+    },
+    {
+        "idType": 27,
+        "nomElement": "Câble de contrôle de sortie"
+    },
+    {
+        "idType": 6,
+        "nomElement": "Ancrage de déport"
+    },
+    {
+        "idType": 11,
+        "nomElement": "Ancrage de pieuvre"
+    },
+    {
+        "idType": 5,
+        "nomElement": "Ancrage de contrôle de sortie"
+    },
+    {
+        "idType": 69,
+        "nomElement": "Lest de pied"
+    },
+    {
+        "idType": 110,
+        "nomElement": "Zone de réception"
+    },
+    {
+        "idType": 51,
+        "nomElement": "Dissipateur"
+    },
+    {
+        "idType": 23,
+        "nomElement": "Béton armé"
+    },
+    {
+        "idType": 65,
+        "nomElement": "Gestion des eaux"
+    },
+    {
+        "idType": 53,
+        "nomElement": "Drains"
+    },
+    {
+        "idType": 18,
+        "nomElement": "Barbacanes"
+    },
+    {
+        "idType": 57,
+        "nomElement": "Evacuation en pied"
+    },
+    {
+        "idType": 66,
+        "nomElement": "Grillage"
+    },
+    {
+        "idType": 77,
+        "nomElement": "Maillons rapides"
+    },
+    {
+        "idType": 2,
+        "nomElement": "Agrafes"
+    },
+    {
+        "idType": 67,
+        "nomElement": "Grillage de doublage"
+    },
+    {
+        "idType": 86,
+        "nomElement": "Nappe de grillage"
+    },
+    {
+        "idType": 1,
+        "nomElement": "Agrafe"
+    },
+    {
+        "idType": 59,
+        "nomElement": "Fil"
+    },
+    {
+        "idType": 61,
+        "nomElement": "Fixation au filet"
+    },
+    {
+        "idType": 60,
+        "nomElement": "Filet"
+    },
+    {
+        "idType": 85,
+        "nomElement": "Nappe de filet"
+    },
+    {
+        "idType": 71,
+        "nomElement": "Liaison inter-nappes"
+    },
+    {
+        "idType": 70,
+        "nomElement": "Liaison câble de rive"
+    },
+    {
+        "idType": 76,
+        "nomElement": "Maillon rapide"
+    },
+    {
+        "idType": 79,
+        "nomElement": "Manille"
+    },
+    {
+        "idType": 101,
+        "nomElement": "Serre-câble"
+    },
+    {
+        "idType": 33,
+        "nomElement": "Câble de rive supérieur"
+    },
+    {
+        "idType": 31,
+        "nomElement": "Câble de rive inférieur"
+    },
+    {
+        "idType": 32,
+        "nomElement": "Câble de rive latéral"
+    },
+    {
+        "idType": 35,
+        "nomElement": "Câble d’élingue"
+    },
+    {
+        "idType": 30,
+        "nomElement": "Câble de placage"
+    },
+    {
+        "idType": 14,
+        "nomElement": "Ancrage de rive"
+    },
+    {
+        "idType": 16,
+        "nomElement": "Ancrage d’élingue"
+    },
+    {
+        "idType": 12,
+        "nomElement": "Ancrage de placage"
+    },
+    {
+        "idType": 80,
+        "nomElement": "Manilles"
+    },
+    {
+        "idType": 48,
+        "nomElement": "Corps d’ouvrage"
+    },
+    {
+        "idType": 25,
+        "nomElement": "Boulon"
+    },
+    {
+        "idType": 106,
+        "nomElement": "Tête de boulon"
+    },
+    {
+        "idType": 94,
+        "nomElement": "Plaque"
+    },
+    {
+        "idType": 54,
+        "nomElement": "Écrou"
+    },
+    {
+        "idType": 45,
+        "nomElement": "Corps de boulon"
+    },
+    {
+        "idType": 92,
+        "nomElement": "Pilier béton armé"
+    },
+    {
+        "idType": 93,
+        "nomElement": "Pilier maçonné"
+    },
+    {
+        "idType": 91,
+        "nomElement": "Pierres sèches"
+    },
+    {
+        "idType": 90,
+        "nomElement": "Pierres liaisonnées"
+    },
+    {
+        "idType": 82,
+        "nomElement": "Mortier"
+    },
+    {
+        "idType": 75,
+        "nomElement": "Longrine béton armé"
+    },
+    {
+        "idType": 62,
+        "nomElement": "Fondation"
+    },
+    {
+        "idType": 22,
+        "nomElement": "Béton"
+    },
+    {
+        "idType": 58,
+        "nomElement": "Ferraillage"
+    },
+    {
+        "idType": 52,
+        "nomElement": "Drainage"
+    },
+    {
+        "idType": 98,
+        "nomElement": "Remblai"
+    },
+    {
+        "idType": 87,
+        "nomElement": "Parement amont"
+    },
+    {
+        "idType": 46,
+        "nomElement": "Corps du remblai"
+    },
+    {
+        "idType": 88,
+        "nomElement": "Parement aval"
+    },
+    {
+        "idType": 64,
+        "nomElement": "Fosse"
+    },
+    {
+        "idType": 50,
+        "nomElement": "Dispositif amortisseur"
+    },
+    {
+        "idType": 104,
+        "nomElement": "Structures verticales"
+    },
+    {
+        "idType": 63,
+        "nomElement": "Fondations"
+    },
+    {
+        "idType": 97,
+        "nomElement": "Poteaux"
+    },
+    {
+        "idType": 103,
+        "nomElement": "Structures horizontales"
+    },
+    {
+        "idType": 68,
+        "nomElement": "Hauban"
+    },
+    {
+        "idType": 26,
+        "nomElement": "Câble"
+    },
+    {
+        "idType": 102,
+        "nomElement": "Serre-câbles"
+    },
+    {
+        "idType": 49,
+        "nomElement": "Cosse-coeurs"
+    },
+    {
+        "idType": 78,
+        "nomElement": "Manchons"
+    },
+    {
+        "idType": 3,
+        "nomElement": "Ancrage"
+    },
+    {
+        "idType": 107,
+        "nomElement": "Tête d’ancrage"
+    },
+    {
+        "idType": 95,
+        "nomElement": "Plaques"
+    },
+    {
+        "idType": 55,
+        "nomElement": "Écrous"
+    },
+    {
+        "idType": 20,
+        "nomElement": "Barre (visible)"
+    },
+    {
+        "idType": 47,
+        "nomElement": "Corps d’ancrage"
+    },
+    {
+        "idType": 19,
+        "nomElement": "Barre (non-visible)"
+    },
+    {
+        "idType": 100,
+        "nomElement": "Scellement"
+    },
+    {
+        "idType": 44,
+        "nomElement": "Cages"
+    },
+    {
+        "idType": 99,
+        "nomElement": "Remplissage"
+    },
+    {
+        "idType": 89,
+        "nomElement": "Pierres"
+    },
+    {
+        "idType": 105,
+        "nomElement": "Terre de Liaison"
+    },
+    {
+        "idType": 56,
+        "nomElement": "Elément GBA"
+    },
+    {
+        "idType": 24,
+        "nomElement": "Blocs"
+    },
+    {
+        "idType": 72,
+        "nomElement": "Liaison par barre"
+    },
+    {
+        "idType": 73,
+        "nomElement": "Liaison par scellement"
+    },
+    {
+        "idType": 83,
+        "nomElement": "Mur"
+    },
+    {
+        "idType": 109,
+        "nomElement": "Zone amont"
+    },
+    {
+        "idType": 96,
+        "nomElement": "Poteau"
+    },
+    {
+        "idType": 108,
+        "nomElement": "Traverse"
+    }
+]

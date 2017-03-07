@@ -1,0 +1,23 @@
+[
+    {
+        "idSituation": 1,
+        "nomSituation": "Talus",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idSituation": 2,
+        "nomSituation": "Bord de route",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idSituation": 3,
+        "nomSituation": "Mi-Versant",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "idUser": 1,
+        "nom": "",
+        "prenom": "",
+        "mail": "jean-michel.ranchoux@cerema.fr",
+        "tel": "",
+        "idService": 0,
+        "idUnite": 0,
+        "idDter": 4,
+        "role": 0
+    },
+    {
+        "idUser": 2,
+        "nom": "",
+        "prenom": "",
+        "mail": "gil.romand@cerema.fr",
+        "tel": "",
+        "idService": 0,
+        "idUnite": 0,
+        "idDter": 4,
+        "role": 0
+    },
+    {
+        "idUser": 3,
+        "nom": "",
+        "prenom": "",
+        "mail": "emilie.thiebaut@cerema.fr",
+        "tel": "",
+        "idService": 0,
+        "idUnite": 0,
+        "idDter": 4,
+        "role": 0
+    }
+]

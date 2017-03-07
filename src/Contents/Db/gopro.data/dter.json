@@ -1,0 +1,66 @@
+[
+    {
+        "idZoneAction": 1,
+        "nom": "Direction Territoriale Centre-Est",
+        "nomcourt": "DTerCE",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 2,
+        "nom": "Direction Territoriale Est",
+        "nomcourt": "DTerEst",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 3,
+        "nom": "Direction Territoriale Ile de France",
+        "nomcourt": "DTerIDF",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 4,
+        "nom": "Direction Territoriale Méditerranée",
+        "nomcourt": "DTerMed",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 5,
+        "nom": "Direction Territoriale Normandie-Centre",
+        "nomcourt": "DTerNC",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 6,
+        "nom": "Direction Territoriale Nord-Picardie",
+        "nomcourt": "DTerNP",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 7,
+        "nom": "Direction Territoriale Ouest",
+        "nomcourt": "DTerOuest",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idZoneAction": 8,
+        "nom": "Direction Territoriale Sud Ouest",
+        "nomcourt": "DTerSO",
+        "modif": "2016-09-28T07:07:45.000Z",
+        "creation": null,
+        "actif": 1
+    }
+]
