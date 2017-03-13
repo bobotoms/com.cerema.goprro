@@ -1,0 +1,44 @@
+[
+    {
+        "idFamille": 1,
+        "nomFamille": "Ecran souple",
+        "modif": "2016-11-09T10:06:51.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idFamille": 2,
+        "nomFamille": "Déflecteur",
+        "modif": "2016-11-09T10:07:06.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idFamille": 3,
+        "nomFamille": "Confortement",
+        "modif": "2016-11-09T10:07:06.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idFamille": 4,
+        "nomFamille": "Soutènement",
+        "modif": "2016-11-09T10:07:06.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idFamille": 5,
+        "nomFamille": "Piège à cailloux",
+        "modif": "2016-11-09T10:07:06.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idFamille": 6,
+        "nomFamille": "Ecran rigide",
+        "modif": "2016-11-09T10:07:06.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    }
+]

@@ -1,0 +1,123 @@
+[
+    {
+        "idCaracteristique": 1,
+        "idType": 1,
+        "nomCaracteristique": "TEST 1",
+        "uniteCaracteristique": "en m3",
+        "typeCaracteristique": "BOOL",
+        "valeursCaracteristique": "[\"T1\",\"T2\",\"T3\",\"T4\"]",
+        "modif": "2016-11-17T07:51:44.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 2,
+        "idType": 8,
+        "nomCaracteristique": "x1",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": null,
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T09:02:04.000Z",
+        "creation": null,
+        "actif": 0
+    },
+    {
+        "idCaracteristique": 3,
+        "idType": 8,
+        "nomCaracteristique": null,
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "BOOL",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T09:03:18.000Z",
+        "creation": null,
+        "actif": 0
+    },
+    {
+        "idCaracteristique": 4,
+        "idType": 22,
+        "nomCaracteristique": "X1",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "BOOL",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T09:14:14.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 5,
+        "idType": 59,
+        "nomCaracteristique": "Bobine",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "BOOL",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T09:17:14.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 6,
+        "idType": 22,
+        "nomCaracteristique": "X2",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "SELECT",
+        "valeursCaracteristique": "1,total commander",
+        "modif": "2016-11-17T14:01:54.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 7,
+        "idType": 22,
+        "nomCaracteristique": "X3",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "STRING",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T12:05:45.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 8,
+        "idType": 58,
+        "nomCaracteristique": "prop1",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "BOOL",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T14:08:28.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 9,
+        "idType": 58,
+        "nomCaracteristique": "prop2",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "STRING",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T14:08:35.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 10,
+        "idType": 58,
+        "nomCaracteristique": "prop3",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "NUMBER",
+        "valeursCaracteristique": null,
+        "modif": "2016-11-17T14:08:47.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idCaracteristique": 11,
+        "idType": 58,
+        "nomCaracteristique": "prop3",
+        "uniteCaracteristique": null,
+        "typeCaracteristique": "SELECT",
+        "valeursCaracteristique": "a,b,c,d,e",
+        "modif": "2016-11-17T14:08:57.000Z",
+        "creation": null,
+        "actif": 1
+    }
+]
