@@ -38,17 +38,7 @@ App.controller.define('CMain', {
 		"VMain",
 		"VSaisie",
 		"VAddItem",
-		"Settings.VCharacteristics",
-		"Settings.VRefs",
-        "Settings.VAxes",
-        "Settings.VFamilles",
-        "Settings.VFournisseurs",
-        "Settings.VGeologies",
-        "Settings.VGestionnaires",
-        "Settings.VPoseurs",
-        "Settings.VTypes",
-        "Settings.VZones"
-
+		"Settings.VCharacteristics"
 	],
 	
 	models: [
@@ -113,49 +103,7 @@ App.controller.define('CMain', {
 			},
 			"VCharacteristics button#add": {
 				click: "charact_validate_click"
-			},
-			"VRefs button#add": {
-				click: "charact_validate_click"
-			},
-			"VRefs combo#cboRefs": {
-				select: "refsT0_click"
-			},
-			"VRefs combo#cboRefs": {
-				select: "ref_cboRefs_select"
-			},
-			"VRefs button#clickUpdate": {
-				click: "ref_update_click"
-			}/*,
-			"VGeologies button#clickUpdate": {
-				click: "ref_update_click"
-			},
-			"VAxes button#clickUpdate": {
-				click: "ref_update_click"
-			},
-            "VAxes": {
-                VAxes: "VAxes_onshow"
-            },
-            "VFamilles": {
-                VFamilles: "VFamilles_onshow"
-            },
-            "VFournisseurs": {
-                VFournisseurs: "VFournisseurs_onshow"
-            },
-            "VGeologies": {
-                VGeologies: "VGeologies_onshow"
-            },
-            "VGestionnaires": {
-                VGestionnaires: "VGestionnaires_onshow"
-            },
-            "VPoseurs": {
-                VPoseurs: "VPoseurs_onshow"
-            },
-            "VTypes": {
-                VTypes: "VTypes_onshow"
-            },
-            "VZones": {
-                VZones: "VZones_onshow"
-            }*/
+			}
 		});
 		
 		App.init('VMain',function(){
@@ -344,9 +292,7 @@ App.controller.define('CMain', {
 				e[r.data[i].COLUMN_NAME]='';
 			};
 			var sm = App.get(me.up('panel').up('panel'),"treepanel#T0").getSelectionModel().getSelection();
-            console.log("sm");
-            console.log(sm);
-            
+
 			if (sm.length==0) {
 				Ext.Msg.alert('GOPRRO',"Vous devez sélectionner un élement du catalogue.");
 				return;	
@@ -356,27 +302,7 @@ App.controller.define('CMain', {
 			console.log(e);
 			App.get(me.up('panel').up('panel'),'grid#T1').getStore().insert(0, e);
 		});	
-	},/*
-	ref_validate_click: function(me) {
-		App.DB.get('goprro://@zones',function(r) {
-			var e={};
-			for (var i=0;i<r.data.length;i++) {
-				e[r.data[i].COLUMN_NAME]='';
-			};
-			var sm = App.get(me.up('panel').up('panel'),"treepanel#T0").getSelectionModel().getSelection();
-            console.log("sm");
-            console.log(sm);
-            
-			if (sm.length==0) {
-				Ext.Msg.alert('GOPRRO',"Vous devez sélectionner un élement du catalogue.");
-				return;	
-			};
-			e.idType=sm[0].data.type_element;
-			e.actif=1;
-			console.log(e);
-			App.get(me.up('panel').up('panel'),'grid#T1').getStore().insert(0, e);
-		});	
-	},*/
+	},
 	charact_grid_edit: function(ed,o) {
 		var data=o.record.data;
 		delete data.creation;
@@ -388,15 +314,6 @@ App.controller.define('CMain', {
 	treeT0_click: function(me,store) {
 		var store=App.store.create('goprro://caracteristiques?idType='+store.data.type_element);
 		App.get('VCharacteristics grid#T1').bindStore(store);
-		store.load();
-	},
-	refsT0_click: function(me,store) {
-        
-        App.get('VRefs #ref_familles').show();
-		console.log("refsT0_click");
-		console.log(me);
-		var store=App.store.create('goprro://familles{nomFamille}');
-		App.get('VRefs grid#T1').bindStore(store);
 		store.load();
 	},
 	charact_cboFamille_select: function(me) {
@@ -538,269 +455,6 @@ App.controller.define('CMain', {
 		hideForms();
 		App.get("mainform panel#setup_characteristics").show();	
 	},
-	showSettingsRefs: function(p) {
-		hideForms();
-		App.get("mainform panel#setup_refs").show();	
-	},
-	ref_cboRefs_select: function(me) {
-      
-        var choix = App.get('VRefs combo#cboRefs').getValue();
-        
-        /*
-        switch (choix) {
-            case "axes":
-                console.log('axes');
-                App.get('VAxes').show();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "familles":
-                console.log('familles');
-                App.get('VAxes').hide();
-                App.get('VFamilles').show();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "fournisseurs":
-                console.log('fournisseurs');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').show();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "geologies":
-                console.log('geologies');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').show();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "gestionnaires":
-                console.log('gestionnaires');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').show();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "poseurs":
-                console.log('poseurs');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').show();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "types":
-                console.log('types');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').show();
-                App.get('VZones').hide();
-                break;
-            case "zones":
-                console.log('zones');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').show();
-                break;
-            default:
-                console.log('default');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            }  */ 
-        
-        
-        
-        
-        switch (choix) {
-            case "axes":
-                console.log('axes');
-                App.get('VRefs #ref_axes').show();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            case "familles":
-                console.log('familles');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').show();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            case "fournisseurs":
-                console.log('fournisseurs');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').show();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            case "geologies":
-                console.log('geologies');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                App.get('VRefs #ref_geologies').show();
-                break;
-            case "gestionnaires":
-                console.log('gestionnaires');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').show();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            case "poseurs":
-                console.log('poseurs');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').show();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            case "types":
-                console.log('types');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').show();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            case "zones":
-                console.log('zones');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').show();
-                break;
-            default:
-                console.log('default');
-                App.get('VRefs #ref_axes').hide();
-                App.get('VRefs #ref_familles').hide();
-                App.get('VRefs #ref_fournisseurs').hide();
-                App.get('VRefs #ref_geologies').hide();
-                App.get('VRefs #ref_gestionnaires').hide();
-                App.get('VRefs #ref_poseurs').hide();
-                App.get('VRefs #ref_types').hide();
-                App.get('VRefs #ref_zones').hide();
-                break;
-            }        
-	},
-	ref_update_click: function(me) {
-        
-        console.log("me update");
-        console.log(me);
-        
-        var tabName = App.get('VRefs #cboRefs').getValue();        
-        
-        App.InsertRefs.columns(tabName,function(response) {
-
-            var nb = response.length;
-
-            var columns ='';
-            var values ='';
-            var colNameNb = 0;
-            for (var i=0;i<nb;i++) {	
-                var columnName = '';
-                columnName = response[i]["Field"];
-
-                if (App.get('VRefs #'+columnName))
-                {
-                    var columnValue = App.get('VRefs #'+columnName).getValue();
-
-                    if (colNameNb === 0)
-                    {
-                        columns += columnName;
-                        values += '"'+columnValue+'"';
-                        colNameNb++;
-                    }
-                    else{
-                        columns += ', '+columnName;
-                        values += ', "'+columnValue+'"';
-                    }
-                }
-            }
-
-            var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
-                console.log("reqSql");
-                console.log(reqSql);
-
-            App.InsertRefs.insert(reqSql,function(response) {
-                console.log("response");
-                console.log(response);
-              Ext.Msg.alert('GOPRRO',"Enregistrement effectué avec succès");
-            });
-        });
-        
-	},
 	onLoad: function(p)
 	{
 		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
@@ -916,14 +570,7 @@ App.controller.define('CMain', {
 						scale: 'large',
 						iconAlign: 'top',
 						rowspan: 3,
-						handler: p.showSettingsCharacteristics					
-				},{
-						text: 'Référentiels',
-						iconCls: "pencil",
-						scale: 'large',
-						iconAlign: 'top',
-						rowspan: 3,
-						handler: p.showSettingsRefs					
+						handler: p.showSettingsCharacteristics
 				}]
 			}
 			]
