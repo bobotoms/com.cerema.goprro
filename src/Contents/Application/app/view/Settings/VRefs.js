@@ -15,7 +15,6 @@ App.view.define('Settings.VRefs',{
 			xtype: "combo",
 			itemId: "cboRefs",
 			fieldLabel: "Refs",
-		    border:false,
 			padding: 5,
 			displayField: "type",
 			valueField: "ref",
@@ -24,9 +23,11 @@ App.view.define('Settings.VRefs',{
 							fields: ["ref","type"],
 							data: [
                                 {
+		    border:false,
 								ref: "axes",
 								type: "Axes"
 							},{
+		    border:false,
 								ref: "familles",
 								type: "Familles"
 							},{
