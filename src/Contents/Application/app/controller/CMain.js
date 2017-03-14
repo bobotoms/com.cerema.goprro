@@ -637,7 +637,7 @@ App.controller.define('CMain', {
             var columns ='';
             var values ='';
             var colNameNb = 0;
-            var view = 'V'+tabName.charAt(0).toUpperCase();
+            var view = 'V'+tabName.charAt(0).toUpperCase() + tabName.substring(1).toLowerCase();
             console.log("view nom");
             console.log(view);
             for (var i=0;i<nb;i++) {	
