@@ -15,25 +15,53 @@ App.view.define('Settings.VZones', {
                     top: 10,
                     left: 10
                 },
-                items: [{
-						xtype: "combo",
-						width: 200,
+                items: [
+                    
+                     {
+                        xtype: "combo",
+                        flex: 1,
+                        margin: {
+                            left: 5
+                        },
+
+						itemId: "dpt",
+                        fieldLabel: "Département",
+                        bindTo: "idDepartement",
+                        store: App.store.create("goprro://departements", {
+                            autoLoad: true
+                        }),
+                        editable: false,
+                        displayField: "nomDepartement",
+                        valueField: "idDepartement",
+                        labelAlign: "top"
+                    },{
+                        xtype: "combo",
+                        flex: 1,
+                        margin: {
+                            left: 5
+                        },
+
 						itemId: "idVille",
-						fieldLabel: "Ville",
-						displayField: "nomVille",
-						valueField: "idVille",
-						editable: false,
-						store: App.store.create("goprro://villes")
-					},{
-                    layout: "hbox",
-                    border: false,
-                    height: 50,
-                    items: [{
+                        fieldLabel: "Ville", 
+						bindTo: "idDepartement",
+                        store: App.store.create({fields:[],data:[]}),
+                        editable: false,
+                        width: "80%",
+						bindTo: "idVille",
+                        displayField: "ville_nom",
+                        valueField: "idVille",
+                        labelAlign: "top",
+						width: 200
+                    },{
                         xtype: "textfield",
+                        margin: {
+                            left: 5
+                        },
                         itemId: "nomZone",
                         valueField: "nomZone",
                         fieldLabel: "Nom zone",
-                        width: 250
+                        labelAlign: "top",
+                        width: 200
                     },
                     {
                         xtype: "button",
@@ -42,8 +70,8 @@ App.view.define('Settings.VZones', {
                         margin: {
                             left: 5
                         }
-                    }]
-                }]
+                    }
+                ]
         }
 	]
 	
