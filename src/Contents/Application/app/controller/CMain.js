@@ -125,7 +125,7 @@ App.controller.define('CMain', {
 			},
 			"VAxes button#clickUpdate": {
 				click: "ref_update_click"
-			},
+			}/*,
             "VAxes": {
                 VAxes: "VAxes_onshow"
             },
@@ -149,7 +149,7 @@ App.controller.define('CMain', {
             },
             "VZones": {
                 VZones: "VZones_onshow"
-            }
+            }*/
 		});
 		
 		App.init('VMain',function(){
