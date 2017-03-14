@@ -8,7 +8,8 @@ App.view.define('VSaisie', {
         this.bodyStyle = "background-color: white";
         this.bbar = [
             '->', {
-                text: 'Enregistrer',
+
+                text: '<b>Enregistrer</b>',
                 itemId: "Record"
             }
         ];
@@ -78,7 +79,9 @@ App.view.define('VSaisie', {
                         }
                     }, {
                         xtype: "textfield",
-                        fieldLabel: "Longueur (en m)", //bindTo: "PRFin",
+
+                        fieldLabel: "Longueur (en m)", 
+						bindTo: "longueur",
                         width: "100%",
                         margin: {
                             left: 10,
@@ -87,7 +90,9 @@ App.view.define('VSaisie', {
                         }
                     }, {
                         xtype: "textfield",
-                        fieldLabel: "Hauteur (en m)", //bindTo: "PRFin",
+
+                        fieldLabel: "Hauteur (en m)", 
+						bindTo: "hauteur",
                         width: "100%",
                         margin: {
                             left: 10,
@@ -96,7 +101,9 @@ App.view.define('VSaisie', {
                         }
                     }, {
                         xtype: "textfield",
-                        fieldLabel: "Surface (en m<sup>2</sup>)", //bindTo: "PRFin",
+
+                        fieldLabel: "Surface (en m<sup>2</sup>)", 
+						bindTo: "surface",
                         width: "100%",
                         margin: {
                             left: 10,
@@ -104,11 +111,7 @@ App.view.define('VSaisie', {
                             right: 10
                         }
                     }]
-                }, {
-                    xtype: "uploadfilemanager",
-                    flex: 1,
-                    width: "100%",
-                    padding: 10
+
                 }]
             }, {
                 region: "center",
@@ -155,6 +158,8 @@ App.view.define('VSaisie', {
                         margin: {
                             left: 5
                         },
+
+						itemId: "dpt",
                         fieldLabel: "Département",
                         bindTo: "idDepartement",
                         store: App.store.create("goprro://departements", {
@@ -188,14 +193,13 @@ App.view.define('VSaisie', {
                     items: [{
                         xtype: "combo",
                         fieldLabel: "Axe",
-                        width: "20%", //bindTo: "idGeologie",
-                        store: App.store.create({
-                            fields: [],
-                            autoLoad: true
-                        }),
+
+                        width: "20%", 
+						bindTo: "idAxe",
+                        store: App.store.create("goprro://axes",{autoLoad:true}),
                         editable: false,
-                        displayField: "nomGeologie",
-                        valueField: "idGeologie",
+                        displayField: "nomAxe",
+                        valueField: "idAxe",
                         labelAlign: "top"
                     }, {
                         xtype: "combo",
@@ -203,19 +207,26 @@ App.view.define('VSaisie', {
                         margin: {
                             left: 5
                         },
-                        fieldLabel: "Ville", //bindTo: "idGeologie",
-                        store: App.store.create({
-                            fields: [],
-                            autoLoad: true
-                        }),
+
+						itemId: "ville",
+                        fieldLabel: "Ville", 
+						bindTo: "idGeologie",
+                        store: App.store.create({fields:[],data:[]}),
                         editable: false,
                         width: "80%",
-                        displayField: "nomGeologie",
-                        valueField: "idGeologie",
+						bindTo: "idVille",
+                        displayField: "ville_nom",
+                        valueField: "idVille",
                         labelAlign: "top"
                     }, {
-                        xtype: "textfield",
+                        xtype: "combo",
                         fieldLabel: "Zone",
+						itemId: "zone",
+						editable: false,
+						displayField: "nomZone",
+						valueField: "idZone",
+						bindTo: "idZone",
+						store: App.store.create({fields:[],data:[]}),
                         margin: {
                             left: 5
                         },
@@ -223,30 +234,33 @@ App.view.define('VSaisie', {
                         width: "100%",
                         flex: 1
                     }]
-                }, {
-                    xtype: "textfield",
-                    padding: 10,
-                    width: "100%",
-                    border: false,
-                    fieldLabel: "Nom de l'ouvrage",
-                    bindTo: "nomOuvrage",
-                    labelAlign: "top"
-                }, {
-                    xtype: "textfield",
-                    width: "100%",
-                    padding: 10,
-                    border: false,
-                    fieldLabel: "Etiquette",
-                    bindTo: "etiquetteOuvrage",
-                    labelAlign: "top"
-                }, {
-                    html: "Eléments:",
-                    border: false,
-                    padding: 10,
-                    margin: {
-                        bottom: 4
-                    }
-                }, {
+
+                }, 
+				{
+					layout: "hbox",
+					width: "100%",
+					border: false,
+					items: [
+						{
+							xtype: "textfield",
+							padding: 10,
+							flex: 1,
+							border: false,
+							fieldLabel: "Nom de l'ouvrage",
+							bindTo: "nomOuvrage",
+							labelAlign: "top"
+						}, {
+							xtype: "textfield",
+							flex: 1,
+							padding: 10,
+							border: false,
+							fieldLabel: "Etiquette",
+							bindTo: "etiquetteOuvrage",
+							labelAlign: "top"
+						}						
+					]
+				}, 
+				{
                     layout: "hbox",
                     padding: 10,
                     width: "100%",
@@ -306,14 +320,13 @@ App.view.define('VSaisie', {
                         }]
                     }]
                 }, {
-                    html: "Accès:",
-                    padding: 10,
-                    border: false
-                }, {
-                    xtype: "textarea",
+
+                    xtype: "uploadfilemanager",
+					itemId: "up",
+                    flex: 1,
                     width: "100%",
                     padding: 10,
-                    flex: 1
+					bindTo: "_BLOB"
                 }]
             },
 
@@ -341,15 +354,11 @@ App.view.define('VSaisie', {
                             fieldLabel: "Gestionnaire",
                             editable: false,
                             itemId: "cboclient",
-                            store: App.store.create({
-                                fields: [],
-                                data: [],
-                                autoLoad: true
-                            }),
-                            displayField: "Lib_client_origine",
-                            valueField: "Id_client_origine"
-                                //, bindTo: "Id_contact_client"
-                                ,
+
+                            store: App.store.create("goprro://gestionnaires",{autoLoad:true}),
+                            displayField: "gest",
+                            valueField: "idGestionnaires",
+                            bindTo: "id_gestionnaire",
                             labelAlign: "top",
                             padding: 4,
                             width: "100%"
@@ -357,6 +366,8 @@ App.view.define('VSaisie', {
 						{
 							xtype: "textarea",
 							width: "100%",
+
+							bindTo: "txt_gestionnaire",
 							padding: 4,
 							flex: 1
 						},
@@ -365,14 +376,11 @@ App.view.define('VSaisie', {
                             fieldLabel: "Fournisseur",
                             itemId: "cboservice",
                             editable: false,
-                            store: App.store.create({
-                                fields: [],
-                                data: [],
-                                autoLoad: true
-                            }),
-                            displayField: "Lib_client_rattache",
-                            valueField: "Id_client_rattache",
-                                //, bindTo: "Id_client_rattache"
+
+                            store: App.store.create("goprro://fournisseurs",{autoLoad:true}),
+                            displayField: "fournisseur",
+                            valueField: "idFournisseurs",
+                            bindTo: "id_fournisseur",
                             labelAlign: "top",
                             padding: 4,
                             width: "100%"
@@ -380,6 +388,8 @@ App.view.define('VSaisie', {
 							xtype: "textarea",
 							padding: 4,
 							width: "100%",
+
+							bindTo: "txt_fournisseur",
 							flex: 1
 						},
 						{
@@ -387,15 +397,11 @@ App.view.define('VSaisie', {
                             fieldLabel: "Poseur",
                             itemId: "cboposeur",
                             editable: false,
-                            store: App.store.create({
-                                fields: [],
-                                data: [],
-                                autoLoad: true
-                            }),
-                            displayField: "Lib_client_rattache",
-                            valueField: "Id_client_rattache"
-                                //, bindTo: "Id_client_rattache"
-                                ,
+
+                            store: App.store.create("goprro://poseurs",{autoLoad:true}),
+                            displayField: "poseur",
+                            valueField: "idPoseurs",
+                            bindTo: "id_poseur",
                             labelAlign: "top",
                             padding: 4,
                             width: "100%"
@@ -403,45 +409,55 @@ App.view.define('VSaisie', {
 						{
 							xtype: "textarea",
 							width: "100%",
+
+							bindTo: "txt_poseur",
 							padding: 4,
 							flex: 1
 						}
 
                     ]
                 }, {
-                    layout: "vbox",
+
+                    layout: "fit",
                     title: "Compléments",
                     items: [{
-                        layout: "hbox",
-                        width: "100%",
-                        border: false,
-                        items: [{
                             layout: "vbox",
                             border: false,
-                            flex: 1,
+							height: "100%",
                             items: [{
-                                    xtype: "textfield",
-                                    fieldLabel: "Matériel nécessaire",
+                                    xtype: "htmleditor",
+                                    fieldLabel: "Matériel(s) nécessaire(s)",
                                     labelAlign: "top",
                                     labelWidth: 150,
                                     padding: 10,
+									bindTo: "materiels",
+									flex: 1,
                                     width: "100%"
                                 }, {
                                     xtype: "textfield",
                                     fieldLabel: "Nécessité coupure route",
                                     labelAlign: "top",
-                                    padding: 10,
-                                    labelWidth: 150,
-                                    flex: 1,
-                                    width: "100%"
-                                }
 
-                            ]
-                        }]
+                                    bindTo: "coupure_route",
+									padding: 10,
+                                    labelWidth: 150,
+                                    width: "100%"
+                                }, {
+									fieldLabel: "Accès",
+									bindTo: "acces",
+									labelAlign: "top",
+									xtype: "htmleditor",
+									width: "100%",
+									padding: 10,
+									flex: 1
+                				}
+						]
                     }]
                 }, {
                     xtype: "grid",
                     itemId: "gridContacts",
+
+					hidden: true,
                     title: "Contact(s) Chantier",
                     border: false,
                     tbar: [{
