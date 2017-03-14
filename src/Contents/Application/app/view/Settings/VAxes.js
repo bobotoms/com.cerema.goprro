@@ -9,9 +9,7 @@ App.view.define('Settings.VAxes', {
 			region: "center",
 			padding: 5,
 			border: false,
-			itemId: "ref_axes",
-            //cls: "referentiel",
-			hidden: true,			
+			itemId: "ref_axes",		
 			split:true,
 			items: [{
                     layout: "hbox",

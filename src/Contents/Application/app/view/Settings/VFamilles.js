@@ -9,9 +9,7 @@ App.view.define('Settings.VFamilles', {
 			region: "center",
                 padding: 5,
                 border: false,
-                //cls: "referentiel",
-                itemId: "ref_familles",
-                hidden: true,			
+                itemId: "ref_familles",			
                 split:true,
                 items: [{
                     layout: "hbox",

@@ -9,9 +9,7 @@ App.view.define('Settings.VGeologies', {
 			region: "center",
 			padding: 5,
 			border: false,
-			itemId: "ref_geologies",
-            //cls: "referentiel",
-			hidden: true,			
+			itemId: "ref_geologies",			
 			split:true,
 			items: [{
                     layout: "hbox",
