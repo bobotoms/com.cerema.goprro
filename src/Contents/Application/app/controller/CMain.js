@@ -645,7 +645,7 @@ App.controller.define('CMain', {
                 columnName = response[i]["Field"];
                 if (App.get(view+' #'+columnName))
                 {
-                    var columnValue = App.get('VRefs #'+columnName).getValue();
+                    var columnValue = App.get(view+' #'+columnName).getValue();
 
                     if (colNameNb === 0)
                     {
