@@ -14,20 +14,33 @@ function GMap(l,m)
 	});
 	google.maps.event.trigger(TMap.map, 'resize');
 	TMap.markers=[];
-	TMap.setMarker=function(l,m) {
+	TMap.setMarker=function(l,m,title,idOuvrage) {
 		var marker=new google.maps.Marker({
 			position: new google.maps.LatLng(l,m),
-			animation: google.maps.Animation.DROP
+			animation: google.maps.Animation.DROP,
+			title: title,
+			itemId: idOuvrage
 		});
 		marker.setMap(TMap.map);
+		marker.addListener('click', function(x) {
+			hideForms();
+			var form=App.get("mainform panel#Saisie");
+			form.idOuvrage=this.itemId;
+			form.show();	
+  		});
 		TMap.markers.push(marker);
 		return marker;
 	};
-	App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y}",function(r) {
+	TMap.clearMarkers=function() {
+		for (var i = 0; i < TMap.markers.length; i++) {
+    		TMap.markers[i].setMap(null);
+  		}	
+	};
+
+	App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
 		for (var i=0;i<r.data.length;i++) {
-			console.log(r.data[i].oa_x);
-			console.log(r.data[i].oa_y);
-			TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x);	
+			TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
+
 		}
 	});
 };
@@ -38,17 +51,8 @@ App.controller.define('CMain', {
 		"VMain",
 		"VSaisie",
 		"VAddItem",
-		"Settings.VCharacteristics",
-		"Settings.VRefs",
-        "Settings.VAxes",
-        "Settings.VFamilles",
-        "Settings.VFournisseurs",
-        "Settings.VGeologies",
-        "Settings.VGestionnaires",
-        "Settings.VPoseurs",
-        "Settings.VTypes",
-        "Settings.VZones"
-
+		"VShowDoc",
+		"Settings.VCharacteristics"
 	],
 	
 	models: [
@@ -71,12 +75,22 @@ App.controller.define('CMain', {
 			"VSaisie": {
 				show: "VSaisie_onShow"	
 			},
+
+			"VSaisie combo#dpt": {
+				select: "dpt_onselect"	
+			},
+			"VSaisie combo#ville": {
+				select: "ville_onselect"	
+			},			
 			"VSaisie combo#famille": {
 				select: "famille_select"
 			},
 			"VSaisie button#add_item": {
 				click: "add_item_click"
 			},
+			"VSaisie uploadfilemanager#up": {
+				itemdblclick: "up_onclick"
+			},			
 			"VSaisie treepanel": {
 				beforeedit: "treeSaisie_beforeedit",
 				itemclick: "treeSaisie_click"
@@ -113,6 +127,7 @@ App.controller.define('CMain', {
 			},
 			"VCharacteristics button#add": {
 				click: "charact_validate_click"
+<<<<<<< HEAD
 			},
 			"VRefs combo#cboRefs": {
 				select: "ref_cboRefs_select"
@@ -150,6 +165,9 @@ App.controller.define('CMain', {
             "VZones": {
                 VZones: "VZones_onshow"
             }*/
+=======
+			}
+>>>>>>> master
 		});
 		
 		App.init('VMain',function(){
@@ -157,10 +175,28 @@ App.controller.define('CMain', {
 		});
 		
 	},
+	up_onclick: function(p, record)
+	{
+		App.view.create('VShowDoc', {
+			modal: true,
+			title: record.data.filename,
+			pid: record.data.docId
+		}).show().center();		
+	},	
+	dpt_onselect: function(me,_store) {
+		var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+_store.data.codeDepartement);
+		App.get('VSaisie combo#ville').bindStore(store);
+		store.load();
+	},
+	ville_onselect: function(me,_store) {
+		var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+_store.data.idVille);	
+		App.get('VSaisie combo#zone').bindStore(store);
+		store.load();
+	},
 	propertygrid_edit: function(ed,o) {
-		var store=App.get(o.grid.up('window'),"treepanel").getStore().data;
-		var selectedNode = App.get(o.grid.up('window'),"treepanel").getSelectionModel().getSelection()[0];
-		var idx = App.get(o.grid.up('window'),"treepanel").getStore().indexOf(selectedNode);
+		var store=App.get(o.grid.up('panel').up('panel'),"treepanel").getStore().data;
+		var selectedNode = App.get(o.grid.up('panel').up('panel'),"treepanel").getSelectionModel().getSelection()[0];
+		var idx = App.get(o.grid.up('panel').up('panel'),"treepanel").getStore().indexOf(selectedNode);
 		store.items[idx].properties=[];
 		for (var i=0;i<o.store.data.items.length;i++) {
 			store.items[idx].properties.push({
@@ -171,9 +207,13 @@ App.controller.define('CMain', {
 	},
 	VSaisie_onShow: function(me) {
 		me.element={};
+		App.reset(me);
+		App.get(me,"treepanel").getRootNode().removeAll();
+		App.get(me,"propertygrid").getStore().removeAll();
 		if (me.idOuvrage) {
 			function getElements(PARAM,PARAMX,PARAMZ,ndx,cb) {
 				App.Elements.getSelect(PARAM[ndx],App.get(me,"combo#type").getValue(),function(r){
+					console.log(r);	
 					if (!r[r.length-1].leaf) r[r.length-1].text="<b>"+r[r.length-1].text+"</b>";
 					if (PARAMX[ndx]) r[r.length-1].description=PARAMX[ndx];
 					if (PARAMZ[ndx]) r[r.length-1].id=PARAMZ[ndx];
@@ -195,9 +235,25 @@ App.controller.define('CMain', {
 			App.get(me,'combo#famille').setDisabled(true);
 			App.get(me,'combo#type').setDisabled(true);
 			// On charge les premiers items
-			App.DB.get('goprro://ouvrages?idOuvrage='+me.idOuvrage,me,function(r){
+			App.DB.get('goprro://ouvrages?idOuvrage='+me.idOuvrage,me,function(re){
+				if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
 				// On continue par les éléments
 				App.DB.get('goprro://oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idOuvrage='+me.idOuvrage,function(r){
+					
+					var id= App.get('VSaisie combo#dpt').getValue();
+					if (id) {
+						var record = App.get('VSaisie combo#dpt').findRecordByValue(id).get('codeDepartement');
+						console.log(record);
+						var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+record);
+						App.get('VSaisie combo#ville').bindStore(store);
+						store.load();						
+					};
+
+
+					//var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+re.data[0].idVille);	
+					//App.get('VSaisie combo#zone').bindStore(store);
+					//store.load();
+
 					var PARAM=[];
 					var PARAMX=[];
 					var PARAMZ=[];
@@ -232,9 +288,14 @@ App.controller.define('CMain', {
 	},
 	new_ouvrage_record: function(me) {
 		me.setDisabled(true);
-		var store=App.get(me.up('window'),"treepanel").getStore().data;
-		App.DB.post('goprro://ouvrages',me.up('window'),function(r){
-			if (!me.up('window').idOuvrage) {
+
+		var store=App.get(me.up('panel'),"treepanel").getStore().data;
+		App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
+			// On post l'upload
+			App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+				//alert('posté!');
+			});
+			if (!me.up('panel').idOuvrage) {
 				if (!r.insertId) {
 					App.notify("Impossible d'enregistrer la fiche");
 					me.setDisabled(false);
@@ -245,7 +306,8 @@ App.controller.define('CMain', {
 					me.setDisabled(false);
 					return;
 				};
-			} else r.insertId=me.up('window').idOuvrage; 
+
+			} else r.insertId=me.up('panel').idOuvrage; 
 			var Post=[];
 			for (var i=0;i<store.items.length;i++) {
 				var descr="";
@@ -260,7 +322,9 @@ App.controller.define('CMain', {
 						parentOAElement: parent,
 						idOuvrage: r.insertId,
 						idElement: store.items[i].data.name.split('c')[1],
-						idType: App.get(me.up('window'),"combo#type").getValue()
+
+						idType: App.get(me.up('panel'),"combo#type").getValue(),
+						_BLOB: App.get('uploadfilemanager#up').getFiles()
 					};
 					if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
 					Post.push(dta);
@@ -268,8 +332,11 @@ App.controller.define('CMain', {
 			};
 			App.Elements.delOuvrage(r.insertId,function(e) {
 				App.DB.post("goprro://oa_elements",Post,function(r){
+					console.log(r);
 					App.get('mainform grid#gridO').getStore().load();
-					me.up('window').close();
+					me.up('panel').hide();
+					hideForms();
+					App.get("mainform grid#gridO").show();	
 					me.setDisabled(false);
 				});				
 			});
@@ -319,6 +386,10 @@ App.controller.define('CMain', {
 				obj.sourceConfig=sourceConfig;
 				
 				var grid2=Ext.create('Ext.grid.property.Grid',obj);
+
+				console.log('-----');
+				console.log(o.properties);
+				console.log('-----');
 				if (o.properties) {
 					for (var i=0;i<o.properties.length;i++) {
 						console.log(o.properties[i]);
@@ -338,9 +409,13 @@ App.controller.define('CMain', {
 				e[r.data[i].COLUMN_NAME]='';
 			};
 			var sm = App.get(me.up('panel').up('panel'),"treepanel#T0").getSelectionModel().getSelection();
+<<<<<<< HEAD
             console.log("sm");
             console.log(sm);
             
+=======
+
+>>>>>>> master
 			if (sm.length==0) {
 				Ext.Msg.alert('GOPRRO',"Vous devez sélectionner un élement du catalogue.");
 				return;	
@@ -362,15 +437,6 @@ App.controller.define('CMain', {
 	treeT0_click: function(me,store) {
 		var store=App.store.create('goprro://caracteristiques?idType='+store.data.type_element);
 		App.get('VCharacteristics grid#T1').bindStore(store);
-		store.load();
-	},
-	refsT0_click: function(me,store) {
-        
-        App.get('VRefs #ref_familles').show();
-		console.log("refsT0_click");
-		console.log(me);
-		var store=App.store.create('goprro://familles{nomFamille}');
-		App.get('VRefs grid#T1').bindStore(store);
 		store.load();
 	},
 	charact_cboFamille_select: function(me) {
@@ -404,33 +470,37 @@ App.controller.define('CMain', {
   			for (i = 0; i < len; i++) result.appendChild(clone(node.childNodes[i]));
   			return result;
 		};
-		var CStore=App.get(me.up('window'),"treepanel#T1").getStore();
+
+		var CStore=App.get(me.up('panel'),"treepanel#T1").getStore();
 		var oldRoot = CStore.getRootNode(),
     	newRoot = clone(oldRoot);
 		App.get('VSaisie treepanel').getStore().setRootNode(newRoot);
 		me.up('window').close();
 	},
 	AddItem_click: function(me) {
-		var tree = App.get(me.up('window'),"treepanel#T0");
+
+		var tree = App.get(me.up('panel').up('panel'),"treepanel#T0");
         var selModel = tree.getSelectionModel();
         var node = selModel.getLastSelected(); 
-		App.Elements.getSelect(node.data.id,me.up('window').type_item,function(r){
+		App.Elements.getSelect(node.data.id,me.up('panel').up('panel').type_item,function(r){
 			if (!r[r.length-1].leaf) r[r.length-1].text="<b>"+r[r.length-1].text+"</b>";
 			console.log(r);
 			for (var i=0;i<r.length;i++) {	
 				
-				var xnode=App.get(me.up('window'),"treepanel#T1").getRootNode().store.getNodeById('c'+r[i].parent);			
+
+				var xnode=App.get(me.up('panel').up('panel'),"treepanel#T1").getRootNode().store.getNodeById('c'+r[i].parent);			
 				if (!xnode) {
-					if (!App.get(me.up('window'),"treepanel#T1").getRootNode().store.getNodeById(r[i].id)) App.get(me.up('window'),"treepanel#T1").getRootNode().appendChild(r[i]); 
+					if (!App.get(me.up('panel').up('panel'),"treepanel#T1").getRootNode().store.getNodeById(r[i].id)) App.get(me.up('panel').up('panel'),"treepanel#T1").getRootNode().appendChild(r[i]); 
 				} else {
-					if (!App.get(me.up('window'),"treepanel#T1").getRootNode().store.getNodeById(r[i].id)) xnode.appendChild(r[i]);
+					if (!App.get(me.up('panel').up('panel'),"treepanel#T1").getRootNode().store.getNodeById(r[i].id)) xnode.appendChild(r[i]);
 				};
-				App.get(me.up('window'),"treepanel#T1").expandAll();
+				App.get(me.up('panel').up('panel'),"treepanel#T1").expandAll();
 			}
 		});
 	},
 	RemoveItem_click: function(me) {
-		var tree=App.get(me.up('window'),"treepanel#T1");
+
+		var tree=App.get(me.up('panel'),"treepanel#T1");
 		var record = tree.getSelectionModel().getSelection()[0];
 		function recursedel(record,cb) {
 			var xnode=tree.getRootNode().store.getNodeById('c'+record.data.parent);	
@@ -478,7 +548,10 @@ App.controller.define('CMain', {
 		//App.view.create('VSaisie',{modal: true}).show().center();	
 		hideForms();
 		var form=App.get("mainform panel#Saisie");
-		//form.idOuvrage=store.data.idOuvrage;
+
+		form.idOuvrage=null;
+		var cbo=App.getAll(form,'combo');
+		for (var i=0;i<cbo.length;i++)	cbo[i].setDisabled(false);
 		form.show();
 	},
 	Menu_onClick: function(p)
@@ -501,7 +574,14 @@ App.controller.define('CMain', {
 	showMap: function(p)
 	{
 		hideForms();
+
+		TMap.clearMarkers();
 		App.get("mainform panel#map").show();
+		App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
+			for (var i=0;i<r.data.length;i++) {
+				TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
+			}
+		});
 	},
 	showGrid: function(p)
 	{
@@ -512,6 +592,7 @@ App.controller.define('CMain', {
 		hideForms();
 		App.get("mainform panel#setup_characteristics").show();	
 	},
+<<<<<<< HEAD
 	showSettingsRefs: function(p) {
 		hideForms();
 		App.get("mainform panel#setup_refs").show();	
@@ -672,6 +753,8 @@ App.controller.define('CMain', {
         });
         
 	},
+=======
+>>>>>>> master
 	onLoad: function(p)
 	{
 		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
@@ -787,14 +870,8 @@ App.controller.define('CMain', {
 						scale: 'large',
 						iconAlign: 'top',
 						rowspan: 3,
-						handler: p.showSettingsCharacteristics					
-				},{
-						text: 'Référentiels',
-						iconCls: "pencil",
-						scale: 'large',
-						iconAlign: 'top',
-						rowspan: 3,
-						handler: p.showSettingsRefs					
+
+						handler: p.showSettingsCharacteristics	
 				}]
 			}
 			]

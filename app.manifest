@@ -6,7 +6,7 @@
     "platform": "desktop",
     "uid": "81a38e9a-fd9f-4326-97e1-d1bf61ee7b46",
     "version": "0.0.2",
-    "build": 6,
+    "build": 13,
     "targets": [
         "webapp"
     ],
@@ -59,11 +59,12 @@
     ],
     "plugins": [],
     "api": [
-        "MyService",
         "Elements",
         "Ouvrages",
         "Notes",
-        "InsertRefs"
+        "Docs",
+        "InsertRefs",
+        "MyService"
     ],
     "db": [
         "goprro"
