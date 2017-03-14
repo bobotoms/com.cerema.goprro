@@ -585,7 +585,6 @@ App.controller.define('CMain', {
 		hideForms();
 		App.get("mainform panel#setup_characteristics").show();	
 	},
-
 	showSettingsRefs: function(p) {
 		hideForms();
 		App.get("mainform panel#setup_refs").show();	
