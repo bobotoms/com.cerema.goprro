@@ -1,10 +1,10 @@
-# tpl.omneedia.webapp
+# GOPRRO
 
-## tpl.omneedia.webapp
+## com.cerema.goprro
 
-Package description goes here
+Suivi des visites des ouvrages de Protection<br>contre les risques rocheux
 
-Copyright (c) 2016 By OMNEEDIA
+Copyright (c) 20162017 By CEREMA
 
 ## License
 
