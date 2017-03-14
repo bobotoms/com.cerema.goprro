@@ -94,54 +94,6 @@ App.view.define('Settings.VRefs',{
                 itemId: "ref_familles",
                 hidden: true,			
                 split:true,
-                width: 350,
-                height: 350,
-                items: [
-                    {
-                    xtype: "grid",
-                    //itemId: "nomFamille",
-                    title: "Zones",
-                    border: false,
-                    tbar: [
-                    '->',
-                    {
-                        xtype: "button",
-                        text: "Ajouter",
-                        itemId: "clickUpdate"
-                    }
-                    ],
-                    plugins: [
-                    {
-                        ptype: "cellediting",
-                        clicksToEdit: 1
-                    }
-                    ],
-                    columns: [
-                        {
-                            text: "Nom",
-                            dataIndex: "nomFamilles",
-                            editor: {
-                                xtype: "textfield",
-                                itemId: "nomFamille",
-                                valueField: "nomFamille",
-                            }
-                        }
-                    ],
-                        store: App.store.create({fields:[],data:[]}),
-                        itemId: "T1",
-                        title: "Zones",
-                        flex: 1,
-                        height: "100%"
-                }]
-            },/*
-            {
-                region: "center",
-                padding: 5,
-                border: false,
-                //cls: "referentiel",
-                itemId: "ref_familles",
-                hidden: true,			
-                split:true,
                 items: [{
                     layout: "hbox",
                     border: false,
@@ -166,7 +118,7 @@ App.view.define('Settings.VRefs',{
                         }
                     }]
                 }]
-            },*/
+            },
             {
                 region: "center",
                 padding: 5,
