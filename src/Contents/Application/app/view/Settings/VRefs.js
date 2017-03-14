@@ -15,7 +15,7 @@ App.view.define('Settings.VRefs',{
 			xtype: "combo",
 			itemId: "cboRefs",
 			fieldLabel: "Refs",
-		    border=false,
+		    border:false,
 			padding: 5,
 			displayField: "type",
 			valueField: "ref",
