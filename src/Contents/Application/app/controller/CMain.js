@@ -52,7 +52,16 @@ App.controller.define('CMain', {
 		"VSaisie",
 		"VAddItem",
 		"VShowDoc",
-		"Settings.VCharacteristics"
+		"Settings.VCharacteristics",
+		"Settings.VRefs",
+        "Settings.VAxes",
+        "Settings.VFamilles",
+        "Settings.VFournisseurs",
+        "Settings.VGeologies",
+        "Settings.VGestionnaires",
+        "Settings.VPoseurs",
+        "Settings.VTypes",
+        "Settings.VZones"
 	],
 	
 	models: [
