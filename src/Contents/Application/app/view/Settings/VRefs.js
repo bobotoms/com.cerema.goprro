@@ -23,11 +23,9 @@ App.view.define('Settings.VRefs',{
 							fields: ["ref","type"],
 							data: [
                                 {
-		    border:false,
 								ref: "axes",
 								type: "Axes"
 							},{
-		    border:false,
 								ref: "familles",
 								type: "Familles"
 							},{
