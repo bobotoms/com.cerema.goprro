@@ -637,11 +637,13 @@ App.controller.define('CMain', {
             var columns ='';
             var values ='';
             var colNameNb = 0;
+            var view = 'V'+tabName.charAt(0).toUpperCase();
+            console.log("view nom");
+            console.log(view);
             for (var i=0;i<nb;i++) {	
                 var columnName = '';
                 columnName = response[i]["Field"];
-
-                if (App.get('VRefs #'+columnName))
+                if (App.get(view+' #'+columnName))
                 {
                     var columnValue = App.get('VRefs #'+columnName).getValue();
 
