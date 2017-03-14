@@ -19,8 +19,8 @@ App.view.define('Settings.VFamilles', {
                         left: 10
                     },
                     items: [{
-                        border: false,
                         xtype: "textfield",
+                        border: false,
                         itemId: "nomFamille",
                         valueField: "nomFamille",
                         fieldLabel: "Nom famille",
