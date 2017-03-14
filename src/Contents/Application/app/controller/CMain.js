@@ -143,11 +143,8 @@ App.controller.define('CMain', {
 			"VRefs button#clickUpdate": {
 				click: "ref_update_click"
 			},
-			"VGeologies button#clickUpdate": {
-				click: "ref_update_click"
-			},
-			"VAxes button#clickUpdate": {
-				click: "ref_update_click"
+            "VZones combo#dpt": {
+				select: "zones_dpt_onselect"	
 			}/*,
             "VAxes": {
                 VAxes: "VAxes_onshow"
