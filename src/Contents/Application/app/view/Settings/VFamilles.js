@@ -3,6 +3,7 @@ App.view.define('Settings.VFamilles', {
     extend: 'Ext.Panel',
 	alias : 'widget.VFamilles',
 	layout: "hbox",
+    border: false,
 	items: [
 		{
 			region: "center",
@@ -20,7 +21,6 @@ App.view.define('Settings.VFamilles', {
                     },
                     items: [{
                         xtype: "textfield",
-                        border: false,
                         itemId: "nomFamille",
                         valueField: "nomFamille",
                         fieldLabel: "Nom famille",
