@@ -127,7 +127,6 @@ App.controller.define('CMain', {
 			},
 			"VCharacteristics button#add": {
 				click: "charact_validate_click"
-<<<<<<< HEAD
 			},
 			"VRefs combo#cboRefs": {
 				select: "ref_cboRefs_select"
@@ -165,9 +164,7 @@ App.controller.define('CMain', {
             "VZones": {
                 VZones: "VZones_onshow"
             }*/
-=======
-			}
->>>>>>> master
+
 		});
 		
 		App.init('VMain',function(){
@@ -409,13 +406,9 @@ App.controller.define('CMain', {
 				e[r.data[i].COLUMN_NAME]='';
 			};
 			var sm = App.get(me.up('panel').up('panel'),"treepanel#T0").getSelectionModel().getSelection();
-<<<<<<< HEAD
             console.log("sm");
             console.log(sm);
-            
-=======
 
->>>>>>> master
 			if (sm.length==0) {
 				Ext.Msg.alert('GOPRRO',"Vous devez sélectionner un élement du catalogue.");
 				return;	
@@ -592,7 +585,7 @@ App.controller.define('CMain', {
 		hideForms();
 		App.get("mainform panel#setup_characteristics").show();	
 	},
-<<<<<<< HEAD
+
 	showSettingsRefs: function(p) {
 		hideForms();
 		App.get("mainform panel#setup_refs").show();	
@@ -753,8 +746,7 @@ App.controller.define('CMain', {
         });
         
 	},
-=======
->>>>>>> master
+
 	onLoad: function(p)
 	{
 		App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
