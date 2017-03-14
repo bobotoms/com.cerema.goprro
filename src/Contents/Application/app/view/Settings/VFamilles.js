@@ -8,7 +8,6 @@ App.view.define('Settings.VFamilles', {
 		{
 			region: "center",
                 padding: 5,
-                border: false,
                 itemId: "ref_familles",			
                 split:true,
                 items: [{
