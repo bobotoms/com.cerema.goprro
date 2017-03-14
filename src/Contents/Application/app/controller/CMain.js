@@ -113,13 +113,13 @@ App.controller.define('CMain', {
 			},
 			"VCharacteristics button#add": {
 				click: "charact_validate_click"
-			},
+			}/*,
 			"VRefs button#add": {
 				click: "charact_validate_click"
-			},
+			}/*,
 			"VRefs combo#cboRefs": {
 				select: "refsT0_click"
-			},
+			}*/,
 			"VRefs combo#cboRefs": {
 				select: "ref_cboRefs_select"
 			},
