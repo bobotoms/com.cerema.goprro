@@ -302,54 +302,6 @@ App.view.define('Settings.VRefs',{
                 itemId: "ref_zones",
                 hidden: true,			
                 split:true,
-                width: 350,
-                height: 350,
-                items: [
-                    {
-                    xtype: "grid",
-                    //itemId: "nomFamille",
-                    title: "Zones",
-                    border: false,
-                    tbar: [
-                    '->',
-                    {
-                        xtype: "button",
-                        text: "Ajouter",
-                        itemId: "add"
-                    }
-                    ],
-                    plugins: [
-                    {
-                        ptype: "cellediting",
-                        clicksToEdit: 1
-                    }
-                    ],
-                    columns: [
-                        {
-                            text: "Nom",
-                            dataIndex: "nomVilles",
-                            editor: {
-                                xtype: "textfield",
-                                itemId: "nomVille",
-                                valueField: "nomVille",
-                            }
-                        }
-                    ],
-                        store: App.store.create({fields:[],data:[]}),
-                        itemId: "T1",
-                        title: "Zones",
-                        flex: 1,
-                        height: "100%"
-                }]
-            }/*,
-            {
-                region: "center",
-                padding: 5,
-                border: false,
-                //cls: "referentiel",
-                itemId: "ref_zones",
-                hidden: true,			
-                split:true,
                 padding: {
                     top: 10,
                     left: 10
@@ -384,7 +336,7 @@ App.view.define('Settings.VRefs',{
                         }
                     }]
                 }]
-            }*/],
+            }],
 		this.callParent();
 	}
 });
