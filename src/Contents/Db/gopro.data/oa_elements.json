@@ -1,0 +1,82 @@
+[
+    {
+        "idOAElement": 1,
+        "nomOAElement": "B1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 4,
+        "idElement": 630
+    },
+    {
+        "idOAElement": 2,
+        "nomOAElement": "F1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 4,
+        "idElement": 631
+    },
+    {
+        "idOAElement": 3,
+        "nomOAElement": "B1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 4,
+        "idElement": 630
+    },
+    {
+        "idOAElement": 4,
+        "nomOAElement": "F1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 4,
+        "idElement": 631
+    },
+    {
+        "idOAElement": 5,
+        "nomOAElement": "B1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 4,
+        "idElement": 630
+    },
+    {
+        "idOAElement": 6,
+        "nomOAElement": "F1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 4,
+        "idElement": 631
+    },
+    {
+        "idOAElement": 7,
+        "nomOAElement": "CX1",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 5,
+        "idElement": 630
+    },
+    {
+        "idOAElement": 8,
+        "nomOAElement": "CX2",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 5,
+        "idElement": 630
+    },
+    {
+        "idOAElement": 9,
+        "nomOAElement": "CX3",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 5,
+        "idElement": 630
+    },
+    {
+        "idOAElement": 10,
+        "nomOAElement": "F0",
+        "parentOAElement": 629,
+        "idType": 8,
+        "idOuvrage": 5,
+        "idElement": 631
+    }
+]

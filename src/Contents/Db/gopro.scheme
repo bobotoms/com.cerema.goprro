@@ -1,0 +1,179 @@
+acces {
+	! (key) idAcces
+	! (string) nomAcces = '0'
+	- (date) creation
+	! (int) actif = '1'
+}
+acteurs_externes {
+	- (int) idActeur
+	- (int) gestionnaire
+	- (int) maitre_ouvrage
+	- (int) poseur
+	- (int) fournisseur
+	- (string) nomActeur
+	- (text) adresseActeur
+	- (string) telActeur
+	- (string) mailActeur
+	- (string) lib1Acteur
+	- (string) lib2Acteur
+	- (string) lib3Acteur
+	- (int) actif = '1'
+}
+caracteristiques {
+	! (key) idCaracteristique
+	- (int) idType
+	- (string) nomCaracteristique
+	- (string) uniteCaracteristique
+	- (string) typeCaracteristique
+	- (string) valeursCaracteristique
+	- (int) actif
+}
+departements {
+	! (key) idDepartement
+	! (int) idDter = 0
+	- (string) codeDepartement
+	- (string) nomDepartement
+	- (string) nom_uppercase
+	- (string) slug
+	- (string) nom_soundex
+	! (int) actif = 1
+}
+dter {
+	! (key) idZoneAction
+	! (string) nom = 0
+	! (string) nomcourt = 0
+	! (int) actif = 1
+}
+elements {
+	! (key) idElement
+	- (int) idType
+	- (int) parent
+	! (int) idType_element
+	- (string) nomElement
+	! (int) actif = 1
+}
+familles {
+	! (key) idFamille
+	! (string) nomFamille
+	- (int) actif = 1
+}
+geologies {
+	! (key) idGeologie
+	! (string) nomGeologie = 0
+	! (int) actif = 1
+}
+meteos {
+	! (key) idMeteo
+	! (string) nomMeteo = 0
+	! (int) actif = 1
+}
+notes {
+	! (key) idNote
+	! (date) dateNote
+	! (string) texteNote
+	! (int) dterNote = 0
+	! (int) imgNote = 0
+	! (int) idUser = 0
+	! (int) actif = 1
+}
+oa_caracteristiques {
+	! (key) idOACaracteristique
+	- (int) idOAElement
+	- (int) idCaracteristique
+	- (string) valeurOACaracteristique
+}
+oa_elements {
+	! (key) idOAElement
+	- (string) nomOAElement
+	- (int) parentOAElement
+	- (int) idType
+	- (int) idOuvrage
+	- (int) idElement
+}
+ouvrages {
+	! (key) idOuvrage
+	! (int) idFamille
+	! (int) idType
+	- (int) idDepartement
+	- (int) idZone
+	- (int) idGeologie
+	- (int) idSituation
+	- (int) idAcces
+	- (string) nomOuvrage
+	- (string) etiquetteOuvrage
+	- (int) idGestionnaire
+	- (int) idMaitreOuvrage
+	- (int) idFournisseur
+	- (int) idPoseur
+	- (string) PRDebut
+	- (string) PRFin
+	- (string) oa_x
+	- (string) oa_y
+	- (string) oa_z
+}
+roles {
+	- (int) idRole
+	- (int) nomRole
+	- (int) actif = 1
+}
+situations {
+	! (key) idSituation
+	! (string) nomSituation = 0
+	! (int) actif = 1
+}
+types {
+	! (key) idType
+	! (int) idFamille = 0
+	! (string) nomType = 0
+	- (int) actif = 1
+}
+types_elements {
+	- (int) idType
+	- (string) nomElement
+}
+users {
+	! (key) idUser
+	! (string) nom
+	! (string) prenom
+	! (string) mail
+	! (string) tel
+	! (int) idService
+	! (int) idUnite
+	! (int) idDter
+	! (int) role
+}
+vegetations {
+	! (key) idVegetation
+	! (string) nomVegetation = 0
+	! (int) actif = 1
+}
+villes {
+	! (key) idVille
+	- (string) ville_departement
+	- (string) ville_slug
+	- (string) ville_nom
+	- (string) ville_nom_simple
+	- (string) nomVille
+	- (string) ville_nom_soundex
+	- (string) ville_nom_metaphone
+	- (string) cpVille
+	- (string) ville_commune
+	! (string) ville_code_commune
+	- (int) ville_arrondissement
+	- (string) ville_canton
+	- (int) ville_amdi
+	- (int) ville_population_2010
+	- (int) ville_population_1999
+	- (int) ville_population_2012
+	- (int) ville_densite_2010
+	- (float) ville_surface
+	- (float) ville_longitude_deg
+	- (float) ville_latitude_deg
+	- (string) ville_longitude_grd
+	- (string) ville_latitude_grd
+	- (string) ville_longitude_dms
+	- (string) ville_latitude_dms
+	- (int) ville_zmin
+	- (int) ville_zmax
+	! (int) actif = 1
+}

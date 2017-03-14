@@ -1,0 +1,218 @@
+[
+    {
+        "idType": 1,
+        "idFamille": 1,
+        "nomType": "Ecran freiné\r\n",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 2,
+        "idFamille": 1,
+        "nomType": "Barrière (non-freinée)",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 3,
+        "idFamille": 2,
+        "nomType": "Grillage pendu\r\n",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 4,
+        "idFamille": 2,
+        "nomType": "Grillage pendu sur poteaux\r\n",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 5,
+        "idFamille": 2,
+        "nomType": "Filet pendu\r\n",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 6,
+        "idFamille": 2,
+        "nomType": "Filet pendu sur poteaux",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 7,
+        "idFamille": 3,
+        "nomType": "Boulon",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 8,
+        "idFamille": 3,
+        "nomType": "Béton projeté",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 9,
+        "idFamille": 3,
+        "nomType": "Grillage plaqué",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 10,
+        "idFamille": 3,
+        "nomType": "Filet plaqué",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 11,
+        "idFamille": 3,
+        "nomType": "Emmaillotage",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 12,
+        "idFamille": 3,
+        "nomType": "Câblage",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 13,
+        "idFamille": 4,
+        "nomType": "Buton maçonné",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 14,
+        "idFamille": 4,
+        "nomType": "Buton béton",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 15,
+        "idFamille": 4,
+        "nomType": "Contrefort maçonné",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 16,
+        "idFamille": 4,
+        "nomType": "Contrefort béton",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 17,
+        "idFamille": 4,
+        "nomType": "Pilier(s) et longrine(s)",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 18,
+        "idFamille": 5,
+        "nomType": "Merlon à paroi raidie",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 19,
+        "idFamille": 5,
+        "nomType": "Levée simple",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 20,
+        "idFamille": 5,
+        "nomType": "Fosse",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 21,
+        "idFamille": 5,
+        "nomType": "Dispositif amortisseur",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 22,
+        "idFamille": 6,
+        "nomType": "Mur bois et/ou métal",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 23,
+        "idFamille": 6,
+        "nomType": "Gabions",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 24,
+        "idFamille": 6,
+        "nomType": "GBA",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 25,
+        "idFamille": 6,
+        "nomType": "Blocs béton",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 26,
+        "idFamille": 6,
+        "nomType": "Mur",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    },
+    {
+        "idType": 27,
+        "idFamille": 6,
+        "nomType": "Berlinoise",
+        "modif": "2016-11-09T10:08:27.000Z",
+        "creation": "2016-10-31T23:00:00.000Z",
+        "actif": 1
+    }
+]

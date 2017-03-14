@@ -1,0 +1,110 @@
+.BackgroundSystem
+{
+	background-image:url(webapp/defaultdesktop.png);
+}
+
+.qxAboutLogo
+{
+	background-image:url(startup/logo.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size: 128px 128px;
+	width: 128px;
+	height: 128px;
+}
+
+.qxIcon
+{
+	background-image:url(webapp/ico.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size: 16px 16px;
+	width: 16px;
+	height: 16px;
+}
+
+.mnu_preferences
+{
+	background-image:url(webapp/Preferences.png);
+}
+
+.new
+{
+	background-image: url(webapp/new.png)
+}
+
+.bridge
+{
+	background-image: url(webapp/bridge.png);
+	border: 1px solid black;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size: 250px 141px;
+}
+
+.map_ico
+{
+	background-image: url(webapp/map_32.png)
+}
+
+.list_ico
+{
+	background-image: url(webapp/list.png)
+}
+
+.characteristics {
+	background-image: url(webapp/characteristics.png)
+}
+
+.items {
+	background-image: url(webapp/items.png)
+}
+
+.table {
+	background-image: url(webapp/tables.png)
+}
+
+.pencil {
+	background-image: url(webapp/pencil.png)
+}
+
+.update {
+	background-image: url(webapp/update.png)	
+}
+
+.timeline {
+  list-style: none;
+}
+.timeline > li {
+  margin-bottom: 60px;
+}
+
+/* for Desktop */
+@media ( min-width : 640px ){
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+  .timeline-date {
+    width: 110px;
+    float: left;
+    margin-top: 22px;
+  }
+  .timeline-content {
+    width: 75%;
+    float: left;
+    border-left: 3px #e5e5d1 solid;
+    padding-left: 30px;
+  }
+  .timeline-content:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #6fc173;
+    position: absolute;
+    left: 106px;
+    top: 24px;
+    border-radius: 100%;
+  }
+}

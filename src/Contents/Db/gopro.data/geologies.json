@@ -1,0 +1,23 @@
+[
+    {
+        "idGeologie": 0,
+        "nomGeologie": "Non définie",
+        "modif": "2016-09-28T07:03:24.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idGeologie": 1,
+        "nomGeologie": "Calcaire",
+        "modif": "2016-09-28T07:03:24.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idGeologie": 2,
+        "nomGeologie": "Gneiss",
+        "modif": "2016-09-28T07:03:24.000Z",
+        "creation": null,
+        "actif": 1
+    }
+]

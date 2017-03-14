@@ -1,0 +1,23 @@
+[
+    {
+        "idAcces": 1,
+        "nomAcces": "Talus",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idAcces": 2,
+        "nomAcces": "Bord de route",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    },
+    {
+        "idAcces": 3,
+        "nomAcces": "Mi-Versant",
+        "modif": "2016-09-28T07:05:58.000Z",
+        "creation": null,
+        "actif": 1
+    }
+]
