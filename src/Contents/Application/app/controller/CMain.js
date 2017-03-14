@@ -864,6 +864,13 @@ App.controller.define('CMain', {
 						rowspan: 3,
 
 						handler: p.showSettingsCharacteristics	
+				},{
+						text: 'Référentiels',
+						iconCls: "pencil",
+						scale: 'large',
+						iconAlign: 'top',
+						rowspan: 3,
+						handler: p.showSettingsRefs					
 				}]
 			}
 			]
