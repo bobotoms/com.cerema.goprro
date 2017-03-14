@@ -3,7 +3,6 @@ App.view.define('Settings.VFamilles', {
     extend: 'Ext.Panel',
 	alias : 'widget.VFamilles',
 	layout: "hbox",
-    border: false,
 	items: [
 		{
 			region: "center",
