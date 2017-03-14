@@ -190,6 +190,11 @@ App.controller.define('CMain', {
 		var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+_store.data.codeDepartement);
 		App.get('VSaisie combo#ville').bindStore(store);
 		store.load();
+	},	
+	zones_dpt_onselect: function(me,_store) {
+		var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+_store.data.codeDepartement);
+		App.get('VZones combo#idVille').bindStore(store);
+		store.load();
 	},
 	ville_onselect: function(me,_store) {
 		var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+_store.data.idVille);	
