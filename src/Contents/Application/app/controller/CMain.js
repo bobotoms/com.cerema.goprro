@@ -145,31 +145,7 @@ App.controller.define('CMain', {
 			},
             "VZones combo#dpt": {
 				select: "zones_dpt_onselect"	
-			}/*,
-            "VAxes": {
-                VAxes: "VAxes_onshow"
-            },
-            "VFamilles": {
-                VFamilles: "VFamilles_onshow"
-            },
-            "VFournisseurs": {
-                VFournisseurs: "VFournisseurs_onshow"
-            },
-            "VGeologies": {
-                VGeologies: "VGeologies_onshow"
-            },
-            "VGestionnaires": {
-                VGestionnaires: "VGestionnaires_onshow"
-            },
-            "VPoseurs": {
-                VPoseurs: "VPoseurs_onshow"
-            },
-            "VTypes": {
-                VTypes: "VTypes_onshow"
-            },
-            "VZones": {
-                VZones: "VZones_onshow"
-            }*/
+			}
 
 		});
 		
