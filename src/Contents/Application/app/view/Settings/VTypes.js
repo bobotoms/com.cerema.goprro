@@ -9,9 +9,7 @@ App.view.define('Settings.VTypes', {
 			region: "center",
                 padding: 5,
                 border: false,
-                //cls: "referentiel",
-                itemId: "ref_types",
-                hidden: true,			
+                itemId: "ref_types",		
                 split:true,
                 padding: {
                     top: 10,

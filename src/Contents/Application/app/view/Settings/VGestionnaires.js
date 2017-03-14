@@ -9,9 +9,7 @@ App.view.define('Settings.VGestionnaires', {
 			region: "center",
                 padding: 5,
                 border: false,
-                //cls: "referentiel",
-                itemId: "ref_gestionnaires",
-                hidden: true,			
+                itemId: "ref_gestionnaires",			
                 split:true,
                 items: [{
                     layout: "hbox",

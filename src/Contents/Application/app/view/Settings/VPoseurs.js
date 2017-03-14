@@ -9,9 +9,7 @@ App.view.define('Settings.VPoseurs', {
 			region: "center",
                 padding: 5,
                 border: false,
-                //cls: "referentiel",
-                itemId: "ref_poseurs",
-                hidden: true,			
+                itemId: "ref_poseurs",			
                 split:true,
                 items: [{
                     layout: "hbox",

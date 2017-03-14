@@ -9,9 +9,7 @@ App.view.define('Settings.VZones', {
 			region: "center",
                 padding: 5,
                 border: false,
-                //cls: "referentiel",
-                itemId: "ref_zones",
-                hidden: true,			
+                itemId: "ref_zones",			
                 split:true,
                 padding: {
                     top: 10,

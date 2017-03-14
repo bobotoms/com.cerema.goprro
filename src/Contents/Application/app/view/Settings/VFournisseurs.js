@@ -9,9 +9,7 @@ App.view.define('Settings.VFournisseurs', {
 			region: "center",
                 padding: 5,
                 border: false,
-                //cls: "referentiel",
-                itemId: "ref_fournisseurs",
-                hidden: true,			
+                itemId: "ref_fournisseurs",		
                 split:true,
                 items: [{
                     layout: "hbox",
