@@ -20,10 +20,10 @@ Officer = {
 			});
 		};
 		if (auth_type=="google") {
-			/* 
-			profile.id
+			 
+			//profile.id
 			profile.email
-			profile.verified_email
+			/*profile.verified_email
 			profile.name
 			profile.given_name
 			profile.family_name
@@ -33,7 +33,7 @@ Officer = {
 			*/
 			profile=profile.username;
 			var mail=profile.email;
-			Officer.using('db').store('xxx','xxxx where login="'+mail+'"',function(err,result){
+			Officer.using('db').store('goprro','select * from user where mail="'+mail+'"',function(err,result){
 
 				var response={
 					lastname: profile.family_name,

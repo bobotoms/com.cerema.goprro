@@ -865,7 +865,11 @@ App.controller.define('CMain', {
 		App.get('mainform ribbon').addTab(tab1, true);
 		App.get('mainform ribbon').addTab(tab2, false);
 		App.get('mainform ribbon').addTab(tab3, false);
-		App.get('mainform ribbon').addTab(tab4, false);	
+		App.get('mainform ribbon').addTab(tab4, false);
+        
+		Auth.login(function(response) {
+			console.log(response);	
+		});
 		
 	}
 	

@@ -48,7 +48,10 @@
             "src": "http://cdn.omneedia.com/public/jquery/3.1.0/jquery.js"
         }
     ],
-    "auth": [],
+    "auth": [
+        "CERBERE",
+        "GOOGLE"
+    ],
     "paths": {},
     "controllers": [
         "CMain"
