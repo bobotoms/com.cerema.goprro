@@ -44,11 +44,7 @@ Officer = {
 					};
 					cb(response);			
 				} else cb(err);
-			});/*
-			var response={
-						mail: mail
-            };
-            cb(response);	*/
+			});
 		}
 		
 	}
