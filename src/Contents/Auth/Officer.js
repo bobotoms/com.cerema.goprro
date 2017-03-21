@@ -33,7 +33,7 @@ Officer = {
             */
             console.log("profile");
             console.log(profile);
-			var mail=profile.email;
+			var mail=profile.username.email;
             console.log("mail");
             console.log(profile.email);
 			Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
