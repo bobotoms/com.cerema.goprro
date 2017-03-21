@@ -70,6 +70,7 @@
         "MyService"
     ],
     "db": [
+        "bpclight",
         "goprro"
     ],
     "packages": [
