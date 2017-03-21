@@ -19,15 +19,15 @@ Officer = {
 		};
 		if (auth_type=="google") {
 			/* 
-			profile.id
-			profile.email
-			profile.verified_email
-			profile.name
-			profile.given_name
-			profile.family_name
-			profile.link
-			profile.gender
-			profile.locale
+			profile.username.id
+			profile.username.email
+			profile.username.verified_email
+			profile.username.name
+			profile.username.given_name
+			profile.username.family_name
+			profile.username.link
+			profile.username.gender
+			profile.username.locale
 			
 			profile=profile.username;
             */
