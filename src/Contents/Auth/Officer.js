@@ -32,6 +32,8 @@ Officer = {
 			profile=profile.username;
             */
 			var mail=profile.email;
+            console.log("mail");
+            console.log(mail);
 			Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
 				if (!err) {
                     var response={
