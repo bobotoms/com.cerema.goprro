@@ -31,6 +31,8 @@ Officer = {
 			
 			profile=profile.username;
             */
+            console.log("profile");
+            console.log(profile);
 			var mail=profile.email;
             console.log("mail");
             console.log(mail);
