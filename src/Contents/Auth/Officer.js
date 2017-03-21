@@ -39,7 +39,7 @@ Officer = {
 						firstname: result.data[0].prenom,
 						//uid: result.data[0].kage,
 						mail: mail,
-						profiles: Officer.getProfile(mail.split('@')[0])
+						//profiles: Officer.getProfile(mail.split('@')[0])
 					};
 					cb(response);			
 				} else cb(err);
