@@ -18,7 +18,7 @@ Officer = {
 			});
 		};
 		if (auth_type=="google") {
-			 
+			/* 
 			profile.id
 			profile.email
 			profile.verified_email
@@ -30,8 +30,9 @@ Officer = {
 			profile.locale
 			
 			profile=profile.username;
+            */
 			var mail=profile.email;
-			Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
+			/*Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
 				if (!err) {
 					var response={
 						lastname: result.data[0].nom,
@@ -42,8 +43,11 @@ Officer = {
 					};
 					cb(response);			
 				} else cb(err);
-			});
-			
+			});*/
+			var response={
+						mail: mail
+            };
+            cb(response);		
 		}
 		
 	}
