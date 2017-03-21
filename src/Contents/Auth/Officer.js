@@ -34,13 +34,16 @@ Officer = {
 			var mail=profile.email;
 			Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
 				if (!err) {
-					var response={
+                    var response={
+                                mail: mail
+                    };
+					/*var response={
 						lastname: result.data[0].nom,
 						firstname: result.data[0].prenom,
 						uid: result.data[0].kage,
 						mail: mail,
 						profiles: Officer.getProfile(mail.split('@')[0])
-					};
+					};*/
 					cb(response);			
 				} else cb(err);
 			});/*
