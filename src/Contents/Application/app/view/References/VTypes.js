@@ -2,14 +2,15 @@ App.view.define('References.VTypes', {
 
     extend: 'Ext.Panel',
 	alias : 'widget.VTypes',
-	layout: "fit",
+	layout: "hbox",
     border: false,
      items: [
             {
                 region: "center",
                 padding: 5,
                 border: false,
-                itemId: "ref_types",	
+                itemId: "ref_types",
+	            layout: "fit",
                 split:true,
                 width: 350,
                 height: 350,
