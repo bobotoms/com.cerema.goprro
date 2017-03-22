@@ -57,10 +57,7 @@ App.view.define('Settings.VRefs',{
 			region: "center",			
 			split:true,
 			items: [
-                {
-                    xtype: "VAxes",
-                    hidden: true
-                },
+               
                 {
                     xtype: "VFamilles",
                     hidden: true
