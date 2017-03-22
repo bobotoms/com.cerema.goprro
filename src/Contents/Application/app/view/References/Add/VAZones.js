@@ -2,7 +2,7 @@ App.view.define('References.Add.VAZones', {
 
     extend: "Ext.window.Window",
 	width: 500,
-	height: 200,
+	height: 250,
 	closable: true,
 	alias : 'widget.VAZones',
 	layout: "hbox",
