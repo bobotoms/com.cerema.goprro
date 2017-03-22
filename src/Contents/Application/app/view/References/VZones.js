@@ -23,7 +23,7 @@ App.view.define('References.VZones', {
                     border: false,
                      tbar: [{
                              text: "Supprimer",
-                            itemId: "clickDel"
+                            itemId: "delRef"
                         },
                         '->',
                             {

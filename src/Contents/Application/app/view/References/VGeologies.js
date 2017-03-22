@@ -23,7 +23,7 @@ App.view.define('References.VGeologies', {
                     border: false,
                      tbar: [{
                              text: "Supprimer",
-                            itemId: "clickDel"
+                            itemId: "delRef"
                         },
                         '->',
                             {

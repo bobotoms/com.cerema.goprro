@@ -22,7 +22,7 @@ App.view.define('References.VGestionnaires', {
                     border: false,
                      tbar: [{
                              text: "Supprimer",
-                            itemId: "clickDel"
+                            itemId: "delRef"
                         },
                         '->',
                             {
