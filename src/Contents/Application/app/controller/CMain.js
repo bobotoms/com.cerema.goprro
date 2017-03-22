@@ -54,7 +54,7 @@ App.controller.define('CMain', {
 		"VShowDoc",
 		"Settings.VCharacteristics",
 		"Settings.VRefs",
-        //"References.VAxes",
+        "References.VAxes",
         "References.Add.VAAxes",
         "References.VFamilles",
         "References.Add.VAFamilles",
