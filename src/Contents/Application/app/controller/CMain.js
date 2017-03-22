@@ -150,7 +150,20 @@ App.controller.define('CMain', {
 			},
 			"VAddNews button#addNews": {
 				click: "add_news"
-			}
+			},
+            "VRefs combo#cboRefs": {
+                select: "ref_cboRefs_select"
+            },
+            "button#clickUpdate": {
+                click: "ref_update_click"
+            },
+            "VRefs button#addRef": {
+                click: "win_ref"
+            },/**/
+            "VRefs button#delRef": {
+                click: "del_ref",
+                //itemclick: "treeSaisie_click"
+            },
 
 		});
 		
@@ -159,6 +172,7 @@ App.controller.define('CMain', {
 		});
 		
 	},
+    
 	up_onclick: function(p, record)
 	{
 		App.view.create('VShowDoc', {
@@ -599,6 +613,235 @@ App.controller.define('CMain', {
                 
         })
 	},
+    ref_cboRefs_select: function(me) {
+      
+        var choix = App.get('VRefs combo#cboRefs').getValue();
+        
+        console.log("choix");
+        console.log(choix);
+        
+        //var store=App.store.create('goprro://familles?idType='+store.data.type_element);
+        //App.get('VFamilles').show();
+        var store=App.store.create('goprro://'+choix);
+        console.log("Store");
+        console.log(store);
+        
+        var ref = choix.charAt(0).toUpperCase() + choix.substring(1).toLowerCase();
+        console.log("ref");
+        console.log(ref);
+        App.get('V'+ref+' grid#T1').bindStore(store);
+        store.load();
+        
+        switch (choix) {
+            case "axes":
+                console.log('axes');
+                App.get('VAxes').show();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();l
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "familles":
+                console.log('familles');
+                App.get('VAxes').hide();
+                App.get('VFamilles').show();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "fournisseurs":
+                console.log('fournisseurs');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').show();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "geologies":
+                console.log('geologies');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').show();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "gestionnaires":
+                console.log('gestionnaires');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').show();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "poseurs":
+                console.log('poseurs');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').show();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "types":
+                console.log('types');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').show();
+                App.get('VZones').hide();
+                break;
+            case "zones":
+                console.log('zones');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').show();
+                break;
+            default:
+                console.log('default');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            }
+        
+    },
+    ref_update_click: function(me) {
+        
+        console.log("me update");
+        console.log(me);
+        
+        var tabName = App.get('VRefs #cboRefs').getValue();        
+        
+        App.InsertRefs.columns(tabName,function(response) {
+
+            var nb = response.length;
+
+            var columns ='';
+            var values ='';
+            var colNameNb = 0;
+            var view = 'VA'+tabName.charAt(0).toUpperCase() + tabName.substring(1).toLowerCase();
+            console.log("view nom");
+            console.log(view);
+            for (var i=0;i<nb;i++) {    
+                var columnName = '';
+                columnName = response[i]["Field"];
+            console.log("view columnName");
+            console.log(columnName);
+                if (App.get(view+' #'+columnName))
+                {
+                    var columnValue = App.get(view+' #'+columnName).getValue();
+
+                    if (colNameNb === 0)
+                    {
+                        columns += columnName;
+                        values += '"'+columnValue+'"';
+                        colNameNb++;
+                    }
+                    else{
+                        columns += ', '+columnName;
+                        values += ', "'+columnValue+'"';
+                    }
+                }
+            }
+
+            var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
+                console.log("reqSql");
+                console.log(reqSql);
+
+            App.InsertRefs.insert(reqSql,function(response) {
+                console.log("response");
+                console.log(response);
+              Ext.Msg.alert('GOPRRO',"Enregistrement effectué avec succès");
+            });
+        });
+        
+    },
+    win_ref: function(me) {        
+        var tabName = App.get('VRefs #cboRefs').getValue(); 
+        var view = 'VA'+tabName.charAt(0).toUpperCase() + tabName.substring(1).toLowerCase();
+        App.view.create('References.Add.'+view,{modal:true}).show().center();
+        
+    },
+    del_ref: function(me,select) {  
+                console.log("me");
+                console.log(me);
+                console.log("select");
+                console.log(select);
+        var idfamille = App.get('VFamilles #nomFamille').getValue(); 
+                console.log("idfamille del");
+                console.log(idfamille);
+        /*
+            var test = App.get(me,'#nomFamille').getValue();
+                console.log("test");
+                console.log(test);*/
+         /*       console.log("store");
+                console.log(store);*/
+        /*var idget = record.get('idFamille');
+                console.log("idget");
+                console.log(App.record('idFamille'));*/
+                //console.log("del_ref");    
+        /*var tabName = App.get('VRefs #cboRefs').getValue(); 
+                console.log("tabName del");
+                console.log(tabName);
+        
+        var view = 'V'+tabName.charAt(0).toUpperCase() + tabName.substring(1).toLowerCase();
+                console.log("view del");
+                console.log(view);
+        App.get(view).select();*//*
+        var id = tabName.charAt(0).toUpperCase() + tabName.substring(1).toLowerCase()
+        var idid = id.substring(0, id.length-1);
+        //var id = tabName.substring()-1;
+        //var id = tabName.length();
+                console.log("idid del");
+                console.log(idid);
+        //var idfamille = App.get(view+' #nom'+id).getValue(); 
+        console.log('view+');
+        console.log(view+' #nom'+idid);
+        var idfamille = App.get(view+' grid#nom'+idid).getValue(); 
+                console.log("idfamille del");
+                console.log(idfamille);
+        //App.view.create('References.Add.'+view,{modal:true}).show().center();*/
+        
+    },
+    ref_grid_edit: function(ed,o) {
+        var tabName = App.get('VRefs #cboRefs').getValue(); 
+        var data=o.record.data;
+        delete data.creation;
+        delete data.modif;
+        App.DB.post("goprro://"+tabName,data,function(r){
+            o.grid.getStore().load();
+        });
+    },
 	onLoad: function(p)
 	{
          Auth.login(function(){
