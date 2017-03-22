@@ -163,7 +163,7 @@ App.controller.define('CMain', {
             "VRefs button#delRef": {
                 click: "del_ref",
                 //itemclick: "treeSaisie_click"
-            },/**/
+            },
             "VRefs grid#T1": {
                 edit: "ref_grid_edit"
             },
