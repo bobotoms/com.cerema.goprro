@@ -767,7 +767,7 @@ App.controller.define('CMain', {
                 }
             }
             
-            var tabRefs = [mail, news]
+            var tabRefs = [tabName, columns, values]
             //App.AddNews.insert(tabNews,function(response) {
             //var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
             //    console.log("reqSql");
