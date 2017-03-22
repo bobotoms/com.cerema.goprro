@@ -11,12 +11,20 @@ InsertRefs = {
                 columns += o[1][i]+',';
                 values += o[2][i]+',';
         }*/
-		Elements.using('db').query("goprro",o,cb);	
+		InsertRefs.using('db').query("goprro",o,function(err,result){
+				if (!err) {
+                    var response=true;
+					cb(response);			
+				} else {
+                    var err=false;
+					cb(err)			
+				};
+			});	
 	},
     columns: function(o,cb) {
         
 		//Elements.using('db').query("goprro","SELECT * FROM COLUMNS WHERE TABLE_NAME="+o,cb);
-		Elements.using('db').query("goprro","SHOW columns FROM "+o,cb);
+		InsertRefs.using('db').query("goprro","SHOW columns FROM "+o,cb);
 	}
 }
 
