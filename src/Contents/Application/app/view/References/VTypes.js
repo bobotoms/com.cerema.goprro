@@ -4,17 +4,12 @@ App.view.define('References.VTypes', {
 	alias : 'widget.VTypes',
 	layout: "hbox",
     border: false,
-    autoScroll: true,
-			rootVisible: false,
      items: [
             {
                 region: "center",
                 padding: 5,
                 border: false,
-					//autoScroll: true,
-                //cls: "referentiel",
-                itemId: "ref_types",
-			rootVisible: false,		
+                itemId: "ref_types",	
                 split:true,
                 width: 350,
                 height: 350,
