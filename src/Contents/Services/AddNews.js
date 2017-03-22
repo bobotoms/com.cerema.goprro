@@ -4,7 +4,17 @@ AddNews = {
         console.log("o");
         console.log(o);
         console.log("o");
-		Elements.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+o+"', 1)",cb);
+        
+        var mail = o['0'];
+        var note = o['1'];
+        
+        console.log("mail");
+        console.log(mail);
+        
+        console.log("note");
+        console.log(note);
+        
+		Elements.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",cb);
         
 	}
 }
