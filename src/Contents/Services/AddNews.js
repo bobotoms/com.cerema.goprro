@@ -7,8 +7,12 @@ AddNews = {
 		//AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",cb);
 		AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
 				if (!err) {
-					cb(result);			
-				} else cb(err);
+                    var response=true;
+					cb(response);			
+				} else {
+                    var err=false;
+					cb(err)			
+				};
 			});
         
 	}
