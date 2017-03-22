@@ -766,10 +766,12 @@ App.controller.define('CMain', {
                     }
                 }
             }
-
-            var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
-                console.log("reqSql");
-                console.log(reqSql);
+            
+            var tabRefs = [mail, news]
+            //App.AddNews.insert(tabNews,function(response) {
+            //var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
+            //    console.log("reqSql");
+            //    console.log(reqSql);
 
             App.InsertRefs.insert(reqSql,function(response) {
                 console.log("response");
