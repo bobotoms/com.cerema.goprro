@@ -1,16 +1,17 @@
-App.view.define('References.VFournisseurs', {
+App.view.define('References.VGeologies', {
 
     extend: 'Ext.Panel',
-	alias : 'widget.VFournisseurs',
+	alias : 'widget.VGeologies',
 	layout: "hbox",
     border: false,
+     
     items: [
             {
                 region: "center",
                 padding: 5,
                 border: false,
                 //cls: "referentiel",
-                itemId: "ref_fournisseurs",		
+                itemId: "ref_geologies",		
                 split:true,
                 width: 350,
                 height: 350,
@@ -18,7 +19,7 @@ App.view.define('References.VFournisseurs', {
                     {
                     xtype: "grid",
                     //itemId: "nomFamille",
-                    title: "Fournisseur",
+                    title: "Geologies",
                     border: false,
                      tbar: [{
                              text: "Supprimer",
@@ -40,32 +41,29 @@ App.view.define('References.VFournisseurs', {
                         
                         {
                             text: "id",
-                            dataIndex: "idFournisseur",
+                            dataIndex: "idGeologie",
                             hidden: true,
                             flex: 1,
                         },
                         {
                             text: "Nom",
-                            dataIndex: "fournisseur",
+                            dataIndex: "nomGeologie",
                             editor: {
                                 xtype: "textfield",
-                                itemId: "fournisseur",
-                                valueField: "fournisseur",
+                                itemId: "nomGeologie",
+                                valueField: "nomGeologie",
                             },
                         }
                     ],
 			             //store: App.store.create('goprro://familles',{autoLoad: true}),
                         store: App.store.create({fields:["value"],data:[]}),
                         itemId: "T1",
-                        title: "Fournisseur",
+                        title: "Geologies",
                         flex: 1,
                         height: "100%"
                 }
                     
             ]
         }
-	]	
+	]
 });
-
-
-

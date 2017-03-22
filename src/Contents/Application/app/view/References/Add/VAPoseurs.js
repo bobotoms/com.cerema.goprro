@@ -1,10 +1,10 @@
-App.view.define('References.Add.VAGestionnaires', {
+App.view.define('References.Add.VAPoseurs', {
 
     extend: "Ext.window.Window",
 	width: 500,
 	height: 200,
 	closable: true,
-	alias : 'widget.VAGestionnaires',
+	alias : 'widget.VAPoseurs',
 	layout: "hbox",
     border: false,
 	items: [
@@ -12,7 +12,7 @@ App.view.define('References.Add.VAGestionnaires', {
 			region: "center",
                 padding: 5,
                 border: false,
-                itemId: "ref_gestionnaires",			
+                itemId: "ref_poseurs",			
                 split:true,
                 items: [{
                     layout: "hbox",
@@ -24,9 +24,9 @@ App.view.define('References.Add.VAGestionnaires', {
                     },
                     items: [{
                         xtype: "textfield",
-                        itemId: "gest",
-                        valueField: "gest",
-                        fieldLabel: "Nom gestionnaire",
+                        itemId: "poseur",
+                        valueField: "poseur",
+                        fieldLabel: "Nom poseur",
                         width: 350
                     },
                     {
@@ -42,6 +42,3 @@ App.view.define('References.Add.VAGestionnaires', {
 	]
 	
 });
-
-
-
