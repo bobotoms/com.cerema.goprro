@@ -3,8 +3,7 @@ App.view.define('References.VTypes', {
     extend: 'Ext.Panel',
 	alias : 'widget.VTypes',
 	layout: "hbox",
-    border: false,
-					//autoScroll: true,
+    border: false,autoScroll: true,
      items: [
             {
                 region: "center",
