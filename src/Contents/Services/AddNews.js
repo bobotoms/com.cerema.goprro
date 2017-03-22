@@ -7,8 +7,7 @@ AddNews = {
 		//AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",cb);
 		AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
 				if (!err) {
-					var response=result;
-					cb(response);			
+					cb(result);			
 				} else cb(err);
 			});
         
@@ -17,7 +16,7 @@ AddNews = {
 
 module.exports = AddNews;
 
-
+/*
 
 Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
 				if (!err) {
@@ -30,4 +29,4 @@ Officer.using('db').store('bpclight','select kage,nom,prenom from agents where k
 					};
 					cb(response);			
 				} else cb(err);
-			});
+			});*/
