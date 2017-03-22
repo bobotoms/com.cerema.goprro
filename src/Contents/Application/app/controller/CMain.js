@@ -53,7 +53,23 @@ App.controller.define('CMain', {
 		"VAddItem",
 		"VShowDoc",
 		"Settings.VCharacteristics",
-		"Settings.VRefs"
+		"Settings.VRefs",
+        //"References.VAxes",
+        "References.Add.VAAxes",
+        "References.VFamilles",
+        "References.Add.VAFamilles",
+        "References.VFournisseurs",
+        "References.Add.VAFournisseurs",
+        "References.VGeologies",
+        "References.Add.VAGeologies",
+        "References.VGestionnaires",
+        "References.Add.VAGestionnaires",
+        "References.VPoseurs",
+        "References.Add.VAPoseurs",
+        "References.VTypes",
+        "References.Add.VATypes",
+        "References.VZones",
+        "References.Add.VAZones"
 	],
 	
 	models: [
