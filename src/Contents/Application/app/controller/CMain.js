@@ -167,7 +167,7 @@ App.controller.define('CMain', {
             "VRefs grid#T1": {
                 edit: "ref_grid_edit"
             },
-            "VZones combo#dpt": {
+            "VAZones combo#dpt": {
                 select: "zones_dpt_onselect"    
             },
 
