@@ -749,13 +749,15 @@ App.controller.define('CMain', {
            console.log(Auth.User);
         console.log("mail");
         console.log(Auth.User.mail);
+        var mail = Auth.User.mail;
         var news = App.get('VAddNews textarea#texteNote').getValue();
         console.log('news');
         console.log(news);
         //var reqSql = "insert into notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+news+"', 1)";
         //console.log('reqSql');
         //console.log(reqSql);
-        App.AddNews.insert(news,function(response) {
+        var tabNews = [mail, news]
+        App.AddNews.insert(tabNews,function(response) {
             App.get('VAddNews').close();
             Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
             console.log('response');
