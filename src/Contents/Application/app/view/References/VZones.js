@@ -33,7 +33,7 @@ App.view.define('References.VZones', {
                     plugins: [
                     {
                         ptype: "cellediting",
-                        clicksToEdit: 1
+                        clicksToEdit: 2
                     }
                     ],
                     columns: [
