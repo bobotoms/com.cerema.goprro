@@ -801,7 +801,7 @@ App.controller.define('CMain', {
                 console.log(me);
                 console.log("select");
                 console.log(select);
-        var idfamille = App.get('VAxes #nomAxe');//.getValue(); 
+        var idfamille = App.get('VAxes #nomAxe').getValue(); 
                 console.log("idfamille del");
                 console.log(idfamille);
         /*
