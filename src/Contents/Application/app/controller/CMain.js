@@ -773,7 +773,7 @@ App.controller.define('CMain', {
             //    console.log("reqSql");
             //    console.log(reqSql);
 
-            App.InsertRefs.insert(reqSql,function(response) {
+            App.InsertRefs.insert(tabRefs,function(response) {
                 console.log("response");
                 console.log(response);
                 App.get(view).close();
