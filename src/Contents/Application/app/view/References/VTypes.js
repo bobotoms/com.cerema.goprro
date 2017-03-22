@@ -48,6 +48,7 @@ App.view.define('References.VTypes', {
                             text: "Famille",
                             dataIndex: "idFamille",
                             editor: {
+                                editable: false,
                             xtype: "combo",
                             width: 200,
                             itemId: "idFamille",
