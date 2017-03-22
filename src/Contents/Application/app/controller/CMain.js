@@ -753,8 +753,8 @@ App.controller.define('CMain', {
         console.log('news');
         console.log(news);
         //var reqSql = "insert into notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+news+"', 1)";
-        console.log('reqSql');
-        console.log(reqSql);
+        //console.log('reqSql');
+        //console.log(reqSql);
         App.AddNews.insert(news,function(response) {
             App.get('VAddNews').close();
             Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
