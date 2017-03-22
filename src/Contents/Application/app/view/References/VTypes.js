@@ -47,13 +47,11 @@ App.view.define('References.VTypes', {
                         {
                             text: "Famille",
                             dataIndex: "idFamille",
-                            editor: {
-                                xtype: "combo",
-                                width: 200,
-                                itemId: "idFamille",
-                                valueField: "nomFamille",
-                                store: App.store.create("goprro://familles")
-                            },
+                            xtype: "combo",
+                            width: 200,
+                            itemId: "idFamille",
+                            valueField: "nomFamille",
+                            store: App.store.create("goprro://familles")
                         },
                         {
                             text: "Nom",
