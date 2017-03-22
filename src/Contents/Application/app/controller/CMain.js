@@ -577,6 +577,10 @@ App.controller.define('CMain', {
 		hideForms();
 		App.get("mainform panel#setup_characteristics").show();	
 	},
+    showSettingsRefs: function(p) {
+        hideForms();
+        App.get("mainform panel#setup_refs").show();    
+    },
 	click_news: function() {
         
         App.view.create('VAddNews',{modal:true}).show().center();
