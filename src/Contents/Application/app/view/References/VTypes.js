@@ -16,9 +16,10 @@ App.view.define('References.VTypes', {
                 height: 350,
                 items: [
                     {
-                    xtype: "grid",
+                    xtype: "grid",		
+				    enableColumnMove: false,
 					//autoScroll: true,
-                        scroll: true,
+                        //scroll: true,
                     //itemId: "nomFamille",
                     title: "Types",
                     border: false,
