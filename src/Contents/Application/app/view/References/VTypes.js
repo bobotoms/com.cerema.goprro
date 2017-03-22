@@ -17,6 +17,7 @@ App.view.define('References.VTypes', {
                 items: [
                     {
                     xtype: "grid",
+					autoScroll: true,
                     //itemId: "nomFamille",
                     title: "Types",
                     border: false,
