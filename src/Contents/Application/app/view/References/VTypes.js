@@ -9,6 +9,7 @@ App.view.define('References.VTypes', {
                 region: "center",
                 padding: 5,
                 border: false,
+                scroll: true,
                 //cls: "referentiel",
                 itemId: "ref_types",		
                 split:true,
