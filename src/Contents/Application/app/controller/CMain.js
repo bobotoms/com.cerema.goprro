@@ -748,6 +748,9 @@ App.controller.define('CMain', {
         var news = App.get('VAddNews textarea#texteNote').getValue();
         var tabNews = [mail, news]
         App.AddNews.insert(tabNews,function(response) {
+            
+                console.log("response");
+                console.log(response);
             App.get('VAddNews').close();
             Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
         })
