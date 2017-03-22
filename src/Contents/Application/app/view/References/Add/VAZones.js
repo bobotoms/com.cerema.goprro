@@ -44,7 +44,7 @@ App.view.define('References.Add.VAZones', {
                             left: 5
                         },
 
-						itemId: "dpt",
+						itemId: "idVille",
                         fieldLabel: "Ville", 
 						bindTo: "idDepartement",
                         store: App.store.create({fields:[],data:[]}),
