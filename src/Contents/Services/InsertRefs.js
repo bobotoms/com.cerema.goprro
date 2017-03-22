@@ -1,17 +1,11 @@
 
 InsertRefs = {
 	insert: function(o,cb) {
-        /*console.log("o");
-        console.log(o);
-        var nb = o[1].length;
-        var table = o[0][0];
-        var columns ='';
-        var values ='';
-        for (var i=0;i<nb;i++) {
-                columns += o[1][i]+',';
-                values += o[2][i]+',';
-        }*/
-		InsertRefs.using('db').query("goprro",o,function(err,result){
+        var tabName = o['0'];
+        var columns = o['1'];
+        var values = o['2'];
+        //var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
+		InsertRefs.using('db').query("goprro","INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")",function(err,result){
 				if (!err) {
                     var response=true;
 					cb(response);			
