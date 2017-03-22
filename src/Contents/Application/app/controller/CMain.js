@@ -748,11 +748,12 @@ App.controller.define('CMain', {
         var news = App.get('VAddNews textarea#texteNote').getValue();
         var tabNews = [mail, news]
         App.AddNews.insert(tabNews,function(response) {
-            
-                console.log("response");
-                console.log(response);
             App.get('VAddNews').close();
+            if (response === true)
             Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
+            else
+            Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+                
         })
 	},
 	onLoad: function(p)
