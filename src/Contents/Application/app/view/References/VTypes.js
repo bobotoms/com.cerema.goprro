@@ -2,7 +2,7 @@ App.view.define('References.VTypes', {
 
     extend: 'Ext.Panel',
 	alias : 'widget.VTypes',
-	layout: "hbox",
+	layout: "fit",
     border: false,
      items: [
             {
