@@ -5,6 +5,7 @@ App.view.define('References.VTypes', {
 	layout: "hbox",
     border: false,
     autoScroll: true,
+			rootVisible: false,
      items: [
             {
                 region: "center",
@@ -12,14 +13,14 @@ App.view.define('References.VTypes', {
                 border: false,
 					//autoScroll: true,
                 //cls: "referentiel",
-                itemId: "ref_types",		
+                itemId: "ref_types",
+			rootVisible: false,		
                 split:true,
                 width: 350,
                 height: 350,
                 items: [
                     {
                     xtype: "grid",
-			rootVisible: false,
                     //itemId: "nomFamille",
                     title: "Types",
                     border: false,
