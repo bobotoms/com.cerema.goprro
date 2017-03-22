@@ -54,7 +54,6 @@ App.controller.define('CMain', {
 		"VShowDoc",
 		"Settings.VCharacteristics",
 		"Settings.VRefs",
-        "Settings.VAxes",
         "Settings.VFamilles",
         "Settings.VFournisseurs",
         "Settings.VGeologies",
@@ -139,15 +138,6 @@ App.controller.define('CMain', {
 			},
 			"VCharacteristics button#add": {
 				click: "charact_validate_click"
-			},
-			"VRefs combo#cboRefs": {
-				select: "ref_cboRefs_select"
-			},
-			"VRefs button#clickUpdate": {
-				click: "ref_update_click"
-			},
-            "VZones combo#dpt": {
-				select: "zones_dpt_onselect"	
 			},
 			"VAddNews button#addNews": {
 				click: "add_news"
@@ -577,166 +567,6 @@ App.controller.define('CMain', {
 	showSettingsCharacteristics: function(p) {
 		hideForms();
 		App.get("mainform panel#setup_characteristics").show();	
-	},
-	showSettingsRefs: function(p) {
-		hideForms();
-		App.get("mainform panel#setup_refs").show();	
-	},
-	ref_cboRefs_select: function(me) {
-      
-        var choix = App.get('VRefs combo#cboRefs').getValue();
-        
-        switch (choix) {
-            case "axes":
-                console.log('axes');
-                App.get('VAxes').show();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "familles":
-                console.log('familles');
-                App.get('VAxes').hide();
-                App.get('VFamilles').show();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "fournisseurs":
-                console.log('fournisseurs');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').show();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "geologies":
-                console.log('geologies');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').show();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "gestionnaires":
-                console.log('gestionnaires');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').show();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "poseurs":
-                console.log('poseurs');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').show();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            case "types":
-                console.log('types');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').show();
-                App.get('VZones').hide();
-                break;
-            case "zones":
-                console.log('zones');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').show();
-                break;
-            default:
-                console.log('default');
-                App.get('VAxes').hide();
-                App.get('VFamilles').hide();
-                App.get('VFournisseurs').hide();
-                App.get('VGeologies').hide();
-                App.get('VGestionnaires').hide();
-                App.get('VPoseurs').hide();
-                App.get('VTypes').hide();
-                App.get('VZones').hide();
-                break;
-            }
-        
-	},
-	ref_update_click: function(me) {
-        
-        console.log("me update");
-        console.log(me);
-        
-        var tabName = App.get('VRefs #cboRefs').getValue();        
-        
-        App.InsertRefs.columns(tabName,function(response) {
-
-            var nb = response.length;
-
-            var columns ='';
-            var values ='';
-            var colNameNb = 0;
-            var view = 'V'+tabName.charAt(0).toUpperCase() + tabName.substring(1).toLowerCase();
-            console.log("view nom");
-            console.log(view);
-            for (var i=0;i<nb;i++) {	
-                var columnName = '';
-                columnName = response[i]["Field"];
-                if (App.get(view+' #'+columnName))
-                {
-                    var columnValue = App.get(view+' #'+columnName).getValue();
-
-                    if (colNameNb === 0)
-                    {
-                        columns += columnName;
-                        values += '"'+columnValue+'"';
-                        colNameNb++;
-                    }
-                    else{
-                        columns += ', '+columnName;
-                        values += ', "'+columnValue+'"';
-                    }
-                }
-            }
-
-            var reqSql = "INSERT INTO "+tabName+" ("+columns+") VALUES ("+values+")";
-                console.log("reqSql");
-                console.log(reqSql);
-
-            App.InsertRefs.insert(reqSql,function(response) {
-                console.log("response");
-                console.log(response);
-              Ext.Msg.alert('GOPRRO',"Enregistrement effectué avec succès");
-            });
-        });
-        
 	},
 	click_news: function() {
         
