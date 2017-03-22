@@ -81,6 +81,9 @@ App.controller.define('CMain', {
 			"mainform grid#gridO": {
 				itemdblclick: "gridO_select"	
 			},
+			"mainform button#ecrire": {
+				click: "click_news"	
+			},
 			"VSaisie": {
 				show: "VSaisie_onShow"	
 			},
@@ -145,6 +148,9 @@ App.controller.define('CMain', {
 			},
             "VZones combo#dpt": {
 				select: "zones_dpt_onselect"	
+			},
+			"VAddNews button#addNews": {
+				click: "add_news"
 			}
 
 		});
@@ -732,7 +738,24 @@ App.controller.define('CMain', {
         });
         
 	},
-
+	click_news: function() {
+        App.view.create('VAddNews',{modal:true}).show().center();
+	},
+	add_news: function() {
+        
+        var news = App.get('VAddNews textarea#texteNote').getValue();
+        console.log('news');
+        console.log(news);
+        var reqSql = "insert into notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+news+"', 1)";
+        console.log('reqSql');
+        console.log(reqSql);
+        App.AddNews.insert(reqSql,function(response) {
+            App.get('VAddNews').close();
+            Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
+            console.log('response');
+            console.log(response);
+        })
+	},
 	onLoad: function(p)
 	{
          Auth.login(function(){

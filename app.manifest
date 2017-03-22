@@ -67,7 +67,8 @@
         "Notes",
         "Docs",
         "InsertRefs",
-        "MyService"
+        "MyService",
+        "AddNews"
     ],
     "db": [
         "bpclight",
