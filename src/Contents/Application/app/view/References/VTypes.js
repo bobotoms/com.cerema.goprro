@@ -46,7 +46,7 @@ App.view.define('References.VTypes', {
                         },
                         {
                             text: "Famille",
-                            dataIndex: "idFamille",
+                            //dataIndex: "idFamille",
                             xtype: "combo",
                             width: 200,
                             itemId: "idFamille",
