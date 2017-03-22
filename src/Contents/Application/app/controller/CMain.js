@@ -742,8 +742,8 @@ App.controller.define('CMain', {
         
            console.log("Auth.User");
            console.log(Auth.User);
-        /*console.log("mail");
-        console.log(mail);*/
+        console.log("mail");
+        console.log(Auth.User.mail);
         
         App.view.create('VAddNews',{modal:true}).show().center();
 	},
