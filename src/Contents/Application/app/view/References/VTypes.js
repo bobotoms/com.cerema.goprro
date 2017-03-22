@@ -20,6 +20,7 @@ App.view.define('References.VTypes', {
                 items: [
                     {
                     xtype: "grid",
+			rootVisible: false,
                     //itemId: "nomFamille",
                     title: "Types",
                     border: false,
