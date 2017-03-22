@@ -739,6 +739,9 @@ App.controller.define('CMain', {
         
 	},
 	click_news: function() {
+        console.log("mail");
+        console.log(mail);
+        
         App.view.create('VAddNews',{modal:true}).show().center();
 	},
 	add_news: function() {
