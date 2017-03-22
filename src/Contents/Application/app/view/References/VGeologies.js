@@ -34,7 +34,7 @@ App.view.define('References.VGeologies', {
                     plugins: [
                     {
                         ptype: "cellediting",
-                        clicksToEdit: 1
+                        clicksToEdit: 2
                     }
                     ],
                     columns: [
