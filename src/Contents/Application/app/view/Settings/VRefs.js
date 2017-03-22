@@ -58,34 +58,7 @@ App.view.define('Settings.VRefs',{
 			split:true,
 			items: [
                
-                {
-                    xtype: "VFamilles",
-                    hidden: true
-                },
-                {
-                    xtype: "VFournisseurs",
-                    hidden: true
-                },
-                {
-                    xtype: "VGeologies",
-                    hidden: true
-                },
-                {
-                    xtype: "VGestionnaires",
-                    hidden: true
-                },
-                {
-                    xtype: "VPoseurs",
-                    hidden: true
-                },
-                {
-                    xtype: "VTypes",
-                    hidden: true
-                },
-                {
-                    xtype: "VZones",
-                    hidden: true
-                }
+               
             ]
 		}],
 		this.callParent();

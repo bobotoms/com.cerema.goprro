@@ -53,14 +53,7 @@ App.controller.define('CMain', {
 		"VAddItem",
 		"VShowDoc",
 		"Settings.VCharacteristics",
-		"Settings.VRefs",
-        "Settings.VFamilles",
-        "Settings.VFournisseurs",
-        "Settings.VGeologies",
-        "Settings.VGestionnaires",
-        "Settings.VPoseurs",
-        "Settings.VTypes",
-        "Settings.VZones"
+		"Settings.VRefs"
 	],
 	
 	models: [
