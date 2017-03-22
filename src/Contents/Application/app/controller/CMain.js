@@ -619,19 +619,9 @@ App.controller.define('CMain', {
     ref_cboRefs_select: function(me) {
       
         var choix = App.get('VRefs combo#cboRefs').getValue();
-        
-        console.log("choix");
-        console.log(choix);
-        
-        //var store=App.store.create('goprro://familles?idType='+store.data.type_element);
-        //App.get('VFamilles').show();
         var store=App.store.create('goprro://'+choix);
-        console.log("Store");
-        console.log(store);
-        
         var ref = choix.charAt(0).toUpperCase() + choix.substring(1).toLowerCase();
-        console.log("ref");
-        console.log(ref);
+        
         App.get('V'+ref+' grid#T1').bindStore(store);
         store.load();
         
@@ -784,7 +774,13 @@ App.controller.define('CMain', {
             App.InsertRefs.insert(reqSql,function(response) {
                 console.log("response");
                 console.log(response);
-              Ext.Msg.alert('GOPRRO',"Enregistrement effectué avec succès");
+                App.get(view).close();
+                console.log("view");
+                console.log(view);
+                if (response === true)
+                Ext.Msg.alert('GOPRRO',"Votre référentiel est enregistré.");
+                else
+                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
             });
         });
         
