@@ -4,7 +4,6 @@ App.view.define('References.VTypes', {
 	alias : 'widget.VTypes',
 	layout: "hbox",
     border: false,
-    scroll: true,
 					//autoScroll: true,
      items: [
             {
