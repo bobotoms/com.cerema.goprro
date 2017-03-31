@@ -51,7 +51,16 @@ App.controller.define('CMain', {
         "VSaisie",
         "VAddItem",
         "VShowDoc",
-        "Settings.VCharacteristics"
+        "Settings.VCharacteristics",
+        "Settings.VRefs",
+        "References.VAxes",
+        "References.VFamilles",
+        "References.VFournisseurs",
+        "References.VGeologies",
+        "References.VGestionnaires",
+        "References.VPoseurs",
+        "References.VTypes",
+        "References.VZones",
     ],
 
     models: [
@@ -70,6 +79,9 @@ App.controller.define('CMain', {
             },
             "mainform grid#gridO": {
                 itemdblclick: "gridO_select"
+            },
+            "mainform button#ecrire": {
+                click: "click_news"
             },
             "VSaisie": {
                 show: "VSaisie_onShow"
@@ -125,7 +137,28 @@ App.controller.define('CMain', {
             },
             "VCharacteristics button#add": {
                 click: "charact_validate_click"
-            }
+            },
+            "VAddNews button#addNews": {
+                click: "add_news"
+            },
+            "VRefs combo#cboRefs": {
+                select: "ref_cboRefs_select"
+            },
+            "VZones combo#cboDepartements": {
+                select: "cboDepartements_select"
+            },
+            "VZones grid#T1": {
+                beforeedit: "combo_villes_beforeedit"
+            },
+            "VRefs button#addRef": {
+                click: "add_ref"
+            },
+            "VRefs button#delRef": {
+                click: "del_ref"
+            },
+            "VRefs grid#T1": {
+                edit: "ref_grid_edit"
+            },
         });
 
         App.init('VMain',function(){
@@ -532,8 +565,354 @@ App.controller.define('CMain', {
         hideForms();
         App.get("mainform panel#setup_characteristics").show();
     },
+    showSettingsRefs: function(p) {
+        hideForms();
+        App.get("mainform panel#setup_refs").show();
+    },
+    click_news: function() {
+        App.view.create('VAddNews',{modal:true}).show().center();
+    },
+    add_news: function(me) {
+
+        var mail = Auth.User.mail;
+        var news = App.get('VAddNews textarea#texteNote').getValue();
+        var tabNews = [mail, news]
+        App.AddNews.insert(tabNews,function(response) {
+            App.get('VAddNews').close();
+            if (response === true)
+            {
+                Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
+                var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+                var tpl=[];
+                App.Notes.getAll({},function(e,r) {
+                    console.log(r);
+                    for (var i=0;i<r.result.data.length;i++) {
+                        var results=html;
+                        results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
+                        results=results.replace('%POSTER%',r.result.data[i].nomprenom);
+                        results=results.replace('%COMMENT%',r.result.data[i].texteNote);
+                        tpl.push(results);
+                    };
+                    results='<ul class="timeline">'+tpl.join('')+'</ul>';
+                    App.get('mainform panel#timeline').update(results);
+                });
+                // setTimeout(function(){window.location.reload();},2500);
+            }
+            else
+            {
+                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+            }
+        })
+    },
+    ref_cboRefs_select: function(me) {
+
+        App.get('mainform panel#southpanel').collapse();
+        App.store.familles.load();
+
+        var choix = App.get('VRefs combo#cboRefs').getValue();
+        var store=App.store.create('goprro://'+choix);
+        console.log("store 1");
+        console.log(store);
+        var ref = choix.charAt(0).toUpperCase() + choix.substring(1).toLowerCase();
+
+        App.get('V'+ref+' grid#T1').bindStore(store);
+        store.load();
+
+        console.log("store");
+        console.log(store);
+        switch (choix) {
+            case "axes":
+                console.log('axes');
+                App.get('VAxes').show();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "familles":
+                console.log('familles');
+                App.get('VAxes').hide();
+                App.get('VFamilles').show();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "fournisseurs":
+                console.log('fournisseurs');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').show();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "geologies":
+                console.log('geologies');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').show();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "gestionnaires":
+                console.log('gestionnaires');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').show();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "poseurs":
+                console.log('poseurs');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').show();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+            case "types":
+                console.log('types');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').show();
+                App.get('VZones').hide();
+                break;
+            case "zones":
+                console.log('zones');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').show();
+                App.get('VZones combo#cboDepartements').reset();
+                App.get('VZones grid#T1').hide();
+                break;
+            default:
+                console.log('default');
+                App.get('VAxes').hide();
+                App.get('VFamilles').hide();
+                App.get('VFournisseurs').hide();
+                App.get('VGeologies').hide();
+                App.get('VGestionnaires').hide();
+                App.get('VPoseurs').hide();
+                App.get('VTypes').hide();
+                App.get('VZones').hide();
+                break;
+        }
+
+    },
+    cboDepartements_select: function(me) {
+        App.get('mainform panel#southpanel').collapse();
+        App.get('VZones').show();
+        if(App.get('VZones grid#T1').store)
+            App.get('VZones grid#T1').store.removeAll();
+
+        var choix = App.get('VZones combo#cboDepartements').getValue();
+        App.Refs.selectZones(choix,function(response) {
+
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                data.push({
+                    idZone:response[i].idZone,
+                    idVille:response[i].idVille,
+                    nomVille:response[i].nomVille,
+                    nomZone:response[i].nomZone
+                })
+            };
+            var store=App.store.create({
+                fields:["idZone","idVille","nomVille","nomZone"],data:data
+            });
+            if(store)
+            {
+                App.get('VZones grid#T1').bindStore(store);
+                store.load();
+            }
+
+            App.get('VZones grid').show();
+        });
+    },
+    add_ref: function(me) {
+        var grid=me.up('grid');
+        grid.getStore().insert(grid.getStore().data.items.length,{});
+    },
+    del_ref: function(me,store) {
+
+        var tabName = App.get('VRefs #cboRefs').getValue()
+        var grid=me.up('grid');
+        for (var i=0;i<grid.getStore().data.items.length;i++) {
+            if (grid.getStore().data.items[i].data.select)
+            {
+
+                console.log("Dans if");
+                switch (tabName) {
+                    case "axes":
+                        var id = grid.getStore().data.items[i].data.idAxe;
+                        var idTab = "idAxe";
+                        break;
+                    case "familles":
+                        var id = grid.getStore().data.items[i].data.idFamille;
+                        var idTab = "idFamille";
+                        break;
+                    case "fournisseurs":
+                        var id = grid.getStore().data.items[i].data.idFournisseurs;
+                        var idTab = "idFournisseurs";
+                        break;
+                    case "geologies":
+                        var id = grid.getStore().data.items[i].data.idGeologie;
+                        var idTab = "idGeologie";
+                        break;
+                    case "gestionnaires":
+                        var id = grid.getStore().data.items[i].data.idGestionnaires;
+                        var idTab = "idGestionnaires";
+                        break;
+                    case "poseurs":
+                        var id = grid.getStore().data.items[i].data.idPoseurs;
+                        var idTab = "idPoseurs";
+                        break;
+                    case "types":
+                        var id = grid.getStore().data.items[i].data.idType;
+                        var idTab = "idType";
+                        break;
+                    case "zones":
+                        var id = grid.getStore().data.items[i].data.idZone;
+                        var idTab = "idZone";
+                        break;
+                    default:
+                        Ext.Msg.alert('GOPRRO',"Erreur lors de la suppression");
+                        break;
+                }
+
+                var tabRefs = [tabName, idTab, id];
+                App.Refs.del(tabRefs,function(response) {
+                    if (response !== true)
+                        Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+
+                })
+            }
+        }
+        if(tabName == "zones")
+        {
+            var choix = App.get('VZones combo#cboDepartements').getValue();
+            App.Refs.selectZones(choix,function(response) {
+                var data=[];
+                for (var i=0;i<response.length;i++) {
+                    data.push({
+                        idZone:response[i].idZone,
+                        idVille:response[i].idVille,
+                        nomVille:response[i].nomVille,
+                        nomZone:response[i].nomZone
+                    })
+                };
+                var store=App.store.create({
+                    fields:["idZone","idVille","nomVille","nomZone"],data:data
+                });
+                if(store)
+                {
+                    App.get('VZones grid#T1').bindStore(store);
+                    store.load();
+                }
+
+                App.get('VZones grid').show();
+            });
+        }
+        else
+        {
+            grid.getStore().load();
+        }
+        Ext.Msg.alert('GOPRRO',"Suppression enregistré.");
+    },
+    ref_grid_edit: function(ed,o) {
+        var tabName = App.get('VRefs combo#cboRefs').getValue();
+        var data=o.record.data;
+        if(tabName == "zones" )
+        {
+            App.Refs.selectVilles(data["nomVille"],function(response) {
+                data["idVille"] = response[0].idVille;
+                delete data.creation;
+                delete data.modif;
+                App.DB.post("goprro://"+tabName,data,function(r){
+                    App.get('VZones grid#T1').store.removeAll();
+
+                    var choix = App.get('VZones combo#cboDepartements').getValue();
+                    App.Refs.selectZones(choix,function(response) {
+
+                        var data=[];
+                        for (var i=0;i<response.length;i++) {
+                            data.push({
+                                idZone:response[i].idZone,
+                                idVille:response[i].idVille,
+                                nomVille:response[i].nomVille,
+                                nomZone:response[i].nomZone
+                            })
+                        };
+                        var store=App.store.create({
+                            fields:["idZone","idVille","nomVille","nomZone"],data:data
+                        });
+                        if(store)
+                        {
+                            App.get('VZones grid#T1').bindStore(store);
+                            store.load();
+                        }
+
+                        App.get('VZones grid').show();
+                    });
+                });
+            })
+        }
+        else{
+            delete data.creation;
+            delete data.modif;
+            App.DB.post("goprro://"+tabName,data,function(r){
+                o.grid.getStore().load();
+            });
+        }
+    },
+    combo_villes_beforeedit: function(ed,cx) {
+
+        if (cx.column.dataIndex == 'nomVille')
+        {
+            console.log(ed);
+            console.log(cx);
+            var cbo=ed.editors.items[0];
+            var store=App.store.create('goprro://villes{nomVille+}?ville_departement='+App.get('VZones combo#cboDepartements').getValue(),{autoLoad:true});
+            //cbo.bindStore(store);
+            store.load();
+            cx.column.setEditor(new Ext.create('Ext.form.field.ComboBox',{
+                store: store,
+                displayField: "nomVille",
+                valueField: "nomVille"
+            }));
+        }
+    },
     onLoad: function(p)
     {
+        Auth.login(function(){
+            console.log(Auth.User);
+        });
         App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
         // load wiki
         var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
@@ -648,6 +1027,13 @@ App.controller.define('CMain', {
                         iconAlign: 'top',
                         rowspan: 3,
                         handler: p.showSettingsCharacteristics
+                    },{
+                        text: 'Référentiels',
+                        iconCls: "pencil",
+                        scale: 'large',
+                        iconAlign: 'top',
+                        rowspan: 3,
+                        handler: p.showSettingsRefs
                     }]
                 }
             ]

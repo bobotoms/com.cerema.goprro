@@ -124,6 +124,11 @@ App.view.define('VMain', {
                     xtype: "VSaisie",
                     itemId: "Saisie",
                     hidden: true
+                },
+                {
+                    xtype: "VRefs",
+                    itemId: "setup_refs",
+                    hidden: true
                 }
             ]
         }
