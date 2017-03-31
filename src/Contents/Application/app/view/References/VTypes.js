@@ -1,43 +1,45 @@
+App.store.familles=App.store.create("goprro://familles",{autoLoad:true});
 App.view.define('References.VTypes', {
 
     extend: 'Ext.Panel',
-	alias : 'widget.VTypes',
-	layout: "hbox",
+    alias : 'widget.VTypes',
+    layout: "hbox",
     border: false,
-     items: [
-            {
-                region: "center",
-                padding: 5,
-                border: false,
-                itemId: "ref_types",
-	            layout: "fit",
-                split:true,
-                width: 350,
-                height: 350,
-                items: [
-                    {
+    familles:App.store.create("goprro://familles",{autoLoad:true}) ,
+    items: [
+        {
+            region: "center",
+            padding: 5,
+            border: false,
+            itemId: "ref_types",
+            layout: "fit",
+            split:true,
+            width: 500,
+            height: 350,
+            items: [
+                {
                     xtype: "grid",
                     //itemId: "nomFamille",
                     title: "Types",
                     border: false,
-                     tbar: [{
-                             text: "Supprimer",
-                            itemId: "delRef"
-                        },
+                    tbar: [{
+                        text: "Supprimer",
+                        itemId: "delRef"
+                    },
                         '->',
-                            {
+                        {
                             text: "Ajouter",
                             //itemId: "clickUpdate"
                             itemId: "addRef"
-                    }],
+                        }],
                     plugins: [
-                    {
-                        ptype: "cellediting",
-                        clicksToEdit: 2
-                    }
+                        {
+                            ptype: "cellediting",
+                            clicksToEdit: 2
+                        }
                     ],
                     columns: [
-                        
+
                         {
                             text: "id",
                             dataIndex: "idType",
@@ -45,15 +47,31 @@ App.view.define('References.VTypes', {
                             flex: 1,
                         },
                         {
+                            xtype: 'checkcolumn',
+                            text: "Sélectionner",
+                            dataIndex: "select",
+                            cls: 'x-grid-checkheader-editor'
+                        },
+                        {
                             text: "Famille",
                             dataIndex: "idFamille",
-                            /*editor: {
-                            xtype: "combo",
-                            width: 200,
-                            itemId: "idFamille",
-                            valueField: "nomFamille",
-                            store: App.store.create("goprro://familles")
-                            },*/
+                            renderer: function(value,a,b,c){
+
+                                var items=App.store.familles.data.items;
+                                var Items={};
+                                for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
+                                return Items[value];
+
+                            },
+                            editor: {
+                                xtype: "combo",
+                                width: 200,
+                                itemId: "cboFamilles",
+                                //itemId: "idFamille",
+                                valueField: "idFamille",
+                                displayField:"nomFamille",
+                                store: App.store.familles
+                            }
                         },
                         {
                             text: "Nom",
@@ -65,18 +83,18 @@ App.view.define('References.VTypes', {
                             },
                         }
                     ],
-			             //store: App.store.create('goprro://familles',{autoLoad: true}),
-                        store: App.store.create({fields:["value"],data:[]}),
-                        itemId: "T1",
-                        title: "Types",
-                        flex: 1,
-                        height: "100%"
+                    // store: App.store.create('goprro://familles',{autoLoad: true}),
+                    //store: App.store.create({fields:["value"],data:[]}),
+                    itemId: "T1",
+                    title: "Types",
+                    flex: 1,
+                    height: "100%"
                 }
-                    
+
             ]
         }
-	]
-	
+    ]
+
 });
 
 

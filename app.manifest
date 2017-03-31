@@ -1,8 +1,8 @@
 {
-    "namespace": "com.cerema.goprro-greg",
+    "namespace": "com.cerema.goprro",
     "git": "https://github.com/cerema/com.cerema.goprro.git",
     "title": "GOPRRO",
-    "description": "Suivi des visites des ouvrages de Protection<br>contre les risques rocheux",
+    "description": "Suivi des visites des ouvrages de Protection contre les risques rocheux",
     "platform": "desktop",
     "uid": "81a38e9a-fd9f-4326-97e1-d1bf61ee7b46",
     "version": "0.0.2",
@@ -48,10 +48,7 @@
             "src": "http://cdn.omneedia.com/public/jquery/3.1.0/jquery.js"
         }
     ],
-    "auth": [
-        "CERBERE",
-        "GOOGLE"
-    ],
+    "auth": [],
     "paths": {},
     "controllers": [
         "CMain"
@@ -65,13 +62,9 @@
         "Elements",
         "Ouvrages",
         "Notes",
-        "Docs",
-        "InsertRefs",
-        "MyService",
-        "AddNews"
+        "Docs"
     ],
     "db": [
-        "bpclight",
         "goprro"
     ],
     "packages": [
