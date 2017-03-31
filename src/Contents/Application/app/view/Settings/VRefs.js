@@ -1,10 +1,10 @@
-App.view.define('Settings.VCharacteristics',{
+App.view.define('Settings.VRefs',{
     extend: 'Ext.Panel',
-    alias: "widget.VCharacteristics",
+    alias: "widget.VRefs",
 
     initComponent: function()
     {
-        this.title="Caractéristiques";
+        this.title="Référentiels";
         this.layout="hbox";
         this.border=false;
         this.width = 820;
@@ -13,113 +13,84 @@ App.view.define('Settings.VCharacteristics',{
         this.tbar=[
             {
                 xtype: "combo",
-                fieldLabel: "Famille",
+                itemId: "cboRefs",
+                fieldLabel: "Refs",
                 padding: 5,
-                labelAlign: "top",
-                displayField: "nomFamille",
-                valueField: "idFamille",
+                displayField: "type",
+                valueField: "ref",
                 editable: false,
-                store: App.store.create('goprro://familles{nomFamille+,idFamille}',{autoLoad: true}),
-                itemId: "cboFamille"
-            },
-            {
-                xtype: "combo",
-                fieldLabel: "Type",
-                padding: 5,
-                labelAlign: "top",
-                displayField: "nomType",
-                valueField: "idType",
-                editable: false,
-                store: App.store.create({fields:[],data:[]}),
-                itemId: "cboType"
+                store: App.store.create({
+                    fields: ["ref","type"],
+                    data: [
+                        {
+                            ref: "axes",
+                            type: "Axes"
+                        },{
+                            ref: "familles",
+                            type: "Familles"
+                        },{
+                            ref: "fournisseurs",
+                            type: "Fournisseurs"
+                        },{
+                            ref: "geologies",
+                            type: "Geologies"
+                        },{
+                            ref: "gestionnaires",
+                            type: "Gestionnaires"
+                        },{
+                            ref: "poseurs",
+                            type: "Poseurs"
+                        },{
+                            ref: "types",
+                            type: "Types"
+                        },{
+                            ref: "zones",
+                            type: "Zones"
+                        }]
+                }),
+                //store: App.store.create('goprro://familles{nomFamille+,idFamille}',{autoLoad: true}),
             }
         ];
         this.items = [
+
             {
-                xtype: "treepanel",
-                padding: 5,
-                border: true,
-                height: "100%",
-                title: "Catalogue",
-                flex: 1,
-                rootVisible: false,
-                useArrows: true,
-                itemId: "T0",
-                store: App.store.create("App.Elements.getAllByType",{autoLoad: false,type:"tree"})
-            },
-            {
-                xtype: "grid",
-                padding: 5,
-                border: true,
-                tbar: [
-                    '->',
+                region: "center",
+                split:true,
+                items: [
                     {
-                        xtype: "button",
-                        text: "Ajouter",
-                        itemId: "add"
-                    }
-                ],
-                plugins: [
-                    {
-                        ptype: "cellediting",
-                        clicksToEdit: 1
-                    }
-                ],
-                columns: [
-                    {
-                        text: "Nom",
-                        dataIndex: "nomCaracteristique",
-                        editor: {
-                            xtype: "textfield"
-                        }
+                        xtype: "VAxes",
+                        hidden: true
                     },
                     {
-                        text: "Type",
-                        dataIndex: "typeCaracteristique",
-                        editor: {
-                            xtype: "combo",
-                            displayField: "value",
-                            valueField: "value",
-                            editable: false,
-                            store: App.store.create({fields:["value"],data:[
-                                {
-                                    value: "BOOL"
-                                },
-                                {
-                                    value: "STRING"
-                                },
-                                {
-                                    value: "NUMBER"
-                                },
-                                {
-                                    value: "SELECT"
-                                }
-                            ]})
-                        }
+                        xtype: "VFamilles",
+                        hidden: true
                     },
                     {
-                        text: "Valeurs",
-                        dataIndex: "valeursCaracteristique",
-                        flex: 1,
-                        editor: {
-                            xtype: "textfield"
-                        }
+                        xtype: "VFournisseurs",
+                        hidden: true
                     },
                     {
-                        text: "Unité",
-                        dataIndex: "uniteCaracteristique",
-                        editor: {
-                            xtype: "textfield"
-                        }
+                        xtype: "VGeologies",
+                        hidden: true
+                    },
+                    {
+                        xtype: "VGestionnaires",
+                        hidden: true
+                    },
+                    {
+                        xtype: "VPoseurs",
+                        hidden: true
+                    },
+                    {
+                        xtype: "VTypes",
+                        hidden: true
+                    },
+                    {
+                        xtype: "VZones",
+                        hidden: true
                     }
-                ],
-                store: App.store.create({fields:[],data:[]}),
-                itemId: "T1",
-                title: "Caractéristiques",
-                flex: 1,
-                height: "100%"
-            }
-        ];
-        this.callParent();
+                ]
+            }],
+            this.callParent();
     }
 });
