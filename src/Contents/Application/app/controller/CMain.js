@@ -924,6 +924,24 @@ App.controller.define('CMain', {
         console.log(mail);
         
         App.Visits.select(mail,function(response) {
+            
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                data.push({
+                    nomOuvrage:response[i].nomOuvrage,
+                    idDepartement:response[i].idDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y
+                })
+            };
+            var store=App.store.create({
+                fields:["nomOuvrage","idDepartement","oa_x","oa_y"],data:data
+            });
+            if(store)
+            {
+                App.get('VZones grid#T1').bindStore(store);
+                store.load();
+            }
             console.log("response");
             console.log(response);
             var store = response;
