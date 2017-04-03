@@ -71,8 +71,7 @@ Visits = {
         Visit.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
 				if (!err) {
                     
-                    console.log("idUser");
-                    console.log(idUser);
+                    
 					//cb(response);
 				} else {
                     console.log("err");
