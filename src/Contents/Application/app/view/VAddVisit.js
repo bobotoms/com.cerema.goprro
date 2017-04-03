@@ -105,29 +105,8 @@ App.view.define('VAddVisit', {
         //width: 820,
         height: 430,
 
-
-
-        tbar: [
-        {
-            fieldLabel: "Date visite",
-            itemId: "Ddate",
-            xtype: "datefield",
-            format: 'd m Y',
-            //altFormats: 'd,m,Y|d-m-Y',
-            dateFormat: 'c',
-            width: 200
-        }
-        ],
-       bbar: [
-            '->', {
-
-            text: '<b>Enregistrer</b>',
-            itemId: "VVisitRecord"
-        }
-        ],
-
         items: [
-            /*{
+            {
             id: "TestMyGMapPanel",
                 //id: "MyGMapPanel",
             itemId: "map",
@@ -138,50 +117,7 @@ App.view.define('VAddVisit', {
             width: "40%",
             border: false,
             split: true
-        },*/
-        {
-            xtype: "grid",
-            //hidden: true,
-            itemId: "gridVisit",
-            width: "60%",
-            columns: 
-            [{
-                text: "Ouvrage disponible",
-                itemId: "NnomOuvrage",
-                flex: 1,
-                dataIndex: "nomOuvrage"
-            },
-            {
-                text: "Dpt",
-                width: 150,
-                dataIndex: "NnomDepartement"
-            },
-            {
-                text: "Longitude",
-                width: 150,
-                dataIndex: "Ooa_y"
-            },
-            {
-                text: "Latitude",
-                width: 150,
-                dataIndex: "Ooa_x"
-            },
-            {
-                xtype: 'checkcolumn',
-                text: "Ajouter",
-                dataIndex: "Sselect",
-                editor: {
-                    xtype: "checkbox",
-                    cls: 'x-grid-checkheader-editor'
-                }
-            }],
-            //store: App.store.create("App.Ouvrages.select",{autoLoad: true})
-        }],
-	}
-    
-    
-    
-    
+        }    
     
     ]
 });
