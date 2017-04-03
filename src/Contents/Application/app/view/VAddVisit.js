@@ -5,37 +5,41 @@ App.view.define('VAddVisit', {
 	border: false,
 	
 	layout: "border",
-	
-	
-	initComponent: function()
-	{
-		this.title="visite";
-        this.layout: "fit",
-		//this.layout="hbox";
-		this.border=false;
-		this.width = 820;
-        this.height = 430;
-		this.bodyStyle="background-color: white";
-		this.tbar=[
-		{
-			fieldLabel: "Date visite",
-            itemId: "date",
-            xtype: "datefield",
-            format: 'd m Y',
-            //altFormats: 'd,m,Y|d-m-Y',
-            dateFormat: 'c',
-			width: 200
-		}	
-		];
-        this.bbar = [
-            '->', {
+    
+	items: [
+        {
+            region: "center",
+            padding: 5,
+            border: false,
+            itemId: "ref_zones",
+            layout: "fit",
+            split:true,
+            width: 820,
+            height: 430,
+
+
+
+            tbar: [
+            {
+                fieldLabel: "Date visite",
+                itemId: "date",
+                xtype: "datefield",
+                format: 'd m Y',
+                //altFormats: 'd,m,Y|d-m-Y',
+                dateFormat: 'c',
+                width: 200
+            }
+            ],
+	       bbar: [
+                '->', {
 
                 text: '<b>Enregistrer</b>',
                 itemId: "VisitRecord"
             }
-        ];
-		this.items = 
-        [/*{
+            ],
+
+            items: [
+                /*{
                 id: "TestMyGMapPanel",
 					//id: "MyGMapPanel",
                 itemId: "map",
@@ -144,6 +148,5 @@ App.view.define('VAddVisit', {
             
             
         ],
-		this.callParent();
 	}
 });
