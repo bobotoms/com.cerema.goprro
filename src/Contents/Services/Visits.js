@@ -1,7 +1,8 @@
 Visits = {
     select: function(o,cb) {
+        console.log('******* USER MAIL *****');
         var mail = Auth.User.mail;
-        console.log("mail select");
+        console.log("******* MAIL SELECT *******");
         console.log(mail);
         console.log('******* USER MAIL *****');
         var mail = o;
