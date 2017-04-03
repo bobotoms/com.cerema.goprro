@@ -1007,8 +1007,8 @@ App.controller.define('CMain', {
         
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
         var date = Ext.Date.format(choixDate, 'Y-m-d');
-        console.log("choixDate");
-        console.log(choixDate);
+        console.log("date");
+        console.log(date);
         var tabDate = [mail, date];
         App.Visits.selectVisitDate(tabDate,function(response) {
             
