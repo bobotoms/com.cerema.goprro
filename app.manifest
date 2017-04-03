@@ -69,7 +69,8 @@
         "InsertRefs",
         "MyService",
         "AddNews",
-        "Refs"
+        "Refs",
+        "Visits"
     ],
     "db": [
         "bpclight",
