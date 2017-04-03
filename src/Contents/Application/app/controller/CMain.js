@@ -982,7 +982,7 @@ App.controller.define('CMain', {
             var data=[];
             for (var i=0;i<response.length;i++) {
                 var dateLong = Ext.Date.parse(response[i].dateVisiteOuvrage,"c");
-                var date = Ext.Date.format(choixDate, 'Y-m-d');
+                var date = Ext.Date.format(dateLong, 'Y-m-d');
         console.log("response[i].dateVisiteOuvrage");
         console.log(response[i].dateVisiteOuvrage);
         console.log("response[i].dateVisiteOuvrage 2");
