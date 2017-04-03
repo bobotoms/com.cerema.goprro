@@ -68,7 +68,7 @@ Visits = {
         ensuite on enregsitre dans la table viste_ouvrage l'ouvrage selectionné en lui attribuant le numero créé juste avant.
         enfin on affiche la table
         ***********************************/
-        Visit.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('2017-04-30', '4', 'demo')",function(err,result){
+        Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('2017-04-30', '4', 'demo')",function(err,result){
 				if (!err) {            
                     console.log("result");
                     console.log(result);
