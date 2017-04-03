@@ -72,12 +72,12 @@ Visits = {
 				if (!err) {            
                     console.log("result");
                     console.log(result);
-					//cb(response);
+					cb(response);
 				} else {
                     console.log("err");
                     console.log(err);
                     var err=false;
-					//cb(err)			
+					cb(err)			
 				};
 			});
 		/*AddVisit.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
