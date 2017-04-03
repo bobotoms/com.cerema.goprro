@@ -1,7 +1,7 @@
 Visits = {
     select: function(o,cb) {
         var mail = o;
- 		Refs.using('db').query("goprro","SELECT idVille FROM villes WHERE nomVille = '"+o+"'",function(err,result){
+ 		Refs.using('db').query("goprro","SELECT idUser FROM users WHERE mail='"+mail+"'",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
