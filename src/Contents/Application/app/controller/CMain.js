@@ -61,6 +61,9 @@ App.controller.define('CMain', {
         "References.VPoseurs",
         "References.VTypes",
         "References.VZones",
+        "References.VAddVisit",
+        "References.VVisit",
+        "References.VVisitWork",
     ],
 
     models: [
