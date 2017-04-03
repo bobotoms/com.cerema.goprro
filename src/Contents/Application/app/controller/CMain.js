@@ -1002,6 +1002,8 @@ App.controller.define('CMain', {
         console.log(mail);
         
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
+        console.log("choixDate");
+        console.log(choixDate);
         var tabDate = [mail, choixDate];
         App.Visits.selectVisitDate(tabDate,function(response) {
             
