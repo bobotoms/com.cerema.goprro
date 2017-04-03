@@ -997,7 +997,7 @@ App.controller.define('CMain', {
         });
     },
     showVisitDate: function(p) {
-         console.log("showVisit");
+        console.log("showVisit");
         App.get('mainform panel#southpanel').collapse();
         //hideForms();
         App.get("mainform panel#visit").show();
@@ -1006,6 +1006,8 @@ App.controller.define('CMain', {
         console.log(mail);
         
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
+        console.log("choixDate");
+        console.log(choixDate);
         var date = Ext.Date.format(choixDate, 'Y-m-d');
         console.log("date");
         console.log(date);
@@ -1038,7 +1040,11 @@ App.controller.define('CMain', {
     add_visit: function(me, store) {
         
         var LongDate = App.get('VAddVisit datefield#date').getValue();
+            console.log("LongDate");
+            console.log(LongDate);
         var date = Ext.Date.format(LongDate, 'Y-m-d');
+            console.log("date");
+            console.log(date);
         if(LongDate != null)
         {
             console.log("avant mail");
