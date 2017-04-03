@@ -1066,7 +1066,7 @@ App.controller.define('CMain', {
                             console.log(mail);
                             var tabVisits = [mail, date, idOuvrage]
                             /**************** ici on récupère le mail du user + la date de la vis1te + le numero de l'ouvrage et on l'envoi au service ************/
-                            App.Visit.insert(tabVisits,function(response) {
+                            App.Visits.insert(tabVisits,function(response) {
 
                                 //App.get('VAddNews').close();
                                 /*if (response === true)
