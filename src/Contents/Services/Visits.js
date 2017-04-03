@@ -72,7 +72,7 @@ Visits = {
        INSERT INTO table1 (colonne1, colonne2, colonne3)
        SELECT "valeur1",colonne2, colonne3 FROM table2
         ***********************************/
-        Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, idOuvrage, nomOuvrage) SELECT '"+date+"', (select idUser from users where mail='"+mail+"'), idFamille, nomOuvrage FROM ouvrages where idOuvrage='"+numOuvrage+"'",function(err,result){
+        Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, idOuvrage, nomOuvrage) SELECT '"+date+"', (select idUser from users where mail='"+mail+"'), idFamille, nomOuvrage FROM ouvrages WHERE idOuvrage='"+numOuvrage+"'",function(err,result){
        // Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
 				if (!err) {            
                     console.log("result");
