@@ -913,11 +913,14 @@ App.controller.define('CMain', {
     },
     /**/
     showAddVisit: function(p) {
+        console.og("showAddVisit");
         App.get('mainform panel#southpanel').collapse();
         hideForms();
         App.get("mainform panel#addVisit").show();
         
         var mail = Auth.User.mail;
+        console.og("mail");
+        console.og(mail);
         
         App.Visit.select(mail,function(response) {
             console.og("response");
