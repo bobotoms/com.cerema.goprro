@@ -165,6 +165,9 @@ App.controller.define('CMain', {
             "VVisit combo#dateVisit": {
                 select: "showVisitDate"
             },
+			"VAddVisit button#VisitRecord": {
+				click: "add_visit"	
+			},
         });
 
         App.init('VMain',function(){
@@ -172,6 +175,7 @@ App.controller.define('CMain', {
         });
 
     },
+    
     up_onclick: function(p, record)
     {
         App.view.create('VShowDoc', {
@@ -1002,9 +1006,10 @@ App.controller.define('CMain', {
         console.log(mail);
         
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
+        var date = Ext.Date.format(choixDate, 'Y-m-d');
         console.log("choixDate");
         console.log(choixDate);
-        var tabDate = [mail, choixDate];
+        var tabDate = [mail, date];
         App.Visits.selectVisitDate(tabDate,function(response) {
             
         console.log("response");
@@ -1030,6 +1035,85 @@ App.controller.define('CMain', {
             
         });
     },
+    add_visit: function(me, store) {
+        
+        var LongDate = App.get('VAddVisit datefield#date').getValue();
+        var date = Ext.Date.format(LongDate, 'Y-m-d');
+        if(LongDate != null)
+        {
+            console.log("avant mail");
+            var mail = Auth.User.mail;
+            console.log("mail");
+            console.log(mail);
+            App.Visit.user(mail,function(response) {
+                var user = response[0].idUser;
+                //var num = date+"/"+user; 
+                /*console.log("num");
+                console.log(num);*/
+
+
+                    /*var date = Ext.Date.format(LongDate, 'Y-m-d');
+                var num = user+date+01; 
+                console.log("num");
+                console.log(num);*/
+                var panel=me.up('panel');
+                console.log("panel");
+                console.log(panel);
+
+                //me.setDisabled(true);
+
+                var dataStore=App.get(me.up('panel'),"grid").getStore().data;
+                console.log("dataStore");
+                console.log(dataStore);
+
+                for (var i=0;i<dataStore.items.length;i++) {
+                    if (dataStore.items[i].data.select)
+                            {
+                                var idOuvrage = dataStore.items[i].data.idOuvrage;
+                                console.log("idOuvrage");
+                                console.log(idOuvrage);
+                                console.log("user");
+                                console.log(user);
+                                var tabVisits = [user, date, idOuvrage]
+                                /**************** ici on récupère le mail du user + la date de la vis1te + le numero de l'ouvrage et on l'envoi au service ************/
+                                App.Visit.insert(tabVisits,function(response) {
+
+                                    //App.get('VAddNews').close();
+                                    /*if (response === true)
+                                    Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
+                                    else
+                                    Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");*/
+
+                                })
+                            }
+                };
+
+               /* var panel=me.up('panel').up('panel').getStore();
+                console.log("panel+");
+                console.log(panel);*/
+                //var grid=me.up('panel').grid;
+                /*var gridvisit = grid.getStore();
+
+
+
+                var grid=me.up('grid');
+                grid.getStore().insert(grid.getStore().data.items.length,{});*/
+                  Ext.Msg.alert('GOPRRO',"Add visite");
+                
+                
+                
+            });
+        
+            
+            
+        }
+        else{
+            
+              console.log("else");
+              Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
+        }
+    
+	},
     onLoad: function(p)
     {
         Auth.login(function(){
