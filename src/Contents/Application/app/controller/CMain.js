@@ -926,8 +926,9 @@ App.controller.define('CMain', {
         App.Visits.select(mail,function(response) {
             console.log("response");
             console.log(response);
-            App.get('VAddVisit grid#gridVisit').bindStore(response);
-            response.load();
+            var store = response;
+            App.get('VAddVisit grid#gridVisit').bindStore(store);
+            store.load();
         });
         
         
