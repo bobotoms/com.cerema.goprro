@@ -920,8 +920,9 @@ App.controller.define('CMain', {
         var mail = Auth.User.mail;
         
         App.Visit.select(mail,function(response) {
-
-            App.get('VZones grid#T1').bindStore(store);
+            console.og("response");
+            console.og(response);
+            App.get('VAddVisit grid#gridVisit').bindStore(store);
             store.load();
         });
         
