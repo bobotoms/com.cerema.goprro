@@ -998,7 +998,7 @@ App.controller.define('CMain', {
         console.log("mail");
         console.log(mail);
         
-        App.Visits.selectVisit(mail,function(response) {
+        App.Visits.selectVisitDate(mail,function(response) {
             
         console.log("response");
         console.log(response);
