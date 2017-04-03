@@ -1,5 +1,8 @@
 Visits = {
     select: function(o,cb) {
+        var mail = Auth.User.mail;
+        console.log("mail select");
+        console.log(mail);
         console.log('******* USER MAIL *****');
         var mail = o;
  		Refs.using('db').query("goprro","SELECT idUser FROM users WHERE mail='"+mail+"'",function(err,result){
