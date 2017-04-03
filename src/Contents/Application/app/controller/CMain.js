@@ -915,12 +915,12 @@ App.controller.define('CMain', {
     showAddVisit: function(p) {
         console.log("showAddVisit");
         App.get('mainform panel#southpanel').collapse();
-        hideForms();
+        //hideForms();
         App.get("mainform panel#addVisit").show();
         var mail = Auth.User.mail;
         console.log("mail");
         console.log(mail);
-        /*
+        
         App.Visits.select(mail,function(response) {
             
         console.log("response");
@@ -943,7 +943,7 @@ App.controller.define('CMain', {
                 store.load();
             }
             
-        });*/
+        });
         
         
         
