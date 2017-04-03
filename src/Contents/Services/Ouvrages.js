@@ -5,8 +5,8 @@ Ouvrages = {
         db.model("goprro",db.sql("OAGetAll"),cb);
     },
     select: function(o,cb) {
-        
-        console.log("user mail");
+        console.log(o);
+        console.log('user mail');
         /*var mail=profile.username.email;
         var mail = Auth.User.mail;
         console.log(mail);
