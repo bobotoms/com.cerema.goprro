@@ -981,12 +981,14 @@ App.controller.define('CMain', {
         console.log(response);
             var data=[];
             for (var i=0;i<response.length;i++) {
+                var dateLong = Ext.Date.parse(response[i].dateVisiteOuvrage,"c");
+                var date = Ext.Date.format(choixDate, 'Y-m-d');
         console.log("response[i].dateVisiteOuvrage");
         console.log(response[i].dateVisiteOuvrage);
         console.log("response[i].dateVisiteOuvrage 2");
-        console.log(Ext.Date.parse(response[i].dateVisiteOuvrage,"c"));
+        console.log(date);
                 data.push({
-                    dateVisiteOuvrage:response[i].dateVisiteOuvrage
+                    dateVisiteOuvrage:date
                 })
             };
             var store=App.store.create({
