@@ -29,7 +29,11 @@ Visits = {
         });       
     },
     selectVisitDate: function(o,cb) {
- 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages left join familles on visite_ouvrages.idFamille=familles.idFamille left join types on types.idType=ouvrages.idType left join geologies on geologies.idGeologie=ouvrages.idGeologie left join situations on situations.idSituation=ouvrages.idSituation left join acces on acces.idAcces=ouvrages.idAcces left join departements on departements.idDepartement=ouvrages.idDepartement WHERE visite_ouvrages.date = "+o+")",function(err,result){
+        
+        var mail = o['0'];
+        var date = o['1'];
+        
+ 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages left join familles on visite_ouvrages.idFamille=familles.idFamille left join types on types.idType=visite_ouvrages.idType left join geologies on geologies.idGeologie=visite_ouvrages.idGeologie left join situations on situations.idSituation=visite_ouvrages.idSituation left join acces on acces.idAcces=visite_ouvrages.idAcces left join departements on departements.idDepartement=visite_ouvrages.idDepartement WHERE visite_ouvrages.date = "+date+" AND idUser = (select idUser from users where mail='"+mail+"'))",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
