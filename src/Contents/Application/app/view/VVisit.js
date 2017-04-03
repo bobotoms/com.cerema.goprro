@@ -54,7 +54,7 @@ App.view.define('VVisit', {
         },*/
         {
             xtype: "grid",
-            //hidden: true,
+            hidden: true,
             itemId: "gridVisit",
             width: "60%",
             columns: 
@@ -107,8 +107,8 @@ App.view.define('VVisit', {
 
         items: [
         {
-            id: "TestMyGMapPanel",
-                //id: "MyGMapPanel",
+            id: "Test2MyGMapPanel",
+            hidden: true,
             itemId: "map",
             html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
             padding: 0,
