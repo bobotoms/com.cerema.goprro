@@ -9,7 +9,7 @@ App.view.define('VAddVisit', {
 	items: [
     {
         region: "west",
-                width: "60%",
+        width: "60%",
         padding: 5,
         border: false,
         itemId: "add_visit",
