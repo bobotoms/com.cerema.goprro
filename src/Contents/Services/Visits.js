@@ -1,13 +1,20 @@
 Visits = {
-    getAll: function(o,cb) {
-        var db=Ouvrages.using('db');
-        db.model("goprro",db.sql("OAGetAll"),cb);
-    },/*
-    select: function(o,cb) {*/
-        /*var mail=profile.username.email;
-        var mail = Auth.User.mail;
-        console.log(mail);
-        */
+    select: function(o,cb) {
+        var mail = o;
+ 		Refs.using('db').query("goprro","SELECT idVille FROM villes WHERE nomVille = '"+o+"'",function(err,result){
+            if (!err) {
+                    console.log("result");
+                    console.log(result);
+					cb(result);			
+				} else {
+                    console.log("err");
+                    console.log(err);
+                    var err=false;
+					cb(err)			
+				};
+        });       
+    },
+        console.log(o);
  /*		var db=Ouvrages.using('db');
 		db.model("goprro",db.sql("OAGetAll"),function(error,response){
             console.log('******* USER MAIL *****');
