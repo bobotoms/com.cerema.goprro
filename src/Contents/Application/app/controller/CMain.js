@@ -916,6 +916,18 @@ App.controller.define('CMain', {
         App.get('mainform panel#southpanel').collapse();
         hideForms();
         App.get("mainform panel#addVisit").show();
+        
+        var mail = Auth.User.mail;
+        
+        App.Visit.select(mail,function(response) {
+
+            App.get('VZones grid#T1').bindStore(store);
+            store.load();
+        });
+        
+        
+        
+        
      /*   
 		//hideForms();
         TMap.clearMarkers();
