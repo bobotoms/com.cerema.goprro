@@ -981,6 +981,8 @@ App.controller.define('CMain', {
         console.log(response);
             var data=[];
             for (var i=0;i<response.length;i++) {
+        console.log("response[i].dateVisiteOuvrage");
+        console.log(response[i].dateVisiteOuvrage);
                 data.push({
                     dateVisiteOuvrage:response[i].dateVisiteOuvrage
                 })
