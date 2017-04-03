@@ -919,7 +919,7 @@ App.controller.define('CMain', {
         App.get("mainform panel#addVisit").show();
         
         //var mail = Auth.User.mail;
-        var mail = Auth.User;
+        var mail = Auth.User.mail;
         console.log("mail");
         console.log(mail);
         
