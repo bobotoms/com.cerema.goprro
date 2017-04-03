@@ -14,7 +14,6 @@ Visits = {
 				};
         });       
     },
-        console.log(o);
  /*		var db=Ouvrages.using('db');
 		db.model("goprro",db.sql("OAGetAll"),function(error,response){
             console.log('******* USER MAIL *****');
