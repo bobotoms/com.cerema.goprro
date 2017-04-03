@@ -10,6 +10,7 @@ App.view.define('VAddVisit', {
 	initComponent: function()
 	{
 		this.title="visite";
+        this.layout: "fit",
 		//this.layout="hbox";
 		this.border=false;
 		this.width = 820;
