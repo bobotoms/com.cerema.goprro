@@ -85,8 +85,17 @@ App.view.define('VVisit', {
             },
             {
                 xtype: 'checkcolumn',
-                text: "Ajouter",
-                dataIndex: "select",
+                text: "Supprimer",
+                dataIndex: "del",
+                editor: {
+                    xtype: "checkbox",
+                    cls: 'x-grid-checkheader-editor'
+                }
+            },
+            {
+                xtype: 'checkcolumn',
+                text: "Ajouter Commmentaire",
+                dataIndex: "addcom",
                 editor: {
                     xtype: "checkbox",
                     cls: 'x-grid-checkheader-editor'
