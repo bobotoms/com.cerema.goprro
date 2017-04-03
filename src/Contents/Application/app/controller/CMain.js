@@ -1045,64 +1045,50 @@ App.controller.define('CMain', {
             var mail = Auth.User.mail;
             console.log("mail");
             console.log(mail);
-            App.Visit.user(mail,function(response) {
-                var user = response[0].idUser;
-                //var num = date+"/"+user; 
-                /*console.log("num");
-                console.log(num);*/
+            
+            var panel=me.up('panel');
+            console.log("panel");
+            console.log(panel);
 
+            //me.setDisabled(true);
 
-                    /*var date = Ext.Date.format(LongDate, 'Y-m-d');
-                var num = user+date+01; 
-                console.log("num");
-                console.log(num);*/
-                var panel=me.up('panel');
-                console.log("panel");
-                console.log(panel);
+            var dataStore=App.get(me.up('panel'),"grid").getStore().data;
+            console.log("dataStore");
+            console.log(dataStore);
 
-                //me.setDisabled(true);
+            for (var i=0;i<dataStore.items.length;i++) {
+                if (dataStore.items[i].data.select)
+                        {
+                            var idOuvrage = dataStore.items[i].data.idOuvrage;
+                            console.log("idOuvrage");
+                            console.log(idOuvrage);
+                            console.log("user");
+                            console.log(mail);
+                            var tabVisits = [mail, date, idOuvrage]
+                            /**************** ici on récupère le mail du user + la date de la vis1te + le numero de l'ouvrage et on l'envoi au service ************/
+                            App.Visit.insert(tabVisits,function(response) {
 
-                var dataStore=App.get(me.up('panel'),"grid").getStore().data;
-                console.log("dataStore");
-                console.log(dataStore);
+                                //App.get('VAddNews').close();
+                                /*if (response === true)
+                                Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
+                                else
+                                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");*/
 
-                for (var i=0;i<dataStore.items.length;i++) {
-                    if (dataStore.items[i].data.select)
-                            {
-                                var idOuvrage = dataStore.items[i].data.idOuvrage;
-                                console.log("idOuvrage");
-                                console.log(idOuvrage);
-                                console.log("user");
-                                console.log(user);
-                                var tabVisits = [user, date, idOuvrage]
-                                /**************** ici on récupère le mail du user + la date de la vis1te + le numero de l'ouvrage et on l'envoi au service ************/
-                                App.Visit.insert(tabVisits,function(response) {
+                            })
+                        }
+            };
 
-                                    //App.get('VAddNews').close();
-                                    /*if (response === true)
-                                    Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
-                                    else
-                                    Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");*/
-
-                                })
-                            }
-                };
-
-               /* var panel=me.up('panel').up('panel').getStore();
-                console.log("panel+");
-                console.log(panel);*/
-                //var grid=me.up('panel').grid;
-                /*var gridvisit = grid.getStore();
+           /* var panel=me.up('panel').up('panel').getStore();
+            console.log("panel+");
+            console.log(panel);*/
+            //var grid=me.up('panel').grid;
+            /*var gridvisit = grid.getStore();
 
 
 
-                var grid=me.up('grid');
-                grid.getStore().insert(grid.getStore().data.items.length,{});*/
-                  Ext.Msg.alert('GOPRRO',"Add visite");
-                
-                
-                
-            });
+            var grid=me.up('grid');
+            grid.getStore().insert(grid.getStore().data.items.length,{});*/
+              Ext.Msg.alert('GOPRRO',"Add visite");
         
             
             
