@@ -72,7 +72,7 @@ Visits = {
 				if (!err) {            
                     console.log("result");
                     console.log(result);
-					cb(response);
+					cb(result);
 				} else {
                     console.log("err");
                     console.log(err);
