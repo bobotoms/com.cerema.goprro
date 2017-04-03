@@ -983,7 +983,7 @@ App.controller.define('CMain', {
             });
             if(store)
             {
-                App.get('VVisit combo#dateVisit').bindStore(store);
+                App.get('VVisit combo#dateVisitAdd').bindStore(store);
                 store.load();
             }
             
@@ -998,7 +998,9 @@ App.controller.define('CMain', {
         console.log("mail");
         console.log(mail);
         
-        App.Visits.selectVisitDate(mail,function(response) {
+        var choixDate = App.get('VZones combo#cboDepartements').getValue();
+        var tabDate = [mail, choixDate];
+        App.Visits.selectVisitDate(tabDate,function(response) {
             
         console.log("response");
         console.log(response);
@@ -1016,10 +1018,10 @@ App.controller.define('CMain', {
             });
             if(store)
             {
-                App.get('VAddVisit grid#gridVisit').bindStore(store);
+                App.get('VVisit grid#gridVisit').bindStore(store);
                 store.load();
             }
-            App.get('VAddVisit grid').show();
+            App.get('VVisit grid').show();
             
         });
     },
