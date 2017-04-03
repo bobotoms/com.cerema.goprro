@@ -984,7 +984,7 @@ App.controller.define('CMain', {
         console.log("response[i].dateVisiteOuvrage");
         console.log(response[i].dateVisiteOuvrage);
         console.log("response[i].dateVisiteOuvrage 2");
-        console.log(Ext.Date.format(response[i].dateVisiteOuvrage, 'Y-m-d'));
+        console.log(response[i].dateVisiteOuvrage.UTF(y,m,d));
                 data.push({
                     dateVisiteOuvrage:response[i].dateVisiteOuvrage
                 })
