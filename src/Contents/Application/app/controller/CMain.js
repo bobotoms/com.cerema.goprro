@@ -923,6 +923,8 @@ App.controller.define('CMain', {
         
         App.Visits.select(mail,function(response) {
             
+        console.log("response");
+        console.log(response);
             var data=[];
             for (var i=0;i<response.length;i++) {
                 data.push({
