@@ -53,11 +53,11 @@ Visits = {
         
 	insert: function(o,cb) {
         
-        var idUser = o['0'];
+        var mail = o['0'];
         var date = o['1'];
         var numOuvrage = o['2'];
-        console.log("idUser");
-        console.log(idUser);
+        console.log("mail");
+        console.log(mail);
         console.log("date");
         console.log(date);
         console.log("numOuvrage");
@@ -68,7 +68,7 @@ Visits = {
         ensuite on enregsitre dans la table viste_ouvrage l'ouvrage selectionné en lui attribuant le numero créé juste avant.
         enfin on affiche la table
         ***********************************/
-        Visit.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', '"+idUser+"', (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
+        Visit.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
 				if (!err) {
                     
                     console.log("idUser");
