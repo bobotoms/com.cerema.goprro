@@ -84,13 +84,13 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
-                xtype: 'column',
+                //xtype: 'column',
                 text: "Supprimer",
                 dataIndex: "del",
                 iconCls: "pencil",
             },
             {
-                xtype: 'column',
+                //xtype: 'column',
                 text: "Ajouter Commmentaire",
                 dataIndex: "addcom",
                 iconCls: "pencil",
