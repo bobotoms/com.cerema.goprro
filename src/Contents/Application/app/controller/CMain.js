@@ -939,7 +939,7 @@ App.controller.define('CMain', {
             });
             if(store)
             {
-                App.get('VAddVisit grid#gridVisit').bindStore(store);
+                App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                 store.load();
             }
             App.get('VAddVisit grid').show();
@@ -983,7 +983,7 @@ App.controller.define('CMain', {
             });
             if(store)
             {
-                App.get('VVisit combo#dateVisitAdd').bindStore(store);
+                App.get('VVisit combo#dateVisit').bindStore(store);
                 store.load();
             }
             
