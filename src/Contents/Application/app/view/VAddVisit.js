@@ -55,7 +55,7 @@ App.view.define('VAddVisit', {
         {
             xtype: "grid",
             //hidden: true,
-            itemId: "gridVisit",
+            itemId: "gridVisitAdd",
             width: "60%",
             columns: 
             [{
