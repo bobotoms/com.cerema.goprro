@@ -929,13 +929,13 @@ App.controller.define('CMain', {
             for (var i=0;i<response.length;i++) {
                 data.push({
                     nomOuvrage:response[i].nomOuvrage,
-                    idDepartement:response[i].idDepartement,
+                    nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
             };
             var store=App.store.create({
-                fields:["nomOuvrage","idDepartement","oa_x","oa_y"],data:data
+                fields:["nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
             });
             if(store)
             {
