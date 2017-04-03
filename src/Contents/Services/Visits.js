@@ -15,7 +15,7 @@ Visits = {
     }
     ,
     selectVisit: function(o,cb) {
- 		Visits.using('db').query("goprro","SELECT dateVisiteOuvrage FROM visite_ouvrages WHERE idUser = (select idUser from users where mail='"+o+"' GROUP BY dateVisiteOuvrage)",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT dateVisiteOuvrage FROM visite_ouvrages WHERE idUser = (select idUser from users where mail='"+o+"') GROUP BY dateVisiteOuvrage",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
