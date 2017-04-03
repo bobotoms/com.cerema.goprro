@@ -84,22 +84,16 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
-                xtype: 'checkcolumn',
+                xtype: 'column',
                 text: "Supprimer",
                 dataIndex: "del",
-                editor: {
-                    xtype: "checkbox",
-                    cls: 'x-grid-checkheader-editor'
-                }
+                iconCls: "pencil",
             },
             {
-                xtype: 'checkcolumn',
+                xtype: 'column',
                 text: "Ajouter Commmentaire",
                 dataIndex: "addcom",
-                editor: {
-                    xtype: "checkbox",
-                    cls: 'x-grid-checkheader-editor'
-                }
+                iconCls: "pencil",
             }],
             //store: App.store.create("App.Ouvrages.select",{autoLoad: true})
         }],
