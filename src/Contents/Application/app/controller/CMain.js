@@ -913,18 +913,18 @@ App.controller.define('CMain', {
     },
     /**/
     showAddVisit: function(p) {
-        console.og("showAddVisit");
+        console.log("showAddVisit");
         App.get('mainform panel#southpanel').collapse();
         hideForms();
         App.get("mainform panel#addVisit").show();
         
         var mail = Auth.User.mail;
-        console.og("mail");
-        console.og(mail);
+        console.log("mail");
+        console.log(mail);
         
         App.Visit.select(mail,function(response) {
-            console.og("response");
-            console.og(response);
+            console.log("response");
+            console.log(response);
             App.get('VAddVisit grid#gridVisit').bindStore(store);
             store.load();
         });
