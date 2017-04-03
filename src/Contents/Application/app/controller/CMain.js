@@ -1059,6 +1059,8 @@ App.controller.define('CMain', {
             for (var i=0;i<dataStore.items.length;i++) {
                 if (dataStore.items[i].data.select)
                         {
+                            console.log("dataStore.items[i].data");
+                            console.log(dataStore.items[i].data);
                             var idOuvrage = dataStore.items[i].data.idOuvrage;
                             console.log("idOuvrage");
                             console.log(idOuvrage);
