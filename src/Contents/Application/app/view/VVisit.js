@@ -22,14 +22,17 @@ App.view.define('VVisit', {
 
         tbar: [
         {
-                    xtype: "combo",
-                    itemId: "dateVisit",
-                    fieldLabel: "Date visite",
-                    padding: 5,
-                    displayField: "dateVisiteOuvrage",
-                    valueField: "dateVisiteOuvrage",
-                    editable: false,
-                    //store: App.store.create("goprro://departements",{autoLoad:true}),
+            
+            xtype: "combo",
+            format: 'd m Y',
+            dateFormat: 'c',
+            itemId: "dateVisit",
+            fieldLabel: "Date visite",
+            padding: 5,
+            displayField: "dateVisiteOuvrage",
+            valueField: "dateVisiteOuvrage",
+            editable: false,
+            //store: App.store.create("goprro://departements",{autoLoad:true}),
         }
         ],
 /*       bbar: [
