@@ -69,7 +69,7 @@ Visits = {
         enfin on affiche la table
         ***********************************/
         Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, (INSERT INTO visite_ouvrages (idFamille, nomOuvrage)) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (VALUES (select idFamille, nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
-       // Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, idFamille, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select idFamille, nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
+       // Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
 				if (!err) {            
                     console.log("result");
                     console.log(result);
