@@ -918,6 +918,7 @@ App.controller.define('CMain', {
         hideForms();
         App.get("mainform panel#addVisit").show();
         
+        //var mail = Auth.User.mail;
         var mail = Auth;
         console.log("mail");
         console.log(mail);
