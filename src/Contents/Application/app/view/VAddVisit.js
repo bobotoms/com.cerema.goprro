@@ -148,5 +148,5 @@ App.view.define('VAddVisit', {
             
             
         ],
-	}
+	}]
 });
