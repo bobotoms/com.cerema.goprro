@@ -162,6 +162,9 @@ App.controller.define('CMain', {
             "VRefs grid#T1": {
                 edit: "ref_grid_edit"
             },
+            "VVisit combo#dateVisit": {
+                select: "showVisitDate"
+            },
         });
 
         App.init('VMain',function(){
