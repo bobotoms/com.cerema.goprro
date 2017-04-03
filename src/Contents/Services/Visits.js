@@ -12,8 +12,23 @@ Visits = {
 					cb(err)			
 				};
         });       
-    },
+    }
+    ,
     selectVisit: function(o,cb) {
+ 		Visits.using('db').query("goprro","SELECT dateVisiteOuvrage FROM visite_ouvrages WHERE idUser = (select idUser from users where mail='"+o+"')",function(err,result){
+            if (!err) {
+                    console.log("result");
+                    console.log(result);
+					cb(result);			
+				} else {
+                    console.log("err");
+                    console.log(err);
+                    var err=false;
+					cb(err)			
+				};
+        });       
+    },
+    selectVisitDate: function(o,cb) {
  		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages left join familles on visite_ouvrages.idFamille=familles.idFamille left join types on types.idType=ouvrages.idType left join geologies on geologies.idGeologie=ouvrages.idGeologie left join situations on situations.idSituation=ouvrages.idSituation left join acces on acces.idAcces=ouvrages.idAcces left join departements on departements.idDepartement=ouvrages.idDepartement WHERE visite_ouvrages.date = "+o+")",function(err,result){
             if (!err) {
                     console.log("result");
