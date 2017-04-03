@@ -117,7 +117,7 @@ App.view.define('VAddVisit', {
             width: "40%",
             border: false,
             split: true
-        }    
-    
-    ]
+        }
+        ]
+    }
 });
