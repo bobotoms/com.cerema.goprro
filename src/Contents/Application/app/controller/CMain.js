@@ -969,9 +969,6 @@ App.controller.define('CMain', {
             results='<ul class="timeline">'+tpl.join('')+'</ul>';
             App.get('mainform panel#timeline').update(results);
         });
-Auth.login(function(){
-            console.log(Auth.User);
-        });
         var tab1=Ext.create("Ext.ux.ribbon.Tab", {
             title: 'Général',
             closable: false,
