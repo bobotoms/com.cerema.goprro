@@ -45,7 +45,64 @@ Visits = {
 					cb(err)			
 				};
         });       
-    }
+    },
+        
+	insert: function(o,cb) {
+        
+        var idUser = o['0'];
+        var date = o['1'];
+        var numOuvrage = o['2'];
+        console.log("idUser");
+        console.log(idUser);
+        console.log("date");
+        console.log(date);
+        console.log("numOuvrage");
+        console.log(numOuvrage);
+                
+        /**************** ici on récupère le numero de user + la date de la vis1te 
+        on vérife dans la table visite si un numèro similaire existe déja si non on rajoute au bout 01 si oui on récupère le numèro le plus élevé et on rajoute 1.
+        ensuite on enregsitre dans la table viste_ouvrage l'ouvrage selectionné en lui attribuant le numero créé juste avant.
+        enfin on affiche la table
+        ***********************************/
+        Visit.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', '"+idUser+"', (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
+				if (!err) {
+                    
+                    console.log("idUser");
+                    console.log(idUser);
+					//cb(response);
+				} else {
+                    console.log("err");
+                    console.log(err);
+                    var err=false;
+					//cb(err)			
+				};
+			});
+		/*AddVisit.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
+				if (!err) {
+                    var response=true;
+					cb(response);			
+				} else {
+                    var err=false;
+					cb(err)			
+				};
+			});*/
+        /*
+        select: function(o,cb) {
+            var db=Visit.using('db');
+            db.model("goprro",db.sql("SELECT * FROM axes"),function(error,response){
+                console.log(response);
+                response.metaData.fields.push({
+                    name: "select",
+                    type: "boolean"
+                });
+                for (var i=0;i<response.data.length;i++) {
+                    response.data[i].select="0";
+                }
+                cb(response);
+            });       
+        }
+        */
+	}
  /*		var db=Ouvrages.using('db');
 		db.model("goprro",db.sql("OAGetAll"),function(error,response){
             console.log('******* USER MAIL *****');
