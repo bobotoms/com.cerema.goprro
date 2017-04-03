@@ -106,7 +106,7 @@ App.view.define('VAddVisit', {
         height: 430,
 
         items: [
-            {
+        {
             id: "TestMyGMapPanel",
                 //id: "MyGMapPanel",
             itemId: "map",
