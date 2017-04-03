@@ -5,11 +5,11 @@ Ouvrages = {
         db.model("goprro",db.sql("OAGetAll"),cb);
     },
     select: function(o,cb) {
-        
+        /*
         console.log("user mail");
         var mail = Auth.User.mail;
         console.log(mail);
-        
+        */
  		var db=Ouvrages.using('db');
 		db.model("goprro",db.sql("OAGetAll"),function(error,response){
             console.log(response);
