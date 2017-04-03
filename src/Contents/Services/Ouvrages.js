@@ -6,8 +6,8 @@ Ouvrages = {
     },
     select: function(o,cb) {
         
-        var mail = Auth.User.mail;
         console.log("user mail");
+        var mail = Auth.User.mail;
         console.log(mail);
         
  		var db=Ouvrages.using('db');
