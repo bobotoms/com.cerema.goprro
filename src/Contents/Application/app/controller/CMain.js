@@ -942,6 +942,7 @@ App.controller.define('CMain', {
                 App.get('VAddVisit grid#gridVisit').bindStore(store);
                 store.load();
             }
+            App.get('VAddVisit grid').show();
             
         });
         
