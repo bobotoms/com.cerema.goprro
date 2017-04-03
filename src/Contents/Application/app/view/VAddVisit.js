@@ -90,7 +90,7 @@ App.view.define('VAddVisit', {
                             cls: 'x-grid-checkheader-editor'
                         }
                     }],
-                    store: App.store.create("App.Ouvrages.select",{autoLoad: true})
+                    //store: App.store.create("App.Ouvrages.select",{autoLoad: true})
                 }/*,                                 
                 {
 
