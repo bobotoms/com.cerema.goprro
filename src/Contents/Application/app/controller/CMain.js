@@ -916,7 +916,7 @@ App.controller.define('CMain', {
         App.get('mainform panel#southpanel').collapse();
         hideForms();
         App.get("mainform panel#addVisit").show();
-        
+     /*   
 		//hideForms();
         TMap.clearMarkers();
 		//App.get("VAddVisit panel#map").show();
@@ -924,7 +924,7 @@ App.controller.define('CMain', {
 			for (var i=0;i<r.data.length;i++) {
 				TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
 			}
-		}); 
+		}); */
     },
     showVisit: function(p) {
         App.get('mainform panel#southpanel').collapse();
