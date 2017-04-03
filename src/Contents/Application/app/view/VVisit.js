@@ -23,7 +23,7 @@ App.view.define('VVisit', {
         tbar: [
         {
                     xtype: "combo",
-                    itemId: "dateVisite",
+                    itemId: "dateVisit",
                     fieldLabel: "Date visite",
                     padding: 5,
                     displayField: "dateVisiteOuvrage",
