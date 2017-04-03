@@ -995,13 +995,13 @@ App.controller.define('CMain', {
     showVisitDate: function(p) {
          console.log("showVisit");
         App.get('mainform panel#southpanel').collapse();
-        hideForms();
+        //hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
         console.log("mail");
         console.log(mail);
         
-        var choixDate = App.get('VZones combo#cboDepartements').getValue();
+        var choixDate = App.get('VVisit combo#dateVisit').getValue();
         var tabDate = [mail, choixDate];
         App.Visits.selectVisitDate(tabDate,function(response) {
             
