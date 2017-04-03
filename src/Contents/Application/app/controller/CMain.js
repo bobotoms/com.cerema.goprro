@@ -982,7 +982,7 @@ App.controller.define('CMain', {
             var data=[];
             for (var i=0;i<response.length;i++) {
                 data.push({
-                    dateVisiteOuvrage:Ext.Date.format(response[i].dateVisiteOuvrage, 'Y-m-d');
+                    dateVisiteOuvrage:response[i].dateVisiteOuvrage
                 })
             };
             var store=App.store.create({
