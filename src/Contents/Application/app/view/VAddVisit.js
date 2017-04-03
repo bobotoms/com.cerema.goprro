@@ -8,13 +8,14 @@ App.view.define('VAddVisit', {
     
 	items: [
         {
-            region: "center",
+            region: "east",
+                    width: "60%",
             padding: 5,
             border: false,
             itemId: "ref_zones",
             layout: "fit",
             split:true,
-            width: 820,
+            //width: 820,
             height: 430,
 
 
