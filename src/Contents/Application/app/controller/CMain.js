@@ -972,21 +972,12 @@ App.controller.define('CMain', {
         hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
-        console.log("mail");
-        console.log(mail);
         
         App.Visits.selectVisit(mail,function(response) {
-            
-        console.log("response");
-        console.log(response);
             var data=[];
             for (var i=0;i<response.length;i++) {
                 var dateLong = Ext.Date.parse(response[i].dateVisiteOuvrage,"c");
                 var date = Ext.Date.format(dateLong, 'Y-m-d');
-        console.log("response[i].dateVisiteOuvrage");
-        console.log(response[i].dateVisiteOuvrage);
-        console.log("response[i].dateVisiteOuvrage 2");
-        console.log(date);
                 data.push({
                     dateVisiteOuvrage:date
                 })
@@ -1014,10 +1005,7 @@ App.controller.define('CMain', {
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
         console.log("choixDate");
         console.log(choixDate);
-        var date = Ext.Date.format(choixDate, 'Y-m-d');
-        console.log("date");
-        console.log(date);
-        var tabDate = [mail, date];
+        var tabDate = [mail, choixDate];
         App.Visits.selectVisitDate(tabDate,function(response) {
             
         console.log("response");
