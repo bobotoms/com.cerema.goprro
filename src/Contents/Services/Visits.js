@@ -68,7 +68,7 @@ Visits = {
         ensuite on enregsitre dans la table viste_ouvrage l'ouvrage selectionné en lui attribuant le numero créé juste avant.
         enfin on affiche la table
         ***********************************/
-        Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, (INSERT INTO visite_ouvrages (idFamille, nomOuvrage) VALUES (select idFamille, nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"')) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
+        Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, (INSERT INTO visite_ouvrages (idFamille, nomOuvrage)) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (VALUES (select idFamille, nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
        // Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, idFamille, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select idFamille, nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
 				if (!err) {            
                     console.log("result");
