@@ -920,7 +920,7 @@ App.controller.define('CMain', {
         var mail = Auth.User.mail;
         console.log("mail");
         console.log(mail);
-        
+        /*
         App.Visits.select(mail,function(response) {
             
         console.log("response");
@@ -943,7 +943,7 @@ App.controller.define('CMain', {
                 store.load();
             }
             
-        });
+        });*/
         
         
         
