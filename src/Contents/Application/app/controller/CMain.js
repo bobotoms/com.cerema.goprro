@@ -985,7 +985,40 @@ App.controller.define('CMain', {
                 align: 'stretch'
             },
             items: [
-
+                {
+                title: 'Préparation',
+                iconAlign: 'top',
+                layout: {
+                    type: 'table', 
+                    columns: 4
+                },
+                items: [{
+                        text: 'Ajouter',
+                        iconCls: "new",
+                        scale: 'large',
+                        iconAlign: 'top',
+                        rowspan: 3,
+                        handler: p.showAddVisit
+                    },
+                    {
+                        text: 'Visite',
+                        iconCls: "pencil",
+                        scale: 'large',
+                        iconAlign: 'top',
+                        rowspan: 3,
+                        handler: p.showVisit
+                    }/*,
+                    {
+                        text: 'Visite',
+                        iconCls: "new",
+                        scale: 'large',
+                        iconAlign: 'top',
+                        rowspan: 3,
+                        handler: p.showVisit
+                    }*/
+                ]
+            }
+            
             ]
         });
 
