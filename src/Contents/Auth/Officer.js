@@ -10,8 +10,8 @@ Officer = {
                         lastname: result.data[0].nom,
                         firstname: result.data[0].prenom,
                         uid: result.data[0].kage,
-                        mail: mail
-                       // profiles: Officer.getProfile(mail.split('@')[0])
+                        mail: mail,
+                        profiles: Officer.getProfile(mail.split('@')[0])
                     };
                     cb(response);
                 } else cb(err);
@@ -39,8 +39,8 @@ Officer = {
                         lastname: result.data[0].nom,
                         firstname: result.data[0].prenom,
                         uid: result.data[0].kage,
-                        mail: mail
-                       // profiles: Officer.getProfile(mail.split('@')[0])
+                        mail: mail,
+                        profiles: Officer.getProfile(mail.split('@')[0])
                     };
                     cb(response);
                 } else cb(err);
