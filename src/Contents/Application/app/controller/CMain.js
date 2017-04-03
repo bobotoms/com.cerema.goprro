@@ -63,7 +63,7 @@ App.controller.define('CMain', {
         "References.VZones",
         "VAddVisit",
         "VVisit",
-        "VVisitWork",
+        "VVisitWork"
     ],
 
     models: [
