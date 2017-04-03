@@ -911,6 +911,26 @@ App.controller.define('CMain', {
             }));
         }
     },
+    /**/
+    showAddVisit: function(p) {
+        App.get('mainform panel#southpanel').collapse();
+        hideForms();
+        App.get("mainform panel#addVisit").show();
+        
+		//hideForms();
+        TMap.clearMarkers();
+		//App.get("VAddVisit panel#map").show();
+		App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
+			for (var i=0;i<r.data.length;i++) {
+				TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
+			}
+		}); 
+    },
+    showVisit: function(p) {
+        App.get('mainform panel#southpanel').collapse();
+        hideForms();
+        App.get("mainform panel#visit").show(); 
+    },
     onLoad: function(p)
     {
         Auth.login(function(){
