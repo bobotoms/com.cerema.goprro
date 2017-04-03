@@ -923,7 +923,7 @@ App.controller.define('CMain', {
         console.log("mail");
         console.log(mail);
         
-        App.Visit.select(mail,function(response) {
+        App.Visits.select(mail,function(response) {
             console.log("response");
             console.log(response);
             App.get('VAddVisit grid#gridVisit').bindStore(store);
