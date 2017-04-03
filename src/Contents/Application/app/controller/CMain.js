@@ -960,9 +960,38 @@ App.controller.define('CMain', {
 		}); */
     },
     showVisit: function(p) {
+         console.log("showAddVisit");
         App.get('mainform panel#southpanel').collapse();
         hideForms();
-        App.get("mainform panel#visit").show(); 
+        App.get("mainform panel#visit").show();
+        var mail = Auth.User.mail;
+        console.log("mail");
+        console.log(mail);
+        
+        App.Visits.selectVisit(mail,function(response) {
+            
+        console.log("response");
+        console.log(response);
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                data.push({
+                    nomOuvrage:response[i].nomOuvrage,
+                    nomDepartement:response[i].nomDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y
+                })
+            };
+            var store=App.store.create({
+                fields:["nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+            });
+            if(store)
+            {
+                App.get('VAddVisit grid#gridVisit').bindStore(store);
+                store.load();
+            }
+            App.get('VAddVisit grid').show();
+            
+        });
     },
     onLoad: function(p)
     {
