@@ -129,7 +129,17 @@ App.view.define('VMain', {
                     xtype: "VRefs",
                     itemId: "setup_refs",
                     hidden: true
-                }
+                },
+				{
+					xtype: "VAddVisit",
+					itemId: "addVisit",
+					hidden: true
+				},
+				{
+					xtype: "VVisit",
+					itemId: "visit",
+					hidden: true
+				}
             ]
         }
     ]
