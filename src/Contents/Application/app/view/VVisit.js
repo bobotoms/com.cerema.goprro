@@ -32,13 +32,13 @@ App.view.define('VVisit', {
                     //store: App.store.create("goprro://departements",{autoLoad:true}),
         }
         ],
-       bbar: [
+/*       bbar: [
             '->', {
 
             text: '<b>Enregistrer</b>',
             itemId: "VisitRecord"
         }
-        ],
+        ],*/
 
         items: [
             /*{
