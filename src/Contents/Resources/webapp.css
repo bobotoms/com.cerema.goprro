@@ -68,6 +68,10 @@
     background-image: url(webapp/pencil.png)
 }
 
+.delgrid {
+    background-image: url(webapp/delgrid.png)
+}
+
 .update {
     background-image: url(webapp/update.png)
 }
