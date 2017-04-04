@@ -81,7 +81,7 @@ App.view.define('VVisit', {
                 itemId: "delOuvrageVisit", 
                 items: [
                 {
-                    iconCls: "pencil",
+                    iconCls: "delgrid",
                 }]
             },
             {
