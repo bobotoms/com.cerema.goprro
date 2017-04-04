@@ -50,12 +50,12 @@ App.view.define('VVisit', {
             width: "60%",
             columns: 
             [
-            {
+/*            {
                 itemId: "idVisiteOuvrage",
                 hidden: true,
                 flex: 1,
                 dataIndex: "idVisiteOuvrage"
-            },{
+            },*/{
                 text: "Ouvrage disponible",
                 itemId: "nomOuvrage",
                 flex: 1,
