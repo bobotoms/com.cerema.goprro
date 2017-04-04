@@ -168,6 +168,9 @@ App.controller.define('CMain', {
 			"VAddVisit button#VisitRecord": {
 				click: "add_visit"	
 			},
+            "VAddVisit grid#gridO": {
+                itemdblclick: "add_visit_select"
+            },
         });
 
         App.init('VMain',function(){
@@ -1103,6 +1106,14 @@ App.controller.define('CMain', {
         }
     
 	},
+    add_visit_select: function(me,store) {
+        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
+        //hideForms();
+        App.get('mainform panel#southpanel').collapse();
+        var form=App.get("VAddVisit panel#Saisie");
+        form.idOuvrage=store.data.idOuvrage;
+        form.show();
+    },
     onLoad: function(p)
     {
         Auth.login(function(){
