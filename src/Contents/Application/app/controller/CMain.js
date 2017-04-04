@@ -216,6 +216,8 @@ App.controller.define('CMain', {
         /**/console.log("VSaisie_onShow");
         /**/console.log("me");
         /**/console.log(me);
+        /**/console.log("xtype");
+        /**/console.log(xtype);
         
         me.element={};
         App.reset(me);
