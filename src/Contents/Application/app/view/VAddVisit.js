@@ -26,7 +26,6 @@ App.view.define('VAddVisit', {
             itemId: "date",
             xtype: "datefield",
             format: 'd m Y',
-            //altFormats: 'd,m,Y|d-m-Y',
             dateFormat: 'c',
             width: 200
         }
@@ -40,18 +39,6 @@ App.view.define('VAddVisit', {
         ],
 
         items: [
-            /*{
-            id: "TestMyGMapPanel",
-                //id: "MyGMapPanel",
-            itemId: "map",
-            html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
-            padding: 0,
-            flex: 1,
-            border: false,
-            width: "40%",
-            border: false,
-            split: true
-        },*/
         {
             xtype: "grid",
             //hidden: true,
@@ -95,7 +82,6 @@ App.view.define('VAddVisit', {
                     cls: 'x-grid-checkheader-editor'
                 }
             }],
-            //store: App.store.create("App.Ouvrages.select",{autoLoad: true})
         }],
 	},
     
