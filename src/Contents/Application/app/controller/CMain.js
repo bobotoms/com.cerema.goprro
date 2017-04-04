@@ -1102,7 +1102,9 @@ App.controller.define('CMain', {
         console.log(store);
         console.log("store.data.idVisiteOuvrage");
         console.log(store.data);
-        
+        var test = me.up('panel');
+        console.log("test");
+        console.log(test);
         /*
         App.Visits.dellOuvrageVisit(tabDate,function(response) {
             if (response === true)
