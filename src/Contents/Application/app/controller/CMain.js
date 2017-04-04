@@ -174,10 +174,10 @@ App.controller.define('CMain', {
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
-            },/*
+            },
             "VVisit actioncolumn#delOuvrageVisit": {
                 click: "dell_ouvrage_visit"
-            },*/
+            },
         });
 
         App.init('VMain',function(){
