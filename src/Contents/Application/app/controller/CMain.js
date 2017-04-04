@@ -171,6 +171,9 @@ App.controller.define('CMain', {
             "VAddVisit grid#gridVisitAdd": {
                 itemdblclick: "add_visit_select"
             },
+            "VVisitWork": {
+                show: "VSaisie_onShow"
+            },
         });
 
         App.init('VMain',function(){
@@ -211,6 +214,9 @@ App.controller.define('CMain', {
     },
     VSaisie_onShow: function(me) {
         /**/console.log("VSaisie_onShow");
+        /**/console.log("me");
+        /**/console.log(me);
+        
         me.element={};
         App.reset(me);
         App.get(me,"treepanel").getRootNode().removeAll();
