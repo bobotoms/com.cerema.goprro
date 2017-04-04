@@ -174,10 +174,10 @@ App.controller.define('CMain', {
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
-            },
+            },/*
             "VVisit button#delOuvrageVisit": {
                 itemclick: "dell_ouvrage_visit"
-            },
+            },*/
         });
 
         App.init('VMain',function(){
@@ -1056,7 +1056,7 @@ App.controller.define('CMain', {
                 })
             };
             var store=App.store.create({
-                fields:["idVisiteOuvrage, nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
             });
             if(store)
             {
