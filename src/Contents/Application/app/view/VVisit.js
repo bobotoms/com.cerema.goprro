@@ -32,7 +32,6 @@ App.view.define('VVisit', {
             displayField: "dateVisiteOuvrage",
             valueField: "dateVisiteOuvrage",
             editable: false,
-            //store: App.store.create("goprro://departements",{autoLoad:true}),
         }
         ],
 /*       bbar: [
@@ -44,18 +43,6 @@ App.view.define('VVisit', {
         ],*/
 
         items: [
-            /*{
-            id: "TestMyGMapPanel",
-                //id: "MyGMapPanel",
-            itemId: "map",
-            html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
-            padding: 0,
-            flex: 1,
-            border: false,
-            width: "40%",
-            border: false,
-            split: true
-        },*/
         {
             xtype: "grid",
             hidden: true,
@@ -63,12 +50,12 @@ App.view.define('VVisit', {
             width: "60%",
             columns: 
             [
-            /*{
+            {
                 itemId: "idVisiteOuvrage",
                 hidden: true,
                 flex: 1,
                 dataIndex: "idVisiteOuvrage"
-            },*/{
+            },{
                 text: "Ouvrage disponible",
                 itemId: "nomOuvrage",
                 flex: 1,
