@@ -64,10 +64,10 @@ App.view.define('VVisit', {
             columns: 
             [
             {
-                itemId: "idOuvrage",
+                itemId: "idVisiteOuvrage",
                 hidden: true,
                 flex: 1,
-                dataIndex: "idOuvrage"
+                dataIndex: "idVisiteOuvrage"
             },{
                 text: "Ouvrage disponible",
                 itemId: "nomOuvrage",
