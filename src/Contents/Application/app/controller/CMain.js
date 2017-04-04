@@ -1100,13 +1100,12 @@ App.controller.define('CMain', {
             
         }
         else{
-            
-              console.log("else");
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
         }
     
 	},
     add_visit_select: function(me,store) {
+              console.log("add_visit_select");
         //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         //hideForms();
         //App.view.create('VWindow',{modal:true}).show().center();
