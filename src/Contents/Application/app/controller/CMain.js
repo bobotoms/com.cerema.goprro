@@ -1099,6 +1099,11 @@ App.controller.define('CMain', {
         var grid=me.up('grid');
         console.log("grid");
         console.log(grid);
+        for (var i=0;i<grid.getStore().data.items.length;i++) {
+            console.log("grid.getStore().data.items[i].data");
+            console.log(grid.getStore().data.items[i].data);
+            
+        }
         /*
         for (var i=0;i<grid.getStore().data.items.length;i++) {
         }
