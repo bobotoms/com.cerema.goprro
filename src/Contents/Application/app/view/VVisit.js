@@ -79,14 +79,18 @@ App.view.define('VVisit', {
             {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
-                items: [
+                listeners: {
+                  click: function() {
+                     Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
+                  }
+               /* items: [
                 {
                     iconCls: "delgrid",
                     listeners: {
                       click: function() {
                          Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
                       }
-               }
+               }*/
                 }]
             },
             {
