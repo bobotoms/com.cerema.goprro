@@ -1094,7 +1094,20 @@ App.controller.define('CMain', {
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
-    dell_ouvrage_visit: function(me,store) {
+    dell_ouvrage_visit: function(p, record)
+    {
+        console.log("grid");
+        console.log(record);
+        App.view.create('VShowDoc', {
+            modal: true,
+            title: record.data.filename,
+            pid: record.data.docId
+        }).show().center();
+    },
+    
+    
+    
+    /*(me,store) {
         
         var grid=me.up('grid');
         console.log("grid");
