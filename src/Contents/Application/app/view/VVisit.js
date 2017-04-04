@@ -82,6 +82,11 @@ App.view.define('VVisit', {
                 items: [
                 {
                     iconCls: "delgrid",
+                    listeners: {
+                      click: function() {
+                         Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
+                      }
+               }
                 }]
             },
             {
