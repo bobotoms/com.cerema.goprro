@@ -86,7 +86,7 @@ App.view.define('VVisit', {
             {
                 //xtype: 'column',
                 text: "Supprimer",
-                dataIndex: "delcom",
+                dataIndex: "delOuvrageVisit",
                 iconCls: "pencil",
             },
             {
