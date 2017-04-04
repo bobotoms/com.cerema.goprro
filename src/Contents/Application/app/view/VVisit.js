@@ -79,22 +79,19 @@ App.view.define('VVisit', {
             {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
-                /*handler: function () {
-                        me.fireEvent('idVisiteOuvrage'); // fire event from mainToolbar, not from button
-                    },*/
                 items: [
                 {
-                    //text: "supprimer",
                     iconCls: "pencil",
                 }]
             },
             {
-                //xtype: 'column',
-                text: "Ajouter Commmentaire",
-                itemId: "addcom",
-                iconCls: "pencil",
+                xtype: 'actioncolumn',
+                itemId: "addcom", 
+                items: [
+                {
+                    iconCls: "pencil",
+                }]
             }],
-            //store: App.store.create("App.Ouvrages.select",{autoLoad: true})
         }],
 	},
     
@@ -108,8 +105,6 @@ App.view.define('VVisit', {
         itemId: "Rref_zones",
         layout: "fit",
         split:true,
-        //width: 820,
-        height: 430,
 
         items: [
         {
