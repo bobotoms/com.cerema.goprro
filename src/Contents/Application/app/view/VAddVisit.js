@@ -92,7 +92,7 @@ App.view.define('VAddVisit', {
         width: "40%",
         padding: 5,
         border: false,
-        itemId: "addVisitMap",
+        itemId: "CPanel",
         layout: "fit",
         split:true,
         //width: 820,
