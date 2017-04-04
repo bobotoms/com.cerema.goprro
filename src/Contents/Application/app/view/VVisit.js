@@ -62,7 +62,13 @@ App.view.define('VVisit', {
             itemId: "gridVisit",
             width: "60%",
             columns: 
-            [{
+            [
+            {
+                itemId: "idOuvrage",
+                hidden: true,
+                flex: 1,
+                dataIndex: "idOuvrage"
+            },{
                 text: "Ouvrage disponible",
                 itemId: "nomOuvrage",
                 flex: 1,
