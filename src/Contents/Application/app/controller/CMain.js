@@ -210,6 +210,7 @@ App.controller.define('CMain', {
         };
     },
     VSaisie_onShow: function(me) {
+        /**/console.log("VSaisie_onShow");
         me.element={};
         App.reset(me);
         App.get(me,"treepanel").getRootNode().removeAll();
@@ -282,6 +283,7 @@ App.controller.define('CMain', {
         };
     },
     gridO_select: function(me,store) {
+        /**/console.log("gridO_select");
         //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         hideForms();
         App.get('mainform panel#southpanel').collapse();
@@ -533,6 +535,7 @@ App.controller.define('CMain', {
         App.get('VSaisie combo#type').getStore().load();
     },
     showSaisie: function() {
+        /**/console.log("showSaisie");
         //App.view.create('VSaisie',{modal: true}).show().center();
         hideForms();
         var form=App.get("mainform panel#Saisie");
@@ -624,15 +627,11 @@ App.controller.define('CMain', {
 
         var choix = App.get('VRefs combo#cboRefs').getValue();
         var store=App.store.create('goprro://'+choix);
-        console.log("store 1");
-        console.log(store);
         var ref = choix.charAt(0).toUpperCase() + choix.substring(1).toLowerCase();
 
         App.get('V'+ref+' grid#T1').bindStore(store);
         store.load();
 
-        console.log("store");
-        console.log(store);
         switch (choix) {
             case "axes":
                 console.log('axes');
@@ -1107,13 +1106,32 @@ App.controller.define('CMain', {
     add_visit_select: function(me,store) {
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
-        console.log(store.data.idOuvrage);        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
+        console.log(store.data.idOuvrage);
+        
+        
+        
+        
+        
+        hideForms();
+        var form=App.get("mainform window#Work");
+        form.idOuvrage=null;
+        var cbo=App.getAll(form,'combo');
+        for (var i=0;i<cbo.length;i++)	cbo[i].setDisabled(false);
+        form.show();
+        
+        
+        
+        
+        
+        
+        
+        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         //hideForms();
         //App.view.create('VWindow',{modal:true}).show().center();
-        App.get('mainform panel#southpanel').collapse();
+        /*App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
-        form.show();
+        form.show();*/
     },
     onLoad: function(p)
     {
