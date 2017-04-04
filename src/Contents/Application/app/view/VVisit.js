@@ -77,10 +77,13 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
-                xtype: 'button',
-                itemId: "delOuvrageVisit",
-				//text: "supprimer",
-                iconCls: "pencil",
+                xtype: 'actioncolumn',
+                items: [
+                {
+                    itemId: "delOuvrageVisit",
+                    //text: "supprimer",
+                    iconCls: "pencil",
+                }]
             },
             {
                 //xtype: 'column',
