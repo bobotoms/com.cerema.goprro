@@ -1048,7 +1048,7 @@ App.controller.define('CMain', {
             var data=[];
             for (var i=0;i<response.length;i++) {
                 data.push({
-                    idOuvrage:response[i].idOuvrage,
+                    idVisiteOuvrage:response[i].idVisiteOuvrage,
                     nomOuvrage:response[i].nomOuvrage,
                     nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
@@ -1056,7 +1056,7 @@ App.controller.define('CMain', {
                 })
             };
             var store=App.store.create({
-                fields:["idOuvrage, nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                fields:["idVisiteOuvrage, nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
             });
             if(store)
             {
