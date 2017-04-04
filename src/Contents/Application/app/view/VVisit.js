@@ -83,7 +83,8 @@ App.view.define('VVisit', {
                 listeners: {
                   click: function() {
                      // var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
-                      var test  = Ext.getCmp('VVisit grid#idVisiteOuvrage');
+                      //var test  = Ext.getCmp('VVisit grid#idVisiteOuvrage');
+                      var test  = App.get('VVisit grid#idVisiteOuvrage');
                       console.log("test");
                      Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+test);	
                   }
