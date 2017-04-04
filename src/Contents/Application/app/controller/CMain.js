@@ -175,8 +175,8 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VSaisie_onShow"
             },
-            "VVisit actioncolumn#delOuvrageVisit": {
-                dblclick: "dell_ouvrage_visit"
+            "VVisit grid#delOuvrageVisit": {
+                itemclick: "dell_ouvrage_visit"
             },
         });
 
