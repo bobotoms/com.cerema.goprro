@@ -1062,66 +1062,23 @@ App.controller.define('CMain', {
     add_visit: function(me, store) {
         
         var LongDate = App.get('VAddVisit datefield#date').getValue();
-            console.log("LongDate");
-            console.log(LongDate);
         var date = Ext.Date.format(LongDate, 'Y-m-d');
-            console.log("date");
-            console.log(date);
         if(LongDate != null)
         {
-            console.log("avant mail");
             var mail = Auth.User.mail;
-            console.log("mail");
-            console.log(mail);
-            
             var panel=me.up('panel');
-            console.log("panel");
-            console.log(panel);
-
-            //me.setDisabled(true);
-
             var dataStore=App.get(me.up('panel'),"grid").getStore().data;
-            console.log("dataStore");
-            console.log(dataStore);
 
             for (var i=0;i<dataStore.items.length;i++) {
                 if (dataStore.items[i].data.select)
                         {
-                            console.log("dataStore.items[i].data");
-                            console.log(dataStore.items[i].data);
                             var idOuvrage = dataStore.items[i].data.idOuvrage;
-                            console.log("idOuvrage");
-                            console.log(idOuvrage);
-                            console.log("user");
-                            console.log(mail);
                             var tabVisits = [mail, date, idOuvrage]
-                            /**************** ici on récupère le mail du user + la date de la vis1te + le numero de l'ouvrage et on l'envoi au service ************/
                             App.Visits.insert(tabVisits,function(response) {
-
-                                //App.get('VAddNews').close();
-                                /*if (response === true)
-                                Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
-                                else
-                                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");*/
-
                             })
                         }
             };
-
-           /* var panel=me.up('panel').up('panel').getStore();
-            console.log("panel+");
-            console.log(panel);*/
-            //var grid=me.up('panel').grid;
-            /*var gridvisit = grid.getStore();
-
-
-
-            var grid=me.up('grid');
-            grid.getStore().insert(grid.getStore().data.items.length,{});*/
               Ext.Msg.alert('GOPRRO',"Add visite");
-        
-            
-            
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
@@ -1137,12 +1094,12 @@ App.controller.define('CMain', {
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
-    dell_ouvrage_visit: function(me,store) {
+    dell_ouvrage_visit: function(me,_store) {
         console.log("dell_ouvrage_visit");
         console.log("me");
         console.log(me);
-        console.log("store");
-        console.log(store);
+        console.log("_store");
+        console.log(_store);
         console.log("store.data.idVisiteOuvrage");
         console.log(store.data.idVisiteOuvrage);
         
