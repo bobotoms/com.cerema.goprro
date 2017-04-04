@@ -78,7 +78,7 @@ App.view.define('VVisit', {
             },
             {
                 xtype: 'actioncolumn',
-                    itemId: "delOuvrageVisit",
+                itemId: "delOuvrageVisit",
                 items: [
                 {
                     //text: "supprimer",
