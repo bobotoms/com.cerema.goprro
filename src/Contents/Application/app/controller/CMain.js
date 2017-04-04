@@ -168,7 +168,7 @@ App.controller.define('CMain', {
 			"VAddVisit button#VisitRecord": {
 				click: "add_visit"	
 			},
-            "VAddVisit grid#gridO": {
+            "VAddVisit grid#gridVisitAdd": {
                 itemdblclick: "add_visit_select"
             },
         });
