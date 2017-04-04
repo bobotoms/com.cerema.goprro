@@ -1144,7 +1144,7 @@ App.controller.define('CMain', {
             }
             
         });*/
-    },
+    //},
     onLoad: function(p)
     {
         Auth.login(function(){
