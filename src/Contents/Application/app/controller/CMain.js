@@ -963,6 +963,15 @@ App.controller.define('CMain', {
                 store.load();
             }
             App.get('VAddVisit grid').show();
+            //hideForms();
+            TMap.clearMarkers();
+            //App.get("VAddVisit panel#addVisitMap").show();
+            App.get("VAddVisit panel#map").show();
+            App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
+                for (var i=0;i<r.data.length;i++) {
+                    TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
+                }
+            });
             
         });
         
@@ -978,7 +987,7 @@ App.controller.define('CMain', {
             }
         });*/
         
-        
+      /*  
 		//hideForms();
         TMap.clearMarkers();
 		//App.get("VAddVisit panel#addVisitMap").show();
@@ -987,7 +996,7 @@ App.controller.define('CMain', {
 			for (var i=0;i<r.data.length;i++) {
 				TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
 			}
-		});
+		});*/
     },
     showVisit: function(p) {
          console.log("showVisit");
