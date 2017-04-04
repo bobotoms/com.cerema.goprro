@@ -3,8 +3,8 @@ App.view.define('VVisitWork', {
     extend: "Ext.window.Window",
 	alias : 'widget.VVisitWork',
 	border: false,
-	width: 500,
-	height: 500,
+	width: 800,
+	height: 600,
 	closable: true,
 	
 	layout: "border",
