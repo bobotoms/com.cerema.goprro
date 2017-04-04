@@ -1139,6 +1139,8 @@ App.controller.define('CMain', {
     },
     dell_ouvrage_visit: function(me,store) {
         console.log("dell_ouvrage_visit");
+        console.log("me");
+        console.log(me);
         console.log("store");
         console.log(store);
         console.log("store.data.idOuvrage");
