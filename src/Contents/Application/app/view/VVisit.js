@@ -77,9 +77,13 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
+                xtype: 'checkcolumn',
+                text: "Sélectionner",
+                dataIndex: "select",
+                cls: 'x-grid-checkheader-editor'/*
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
-                iconCls: "delgrid",
+                iconCls: "delgrid",*/
                 /*listeners: {
                   click: function() {
                      // var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
