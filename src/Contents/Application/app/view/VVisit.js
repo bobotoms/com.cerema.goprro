@@ -79,6 +79,7 @@ App.view.define('VVisit', {
             {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
+                iconCls: "delgrid",
                 listeners: {
                   click: function() {
                      Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
