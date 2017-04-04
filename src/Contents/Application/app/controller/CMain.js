@@ -1144,7 +1144,7 @@ App.controller.define('CMain', {
         var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-    },
+    },/*
     dell_ouvrage_visit: function(me,store) {
         console.log("dell_ouvrage_visit");
         console.log("store");
@@ -1165,7 +1165,7 @@ App.controller.define('CMain', {
             }
             
         });*/
-    },
+    },*/
     onLoad: function(p)
     {
         Auth.login(function(){
