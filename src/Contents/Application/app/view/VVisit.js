@@ -77,16 +77,15 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
-                //xtype: 'button',
-                text: "supp ",
-                text: "Supprimer",
-                dataIndex: "delOuvrageVisit",
+                xtype: 'button',
+                itemId: "delOuvrageVisit",
+				//text: "supprimer",
                 iconCls: "pencil",
             },
             {
                 //xtype: 'column',
                 text: "Ajouter Commmentaire",
-                dataIndex: "addcom",
+                itemId: "addcom",
                 iconCls: "pencil",
             }],
             //store: App.store.create("App.Ouvrages.select",{autoLoad: true})
