@@ -217,7 +217,7 @@ App.controller.define('CMain', {
         /**/console.log("me");
         /**/console.log(me);
         /**/console.log("xtype");
-        /**/console.log(xtype);
+        /**/console.log(me.xtype);
         
         me.element={};
         App.reset(me);
