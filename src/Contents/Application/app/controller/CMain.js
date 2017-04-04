@@ -1109,8 +1109,9 @@ App.controller.define('CMain', {
     add_visit_select: function(me,store) {
         //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         //hideForms();
+        //App.view.create('VWindow',{modal:true}).show().center();
         App.get('mainform panel#southpanel').collapse();
-        var form=App.get("VAddVisit panel#Saisie");
+        var form=App.get("mainform panel#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
