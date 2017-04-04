@@ -77,11 +77,10 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
- //               xtype: 'checkcolumn',
+ /*               xtype: 'checkcolumn',
                 text: "Sélectionner",
                 dataIndex: "select",
-                cls: 'x-grid-checkheader-editor',
-                iconCls: "delgrid"
+                cls: 'x-grid-checkheader-editor',*/
 /*                renderer: function(value,a,b,c){
 
                                 var items=App.store.familles.data.items;
@@ -89,10 +88,10 @@ App.view.define('VVisit', {
                                 for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
                                 return iconCls: "delgrid";
 
-                            },*//*
+                            },*/
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
-                iconCls: "delgrid",*/
+                iconCls: "delgrid",
                 /*listeners: {
                   click: function() {
                      // var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
