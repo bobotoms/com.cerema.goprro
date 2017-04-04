@@ -82,7 +82,7 @@ App.view.define('VVisit', {
                 iconCls: "delgrid",
                 listeners: {
                   click: function() {
-                      var test  = Ext.getCmp('idVisiteOuvrage').getValue();
+                      var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
                      Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+test);	
                   }
                 }
