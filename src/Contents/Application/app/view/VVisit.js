@@ -77,7 +77,7 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
-                xtype: 'checkcolumn',
+ //               xtype: 'checkcolumn',
                 text: "Sélectionner",
                 dataIndex: "select",
                 cls: 'x-grid-checkheader-editor',
