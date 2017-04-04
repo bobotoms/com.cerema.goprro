@@ -80,7 +80,7 @@ App.view.define('VVisit', {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
                 iconCls: "delgrid",
-                listeners: {
+                /*listeners: {
                   click: function() {
                      // var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
                       //var test  = Ext.getCmp('VVisit grid#idVisiteOuvrage');
@@ -89,7 +89,7 @@ App.view.define('VVisit', {
                       console.log(test);
                      Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+test);	
                   }
-                }
+                }*/
                /* items: [
                 {
                     iconCls: "delgrid",
