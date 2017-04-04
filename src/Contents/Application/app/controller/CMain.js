@@ -1143,8 +1143,8 @@ App.controller.define('CMain', {
         console.log(me);
         console.log("store");
         console.log(store);
-        console.log("store.data.idOuvrage");
-        console.log(store.data.idOuvrage);
+        console.log("store.data.idVisiteOuvrage");
+        console.log(store.data.idVisiteOuvrage);
         
         /*
         App.Visits.dellOuvrageVisit(tabDate,function(response) {
