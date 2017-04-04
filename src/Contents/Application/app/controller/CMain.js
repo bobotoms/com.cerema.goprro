@@ -1115,38 +1115,10 @@ App.controller.define('CMain', {
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
-        
-        
-        
-        /**/console.log("gridO_select");
-        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
-        //hideForms();
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-        
-        /*
-        hideForms();
-        var form=App.get("mainform window#Work");
-        form.idOuvrage=null;
-        var cbo=App.getAll(form,'combo');
-        for (var i=0;i<cbo.length;i++)	cbo[i].setDisabled(false);
-        form.show();
-        */
-        
-        
-        
-        
-        
-        
-        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
-        //hideForms();
-        //App.view.create('VWindow',{modal:true}).show().center();
-        /*App.get('mainform panel#southpanel').collapse();
-        var form=App.get("mainform window#Work");
-        form.idOuvrage=store.data.idOuvrage;
-        form.show();*/
     },
     onLoad: function(p)
     {
