@@ -218,7 +218,7 @@ App.controller.define('CMain', {
         /**/console.log(me);
         /**/console.log("xtype");
         /**/console.log(me.xtype);
-        
+        var xtype = me.xtype;
         me.element={};
         App.reset(me);
         App.get(me,"treepanel").getRootNode().removeAll();
@@ -253,12 +253,12 @@ App.controller.define('CMain', {
                 // On continue par les éléments
                 App.DB.get('goprro://oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idOuvrage='+me.idOuvrage,function(r){
 
-                    var id= App.get('VSaisie combo#dpt').getValue();
+                    var id= App.get(xtype+' combo#dpt').getValue();
                     if (id) {
                         var record = App.get('VSaisie combo#dpt').findRecordByValue(id).get('codeDepartement');
                         console.log(record);
                         var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+record);
-                        App.get('VSaisie combo#ville').bindStore(store);
+                        App.get(xtype+' combo#ville').bindStore(store);
                         store.load();
                     };
 
