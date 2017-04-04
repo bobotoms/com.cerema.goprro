@@ -1105,7 +1105,9 @@ App.controller.define('CMain', {
     
 	},
     add_visit_select: function(me,store) {
-              console.log("add_visit_select");
+        console.log("add_visit_select");
+        console.log("store");
+        console.log(store);
         //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         //hideForms();
         //App.view.create('VWindow',{modal:true}).show().center();
