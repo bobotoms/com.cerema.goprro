@@ -1107,12 +1107,11 @@ App.controller.define('CMain', {
     add_visit_select: function(me,store) {
         console.log("add_visit_select");
         console.log("store");
-        console.log(store);
-        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
+        console.log(store);        //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         //hideForms();
         //App.view.create('VWindow',{modal:true}).show().center();
         App.get('mainform panel#southpanel').collapse();
-        var form=App.get("mainform panel#Work");
+        var form=App.get("VVisitWork panel#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
