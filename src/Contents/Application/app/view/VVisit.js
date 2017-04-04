@@ -77,7 +77,8 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
-                xtype: 'button',
+                //xtype: 'button',
+                text: "supp ",
                 text: "Supprimer",
                 dataIndex: "delOuvrageVisit",
                 iconCls: "pencil",
