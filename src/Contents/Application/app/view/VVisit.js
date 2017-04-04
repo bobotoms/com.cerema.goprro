@@ -80,7 +80,16 @@ App.view.define('VVisit', {
                 xtype: 'checkcolumn',
                 text: "Sélectionner",
                 dataIndex: "select",
-                cls: 'x-grid-checkheader-editor'/*
+                cls: 'x-grid-checkheader-editor',
+                iconCls: "delgrid"
+/*                renderer: function(value,a,b,c){
+
+                                var items=App.store.familles.data.items;
+                                var Items={};
+                                for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
+                                return iconCls: "delgrid";
+
+                            },*//*
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
                 iconCls: "delgrid",*/
