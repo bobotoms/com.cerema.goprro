@@ -1095,6 +1095,14 @@ App.controller.define('CMain', {
         form.show();
     },
     dell_ouvrage_visit: function(me,store) {
+        
+        var grid=me.up('grid');
+        console.log("grid");
+        console.log(grid);
+        /*
+        for (var i=0;i<grid.getStore().data.items.length;i++) {
+        }
+            
         console.log("dell_ouvrage_visit");
         console.log("me");
         console.log(me);
@@ -1104,7 +1112,7 @@ App.controller.define('CMain', {
         console.log(store.data);
         var test = me.up('panel');
         console.log("test");
-        console.log(test);
+        console.log(test);*/
         /*
         App.Visits.dellOuvrageVisit(tabDate,function(response) {
             if (response === true)
