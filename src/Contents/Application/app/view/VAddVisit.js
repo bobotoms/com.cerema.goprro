@@ -95,8 +95,6 @@ App.view.define('VAddVisit', {
         itemId: "addVisitMap",
         layout: "fit",
         split:true,
-        //width: 820,
-        height: 430,
 
         items: [
         {
