@@ -1094,12 +1094,12 @@ App.controller.define('CMain', {
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
-    dell_ouvrage_visit: function(me,_store) {
+    dell_ouvrage_visit: function(me,store) {
         console.log("dell_ouvrage_visit");
         console.log("me");
         console.log(me);
-        console.log("_store");
-        console.log(_store);
+        console.log("store");
+        console.log(store);
         console.log("store.data.idVisiteOuvrage");
         console.log(store.data.idVisiteOuvrage);
         
