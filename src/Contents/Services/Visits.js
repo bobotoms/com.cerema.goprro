@@ -71,16 +71,13 @@ Visits = {
         },
     dellOuvrageVisit: function(o,cb) {
  		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = "+o,function(err,result){
-            if (!err) {
-                    console.log("result");
-                    console.log(result);
-					cb(result);			
-				} else {
-                    console.log("err");
-                    console.log(err);
-                    var err=false;
-					cb(err)			
-				};
+             if (!err) {
+                var response=true;
+                cb(response);
+            } else {
+                var err=false;
+                cb(err)
+            };
         });       
     }
 };
