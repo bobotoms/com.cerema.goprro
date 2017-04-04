@@ -91,8 +91,8 @@ App.view.define('VVisit', {
                       click: function() {
                          Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
                       }
-               }*/
-                }]
+               }
+                }]*/
             },
             {
                 xtype: 'actioncolumn',
