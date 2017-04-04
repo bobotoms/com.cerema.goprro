@@ -56,24 +56,7 @@ Visits = {
         var mail = o['0'];
         var date = o['1'];
         var numOuvrage = o['2'];
-        console.log("mail");
-        console.log(mail);
-        console.log("date");
-        console.log(date);
-        console.log("numOuvrage");
-        console.log(numOuvrage);
-                
-        /**************** ici on récupère le numero de user + la date de la vis1te 
-        on vérife dans la table visite si un numèro similaire existe déja si non on rajoute au bout 01 si oui on récupère le numèro le plus élevé et on rajoute 1.
-        ensuite on enregsitre dans la table viste_ouvrage l'ouvrage selectionné en lui attribuant le numero créé juste avant.
-        enfin on affiche la table
-        ***********************************/
-        /***********************************
-       INSERT INTO table1 (colonne1, colonne2, colonne3)
-       SELECT "valeur1",colonne2, colonne3 FROM table2
-        ***********************************/
         Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, idFamille, idType, idDepartement, idZone, idGeologie, idSituation, idAcces, nomOuvrage, etiquetteOuvrage, idGestionnaire, idMaitreOuvrage, idFournisseur, idPoseur, datePose, PRDebut, PRFin, PRSens, oa_x, oa_y, oa_z, materiel, modif, creation, actif, idVille, idAxe, longueur, hauteur, surface, id_gestionnaire, id_fournisseur, id_poseur, coupure_route, acces, materiels, txt_fournisseur, txt_poseur, txt_gestionnaire, _BLOB) SELECT '"+date+"', (select idUser from users where mail='"+mail+"'), idFamille, idType, idDepartement, idZone, idGeologie, idSituation, idAcces, nomOuvrage, etiquetteOuvrage, idGestionnaire, idMaitreOuvrage, idFournisseur, idPoseur, datePose, PRDebut, PRFin, PRSens, oa_x, oa_y, oa_z, materiel, modif, creation, actif, idVille, idAxe, longueur, hauteur, surface, id_gestionnaire, id_fournisseur, id_poseur, coupure_route, acces, materiels, txt_fournisseur, txt_poseur, txt_gestionnaire, _BLOB FROM ouvrages WHERE idOuvrage='"+numOuvrage+"'",function(err,result){
-       // Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, nomOuvrage) VALUES ('"+date+"', (select idUser from users where mail='"+mail+"'), (select nomOuvrage from ouvrages where idOuvrage='"+numOuvrage+"'))",function(err,result){
 				if (!err) {            
                     console.log("result");
                     console.log(result);
@@ -86,46 +69,6 @@ Visits = {
 				};
 			});
         }
-		/*AddVisit.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
-				if (!err) {
-                    var response=true;
-					cb(response);			
-				} else {
-                    var err=false;
-					cb(err)			
-				};
-			});*/
-        /*
-        select: function(o,cb) {
-            var db=Visit.using('db');
-            db.model("goprro",db.sql("SELECT * FROM axes"),function(error,response){
-                console.log(response);
-                response.metaData.fields.push({
-                    name: "select",
-                    type: "boolean"
-                });
-                for (var i=0;i<response.data.length;i++) {
-                    response.data[i].select="0";
-                }
-                cb(response);
-            });       
-        }
-        */
-	
- /*		var db=Ouvrages.using('db');
-		db.model("goprro",db.sql("OAGetAll"),function(error,response){
-            console.log('******* USER MAIL *****');
-            console.log(response);
-            response.metaData.fields.push({
-                name: "select",
-                type: "boolean"
-            });
-            for (var i=0;i<response.data.length;i++) {
-                response.data[i].select="0";
-            }
-            cb(response);
-        });       
-    }*/
 };
 
 module.exports = Visits;
