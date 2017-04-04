@@ -7,7 +7,7 @@ App.view.define('VAddVisit', {
 	layout: "border",
     
 	items: [
-    {
+    /*{
         region: "west",
         width: "60%",
         padding: 5,
@@ -83,13 +83,13 @@ App.view.define('VAddVisit', {
                 }
             }],
         }],
-	},
+	},*/
     
     
     
     {
-        region: "east",
-        width: "40%",
+        region: "center",
+        //width: "40%",
         padding: 5,
         border: false,
         itemId: "addVisitMap",
