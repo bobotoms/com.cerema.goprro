@@ -1111,7 +1111,7 @@ App.controller.define('CMain', {
         //hideForms();
         //App.view.create('VWindow',{modal:true}).show().center();
         App.get('mainform panel#southpanel').collapse();
-        var form=App.get("VVisitWork panel#Work");
+        var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
