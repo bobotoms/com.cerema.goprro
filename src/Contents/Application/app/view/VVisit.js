@@ -78,9 +78,9 @@ App.view.define('VVisit', {
             },
             {
                 xtype: 'actioncolumn',
+                    itemId: "delOuvrageVisit",
                 items: [
                 {
-                    itemId: "delOuvrageVisit",
                     //text: "supprimer",
                     iconCls: "pencil",
                 }]
