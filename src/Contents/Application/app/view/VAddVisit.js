@@ -88,8 +88,8 @@ App.view.define('VAddVisit', {
     
     
     {
-        region: "center",
-        //width: "40%",
+        region: "west",
+        width: "40%",
         padding: 5,
         border: false,
         itemId: "addVisitMap",
