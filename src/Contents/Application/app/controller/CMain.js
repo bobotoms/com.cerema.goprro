@@ -174,10 +174,10 @@ App.controller.define('CMain', {
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
-            },/*
-            "VVisit button#delOuvrageVisit": {
+            },
+            "VVisit actioncolumn#delOuvrageVisit": {
                 itemclick: "dell_ouvrage_visit"
-            },*/
+            },
         });
 
         App.init('VMain',function(){
@@ -1048,7 +1048,7 @@ App.controller.define('CMain', {
             var data=[];
             for (var i=0;i<response.length;i++) {
                 data.push({
-                    //idVisiteOuvrage:response[i].idVisiteOuvrage,
+                    idVisiteOuvrage:response[i].idVisiteOuvrage,
                     nomOuvrage:response[i].nomOuvrage,
                     nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
@@ -1056,8 +1056,7 @@ App.controller.define('CMain', {
                 })
             };
             var store=App.store.create({
-               // fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
-                fields:["nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
             });
             if(store)
             {
@@ -1145,7 +1144,7 @@ App.controller.define('CMain', {
         var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-    },/*
+    },
     dell_ouvrage_visit: function(me,store) {
         console.log("dell_ouvrage_visit");
         console.log("store");
@@ -1166,7 +1165,7 @@ App.controller.define('CMain', {
             }
             
         });*/
-/*    },*/
+    },
     onLoad: function(p)
     {
         Auth.login(function(){
