@@ -175,6 +175,9 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VSaisie_onShow"
             },
+            "VVisit grid#delOuvrageVisit": {
+                itemclick: "dell_ouvrage_visit"
+            },
         });
 
         App.init('VMain',function(){
@@ -1140,6 +1143,27 @@ App.controller.define('CMain', {
         var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
+    },
+    dell_ouvrage_visit: function(me,store) {
+        console.log("dell_ouvrage_visit");
+        console.log("store");
+        console.log(store);
+        console.log("store.data.idOuvrage");
+        console.log(store.data.idOuvrage);
+        
+        /*
+        App.Visits.dellOuvrageVisit(tabDate,function(response) {
+            if (response === true)
+            {
+                Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
+                
+            }
+            else
+            {
+                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+            }
+            
+        });*/
     },
     onLoad: function(p)
     {
