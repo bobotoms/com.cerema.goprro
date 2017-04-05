@@ -95,6 +95,9 @@ App.view.define('VVisit', {
                 iconCls: "delgrid",
                 listeners : {
                     click: function() {
+                        var id0 = Ext.getCmp("idtest");
+                      console.log("id0");
+                      console.log(id0);
                         var id1 = Ext.getCmp(idtest);
                       console.log("id1");
                       console.log(id1);
@@ -104,7 +107,7 @@ App.view.define('VVisit', {
                         var id3 = Ext.getCmp("#idVisiteOuvrage");
                       console.log("id3");
                       console.log(id3);
-                        var id4 = Ext.getCmp(idVisiteOuvrage);
+                        var id4 = Ext.getCmp("idVisiteOuvrage");
                       console.log("id4");
                       console.log(id4);
               
