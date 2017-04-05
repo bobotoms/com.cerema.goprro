@@ -1257,7 +1257,7 @@ App.controller.define('CMain', {
         Auth.login(function(){
             console.log(Auth.User);
         });
-        App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+        //App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
         // load wiki
         var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         var tpl=[];
