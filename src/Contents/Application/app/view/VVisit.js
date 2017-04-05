@@ -96,7 +96,7 @@ App.view.define('VVisit', {
      //           sm: new Ext.grid.RowSelectionModel({
                   singleSelect: true,
                   listeners: {
-                     rowselect: function(sm,index,record) {
+                     click: function(sm,index,record) {
                       console.log("record.data");
                       console.log(record.data);
                             /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
