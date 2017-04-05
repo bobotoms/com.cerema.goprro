@@ -95,7 +95,7 @@ App.view.define('VAddVisit', {
         itemId: "addVisitMap",
         layout: "fit",
         split:true,
-        tbar: [
+/*        tbar: [
         {
             fieldLabel: "Date visite",
             itemId: "date",
@@ -111,7 +111,7 @@ App.view.define('VAddVisit', {
             text: '<b>Enregistrer</b>',
             itemId: "VisitRecord"
         }
-        ],
+        ],*/
         items: [
         {
             id: "TestMyGMapPanel",
@@ -123,7 +123,19 @@ App.view.define('VAddVisit', {
             border: false,
             width: "40%",
             border: false,
-            split: true
+            split: true,
+            columns: 
+            [
+           
+            {
+                xtype: 'checkcolumn',
+                text: "Ajouter",
+                dataIndex: "select",
+                editor: {
+                    xtype: "checkbox",
+                    cls: 'x-grid-checkheader-editor'
+                }
+            }],
         }
         ]
     }]
