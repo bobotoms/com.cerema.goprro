@@ -69,8 +69,8 @@ Visits = {
 				};
 			});
         },
-    dellOuvrageVisit: function(o,cb) {
- 		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = 1",function(err,result){
+    delOuvrageVisit: function(o,cb) {
+ 		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = "+o,function(err,result){
              if (!err) {
                 var response=true;
                 cb(response);
