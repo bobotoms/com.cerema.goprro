@@ -108,7 +108,6 @@ App.view.define('VVisit', {
                             /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
                             /*je t ai mis une alerte ... */
                             /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
-                            Ext.Msg.alert('t as choisis');
                              }
                          }
        //               }),
