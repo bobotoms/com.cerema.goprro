@@ -1,5 +1,3 @@
-
-        App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
 App.view.define('VAddVisit', {
 
     extend: 'Ext.Panel',
