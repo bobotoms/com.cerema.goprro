@@ -25,7 +25,7 @@ function GMap(l,m)
         marker.setMap(TMap.map);
         marker.addListener('click', function(x) {
             hideForms();
-            //var form=App.get("mainform panel#Saisie");
+            var form=App.get("mainform panel#Saisie");
             //var form=App.get("VAddVisit panel#gridVisitAdd");
             form.idOuvrage=this.itemId;
             form.show();
