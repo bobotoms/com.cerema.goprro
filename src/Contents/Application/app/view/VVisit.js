@@ -87,9 +87,18 @@ App.view.define('VVisit', {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         console.log("del id viste ouvrage");
                         console.log(idVisiteOuvrage);
-                        /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
-                        /*je t ai mis une alerte ... */
-                        /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
+                        App.Visits.delOuvrageVisit(tabDate,function(response) {
+                            if (response === true)
+                            {
+                                Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
+
+                            }
+                            else
+                            {
+                                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+                            }
+            
+                        });
                         
                     }
                 }
