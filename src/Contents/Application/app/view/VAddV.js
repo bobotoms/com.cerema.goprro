@@ -1,7 +1,7 @@
-App.view.define('VAddVisit', {
+App.view.define('VAddV', {
 
     extend: 'Ext.Panel',
-	alias : 'widget.VAddVisit',
+	alias : 'widget.VAddV',
 	border: false,
 	
 	layout: "border",
