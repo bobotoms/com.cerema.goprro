@@ -16,7 +16,7 @@ App.view.define('VAddV', {
                 {
                     id: "MyGMapPanel2",
                     itemId: "mapV",
-                    html: '<div id="TMapPanel" style="width:100%;height:100%"></div>',
+                    html: '<div id="TMapPanel2" style="width:100%;height:100%"></div>',
                     padding: 0,
                     flex: 1,
                     border: false,
