@@ -96,8 +96,9 @@ App.view.define('VVisit', {
                                 //App.get('mainform panel#timeline').update(results);
                                 //grid.store.load();
                                 //grid.load();
-                                grid.update();
-                                //store.load();
+                                        //grid.update();
+                                        //store.load();
+                                        store.update();
                                 //this.store.load();
                                 //this.grid.store.load();
                                 Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
