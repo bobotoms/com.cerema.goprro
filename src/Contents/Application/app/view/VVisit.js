@@ -51,6 +51,7 @@ App.view.define('VVisit', {
             columns: 
             [
             {
+                id: "idtest",
                 itemId: "idVisiteOuvrage",
                 hidden: true,
                 flex: 1,
@@ -92,6 +93,12 @@ App.view.define('VVisit', {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
                 iconCls: "delgrid",
+                listeners : {
+                    click: function() {
+                        var id = Ext.getCmp(idtest);
+                        Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+test);	
+                    }
+                }
                 /*listeners: {
                   click: function() {
                      // var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
