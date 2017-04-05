@@ -116,35 +116,16 @@ App.view.define('VAddVisit', {
         {
             id: "TestMyGMapPanel",
                 //id: "MyGMapPanel",
-            //hidden: true,
-/*            itemId: "map",
+            hidden: false,
+            itemId: "map",
             html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
             padding: 0,
             flex: 1,
             border: false,
             width: "40%",
             border: false,
-            split: true,*/
-            items: [
-        {
-             xtype: "grid",
-            //hidden: true,
-            itemId: "gridVisitAdd",
-            width: "60%",
-            columns: 
-            [
-           
-            {
-                xtype: 'checkcolumn',
-                text: "Ajouter",
-                dataIndex: "select",
-                editor: {
-                    xtype: "checkbox",
-                    cls: 'x-grid-checkheader-editor'
-                }
-            }],
+            split: true,
             
-            }],
         }
         ]
     }]
