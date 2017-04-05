@@ -597,7 +597,7 @@ App.controller.define('CMain', {
         hideForms();
         TMap.clearMarkers();
         App.get("VAddV panel#CPanel").show();
-        console.log("VAddV panel#mapV");
+        console.log("VAddV #mapV");
         console.log(App.get("VAddV panel#mapV"));
         App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
             for (var i=0;i<r.data.length;i++) {
