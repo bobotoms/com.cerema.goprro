@@ -125,6 +125,8 @@ App.view.define('VAddVisit', {
             width: "40%",
             border: false,
             split: true,*/
+            items: [
+        {
              xtype: "grid",
             //hidden: true,
             itemId: "gridVisitAdd",
@@ -140,6 +142,8 @@ App.view.define('VAddVisit', {
                     xtype: "checkbox",
                     cls: 'x-grid-checkheader-editor'
                 }
+            }],
+            
             }],
         }
         ]
