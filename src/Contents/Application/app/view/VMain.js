@@ -77,7 +77,7 @@ App.view.define('VMain', {
             itemId: "CPanel",
             items: [
                 {
-                    //id: "MyGMapPanel",
+                    id: "MyGMapPanel",
                     itemId: "map",
                     html: '<div id="TMapPanel" style="width:100%;height:100%"></div>',
                     padding: 0,
