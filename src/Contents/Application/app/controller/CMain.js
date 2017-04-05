@@ -65,7 +65,8 @@ App.controller.define('CMain', {
         "References.VZones",
         "VAddVisit",
         "VVisit",
-        "VVisitWork"
+        "VVisitWork",
+        "VAddV"
     ],
 
     models: [
@@ -580,6 +581,18 @@ App.controller.define('CMain', {
         hideForms();
         TMap.clearMarkers();
         App.get("mainform panel#map").show();
+        App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
+            for (var i=0;i<r.data.length;i++) {
+                TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
+            }
+        });
+    },
+    showMapV: function(p)
+    {
+        console.log("showMap");
+        hideForms();
+        TMap.clearMarkers();
+        App.get("VAddV panel#map").show();
         App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
             for (var i=0;i<r.data.length;i++) {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
@@ -1323,7 +1336,7 @@ App.controller.define('CMain', {
                         scale: 'large',
                         iconAlign: 'top',
                         rowspan: 3,
-                        handler: p.showAddVisit
+                        handler: p.showMapV
                     },
                     {
                         text: 'Visite',
