@@ -90,8 +90,6 @@ App.view.define('VAddVisit', {
     {
         region: "west",
         width: "40%",
-        padding: 5,
-        border: false,
         itemId: "addVisitMap",
         layout: "fit",
         split:true,
@@ -116,13 +114,12 @@ App.view.define('VAddVisit', {
         {
             id: "TestMyGMapPanel",
                 //id: "MyGMapPanel",
-            hidden: false,
             itemId: "map",
             html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
             padding: 0,
             flex: 1,
             border: false,
-            width: "40%",
+            width: "100%",
             border: false,
             split: true,
             
