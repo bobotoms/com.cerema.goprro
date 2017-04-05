@@ -85,7 +85,7 @@ App.view.define('VVisit', {
                 listeners: {
                     click: function(sm,index,record) {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                        console.log("id viste ouvrage");
+                        console.log("del id viste ouvrage");
                         console.log(idVisiteOuvrage);
                         /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
                         /*je t ai mis une alerte ... */
@@ -98,10 +98,19 @@ App.view.define('VVisit', {
             {
                 xtype: 'actioncolumn',
                 itemId: "addcom", 
-                items: [
-                {
-                    iconCls: "pencil",
-                }]
+                iconCls: "pencil",
+                singleSelect: true,
+                listeners: {
+                    click: function(sm,index,record) {
+                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                        console.log("modif id viste ouvrage");
+                        console.log(idVisiteOuvrage);
+                        /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
+                        /*je t ai mis une alerte ... */
+                        /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
+                        
+                    }
+                }
             }],
         }],
 	},
