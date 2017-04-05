@@ -25,8 +25,8 @@ function GMap(l,m)
         marker.setMap(TMap.map);
         marker.addListener('click', function(x) {
             hideForms();
-            //var form=App.get("mainform panel#Saisie");
-            var form=App.get("VAddVisit panel#Saisie");
+            var form=App.get("mainform panel#Saisie");
+            //var form=App.get("VAddVisit panel#Saisie");
             //var form=App.get("VAddVisit panel#gridVisitAdd");
             form.idOuvrage=this.itemId;
             form.show();
@@ -1257,7 +1257,7 @@ App.controller.define('CMain', {
         Auth.login(function(){
             console.log(Auth.User);
         });
-        //App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+        App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
         // load wiki
         var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         var tpl=[];
