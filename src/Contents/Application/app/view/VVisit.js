@@ -97,8 +97,9 @@ App.view.define('VVisit', {
                                 //grid.store.load();
                                 //grid.load();
                                         //grid.update();
+                                        grid.getStore().update();
                                         //store.load();
-                                        store.update();
+                                //store.update();
                                 //this.store.load();
                                 //this.grid.store.load();
                                 Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
