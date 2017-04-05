@@ -96,7 +96,7 @@ App.view.define('VVisit', {
                 listeners : {
                     click: function() {
                         var id = Ext.getCmp(idtest);
-                        Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+test);	
+                        Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+id);	
                     }
                 }
                 /*listeners: {
