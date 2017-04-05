@@ -93,7 +93,7 @@ App.view.define('VVisit', {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
                 iconCls: "delgrid",
-                sm: new Ext.grid.RowSelectionModel({
+     //           sm: new Ext.grid.RowSelectionModel({
                   singleSelect: true,
                   listeners: {
                      rowselect: function(sm,index,record) {
@@ -103,7 +103,7 @@ App.view.define('VVisit', {
                             Ext.Msg.alert('t as choisis',record.data.Nom);
                              }
                          }
-                      }),
+       //               }),
     /*            listeners : {
                     click: function() {
                         var id0 = Ext.getCmp("idtest");
