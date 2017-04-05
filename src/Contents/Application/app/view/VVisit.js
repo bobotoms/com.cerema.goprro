@@ -98,7 +98,22 @@ App.view.define('VVisit', {
                         var id0 = Ext.getCmp("idtest");
                       console.log("id0");
                       console.log(id0);
-                        var id1 = Ext.getCmp(idtest);
+                        var id1 = Ext.getCmp("idtest").value;
+                      console.log("id1");
+                      console.log(id1);
+                        var id2 = Ext.getCmp("idtest").value();
+                      console.log("id2");
+                      console.log(id2);
+                        var id3 = Ext.getCmp("idtest").val;
+                      console.log("id3");
+                      console.log(id3);
+                        var id4 = Ext.getCmp("idtest").val();
+                      console.log("id4");
+                      console.log(id4);
+                        var id5 = Ext.getCmp("idtest").getValue();
+                      console.log("id5");
+                      console.log(id5);
+       /*                 var id1 = Ext.getCmp(idtest);
                       console.log("id1");
                       console.log(id1);
                         var id2 = Ext.getCmp("#idtest");
@@ -109,7 +124,7 @@ App.view.define('VVisit', {
                       console.log(id3);
                         var id4 = Ext.getCmp("idVisiteOuvrage");
                       console.log("id4");
-                      console.log(id4);
+                      console.log(id4);*/
               
                         Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
                     }
