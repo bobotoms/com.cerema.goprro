@@ -115,6 +115,7 @@ App.view.define('VAddVisit', {
             //id: "TestMyGMapPanel",
             id: "MyGMapPanel",
             itemId: "map",
+            hidden: false,
             html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
             padding: 0,
             flex: 1,
