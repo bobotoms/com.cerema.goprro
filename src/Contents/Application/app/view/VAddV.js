@@ -1,6 +1,6 @@
 App.view.define('VAddV', {
 
-     extend: 'Ext.Panel',
+    extend: 'Ext.Panel',
     alias : 'widget.VAddV',
     border: false,
 
