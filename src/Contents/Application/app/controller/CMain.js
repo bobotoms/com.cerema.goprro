@@ -970,7 +970,7 @@ App.controller.define('CMain', {
         console.log("avant map");
             
             
-            
+ /*           
             
             
             
@@ -1034,7 +1034,7 @@ App.controller.define('CMain', {
                 }
             });
             
-        console.log("apres map");
+        console.log("apres map");           */
             
         });
         
