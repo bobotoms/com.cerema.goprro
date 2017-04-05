@@ -1005,7 +1005,7 @@ App.controller.define('CMain', {
         marker.setMap(TMap.map);
         marker.addListener('click', function(x) {
             hideForms();
-            var form=App.get("mainform panel#Saisie");
+            var form=App.get("VAddVisit panel#addVisitMap");
             form.idOuvrage=this.itemId;
             form.show();
         });
