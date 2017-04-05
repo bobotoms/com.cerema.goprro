@@ -573,6 +573,7 @@ App.controller.define('CMain', {
     },
     hideForms: function()
     {
+        //var form=App.get('mainform');
         var form=App.get('VAddV');
         for (var i=0;i<form.items.length;i++) form.items[i].remove();
     },
