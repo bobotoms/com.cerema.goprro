@@ -583,6 +583,8 @@ App.controller.define('CMain', {
         hideForms();
         TMap.clearMarkers();
         App.get("mainform panel#map").show();
+        console.log("mainform panel#map");
+        console.log(App.get("mainform panel#map"));
         App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
             for (var i=0;i<r.data.length;i++) {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
@@ -595,6 +597,8 @@ App.controller.define('CMain', {
         hideForms();
         TMap.clearMarkers();
         App.get("VAddV panel#mapV").show();
+        console.log("VAddV panel#mapV");
+        console.log(App.get("VAddV panel#mapV"));
         App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
             for (var i=0;i<r.data.length;i++) {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
