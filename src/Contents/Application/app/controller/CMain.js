@@ -592,7 +592,7 @@ App.controller.define('CMain', {
         console.log("showMapV");
         hideForms();
         TMap.clearMarkers();
-        App.get("mainform panel#map").show();
+        App.get("VAddV panel#map").show();
         App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
             for (var i=0;i<r.data.length;i++) {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
