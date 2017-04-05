@@ -103,6 +103,8 @@ App.view.define('VVisit', {
                       console.log(index);
                       console.log("record");
                       console.log(record);
+                      console.log("sm");
+                      console.log(sm.store.data.items[record]);
                             /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
                             /*je t ai mis une alerte ... */
                             /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
