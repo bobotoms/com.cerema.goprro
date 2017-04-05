@@ -14,7 +14,7 @@ function GMap(l,m)
         mapTypeId: google.maps.MapTypeId.MAP
     });
     google.maps.event.trigger(TMap.map, 'resize');
-    TMap.markers=[];
+    TMap.markers=[];/*
     TMap.setMarker=function(l,m,title,idOuvrage) {
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
@@ -33,7 +33,7 @@ function GMap(l,m)
         });
         TMap.markers.push(marker);
         return marker;
-    };
+    };*/
     TMap.clearMarkers=function() {
         for (var i = 0; i < TMap.markers.length; i++) {
             TMap.markers[i].setMap(null);
