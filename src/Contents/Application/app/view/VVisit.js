@@ -96,6 +96,7 @@ App.view.define('VVisit', {
                                 //App.get('mainform panel#timeline').update(results);
                                 //grid.store.load();
                                 //grid.load();
+                                grid.reload();
                                         //grid.update();
                                         //grid.getStore().update();
                                         //grid.store.update();
