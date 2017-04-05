@@ -11,7 +11,7 @@ App.view.define('VAddV', {
             region: "center",
             split:true,
             layout:"fit",
-            itemId: "CPanel",
+            itemId: "CPanel2",
             items: [
                 {
                     id: "MyGMapPanel2",
