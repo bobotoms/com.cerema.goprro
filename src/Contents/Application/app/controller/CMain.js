@@ -1218,44 +1218,6 @@ App.controller.define('CMain', {
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
-    dell_ouvrage_visit: function(me,store) {
-        
-        var grid=me.up('grid');
-        console.log("grid");
-        console.log(grid);
-        for (var i=0;i<grid.getStore().data.items.length;i++) {
-            console.log("grid.getStore().data.items[i].data");
-            console.log(grid.getStore().data.items[i].data);
-            
-        }
-        /*
-        for (var i=0;i<grid.getStore().data.items.length;i++) {
-        }
-            
-        console.log("dell_ouvrage_visit");
-        console.log("me");
-        console.log(me);
-        console.log("store");
-        console.log(store);
-        console.log("store.data.idVisiteOuvrage");
-        console.log(store.data);
-        var test = me.up('panel');
-        console.log("test");
-        console.log(test);*/
-        /*
-        App.Visits.dellOuvrageVisit(tabDate,function(response) {
-            if (response === true)
-            {
-                Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
-                
-            }
-            else
-            {
-                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
-            }
-            
-        });*/
-    },
     onLoad: function(p)
     {
         Auth.login(function(){
