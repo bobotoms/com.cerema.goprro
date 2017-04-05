@@ -87,7 +87,7 @@ App.view.define('VVisit', {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         console.log("del id viste ouvrage");
                         console.log(idVisiteOuvrage);
-                        App.Visits.delOuvrageVisit(tabDate,function(response) {
+                        App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
                             {
                                 grid.getStore().load();
