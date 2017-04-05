@@ -97,14 +97,7 @@ App.view.define('VVisit', {
                   singleSelect: true,
                   listeners: {
                      click: function(sm,index,record) {
-                      console.log("sm");
-                      console.log(sm);
-                      console.log("index");
-                      console.log(index);
-                      console.log("record");
-                      console.log(record);
-                      console.log("sm");
-                      console.log(sm.store.data.items[record].data.idVisiteOuvrage);
+                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
                             /*je t ai mis une alerte ... */
                             /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
