@@ -93,11 +93,23 @@ App.view.define('VVisit', {
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
                 iconCls: "delgrid",
-                listeners : {
+                sm: new Ext.grid.RowSelectionModel({
+                  singleSelect: true,
+                  listeners: {
+                     rowselect: function(sm,index,record) {
+                            /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
+                            /*je t ai mis une alerte ... */
+                            /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
+                            Ext.Msg.alert('t as choisis',record.data.Nom);
+                             }
+                         }
+                      }
+                  }),
+    /*            listeners : {
                     click: function() {
                         var id0 = Ext.getCmp("idtest");
                       console.log("id0");
-                      console.log(id0);
+                      console.log(id0);*/
     /*                    var id1 = Ext.getCmp("idtest").value;
                       console.log("id1");
                       console.log(id1);
@@ -110,9 +122,9 @@ App.view.define('VVisit', {
                         var id4 = Ext.getCmp("idtest").val();
                       console.log("id4");
                       console.log(id4);*/
-                        var id5 = Ext.getCmp("idtest").getValue();
+ /*                       var id5 = Ext.getCmp("idtest").getValue();
                       console.log("id5");
-                      console.log(id5);
+                      console.log(id5);*/
        /*                 var id1 = Ext.getCmp(idtest);
                       console.log("id1");
                       console.log(id1);
@@ -125,10 +137,10 @@ App.view.define('VVisit', {
                         var id4 = Ext.getCmp("idVisiteOuvrage");
                       console.log("id4");
                       console.log(id4);*/
-              
+  /*            
                         Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
                     }
-                }
+                }*/
                 /*listeners: {
                   click: function() {
                      // var test  = Ext.getCmp('#idVisiteOuvrage').getValue();
