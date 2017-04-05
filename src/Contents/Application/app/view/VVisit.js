@@ -107,7 +107,7 @@ App.view.define('VVisit', {
                         var id4 = App.getCmp("idtest");
                       console.log("id4");
                       console.log(id4);
-                        Ext.MessageBox.alert('Alert box', 'Button 1 is clicked'+id);	
+                        Ext.MessageBox.alert('Alert box', 'Button 1 is clicked');	
                     }
                 }
                 /*listeners: {
