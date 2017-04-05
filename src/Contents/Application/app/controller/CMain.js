@@ -965,6 +965,9 @@ App.controller.define('CMain', {
                 App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                 store.load();
             }
+            
+        console.log("avant map");
+            
             App.get('VAddVisit grid').show();
             //hideForms();
             TMap.clearMarkers();
@@ -975,6 +978,8 @@ App.controller.define('CMain', {
                     TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);	
                 }
             });
+            
+        console.log("apres map");
             
         });
         
