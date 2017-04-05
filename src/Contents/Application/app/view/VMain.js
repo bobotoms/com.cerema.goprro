@@ -76,7 +76,7 @@ App.view.define('VMain', {
             layout:"fit",
             itemId: "CPanel",
             items: [
-                {
+             /*   {
                     id: "MyGMapPanel",
                     itemId: "map",
                     html: '<div id="TMapPanel" style="width:100%;height:100%"></div>',
@@ -86,7 +86,7 @@ App.view.define('VMain', {
                     width: "100%",
                     border: false,
                     split: true
-                },
+                },*/
                 {
                     xtype: "grid",
                     hidden: true,
