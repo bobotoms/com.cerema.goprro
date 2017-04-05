@@ -95,7 +95,23 @@ App.view.define('VAddVisit', {
         itemId: "addVisitMap",
         layout: "fit",
         split:true,
+        tbar: [
+        {
+            fieldLabel: "Date visite",
+            itemId: "date",
+            xtype: "datefield",
+            format: 'd m Y',
+            dateFormat: 'c',
+            width: 200
+        }
+        ],
+       bbar: [
+            '->', {
 
+            text: '<b>Enregistrer</b>',
+            itemId: "VisitRecord"
+        }
+        ],
         items: [
         {
             id: "TestMyGMapPanel",
