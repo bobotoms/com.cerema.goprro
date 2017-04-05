@@ -1,7 +1,8 @@
 var TMap={};
 
 function hideForms() {
-    var form=App.get('mainform panel#CPanel');
+    //var form=App.get('mainform panel#CPanel');
+    var form=App.get('VAddV panel#CPanel');
     for (var i=0;i<form.items.length;i++) form.items.items[i].hide();
 };
 
