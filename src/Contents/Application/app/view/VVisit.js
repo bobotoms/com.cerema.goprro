@@ -103,8 +103,7 @@ App.view.define('VVisit', {
                             Ext.Msg.alert('t as choisis',record.data.Nom);
                              }
                          }
-                      }
-                  }),
+                      }),
     /*            listeners : {
                     click: function() {
                         var id0 = Ext.getCmp("idtest");
