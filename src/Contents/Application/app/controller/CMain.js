@@ -594,7 +594,7 @@ App.controller.define('CMain', {
     showMapV: function(p)
     {
         console.log("showMapV");
-        //hideForms();
+        hideForms();
         TMap.clearMarkers();
         console.log("VAddV panel#mapV");
         console.log(App.get("VAddV panel#mapV"));
