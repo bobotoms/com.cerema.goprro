@@ -968,7 +968,61 @@ App.controller.define('CMain', {
             
         console.log("avant map");
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             App.get('VAddVisit grid').show();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+              TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
+        zoom: 10,
+        center: new google.maps.LatLng('43.299999','5.4'),
+        mapTypeId: google.maps.MapTypeId.MAP
+    });
+    google.maps.event.trigger(TMap.map, 'resize');
+    TMap.markers=[];
+    TMap.setMarker=function(l,m,title,idOuvrage) {
+        var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(l,m),
+            animation: google.maps.Animation.DROP,
+            title: title,
+            itemId: idOuvrage
+        });
+        marker.setMap(TMap.map);
+        marker.addListener('click', function(x) {
+            hideForms();
+            var form=App.get("mainform panel#Saisie");
+            form.idOuvrage=this.itemId;
+            form.show();
+        });
+        TMap.markers.push(marker);
+        return marker;
+    };
+    TMap.clearMarkers=function() {
+        for (var i = 0; i < TMap.markers.length; i++) {
+            TMap.markers[i].setMap(null);
+        }
+    };
+            
+            
+            
+            
+            
+            
             //hideForms();
             TMap.clearMarkers();
             //App.get("VAddVisit panel#addVisitMap").show();
