@@ -1,14 +1,77 @@
 App.view.define('VAddV', {
 
-    extend: 'Ext.Panel',
-	alias : 'widget.VAddV',
-	border: false,
-	
-	layout: "border",
-    
-	items: [
-    {
-        region: "center",
+     extend: 'Ext.Panel',
+    alias : 'widget.VAddV',
+    border: false,
+
+    layout: "border",
+
+    items: [
+        {
+            region: 'north',
+            height: 25,
+            minHeight: 25,
+            border:false,
+            baseCls: 'cls-header',
+            xtype: "Menu",
+            itemId: "MenuPanel",
+            menu: [
+                {
+                    text: "Général",
+                    menu: [
+                        {
+                            text: "Ouvrages",
+                            menu: [
+                                {
+                                    text: "Nouveau"
+                                },
+                                {
+                                    text: "Carte"
+                                },
+                                {
+                                    text: "Liste"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: "Visites"
+                }
+            ]
+        },
+        {
+            region: 'north',
+            xtype: "ribbon"
+        },
+        {
+            title: "Actualités"
+            , region: 'south'
+            , itemId: "southpanel"
+            , border: false
+            , collapsible: true
+            , height: 195
+            , layout: "vbox"
+            , tbar: [
+            {
+                itemId: "ecrire"
+                , text: "Ecrire"
+                , iconCls: "pencil"
+            }
+        ]
+            , items: [
+            {
+                width: "100%"
+                , itemId: "timeline"
+                , border: false
+                , autoScroll: true
+                , html: '<ul class="timeline"></ul>'
+                , flex: 1
+            }
+        ]
+        },
+        {
+            region: "center",
             split:true,
             layout:"fit",
             itemId: "CPanel",
@@ -51,9 +114,40 @@ App.view.define('VAddV', {
                         }
                     ],
                     store: App.store.create("App.Ouvrages.getAll",{autoLoad: true})
+                },
+                {
+                    xtype: "VCharacteristics",
+                    itemId: "setup_characteristics",
+                    hidden: true
+                },
+                {
+                    xtype: "VSaisie",
+                    itemId: "Saisie",
+                    hidden: true
+                },
+                {
+                    xtype: "VRefs",
+                    itemId: "setup_refs",
+                    hidden: true
+                },
+				{
+					xtype: "VAddVisit",
+					itemId: "addVisit",
+					hidden: true
+				},
+				{
+					xtype: "VVisit",
+					itemId: "visit",
+					hidden: true
+				},
+                {
+                    xtype: "VVisitWork",
+                    itemId: "Work",
+                    hidden: true
                 }
-                ],
-    }]
+            ]
+        }
+    ]
 });
  
 
