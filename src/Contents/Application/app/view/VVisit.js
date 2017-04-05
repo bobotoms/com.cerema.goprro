@@ -98,12 +98,12 @@ App.view.define('VVisit', {
                         var id0 = Ext.getCmp("idtest");
                       console.log("id0");
                       console.log(id0);
-                        var id1 = Ext.getCmp("idtest").value;
+    /*                    var id1 = Ext.getCmp("idtest").value;
                       console.log("id1");
                       console.log(id1);
                         var id2 = Ext.getCmp("idtest").value();
                       console.log("id2");
-                      console.log(id2);
+                      console.log(id2);*/
                         var id3 = Ext.getCmp("idtest").val;
                       console.log("id3");
                       console.log(id3);
