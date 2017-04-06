@@ -1197,6 +1197,8 @@ App.controller.define('CMain', {
                             var tabVisits = [mail, date, idOuvrage]
                             
                             App.Visits.verif(tabVisits,function(response) {
+                                concole.log('response');
+                                concole.log(response);
                                 if (response === false)
                                 App.Visits.insert(tabVisits,function(response) {
                                     
