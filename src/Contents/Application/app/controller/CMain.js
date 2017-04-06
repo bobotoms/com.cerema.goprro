@@ -1052,14 +1052,7 @@ App.controller.define('CMain', {
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
             };
-           
-
-        });
-        
-        
-        
-        
-        var choixDate = App.get('VVisit combo#dateVisit').getValue();
+            var choixDate = App.get('VVisit combo#dateVisit').getValue();
         var tabDate = [mail, choixDate];
         App.Visits.selectVisitDate(tabDate,function(response) {
             var data=[];
@@ -1085,6 +1078,39 @@ App.controller.define('CMain', {
             App.get('VVisit grid').show();
             
         });
+           
+
+        });
+        
+        
+        
+ /*       
+        var choixDate = App.get('VVisit combo#dateVisit').getValue();
+        var tabDate = [mail, choixDate];
+        App.Visits.selectVisitDate(tabDate,function(response) {
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                data.push({
+                    idVisiteOuvrage:response[i].idVisiteOuvrage,
+                    nomOuvrage:response[i].nomOuvrage,
+                    nomDepartement:response[i].nomDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y
+                })
+                
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage, "jaune");
+            };
+            var store=App.store.create({
+                fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+            });
+            if(store)
+            {
+                App.get('VVisit grid#gridVisit').bindStore(store);
+                store.load();
+            }
+            App.get('VVisit grid').show();
+            
+        });*/
     },
     add_visit: function(me, store) {
         
