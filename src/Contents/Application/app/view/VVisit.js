@@ -93,12 +93,13 @@ App.view.define('VVisit', {
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
                             {
-                                grid.store.removeAll();
-                                var store=App.store.create({
+                                //grid.store.removeAll();
+                                
+                                /*var store=App.store.create({
                                     fields:["dateVisiteOuvrage"],data:data
                                 });
                                 App.get('VVisit combo#dateVisit').bindStore(store);
-                                store.load();
+                                store.load();*/
                                                     //grid.store.removeAll();
                                 //grid.store.reload();
             //                    grid.reset();
