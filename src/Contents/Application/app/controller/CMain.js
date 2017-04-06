@@ -9,12 +9,12 @@ function hideForms() {
 
 function GMap(l,m)
 {
-/*
+
     TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
         zoom: 10,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
-    });*/
+    });
 
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
@@ -32,8 +32,6 @@ function GMap(l,m)
         marker.addListener('click', function(x) {
             hideForms();
             var form=App.get("mainform panel#Saisie");
-            //var form=App.get("VAddVisit panel#Saisie");
-            //var form=App.get("VAddVisit panel#map");
             form.idOuvrage=this.itemId;
             form.show();
         });
@@ -54,6 +52,41 @@ function GMap(l,m)
             TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
         }
     });
+    
+    
+    
+    
+    
+    google.maps.event.trigger(TMapAddV.map, 'resize');
+    TMapAddV.markers=[];
+    TMapAddV.setMarker=function(l,m,title,idOuvrage) {
+        
+        console.log("setMarker");
+        
+        var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(l,m),
+            animation: google.maps.Animation.DROP,
+            title: title,
+            itemId: idOuvrage
+        });
+        marker.setMap(TMapAddV.map);
+        marker.addListener('click', function(x) {
+            hideForms();
+            var form=App.get("mainform panel#Saisie");
+            form.idOuvrage=this.itemId;
+            form.show();
+        });
+        TMapAddV.markers.push(marker);
+        return marker;
+    };
+    TMapAddV.clearMarkers=function() {
+        
+        console.log("clearMarkers");
+        
+        for (var i = 0; i < TMapAddV.markers.length; i++) {
+            TMapAddV.markers[i].setMap(null);
+        }
+    };
 };
 
 App.controller.define('CMain', {
@@ -1115,7 +1148,7 @@ App.controller.define('CMain', {
         form.show();
     },
     showMapAddV: function() {
-                    TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
+                    TMapAddV.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
                         zoom: 10,
                         center: new google.maps.LatLng('43.299999','5.4'),
                         mapTypeId: google.maps.MapTypeId.MAP
