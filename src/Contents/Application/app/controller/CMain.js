@@ -1200,9 +1200,11 @@ App.controller.define('CMain', {
                                 concole.log('response');
                                 concole.log(response);
                                 if (response !== true)
-                                App.Visits.insert(tabVisits,function(response) {
-                                    
-                                })
+                                {
+                                    App.Visits.insert(tabVisits,function(response) {
+
+                                    })
+                                }
                             })
                         }
             };
