@@ -8,7 +8,7 @@ function hideForms() {
 function GMap(l,m)
 {
     console.log("GMap");
-    TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
+    TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
         zoom: 10,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
