@@ -1047,7 +1047,7 @@ App.controller.define('CMain', {
         //hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
-        
+        TMap.clearMarkers();
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
         var tabDate = [mail, choixDate];
         App.Visits.selectVisitDate(tabDate,function(response) {
