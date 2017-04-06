@@ -64,7 +64,7 @@ Visits = {
         
  		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"') AND idOuvrage = '"+numOuvrage+"'",function(err,result){
             if (!err) {
-                    console.log("***************result*************");
+               /*     console.log("***************result*************");
                     console.log(result.length);
                     console.log(result);
                     if (result.length === 0)
@@ -76,7 +76,7 @@ Visits = {
                         var result=true;
                     }
                    
-                    console.log(result);
+                    console.log(result);*/
 					cb(result);			
 				} else {
                     console.log("************err**************");
