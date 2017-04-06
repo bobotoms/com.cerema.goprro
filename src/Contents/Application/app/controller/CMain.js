@@ -20,8 +20,6 @@ function GMap(l,m)
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
         
-        console.log("setMarker");
-        
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
@@ -39,8 +37,6 @@ function GMap(l,m)
         return marker;
     };
     TMap.clearMarkers=function() {
-        
-        console.log("clearMarkers");
         
         for (var i = 0; i < TMap.markers.length; i++) {
             TMap.markers[i].setMap(null);
