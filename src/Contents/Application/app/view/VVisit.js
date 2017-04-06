@@ -149,30 +149,25 @@ App.view.define('VVisit', {
             }],
         }],
 	},
-    
-    
-    
     {
-        region: "east",
+        region: "west",
         width: "40%",
-        padding: 5,
-        border: false,
-        itemId: "Rref_zones",
+        itemId: "addVisitMap",
         layout: "fit",
         split:true,
-
         items: [
         {
-            id: "Test2MyGMapPanel",
-            hidden: true,
+            id: "MyGMapPanel3",
             itemId: "map",
-            html: '<div id="TMapPanel" style="width:50%;height:100%"></div>',
+            hidden: false,
+            html: '<div id="TMapPanel3" style="width:100%;height:100%"></div>',
             padding: 0,
             flex: 1,
             border: false,
-            width: "40%",
+            width: "100%",
             border: false,
-            split: true
+            split: true,
+            
         }
         ]
     }]
