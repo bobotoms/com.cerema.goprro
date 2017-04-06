@@ -951,15 +951,13 @@ App.controller.define('CMain', {
         console.log("showAddVisit");
         App.get('mainform panel#southpanel').collapse();
         hideForms();
-        //App.get("mainform panel#addVisit").show();
+        App.get("mainform panel#addVisit").show();
         var mail = Auth.User.mail;
         console.log("mail");
         console.log(mail);
         
         
         TMap.clearMarkers();
-        //App.get("VAddVisit panel#addVisitMap").show();
-        App.get("VAddVisit panel#map").show();
         
         App.Visits.select(mail,function(response) {
             
@@ -985,6 +983,8 @@ App.controller.define('CMain', {
                 store.load();
             }
             
+        App.get("VAddVisit panel#addVisitMap").show();
+        App.get("VAddVisit panel#map").show();
 /*
            console.log("showAddVisit");
             hideForms();
