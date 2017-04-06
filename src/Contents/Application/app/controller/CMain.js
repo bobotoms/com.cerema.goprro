@@ -985,16 +985,18 @@ App.controller.define('CMain', {
             
         console.log("avant map");
             
-            
- /*           
-            
-            
-            
-            
+        });      
+
+        
+        
             
             
             
             
+            
+            
+            
+  /*           
             App.get('VAddVisit grid').show();
             
             
@@ -1052,11 +1054,10 @@ App.controller.define('CMain', {
             
         console.log("apres map");           */
             
-        });
+//        });
         
         
         
-        console.log("apres apres map");
             
         
         /* *************************
