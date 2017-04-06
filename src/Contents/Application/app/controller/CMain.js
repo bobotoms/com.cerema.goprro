@@ -584,8 +584,6 @@ App.controller.define('CMain', {
     },
     showMap: function(p)
     {
-        
-       
         console.log("showMap");
         hideForms();
         //TMap.clearMarkers();
@@ -1048,6 +1046,7 @@ App.controller.define('CMain', {
                 })
                 
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                oMarker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             };
             var store=App.store.create({
                 fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
