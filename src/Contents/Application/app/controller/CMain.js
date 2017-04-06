@@ -25,9 +25,10 @@ function GMap(l,m)
             title: title,
             itemId: idOuvrage
         });
-        
+        marker.setZIndex(0);
         if (color == "jaune")
             {
+                marker.setZIndex(1);
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             }
         marker.setMap(TMap.map);
