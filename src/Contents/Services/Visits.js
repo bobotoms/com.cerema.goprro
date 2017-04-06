@@ -50,7 +50,25 @@ Visits = {
 				};
         });       
     },
+    verif: function(o,cb) {
         
+        var mail = o['0'];
+        var date = o['1'];
+        var numOuvrage = o['2'];
+        
+ 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"') AND idOuvrage = "+numOuvrage,function(err,result){
+            if (!err) {
+                    console.log("result");
+                    console.log(result);
+					cb(result);			
+				} else {
+                    console.log("err");
+                    console.log(err);
+                    var err=false;
+					cb(err)			
+				};
+        });       
+    }, 
 	insert: function(o,cb) {
         
         var mail = o['0'];
