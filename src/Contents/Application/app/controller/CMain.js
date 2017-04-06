@@ -53,6 +53,40 @@ function GMap(l,m)
         }
     });
     
+    
+    
+    
+    
+    google.maps.event.trigger(TMapAddV.map, 'resize');
+    TMapAddV.markers=[];
+    TMapAddV.setMarker=function(l,m,title,idOuvrage) {
+        
+        console.log("setMarker");
+        
+        var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(l,m),
+            animation: google.maps.Animation.DROP,
+            title: title,
+            itemId: idOuvrage
+        });
+        marker.setMap(TMapAddV.map);
+        marker.addListener('click', function(x) {
+            hideForms();
+            var form=App.get("mainform panel#Saisie");
+            form.idOuvrage=this.itemId;
+            form.show();
+        });
+        TMapAddV.markers.push(marker);
+        return marker;
+    };
+    TMapAddV.clearMarkers=function() {
+        
+        console.log("clearMarkers");
+        
+        for (var i = 0; i < TMapAddV.markers.length; i++) {
+            TMapAddV.markers[i].setMap(null);
+        }
+    };
 };
 
 App.controller.define('CMain', {
@@ -964,7 +998,7 @@ App.controller.define('CMain', {
         console.log(mail);
         
         
-        //TMap.clearMarkers();
+        TMapAddV.clearMarkers();
         
         App.Visits.select(mail,function(response) {
             
@@ -979,7 +1013,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                TMapAddV.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
             };
             var store=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
