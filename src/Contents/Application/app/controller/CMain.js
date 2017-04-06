@@ -1199,7 +1199,7 @@ App.controller.define('CMain', {
                             })
                         }
             };
-              Ext.Msg.alert('GOPRRO',"Add visite");
+              Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
