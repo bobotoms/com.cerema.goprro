@@ -95,27 +95,7 @@ App.view.define('VVisit', {
                             {
                                 
                                 grid.store.removeAll();
-                                var mail = Auth.User.mail;
-        
-        App.Visits.selectVisit(mail,function(response) {
-            var data=[];
-            for (var i=0;i<response.length;i++) {
-                var dateLong = Ext.Date.parse(response[i].dateVisiteOuvrage,"c");
-                var date = Ext.Date.format(dateLong, 'Y-m-d');
-                data.push({
-                    dateVisiteOuvrage:date
-                })
-            };
-            var store=App.store.create({
-                fields:["dateVisiteOuvrage"],data:data
-            });
-            if(store)
-            {
-                App.get('VVisit combo#dateVisit').bindStore(store);
-                store.load();
-            }
-            
-        });
+                                grid.store.load();
             //                    grid.reset();
                                 //App.get('mainform panel#timeline').update(results);
                                 //grid.store.load();
