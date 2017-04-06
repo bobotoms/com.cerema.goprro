@@ -983,7 +983,7 @@ App.controller.define('CMain', {
                 store.load();
             }
             
-        console.log("avant map");
+//        console.log("avant map");
             
       
 
