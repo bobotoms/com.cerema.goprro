@@ -108,6 +108,7 @@ App.view.define('VVisit', {
                                 //store.update();
                                 //this.store.load();
                                 //this.grid.store.load();
+                                grid.store.load();
                                 Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
 
                             }
