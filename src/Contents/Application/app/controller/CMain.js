@@ -1335,7 +1335,7 @@ App.controller.define('CMain', {
                         iconAlign: 'top',
                         rowspan: 3,
                     //    handler: p.showMapV
-                        handler: p.showAddVisit
+                        handler: p.showAddVisitV
                     },
                     {
                         text: 'Visite',
