@@ -9,13 +9,13 @@ function hideForms() {
 
 function GMap(l,m)
 {
-/*
+
     TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
         zoom: 10,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
     });
-*/
+
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
@@ -187,9 +187,6 @@ App.controller.define('CMain', {
             },
             "VVisit":{
                 show: "showMapV"
-            },
-            "mainform":{
-                show: "showMapIndex"
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
@@ -1121,13 +1118,6 @@ App.controller.define('CMain', {
     },
     showMapV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel3'),{
-                        zoom: 10,
-                        center: new google.maps.LatLng('43.299999','5.4'),
-                        mapTypeId: google.maps.MapTypeId.MAP
-        });
-    },
-    showMapIndex: function() {
-                    TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
                         zoom: 10,
                         center: new google.maps.LatLng('43.299999','5.4'),
                         mapTypeId: google.maps.MapTypeId.MAP
