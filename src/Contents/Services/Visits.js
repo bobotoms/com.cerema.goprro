@@ -75,7 +75,6 @@ Visits = {
                         var result=true;
                     }
                    
-                    console.log(result.length);
                     console.log(result);
 					cb(result);			
 				} else {
