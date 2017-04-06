@@ -8,13 +8,13 @@ function hideForms() {
 function GMap(l,m)
 {
     console.log("GMap");
-    TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
+    TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
         zoom: 10,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
     });
     google.maps.event.trigger(TMap.map, 'resize');
-    TMap.markers=[];/*
+    TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
@@ -33,7 +33,7 @@ function GMap(l,m)
         });
         TMap.markers.push(marker);
         return marker;
-    };*/
+    };
     TMap.clearMarkers=function() {
         for (var i = 0; i < TMap.markers.length; i++) {
             TMap.markers[i].setMap(null);
@@ -1301,7 +1301,8 @@ App.controller.define('CMain', {
                         scale: 'large',
                         iconAlign: 'top',
                         rowspan: 3,
-                        handler: p.showMapV
+                    //    handler: p.showMapV
+                        handler: p.showAddVisit
                     },
                     {
                         text: 'Visite',
