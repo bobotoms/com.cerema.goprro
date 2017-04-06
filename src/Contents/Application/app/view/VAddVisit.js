@@ -84,9 +84,6 @@ App.view.define('VAddVisit', {
             }],
         }],
 	},
-    
-    
-    
     {
         region: "west",
         width: "40%",
