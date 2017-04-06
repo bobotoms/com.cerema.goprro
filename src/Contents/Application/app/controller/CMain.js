@@ -1128,7 +1128,6 @@ App.controller.define('CMain', {
         
         //App.store.familles.load();
             App.get('VVisit grid#gridVisit').store.removeAll();
-            App.get('VVisit combo#dateVisit').removeAll();
         hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
