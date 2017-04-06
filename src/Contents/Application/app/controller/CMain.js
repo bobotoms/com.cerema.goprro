@@ -594,7 +594,7 @@ App.controller.define('CMain', {
        
         console.log("showMap");
         hideForms();
-        TMap.clearMarkers();
+        //TMap.clearMarkers();
         App.get("mainform panel#map").show();
         console.log("mainform panel#map");
         console.log(App.get("mainform panel#map"));
