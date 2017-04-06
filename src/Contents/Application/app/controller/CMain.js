@@ -960,7 +960,7 @@ App.controller.define('CMain', {
         console.log(mail);
         
         
-        //TMap.clearMarkers();
+        TMap.clearMarkers();
         
         App.Visits.select(mail,function(response) {
             
@@ -1035,7 +1035,7 @@ App.controller.define('CMain', {
         //hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
-        TMap.clearMarkers();
+        //TMap.clearMarkers();
         var choixDate = App.get('VVisit combo#dateVisit').getValue();
         var tabDate = [mail, choixDate];
         App.Visits.selectVisitDate(tabDate,function(response) {
