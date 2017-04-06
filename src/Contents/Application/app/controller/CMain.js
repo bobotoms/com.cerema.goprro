@@ -18,7 +18,7 @@ function GMap(l,m)
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
         
-                oMarker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
+                marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
