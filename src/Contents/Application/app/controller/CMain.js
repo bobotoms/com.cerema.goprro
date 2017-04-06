@@ -1198,7 +1198,11 @@ App.controller.define('CMain', {
                             
                                 console.log('tabVisits');
                                 console.log(tabVisits);
-                            App.Visits.verif(tabVisits,function(response) {
+                            App.Visits.VerifInsert(tabVisits,function(response) {
+                                console.log('response');
+                                console.log(response);
+                            }
+ /*                           App.Visits.verif(tabVisits,function(response) {
                                 console.log('response');
                                 console.log(response.length);
                                 if (response.length == 0)
@@ -1207,7 +1211,7 @@ App.controller.define('CMain', {
 
                                     })
                                 }
-                            })
+                            })*/
                         }
             };
               Ext.Msg.alert('GOPRRO',"Visite enregistrée");
