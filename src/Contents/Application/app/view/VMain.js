@@ -144,11 +144,6 @@ App.view.define('VMain', {
                     xtype: "VVisitWork",
                     itemId: "Work",
                     hidden: true
-                },
-                {
-                    xtype: "VAddV",
-                    itemId: "AddV",
-                    hidden: true
                 }
             ]
         }
