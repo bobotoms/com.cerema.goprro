@@ -950,7 +950,7 @@ App.controller.define('CMain', {
             }));
         }
     },
-    /**/
+    /******************************************************************************************************/
     showAddVisit: function(p) {
         console.log("showAddVisit");
         App.get('mainform panel#southpanel').collapse();
