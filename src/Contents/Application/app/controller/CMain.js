@@ -991,11 +991,10 @@ App.controller.define('CMain', {
             }
             
             new google.maps.Map(document.getElementById('TMapPanel2'),{
-                    zoom: 1,
-                    center: new google.maps.LatLng('43.299999','5.4'),
-                    mapTypeId: google.maps.MapTypeId.MAP
-                });
-            }
+                zoom: 1,
+                center: new google.maps.LatLng('43.299999','5.4'),
+                mapTypeId: google.maps.MapTypeId.MAP
+            });
       
 
         });
