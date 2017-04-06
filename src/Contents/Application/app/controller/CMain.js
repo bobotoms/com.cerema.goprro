@@ -950,7 +950,7 @@ App.controller.define('CMain', {
         console.log("mail");
         console.log(mail);
         
-        hideForms();
+        
         TMap.clearMarkers();
         
         App.Visits.select(mail,function(response) {
