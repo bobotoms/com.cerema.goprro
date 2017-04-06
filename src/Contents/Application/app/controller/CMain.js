@@ -997,7 +997,7 @@ App.controller.define('CMain', {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
             }
         }) 
-            
+            ;
             
             
             
