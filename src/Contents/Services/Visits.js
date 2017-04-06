@@ -55,8 +55,14 @@ Visits = {
         var mail = o['0'];
         var date = o['1'];
         var numOuvrage = o['2'];
+        console.log("mail");
+        console.log(mail);
+        console.log("date");
+        console.log(date);
+        console.log("numOuvrage");
+        console.log(numOuvrage);
         
- 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"') AND idOuvrage = "+numOuvrage,function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"') AND idOuvrage = '"+numOuvrage+"'",function(err,result){
             if (!err) {
                     
                     var result=true;
