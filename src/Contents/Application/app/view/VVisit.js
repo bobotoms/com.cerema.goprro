@@ -93,6 +93,7 @@ App.view.define('VVisit', {
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
                             {
+                                grid.store.removeAll();
                                 var store=App.store.create({
                                     fields:["dateVisiteOuvrage"],data:data
                                 });
