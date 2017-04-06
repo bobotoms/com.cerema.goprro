@@ -588,7 +588,7 @@ App.controller.define('CMain', {
             }
         });
     },
-    showMapV: function(p)
+/*    showMapV: function(p)
     {
         console.log("showMapV");
         hideForms();
@@ -601,7 +601,7 @@ App.controller.define('CMain', {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
             }
         });
-    },
+    },*/
     showGrid: function(p)
     {
         hideForms();
