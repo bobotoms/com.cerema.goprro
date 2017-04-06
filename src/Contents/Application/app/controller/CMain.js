@@ -17,6 +17,9 @@ function GMap(l,m)
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
+        
+        console.log("setMarker");
+        
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
@@ -36,6 +39,9 @@ function GMap(l,m)
         return marker;
     };
     TMap.clearMarkers=function() {
+        
+        console.log("clearMarkers");
+        
         for (var i = 0; i < TMap.markers.length; i++) {
             TMap.markers[i].setMap(null);
         }
@@ -991,17 +997,6 @@ App.controller.define('CMain', {
             });
 */
         });
-        
-              
-  /*     
-        TMap.clearMarkers();
-        App.get("VAddVisit panel#map").show();
-        App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
-            for (var i=0;i<r.data.length;i++) {
-                TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
-            }
-        });
-            */
               
          
         
