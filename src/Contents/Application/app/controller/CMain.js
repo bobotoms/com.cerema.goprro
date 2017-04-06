@@ -964,7 +964,7 @@ App.controller.define('CMain', {
         console.log(mail);
         
         
-        //TMap.clearMarkers();
+        TMap.clearMarkers();
         
         App.Visits.select(mail,function(response) {
             
