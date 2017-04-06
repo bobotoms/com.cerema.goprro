@@ -31,7 +31,7 @@ function GMap(l,m)
             hideForms();
             //var form=App.get("mainform panel#Saisie");
             //var form=App.get("VAddVisit panel#Saisie");
-            var form=App.get("VAddVisit panel#map");
+            //var form=App.get("VAddVisit panel#map");
             form.idOuvrage=this.itemId;
             form.show();
         });
