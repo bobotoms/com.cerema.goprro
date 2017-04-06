@@ -8,6 +8,7 @@ function hideForms() {
 function GMap(l,m)
 {
     console.log("GMap");
+    return;
     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
         zoom: 1,
         center: new google.maps.LatLng('43.299999','5.4'),
@@ -175,6 +176,15 @@ App.controller.define('CMain', {
 			},
             "VAddVisit grid#gridVisitAdd": {
                 itemdblclick: "add_visit_select"
+            },
+            "VAddVisit":{
+                show: function() {
+                    new google.maps.Map(document.getElementById('TMapPanel2'),{
+                        zoom: 1,
+                        center: new google.maps.LatLng('43.299999','5.4'),
+                        mapTypeId: google.maps.MapTypeId.MAP
+    }               );
+                }
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
