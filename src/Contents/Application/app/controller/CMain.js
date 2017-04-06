@@ -177,13 +177,10 @@ App.controller.define('CMain', {
                 itemdblclick: "add_visit_select"
             },
             "VAddVisit":{
-                show: function() {
-                    new google.maps.Map(document.getElementById('TMapPanel2'),{
-                        zoom: 1,
-                        center: new google.maps.LatLng('43.299999','5.4'),
-                        mapTypeId: google.maps.MapTypeId.MAP
-    }               );
-                }
+                show: "showAddVisit"
+            },
+            "VVisit":{
+                show: "showAddVisit"
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
@@ -993,7 +990,12 @@ App.controller.define('CMain', {
                 store.load();
             }
             
-            
+            new google.maps.Map(document.getElementById('TMapPanel2'),{
+                    zoom: 1,
+                    center: new google.maps.LatLng('43.299999','5.4'),
+                    mapTypeId: google.maps.MapTypeId.MAP
+                });
+            }
       
 
         });
