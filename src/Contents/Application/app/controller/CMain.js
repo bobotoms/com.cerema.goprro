@@ -177,7 +177,7 @@ App.controller.define('CMain', {
                 itemdblclick: "add_visit_select"
             },
             "VAddVisit":{
-                show: "test"
+                show: "showMapV"
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
@@ -189,13 +189,6 @@ App.controller.define('CMain', {
         });
 
     },
-    test: function() {
-                    new google.maps.Map(document.getElementById('TMapPanel2'),{
-                        zoom: 8,
-                        center: new google.maps.LatLng('43.299999','5.4'),
-                        mapTypeId: google.maps.MapTypeId.MAP
-        });
-                },
     up_onclick: function(p, record)
     {
         App.view.create('VShowDoc', {
@@ -598,20 +591,6 @@ App.controller.define('CMain', {
             }
         });
     },
-/*    showMapV: function(p)
-    {
-        console.log("showMapV");
-        hideForms();
-        TMap.clearMarkers();
-        console.log("VAddV panel#mapV");
-        console.log(App.get("VAddV panel#mapV"));
-        App.get("VAddV panel#mapV").show();
-        App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
-            for (var i=0;i<r.data.length;i++) {
-                TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
-            }
-        });
-    },*/
     showGrid: function(p)
     {
         hideForms();
@@ -1240,6 +1219,13 @@ App.controller.define('CMain', {
         var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
+    },
+    showMapV: function() {
+                    new google.maps.Map(document.getElementById('TMapPanel2'),{
+                        zoom: 8,
+                        center: new google.maps.LatLng('43.299999','5.4'),
+                        mapTypeId: google.maps.MapTypeId.MAP
+        });
     },
     onLoad: function(p)
     {
