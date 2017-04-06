@@ -9,7 +9,7 @@ function GMap(l,m)
 {
     console.log("GMap");
     TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
-        zoom: 50,
+        zoom: 1,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
     });
