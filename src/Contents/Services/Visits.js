@@ -133,7 +133,7 @@ Visits = {
                     var err=false;
 					cb(err)			
 				};
-            }
+            });
         },
     delOuvrageVisit: function(o,cb) {
  		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = "+o,function(err,result){
