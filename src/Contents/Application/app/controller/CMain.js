@@ -1052,17 +1052,7 @@ App.controller.define('CMain', {
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
             };
-            var store=App.store.create({
-                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
-            });
-            if(store)
-            {
-                App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
-                store.load();
-            }
-            
-        App.get("VAddVisit panel#addVisitMap").show();
-        App.get("VAddVisit panel#map").show();
+           
 
         });
         
