@@ -18,13 +18,14 @@ function GMap(l,m)
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
         
-                marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
+                
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
             title: title,
             itemId: idOuvrage
         });
+        marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
         marker.setMap(TMap.map);
         marker.addListener('click', function(x) {
             hideForms();
