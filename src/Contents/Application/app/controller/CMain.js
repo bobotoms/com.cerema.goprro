@@ -18,6 +18,7 @@ function GMap(l,m)
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
         
+                oMarker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
@@ -1046,7 +1047,6 @@ App.controller.define('CMain', {
                 })
                 
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
-                oMarker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             };
             var store=App.store.create({
                 fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
