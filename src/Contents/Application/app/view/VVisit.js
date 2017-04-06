@@ -86,7 +86,8 @@ App.view.define('VVisit', {
                     click: function(sm,index,record) {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         
-                        var grid=this.up('grid');
+                        /var grid=this.up('grid');
+                        var grid=this('grid');
                         console.log("del id viste ouvrage");
                         console.log(idVisiteOuvrage);
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
@@ -97,11 +98,11 @@ App.view.define('VVisit', {
                                 //grid.store.load();
                                 //grid.load();
                                 //grid.reload();
-                                        //grid.update();
-                                        //grid.getStore().update();
-                                        //grid.store.update();
-                                        //grid.getStore().load();
-                                        //store.load();
+                                    //grid.update();
+                                    //grid.getStore().update();
+                                    //grid.store.update();
+                                    //grid.getStore().load();
+                                    //store.load();
                                 //store.update();
                                 //this.store.load();
                                 //this.grid.store.load();
