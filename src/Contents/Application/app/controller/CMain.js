@@ -987,7 +987,7 @@ App.controller.define('CMain', {
             
       
 
- //       });
+        });
         
               
   /*     
