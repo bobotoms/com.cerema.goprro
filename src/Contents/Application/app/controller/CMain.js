@@ -1199,7 +1199,7 @@ App.controller.define('CMain', {
                             App.Visits.verif(tabVisits,function(response) {
                                 console.log('response');
                                 console.log(response);
-                                if (response !== true)
+                                if (response !== 'true')
                                 {
                                     App.Visits.insert(tabVisits,function(response) {
 
