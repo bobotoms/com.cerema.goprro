@@ -13,6 +13,7 @@ function GMap(l,m)
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
     });
+    return;
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
