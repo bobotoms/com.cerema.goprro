@@ -595,9 +595,19 @@ App.controller.define('CMain', {
             }
         });
     },
-/*    showMapV: function(p)
+    showMapV: function(p)
     {
         console.log("showMapV");
+        
+         new google.maps.Map(document.getElementById('TMapPanel2'),{
+                zoom: 1,
+                center: new google.maps.LatLng('43.299999','5.4'),
+                mapTypeId: google.maps.MapTypeId.MAP
+            });
+        
+        
+        /*
+        
         hideForms();
         TMap.clearMarkers();
         console.log("VAddV panel#mapV");
@@ -607,8 +617,8 @@ App.controller.define('CMain', {
             for (var i=0;i<r.data.length;i++) {
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
             }
-        });
-    },*/
+        });*/
+    },
     showGrid: function(p)
     {
         hideForms();
@@ -990,11 +1000,7 @@ App.controller.define('CMain', {
                 store.load();
             }
             
-            new google.maps.Map(document.getElementById('TMapPanel2'),{
-                zoom: 1,
-                center: new google.maps.LatLng('43.299999','5.4'),
-                mapTypeId: google.maps.MapTypeId.MAP
-            });
+           
       
 
         });
