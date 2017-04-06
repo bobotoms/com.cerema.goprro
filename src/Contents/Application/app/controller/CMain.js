@@ -180,7 +180,7 @@ App.controller.define('CMain', {
                 show: "showAddVisit"
             },
             "VVisit":{
-                show: "showAddVisit"
+                show: "showMapV"
             },
             "VVisitWork": {
                 show: "VSaisie_onShow"
