@@ -588,7 +588,11 @@ App.controller.define('CMain', {
     showMap: function(p)
     {
         
-   
+   TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
+        zoom: 10,
+        center: new google.maps.LatLng('43.299999','5.4'),
+        mapTypeId: google.maps.MapTypeId.MAP
+    });
         console.log("showMap");
         hideForms();
         TMap.clearMarkers();
@@ -988,19 +992,7 @@ App.controller.define('CMain', {
             
         App.get("VAddVisit panel#addVisitMap").show();
         App.get("VAddVisit panel#map").show();
-/*
-           console.log("showAddVisit");
-            hideForms();
-            TMap.clearMarkers();
-            App.get("mainform panel#map").show();
-            console.log("mainform panel#map");
-            console.log(App.get("mainform panel#map"));
-            App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
-                for (var i=0;i<r.data.length;i++) {
-                    TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
-                }
-            });
-*/
+
         });
               
          
