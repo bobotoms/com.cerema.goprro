@@ -1201,7 +1201,7 @@ App.controller.define('CMain', {
                             App.Visits.VerifInsert(tabVisits,function(response) {
                                 console.log('response');
                                 console.log(response);
-                            }
+                            })
  /*                           App.Visits.verif(tabVisits,function(response) {
                                 console.log('response');
                                 console.log(response.length);
