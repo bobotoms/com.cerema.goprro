@@ -7,14 +7,13 @@ function hideForms() {
 
 function GMap(l,m)
 {
-    console.log("GMap");
-    return;
-    TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
+
+    TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
         zoom: 1,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
     });
-    return;
+
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage) {
