@@ -950,6 +950,9 @@ App.controller.define('CMain', {
         console.log("mail");
         console.log(mail);
         
+        hideForms();
+        TMap.clearMarkers();
+        
         App.Visits.select(mail,function(response) {
             
         console.log("response");
@@ -963,6 +966,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
             };
             var store=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
@@ -973,9 +977,19 @@ App.controller.define('CMain', {
                 store.load();
             }
             
-            
-      
-
+/*
+           console.log("showAddVisit");
+            hideForms();
+            TMap.clearMarkers();
+            App.get("mainform panel#map").show();
+            console.log("mainform panel#map");
+            console.log(App.get("mainform panel#map"));
+            App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
+                for (var i=0;i<r.data.length;i++) {
+                    TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
+                }
+            });
+*/
         });
         
               
