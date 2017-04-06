@@ -98,7 +98,7 @@ App.view.define('VVisit', {
                                 //grid.store.load();
                                 //grid.load();
                                 //grid.reload();
-                                    //grid.update();
+                                    grid.update();
                                     //grid.getStore().update();
                                     //grid.store.update();
                                     //grid.getStore().load();
