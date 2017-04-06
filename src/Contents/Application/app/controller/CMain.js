@@ -28,8 +28,6 @@ function GMap(l,m)
         
         if (color == "jaune")
             {
-                marker.setMap(null);
-                
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             }
         marker.setMap(TMap.map);
