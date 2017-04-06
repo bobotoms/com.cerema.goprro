@@ -92,7 +92,7 @@ App.view.define('VAddVisit', {
         split:true,
         items: [
         {
-            id: "TestMyGMapPanel",
+            id: "MyGMapPanel2",
             //id: "MyGMapPanel",
             itemId: "map",
             hidden: false,
