@@ -133,6 +133,12 @@ Visits = {
                     var err=false;
 					cb(err)			
 				};
+            } else {
+                console.log("err");
+                console.log(err);
+                var err=false;
+                cb(err)			
+            };
             });
         },
     delOuvrageVisit: function(o,cb) {
