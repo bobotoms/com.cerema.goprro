@@ -1,6 +1,4 @@
 var TMap={};
-var TMapAddV={};
-var TMapV={};
 
 function hideForms() {
     var form=App.get('mainform panel#CPanel');
