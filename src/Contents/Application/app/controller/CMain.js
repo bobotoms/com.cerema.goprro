@@ -29,12 +29,7 @@ function GMap(l,m)
         if (color == "jaune")
             {
                 marker.setMap(null);
-                var marker=new google.maps.Marker({
-            position: new google.maps.LatLng(l,m),
-            animation: google.maps.Animation.DROP,
-            title: title,
-            itemId: idOuvrage
-        });
+                
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             }
         marker.setMap(TMap.map);
