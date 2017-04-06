@@ -958,6 +958,7 @@ App.controller.define('CMain', {
         
         
         TMap.clearMarkers();
+        App.get("mainform panel#map").show();
         
         App.Visits.select(mail,function(response) {
             
