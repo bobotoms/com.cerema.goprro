@@ -1125,6 +1125,9 @@ App.controller.define('CMain', {
     showVisit: function(p) {
          console.log("showVisit");
         App.get('mainform panel#southpanel').collapse();
+        
+        //App.store.familles.load();
+            App.get('VVisit grid#gridVisit').store.removeAll();
         hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
