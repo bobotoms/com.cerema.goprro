@@ -66,6 +66,7 @@ Visits = {
             if (!err) {
                     console.log("***************result*************");
                     console.log(result.length);
+                    console.log(result);
                     if (result.length === 0)
                     {
                         var result=false;
