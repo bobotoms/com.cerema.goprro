@@ -1196,6 +1196,8 @@ App.controller.define('CMain', {
                             var idOuvrage = dataStore.items[i].data.idOuvrage;
                             var tabVisits = [mail, date, idOuvrage]
                             
+                                console.log('tabVisits');
+                                console.log(tabVisits);
                             App.Visits.verif(tabVisits,function(response) {
                                 console.log('response');
                                 console.log(response.length);
