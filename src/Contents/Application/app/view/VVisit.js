@@ -85,7 +85,7 @@ App.view.define('VVisit', {
                 listeners: {
                     click: function(sm,index,record) {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                        
+                        var data =sm.store.data.items[record].data;
                         var grid=this.up('grid');
                         //var grid=this('grid');
                         console.log("del id viste ouvrage");
@@ -93,8 +93,12 @@ App.view.define('VVisit', {
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
                             {
-                                
-                                grid.store.removeAll();
+                                var store=App.store.create({
+                                    fields:["dateVisiteOuvrage"],data:data
+                                });
+                                App.get('VVisit combo#dateVisit').bindStore(store);
+                                store.load();
+                                                    //grid.store.removeAll();
                                 //grid.store.reload();
             //                    grid.reset();
                                 //App.get('mainform panel#timeline').update(results);
@@ -105,7 +109,7 @@ App.view.define('VVisit', {
                                     //grid.getStore().update();
                                     //grid.store.update();
                                     //grid.getStore().load();
-                                    store.load();
+                                    //store.load();
                                 //store.update();
                                 //this.store.load();
                                 //this.grid.store.load();
