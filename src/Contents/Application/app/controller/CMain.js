@@ -1192,27 +1192,13 @@ App.controller.define('CMain', {
 
             for (var i=0;i<dataStore.items.length;i++) {
                 if (dataStore.items[i].data.select)
-                        {
-                            var idOuvrage = dataStore.items[i].data.idOuvrage;
-                            var tabVisits = [mail, date, idOuvrage]
-                            
-                                console.log('tabVisits');
-                                console.log(tabVisits);
-                            App.Visits.VerifInsert(tabVisits,function(response) {
-                                console.log('response');
-                                console.log(response);
-                            })
- /*                           App.Visits.verif(tabVisits,function(response) {
-                                console.log('response');
-                                console.log(response.length);
-                                if (response.length == 0)
-                                {
-                                    App.Visits.insert(tabVisits,function(response) {
+                {
+                    var idOuvrage = dataStore.items[i].data.idOuvrage;
+                    var tabVisits = [mail, date, idOuvrage]
 
-                                    })
-                                }
-                            })*/
-                        }
+                    App.Visits.insert(tabVisits,function(response) {
+                    })
+                }
             };
               Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
