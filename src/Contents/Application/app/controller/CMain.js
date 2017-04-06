@@ -1195,7 +1195,12 @@ App.controller.define('CMain', {
                         {
                             var idOuvrage = dataStore.items[i].data.idOuvrage;
                             var tabVisits = [mail, date, idOuvrage]
-                            App.Visits.insert(tabVisits,function(response) {
+                            
+                            App.Visits.verif(tabVisits,function(response) {
+                                if (response === false)
+                                App.Visits.insert(tabVisits,function(response) {
+                                    
+                                })
                             })
                         }
             };
