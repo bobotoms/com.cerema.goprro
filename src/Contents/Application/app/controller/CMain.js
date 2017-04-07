@@ -1090,7 +1090,7 @@ App.controller.define('CMain', {
             App.get('VVisit grid').show();
             
 //        });
-           
+            }
 
         });
         
