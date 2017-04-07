@@ -1050,37 +1050,38 @@ App.controller.define('CMain', {
                     
                     var jaune = false;
                     for (var i=0;i<response.length;i++) {
-                    if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
+                        if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
                         {
                             jaune = true;
-                        
+
                         }
-                        
-                    if(jaune == true)
+
+                        if(jaune == true)
                         {
                             data.push({
-                            idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
-                            nomOuvrage:responseVisite[i].nomOuvrage,
-                            nomDepartement:responseVisite[i].nomDepartement,
-                            oa_x:responseVisite[i].oa_x,
-                            oa_y:responseVisite[i].oa_y
-                        })
+                                idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
+                                nomOuvrage:responseVisite[i].nomOuvrage,
+                                nomDepartement:responseVisite[i].nomDepartement,
+                                oa_x:responseVisite[i].oa_x,
+                                oa_y:responseVisite[i].oa_y
+                            })
 
-                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+                            TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                         }
-                    else
+                        else
                         {
 
-                         data.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y
-                        })
+                            data.push({
+                            idOuvrage:response[i].idOuvrage,
+                            nomOuvrage:response[i].nomOuvrage,
+                            nomDepartement:response[i].nomDepartement,
+                            oa_x:response[i].oa_x,
+                            oa_y:response[i].oa_y
+                            })
 
-                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
                         }
+                    };
                 };
                 
                 var store=App.store.create({
@@ -1092,6 +1093,8 @@ App.controller.define('CMain', {
                     store.load();
                 }
                 App.get('VVisit grid').show();
+
+            });
 
             });
                
