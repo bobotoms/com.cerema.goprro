@@ -1,7 +1,6 @@
 App.view.define('VVisitWork', {
 
-    //extend: "Ext.window.Window",
-    extend: 'Ext.Panel',
+    extend: "Ext.window.Window",
 	alias : 'widget.VVisitWork',
 	border: false,
 	width: 1200,
