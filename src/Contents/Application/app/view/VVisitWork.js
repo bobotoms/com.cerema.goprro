@@ -12,7 +12,7 @@ App.view.define('VVisitWork', {
                 region: "west",
                 layout: "vbox",
                 width: "25%",
-	itemId : "VisiteWork",
+	            itemId : "VisiteWork",
                 split: true,
                 items: [{
                     xtype: "textfield",
