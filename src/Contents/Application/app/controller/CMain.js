@@ -1074,7 +1074,7 @@ App.controller.define('CMain', {
                                 })
                                 TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                             }
-                            else if (response[i].idOuvrage != responseVisite[i].idVisiteOuvrage)
+                            else if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
                             {
                                 data.push({
                                     idOuvrage:response[i].idOuvrage,
