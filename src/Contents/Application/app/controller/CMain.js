@@ -16,7 +16,7 @@ function GMap(l,m)
 
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
-    TMap.setMarker=function(l,m,title,idOuvrage, color) {
+    TMap.setMarker=function(l,m,title,idOuvrage, param) {
         
               
         var marker=new google.maps.Marker({
@@ -26,7 +26,7 @@ function GMap(l,m)
             itemId: idOuvrage
         });
         marker.setZIndex(0);
-        if (color == "jaune")
+        if (param == "jaune")
             {
                 marker.setZIndex(1);
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
