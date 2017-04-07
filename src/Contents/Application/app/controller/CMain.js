@@ -1048,41 +1048,52 @@ App.controller.define('CMain', {
                 var data=[];
                 for (var i=0;i<response.length;i++) {
                     
+                    console.log("response[i].idOuvrage");
+                    console.log(response[i].idOuvrage);
                     var jaune = false;
+                    console.log("jaune 0");
+                    console.log(jaune);
                     for (var i=0;i<responseVisite.length;i++) {
+                        
+                        console.log("responseVisite[i].idVisiteOuvrage");
+                        console.log(responseVisite[i].idVisiteOuvrage);
                         if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
                         {
                             jaune = true;
 
+                            console.log("jaune true");
+                            console.log(jaune);
                         }
 
                         
                     };
                     if(jaune == true)
-                        {
-                            data.push({
-                                idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
-                                nomOuvrage:responseVisite[i].nomOuvrage,
-                                nomDepartement:responseVisite[i].nomDepartement,
-                                oa_x:responseVisite[i].oa_x,
-                                oa_y:responseVisite[i].oa_y
-                            })
+                    {
+                            console.log("jaune true 2");
+                        data.push({
+                            idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
+                            nomOuvrage:responseVisite[i].nomOuvrage,
+                            nomDepartement:responseVisite[i].nomDepartement,
+                            oa_x:responseVisite[i].oa_x,
+                            oa_y:responseVisite[i].oa_y
+                        })
 
-                            TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
-                        }
-                        else
-                        {
+                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+                    }
+                    else
+                    {
 
-                            data.push({
-                            idOuvrage:response[i].idOuvrage,
-                            nomOuvrage:response[i].nomOuvrage,
-                            nomDepartement:response[i].nomDepartement,
-                            oa_x:response[i].oa_x,
-                            oa_y:response[i].oa_y
-                            })
+                            console.log("jaune not true 2");
+                        data.push({
+                        idOuvrage:response[i].idOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y
+                        })
 
-                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
-                        }
+                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                    }
                 };
                 
                 var store=App.store.create({
