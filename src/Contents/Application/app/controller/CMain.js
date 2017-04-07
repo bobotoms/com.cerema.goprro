@@ -1083,7 +1083,7 @@ App.controller.define('CMain', {
                     if(jaune)
                     {
                             console.log("jaune true 2");
-                        jaune
+                        console.log(jaune);
 
                         TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                     }
