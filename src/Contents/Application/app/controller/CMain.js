@@ -1246,9 +1246,10 @@ App.controller.define('CMain', {
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
+        var test = store.data.idOuvrage;
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform window#Work");
-        form.idOuvrage=store.data.idOuvrage;
+        form.idOuvrage=test;
         form.show();
     },
     showMapAddV: function() {
