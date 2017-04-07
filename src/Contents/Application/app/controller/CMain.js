@@ -1064,6 +1064,7 @@ App.controller.define('CMain', {
                         console.log(responseVisite[i].idOuvrage);
                         if (response[i].idOuvrage == responseVisite[i].idOuvrage)
                         {
+                            
                             jaune = true;
     /*                        jaune = data.push({
                         idOuvrage:response[i].idOuvrage,
@@ -1076,10 +1077,7 @@ App.controller.define('CMain', {
                             console.log("jaune true");
                             console.log(jaune);
     */                    }
-
-                        
-                    };
-                    if(jaune)
+ if(jaune)
                     {
                             console.log("jaune true 2");
                         console.log(jaune);
@@ -1101,6 +1099,9 @@ App.controller.define('CMain', {
 
                         TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);*/
                     }
+                        
+                    };
+                   
                 };
                 
                 var store=App.store.create({
