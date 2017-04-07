@@ -210,9 +210,6 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VSaisie_onShow"
             },
-            "VVisitWork": {
-                closed: function(me, store) {store.removeAll();}
-            },
         });
 
         App.init('VMain',function(){
