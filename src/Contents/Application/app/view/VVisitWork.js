@@ -4,7 +4,7 @@ App.view.define('VVisitWork', {
 	alias : 'widget.VVisitWork',
 	border: false,
 	width: 1200,
-	height: 700,
+	height: 600,
 	closable: true,
 	
 	layout: "border",
