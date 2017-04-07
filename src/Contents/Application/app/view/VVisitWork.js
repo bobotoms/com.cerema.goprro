@@ -7,12 +7,12 @@ App.view.define('VVisitWork', {
 	height: 600,
 	closable: true,
 	layout: "border",
+	            itemId : "VisiteWork",
 	
 	items: [{
                 region: "west",
                 layout: "vbox",
                 width: "25%",
-	            itemId : "VisiteWork",
                 split: true,
                 items: [{
                     xtype: "textfield",
