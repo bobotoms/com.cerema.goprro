@@ -1087,9 +1087,7 @@ App.controller.define('CMain', {
                             }
                      //   };
                     
-
-                };
-            var store=App.store.create({
+ var store=App.store.create({
                 fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
             });
             if(store)
@@ -1098,6 +1096,8 @@ App.controller.define('CMain', {
                 store.load();
             }
             App.get('VVisit grid').show();
+                };
+           
             
         });
            
