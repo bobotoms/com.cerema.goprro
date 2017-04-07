@@ -1246,8 +1246,7 @@ App.controller.define('CMain', {
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
         
-        var form=App.get("mainform window#Work");
-        form.removeAll();
+        
         /*
         App.get('mainform panel#southpanel').collapse();
         //form=App.get("VVisitWork window#VisiteWork");
@@ -1256,7 +1255,16 @@ App.controller.define('CMain', {
         console.log("form");
         console.log(form);*/
         App.get('mainform panel#southpanel').collapse();
-        var form=App.get("mainform window#Work");
+        if form
+            {
+                
+        console.log("form");
+        console.log(form);
+        form.idOuvrage=store.data.idOuvrage;
+        form.show();
+            }
+        else{
+            var form=App.get("mainform window#Work");
  //       var form = App.get("VVisitWork window#VisiteWork");
         //var form = App.get("VVisitWork");
         
@@ -1264,6 +1272,8 @@ App.controller.define('CMain', {
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
+        }
+        
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
