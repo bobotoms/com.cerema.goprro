@@ -1245,6 +1245,8 @@ App.controller.define('CMain', {
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
+        
+        form.removeAll();
         /*
         App.get('mainform panel#southpanel').collapse();
         //form=App.get("VVisitWork window#VisiteWork");
@@ -1261,7 +1263,6 @@ App.controller.define('CMain', {
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-        form.removeAll();
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
