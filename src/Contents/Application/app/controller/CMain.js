@@ -210,6 +210,9 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VSaisie_onShow"
             },
+            "VVisitWork": {
+                closed: function(me, store) {store.removeAll();}
+            },
         });
 
         App.init('VMain',function(){
@@ -1251,7 +1254,6 @@ App.controller.define('CMain', {
         console.log(store.data);
         console.log("test");
         console.log(test);*/
-        var form= null;
         App.get('mainform panel#southpanel').collapse();
         form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
