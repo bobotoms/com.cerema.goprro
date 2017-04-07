@@ -1068,14 +1068,14 @@ App.controller.define('CMain', {
                             oa_x:responseVisite[i].oa_x,
                             oa_y:responseVisite[i].oa_y
                         })
-                        if ()
+                        /*if ()
                         { 
                             TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                         }
                         else
                         {
                             TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
-                        }
+                        }*/
                     };
             };
             
