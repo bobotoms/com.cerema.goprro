@@ -1255,7 +1255,7 @@ App.controller.define('CMain', {
         console.log("form");
         console.log(form);*/
         App.get('mainform panel#southpanel').collapse();
-        if form
+        if (form)
             {
                 
         console.log("form");
