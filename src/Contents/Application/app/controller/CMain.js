@@ -1294,7 +1294,6 @@ App.controller.define('CMain', {
                         /*je t ai mis une alerte ... */
                         /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
                         
-                    };
     },
     onLoad: function(p)
     {
