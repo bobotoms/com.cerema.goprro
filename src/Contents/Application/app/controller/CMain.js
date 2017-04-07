@@ -1061,7 +1061,7 @@ App.controller.define('CMain', {
                 var dataVisite=[];
                 for (var i=0;i<response.length;i++) {
                     var data=[];
-                        for (var i=0;i<response.length;i++) {
+                       // for (var i=0;i<response.length;i++) {
                             
                             if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
                             {
@@ -1084,7 +1084,7 @@ App.controller.define('CMain', {
                                 })
                                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);  
                             }
-                        };
+                     //   };
                     
 
                 };
