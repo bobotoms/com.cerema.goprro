@@ -1053,23 +1053,32 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                var choixDate = App.get('VVisit combo#dateVisit').getValue();
+                var tabDate = [mail, choixDate];
+                App.Visits.selectVisitDate(tabDate,function(responseVisite) {
+                    console.log("responseVisite");
+                    console.log(responseVisite);
+                    
+                    var data=[];
+                    for (var i=0;i<responseVisite.length;i++) {
+                        data.push({
+                            idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
+                            nomOuvrage:responseVisite[i].nomOuvrage,
+                            nomDepartement:responseVisite[i].nomDepartement,
+                            oa_x:responseVisite[i].oa_x,
+                            oa_y:responseVisite[i].oa_y
+                        })
+                        if ()
+                        { 
+                            TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+                        }
+                        else
+                        {
+                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                        }
+                    };
             };
-            var choixDate = App.get('VVisit combo#dateVisit').getValue();
-        var tabDate = [mail, choixDate];
-        App.Visits.selectVisitDate(tabDate,function(response) {
-            var data=[];
-            for (var i=0;i<response.length;i++) {
-                data.push({
-                    idVisiteOuvrage:response[i].idVisiteOuvrage,
-                    nomOuvrage:response[i].nomOuvrage,
-                    nomDepartement:response[i].nomDepartement,
-                    oa_x:response[i].oa_x,
-                    oa_y:response[i].oa_y
-                })
-                
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune");
-            };
+            
             var store=App.store.create({
                 fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
             });
