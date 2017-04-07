@@ -1063,7 +1063,7 @@ App.controller.define('CMain', {
                     var data=[];
                         for (var i=0;i<response.length;i++) {
                             
-                            if (typeof(responseVisite[i].idVisiteOuvrage)
+                            if (typeof(responseVisite[i].idVisiteOuvrage))
                             {
                                 dataVisite.push({
                                     idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
