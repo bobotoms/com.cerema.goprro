@@ -1059,11 +1059,11 @@ App.controller.define('CMain', {
             var tabDate = [mail, choixDate];
             App.Visits.selectVisitDate(tabDate,function(responseVisite) {
                 var dataVisite=[];
-                for (var i=0;i<responseVisite.length;i++) {
+                for (var i=0;i<response.length;i++) {
                     var data=[];
                         for (var i=0;i<response.length;i++) {
                             
-                            if (typeof(responseVisite[i].idVisiteOuvrage))
+                            if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
                             {
                                 dataVisite.push({
                                     idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
@@ -1074,7 +1074,6 @@ App.controller.define('CMain', {
                                 })
                                 TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                             }
-                            else
                             {
                                 data.push({
                                     idOuvrage:response[i].idOuvrage,
