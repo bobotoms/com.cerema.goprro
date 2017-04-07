@@ -1046,69 +1046,57 @@ App.controller.define('CMain', {
                     console.log(response.length);
             var choixDate = App.get('VVisit combo#dateVisit').getValue();
             var tabDate = [mail, choixDate];
-            App.Visits.selectVisitDate(tabDate,function(responseVisite) {
-                var data=[];
-                
-                    console.log("response.length2");
-                    console.log(response.length);
-                for (var i=0;i<response.length;i++) {
-                    
-                    console.log("response[i].idOuvrage");
-                    console.log(response[i].idOuvrage);
-                    var jaune = 0;
-                    console.log("jaune 0");
-                    console.log(jaune);
-                    for (var i=0;i<responseVisite.length;i++) {
-                        
-                        console.log("responseVisite[i].idOuvrage");
-                        console.log(responseVisite[i].idOuvrage);
-                        if (response[i].idOuvrage == responseVisite[i].idOuvrage)
-                        {
-                            
-                            
-                            jaune++;
- 
-                            data.push({
-                                idOuvrage:responseVisite[i].idOuvrage,
-                                nomOuvrage:responseVisite[i].nomOuvrage,
-                                nomDepartement:responseVisite[i].nomDepartement,
-                                oa_x:responseVisite[i].oa_x,
-                                oa_y:responseVisite[i].oa_y
-                            });
-                            TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
-                        }
+            
+            for (var i=0;i<response.length;i++) {
+                App.Visits.selectVisitDate(tabDate,function(responseVisite) {
+                    var data=[];
 
+       //             for (var i=0;i<response.length;i++) {
+
+                        console.log("response[i].idOuvrage");
+                        console.log(response[i].idOuvrage);
+                        var jaune = 0;
+                        console.log("jaune 0");
+                        console.log(jaune);
+                        for (var i=0;i<responseVisite.length;i++) {
+
+                            console.log("responseVisite[i].idOuvrage");
+                            console.log(responseVisite[i].idOuvrage);
+                            if (response[i].idOuvrage == responseVisite[i].idOuvrage)
+                            {
+
+
+                                jaune++;
+
+                                data.push({
+                                    idOuvrage:responseVisite[i].idOuvrage,
+                                    nomOuvrage:responseVisite[i].nomOuvrage,
+                                    nomDepartement:responseVisite[i].nomDepartement,
+                                    oa_x:responseVisite[i].oa_x,
+                                    oa_y:responseVisite[i].oa_y
+                                });
+                                TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+                            }
+
+
+    //                    };
                         
                     };
-                    if(jaune == 0)
+
+                    var store=App.store.create({
+                        fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                    });
+                    if(store)
                     {
-                        console.log("jaune not true 2");
-                        console.log(jaune);
-                        data.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y
-                        })
-
-                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                        App.get('VVisit grid#gridVisit').bindStore(store);
+                        store.load();
                     }
-                };
-                
-                var store=App.store.create({
-                    fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                    App.get('VVisit grid').show();
+
                 });
-                if(store)
-                {
-                    App.get('VVisit grid#gridVisit').bindStore(store);
-                    store.load();
-                }
-                App.get('VVisit grid').show();
+            };
 
-            });
-
-            });
+        });
                
         
         
