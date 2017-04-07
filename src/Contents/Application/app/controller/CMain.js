@@ -1068,14 +1068,14 @@ App.controller.define('CMain', {
                             
                             jaune = ++;
  
-                        data.push({
-                        idOuvrage:responseVisite[i].idOuvrage,
-                        nomOuvrage:responseVisite[i].nomOuvrage,
-                        nomDepartement:responseVisite[i].nomDepartement,
-                        oa_x:responseVisite[i].oa_x,
-                        oa_y:responseVisite[i].oa_y
-                        })
-                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+                            data.push({
+                                idOuvrage:responseVisite[i].idOuvrage,
+                                nomOuvrage:responseVisite[i].nomOuvrage,
+                                nomDepartement:responseVisite[i].nomDepartement,
+                                oa_x:responseVisite[i].oa_x,
+                                oa_y:responseVisite[i].oa_y
+                            });
+                            TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                         }
 
                         
