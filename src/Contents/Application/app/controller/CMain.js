@@ -1042,10 +1042,15 @@ App.controller.define('CMain', {
         TMap.clearMarkers();
         
         App.Visits.select(mail,function(response) {
+                    console.log("response.length");
+                    console.log(response.length);
             var choixDate = App.get('VVisit combo#dateVisit').getValue();
             var tabDate = [mail, choixDate];
             App.Visits.selectVisitDate(tabDate,function(responseVisite) {
                 var data=[];
+                
+                    console.log("response.length2");
+                    console.log(response.length);
                 for (var i=0;i<response.length;i++) {
                     
                     console.log("response[i].idOuvrage");
