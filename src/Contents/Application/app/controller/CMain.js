@@ -1062,7 +1062,7 @@ App.controller.define('CMain', {
                         
                         console.log("responseVisite[i].idVisiteOuvrage");
                         console.log(responseVisite[i].idVisiteOuvrage);
-                        if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
+                        if (response[i].idOuvrage == responseVisite[i].idOuvrage)
                         {
                             jaune = true;
 
