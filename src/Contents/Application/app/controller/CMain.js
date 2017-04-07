@@ -1055,7 +1055,7 @@ App.controller.define('CMain', {
                     
                     console.log("response[i].idOuvrage");
                     console.log(response[i].idOuvrage);
-                    var jaune = [];
+                    var jaune = false;
                     console.log("jaune 0");
                     console.log(jaune);
                     for (var i=0;i<responseVisite.length;i++) {
@@ -1064,7 +1064,8 @@ App.controller.define('CMain', {
                         console.log(responseVisite[i].idOuvrage);
                         if (response[i].idOuvrage == responseVisite[i].idOuvrage)
                         {
-                            jaune = data.push({
+                            jaune = true;
+    /*                        jaune = data.push({
                         idOuvrage:response[i].idOuvrage,
                         nomOuvrage:response[i].nomOuvrage,
                         nomDepartement:response[i].nomDepartement,
@@ -1074,24 +1075,23 @@ App.controller.define('CMain', {
 
                             console.log("jaune true");
                             console.log(jaune);
-                        }
+    */                    }
 
                         
                     };
-                     console.log("jaune avant true");
-                     console.log(jaune);
                     if(jaune)
                     {
                             console.log("jaune true 2");
                         console.log(jaune);
 
-                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+//                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
                     }
                     else
                     {
 
                             console.log("jaune not true 2");
-                        data.push({
+                        console.log(jaune);
+      /*                  data.push({
                         idOuvrage:response[i].idOuvrage,
                         nomOuvrage:response[i].nomOuvrage,
                         nomDepartement:response[i].nomDepartement,
@@ -1099,7 +1099,7 @@ App.controller.define('CMain', {
                         oa_y:response[i].oa_y
                         })
 
-                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);*/
                     }
                 };
                 
