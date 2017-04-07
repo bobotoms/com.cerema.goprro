@@ -1245,8 +1245,6 @@ App.controller.define('CMain', {
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
-        App.get("mainform").show();
-        
         /*
         App.get('mainform panel#southpanel').collapse();
         //form=App.get("VVisitWork window#VisiteWork");
