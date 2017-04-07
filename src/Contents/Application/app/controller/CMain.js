@@ -1060,8 +1060,8 @@ App.controller.define('CMain', {
                     console.log(jaune);
                     for (var i=0;i<responseVisite.length;i++) {
                         
-                        console.log("responseVisite[i].idVisiteOuvrage");
-                        console.log(responseVisite[i].idVisiteOuvrage);
+                        console.log("responseVisite[i].idOuvrage");
+                        console.log(responseVisite[i].idOuvrage);
                         if (response[i].idOuvrage == responseVisite[i].idOuvrage)
                         {
                             jaune = true;
