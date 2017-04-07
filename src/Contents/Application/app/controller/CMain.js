@@ -1287,9 +1287,9 @@ App.controller.define('CMain', {
         });
     },
     add_visit_marquer: function(sm,index,record) {
-                        var idVisiteOuvrage = sm.store.data.items[record].data.idOuvrage;
+                        var idOuvrage = sm.store.data.items[record].data.idOuvrage;
                         console.log("id ouvrage ADD");
-                        console.log(idVisiteOuvrage);
+                        console.log(idOuvrage);
                         /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
                         /*je t ai mis une alerte ... */
                         /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
