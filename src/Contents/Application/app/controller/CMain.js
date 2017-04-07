@@ -1255,16 +1255,7 @@ App.controller.define('CMain', {
         console.log("form");
         console.log(form);*/
         App.get('mainform panel#southpanel').collapse();
-        if (form)
-            {
-                
-        console.log("form");
-        console.log(form);
-        form.idOuvrage=store.data.idOuvrage;
-        form.show();
-            }
-        else{
-            var form=App.get("mainform window#Work");
+        var form=App.get("mainform window#Work");
  //       var form = App.get("VVisitWork window#VisiteWork");
         //var form = App.get("VVisitWork");
         
@@ -1272,8 +1263,6 @@ App.controller.define('CMain', {
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-        }
-        
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
