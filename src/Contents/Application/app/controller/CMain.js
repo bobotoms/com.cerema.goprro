@@ -1252,8 +1252,7 @@ App.controller.define('CMain', {
         console.log("test");
         console.log(test);*/
         App.get('mainform panel#southpanel').collapse();
-        form=App.get("mainform window#Work");
-        form.idOuvrage=null;
+        form=App.get("VVisitWork window#VisiteWork");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
