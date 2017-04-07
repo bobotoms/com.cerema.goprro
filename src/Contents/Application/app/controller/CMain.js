@@ -32,12 +32,24 @@ function GMap(l,m)
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             }
         marker.setMap(TMap.map);
-        marker.addListener('click', function(x) {
-            hideForms();
-            var form=App.get("mainform panel#Saisie");
-            form.idOuvrage=this.itemId;
-            form.show();
-        });
+        if (param == "addVisit")
+        {
+            marker.addListener('click', function(x) {
+                hideForms();
+                var form=App.get("mainform panel#Work");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        else
+        {
+            marker.addListener('click', function(x) {
+                hideForms();
+                var form=App.get("mainform panel#Saisie");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
         TMap.markers.push(marker);
         return marker;
     };
@@ -978,7 +990,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage);
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"addVisit");
             };
             var store=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
