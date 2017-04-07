@@ -1066,7 +1066,7 @@ App.controller.define('CMain', {
                         {
                             
                             
-                            jaune = ++;
+                            jaune++;
  
                             data.push({
                                 idOuvrage:responseVisite[i].idOuvrage,
