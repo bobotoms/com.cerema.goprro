@@ -1055,7 +1055,7 @@ App.controller.define('CMain', {
                     
                     console.log("response[i].idOuvrage");
                     console.log(response[i].idOuvrage);
-                    var jaune = false;
+                    var jaune = [];
                     console.log("jaune 0");
                     console.log(jaune);
                     for (var i=0;i<responseVisite.length;i++) {
@@ -1064,7 +1064,13 @@ App.controller.define('CMain', {
                         console.log(responseVisite[i].idOuvrage);
                         if (response[i].idOuvrage == responseVisite[i].idOuvrage)
                         {
-                            jaune = true;
+                            jaune = [
+                            idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
+                            nomOuvrage:responseVisite[i].nomOuvrage,
+                            nomDepartement:responseVisite[i].nomDepartement,
+                            oa_x:responseVisite[i].oa_x,
+                            oa_y:responseVisite[i].oa_y
+                            ];
 
                             console.log("jaune true");
                             console.log(jaune);
@@ -1072,15 +1078,13 @@ App.controller.define('CMain', {
 
                         
                     };
-                    if(jaune == true)
+                     console.log("jaune avant true");
+                     console.log(jaune);
+                    if(jaune)
                     {
                             console.log("jaune true 2");
                         data.push({
-                            idVisiteOuvrage:responseVisite[i].idVisiteOuvrage,
-                            nomOuvrage:responseVisite[i].nomOuvrage,
-                            nomDepartement:responseVisite[i].nomDepartement,
-                            oa_x:responseVisite[i].oa_x,
-                            oa_y:responseVisite[i].oa_y
+                            jaune
                         })
 
                         TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
