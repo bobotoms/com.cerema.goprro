@@ -38,7 +38,6 @@ function GMap(l,m)
         if (param == "addVisit")
         {
             marker.addListener('click', function(x) {
-                hideForms();
                 var form=App.get("mainform panel#Work");
                 form.idOuvrage=this.itemId;
                 form.show();
