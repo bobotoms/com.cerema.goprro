@@ -1046,10 +1046,10 @@ App.controller.define('CMain', {
             var tabDate = [mail, choixDate];
             App.Visits.selectVisitDate(tabDate,function(responseVisite) {
                 var data=[];
-                for (var i=0;i<responseVisite.length;i++) {
+                for (var i=0;i<response.length;i++) {
                     
                     var jaune = false;
-                    for (var i=0;i<response.length;i++) {
+                    for (var i=0;i<responseVisite.length;i++) {
                         if (response[i].idOuvrage == responseVisite[i].idVisiteOuvrage)
                         {
                             jaune = true;
