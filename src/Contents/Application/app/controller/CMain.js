@@ -30,7 +30,7 @@ function GMap(l,m)
             {
                 marker.setZIndex(1);
                 //marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
-                marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/32/Map-Marker-Marker-Outside-Chartreuse-icon.png'); // affiche un marker jaune
+                marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Chartreuse-icon.png'); // affiche un marker jaune
             }
         marker.setMap(TMap.map);
         
