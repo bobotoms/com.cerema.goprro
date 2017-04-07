@@ -19,18 +19,28 @@ function GMap(l,m)
     TMap.setMarker=function(l,m,title,idOuvrage, color) {
         
               
-        var marker=new google.maps.Marker({
-            position: new google.maps.LatLng(l,m),
-            animation: google.maps.Animation.DROP,
-            title: title,
-            itemId: idOuvrage
-        });
+        
         marker.setZIndex(0);
         if (color == "jaune")
             {
+                var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(l,m),
+            animation: google.maps.Animation.DROP,
+            title: title,
+            itemId: idOuvrage,
+            new google.maps.Size(42, 68)
+        });
                 marker.setZIndex(1);
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             }
+        else {
+            var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(l,m),
+            animation: google.maps.Animation.DROP,
+            title: title,
+            itemId: idOuvrage,
+        });
+        }
         marker.setMap(TMap.map);
         marker.addListener('click', function(x) {
             hideForms();
