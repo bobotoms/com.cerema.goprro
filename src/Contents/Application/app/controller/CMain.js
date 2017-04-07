@@ -209,6 +209,9 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VSaisie_onShow"
             },
+            "VAddVisit checkcolumn#select": {
+                click: "add_visit_marquer"
+            },
         });
 
         App.init('VMain',function(){
@@ -1282,6 +1285,16 @@ App.controller.define('CMain', {
             center: new google.maps.LatLng('43.299999','5.4'),
             mapTypeId: google.maps.MapTypeId.MAP
         });
+    },
+    add_visit_marquer: function(sm,index,record) {
+                        var idVisiteOuvrage = sm.store.data.items[record].data.idOuvrage;
+                        console.log("id ouvrage ADD");
+                        console.log(idVisiteOuvrage);
+                        /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
+                        /*je t ai mis une alerte ... */
+                        /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
+                        
+                    };
     },
     onLoad: function(p)
     {
