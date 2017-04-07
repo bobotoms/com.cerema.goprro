@@ -1244,16 +1244,16 @@ App.controller.define('CMain', {
 	},
     add_visit_select: function(me,store) {
         console.log("add_visit_select");
-        console.log("store.data.idOuvrage");
+ /*       console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
         var test = store.data.idOuvrage;
         console.log("store.data");
         console.log(store.data);
         console.log("test");
-        console.log(test);
+        console.log(test);*/
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform window#Work");
-        form.idOuvrage=test;
+        //form.idOuvrage=test;
         form.show();
     },
     showMapAddV: function() {
