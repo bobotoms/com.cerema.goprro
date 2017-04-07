@@ -32,7 +32,17 @@ function GMap(l,m)
                 marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
             }
         marker.setMap(TMap.map);
-        if (param == "addVisit")
+        
+        
+        marker.addListener('click', function(x) {
+                hideForms();
+                var form=App.get("mainform panel#Saisie");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        
+        
+ /*       if (param == "addVisit")
         {
             marker.addListener('click', function(x) {
                 hideForms();
@@ -49,7 +59,7 @@ function GMap(l,m)
                 form.idOuvrage=this.itemId;
                 form.show();
             });
-        }
+        }       */
         TMap.markers.push(marker);
         return marker;
     };
