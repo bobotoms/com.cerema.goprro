@@ -1244,19 +1244,17 @@ App.controller.define('CMain', {
 	},
     add_visit_select: function(me,store) {
         console.log("add_visit_select");
- /*       console.log("store.data.idOuvrage");
+        console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
-        var test = store.data.idOuvrage;
-        console.log("store.data");
-        console.log(store.data);
-        console.log("test");
-        console.log(test);*/
+        /*
         App.get('mainform panel#southpanel').collapse();
         //form=App.get("VVisitWork window#VisiteWork");
-        form=App.get("mainform window#work");
+        form=App.get("mainform window#work");*/
         /*
         console.log("form");
         console.log(form);*/
+        App.get('mainform panel#southpanel').collapse();
+        var form=App.get("mainform window#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
