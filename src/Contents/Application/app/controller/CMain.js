@@ -1034,7 +1034,7 @@ App.controller.define('CMain', {
         });
     },
     showVisitDate: function(p) {
-        
+/*        
         App.get('mainform panel#southpanel').collapse();
         //hideForms();
         App.get("mainform panel#visit").show();
@@ -1098,6 +1098,7 @@ App.controller.define('CMain', {
 
         });
                
+        */
         
         
         
@@ -1109,8 +1110,7 @@ App.controller.define('CMain', {
         
         
         
-        
- /***************************************** OK
+ //***************************************** OK
         
         App.get('mainform panel#southpanel').collapse();
         //hideForms();
@@ -1164,7 +1164,7 @@ App.controller.define('CMain', {
 
         });
         
-***************************************************/
+//***************************************************/
         
         
         
