@@ -1075,7 +1075,7 @@ App.controller.define('CMain', {
                         oa_x:responseVisite[i].oa_x,
                         oa_y:responseVisite[i].oa_y
                         })
-                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idOuvrage,"jaune");
+                        TMap.setMarker(responseVisite[i].oa_y,responseVisite[i].oa_x,responseVisite[i].nomOuvrage,responseVisite[i].idVisiteOuvrage,"jaune");
                         }
 
                         
