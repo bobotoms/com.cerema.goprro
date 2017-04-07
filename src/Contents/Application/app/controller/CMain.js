@@ -1247,6 +1247,8 @@ App.controller.define('CMain', {
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
         var test = store.data.idOuvrage;
+        console.log("store.data");
+        console.log(store.data);
         console.log("test");
         console.log(test);
         App.get('mainform panel#southpanel').collapse();
