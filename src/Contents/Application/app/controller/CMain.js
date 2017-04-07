@@ -34,15 +34,7 @@ function GMap(l,m)
         marker.setMap(TMap.map);
         
         
-        marker.addListener('click', function(x) {
-                hideForms();
-                var form=App.get("mainform panel#Saisie");
-                form.idOuvrage=this.itemId;
-                form.show();
-            });
-        
-        
- /*       if (param == "addVisit")
+        if (param == "addVisit")
         {
             marker.addListener('click', function(x) {
                 hideForms();
@@ -59,7 +51,7 @@ function GMap(l,m)
                 form.idOuvrage=this.itemId;
                 form.show();
             });
-        }       */
+        }
         TMap.markers.push(marker);
         return marker;
     };
