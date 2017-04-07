@@ -27,11 +27,11 @@ function GMap(l,m)
         });
         marker.setZIndex(0);
         if (param == "jaune")
-            {
-                marker.setZIndex(1);
-                //marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
-                marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Chartreuse-icon.png'); // affiche un marker jaune
-            }
+        {
+            marker.setZIndex(1);
+            //marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
+            marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Chartreuse-icon.png'); // affiche un marker jaune
+        }
         marker.setMap(TMap.map);
         
         
@@ -1261,6 +1261,7 @@ App.controller.define('CMain', {
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
+        form.removeAll();
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
