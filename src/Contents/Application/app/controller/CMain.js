@@ -198,7 +198,7 @@ App.controller.define('CMain', {
                 itemdblclick: "add_visit_select"
             },
             "VVisit grid#gridVisit": {
-                itemdblclick: "add_visit_select"
+                itemdblclick: "visit_select"
             },
             "VAddVisit":{
                 show: "showMapAddV"
@@ -1137,54 +1137,16 @@ App.controller.define('CMain', {
     
 	},
     add_visit_select: function(me,store) {
-        
-        
-      
-        //App.get(me,"treepanel").getRootNode().removeAll();
-        //App.get(me,"propertygrid").getStore().removeAll();
-     /*   var form=App.get('mainform panel#Work');
-        for (var i=0;i<form.items.length;i++) form.items[i].remove();*/
-            //App.reset(me);
-            //App.reset(App.get("mainform window#Work"));
-        console.log("add_visit_select");
-        console.log("store.data.idOuvrage");
-        console.log(store.data.idOuvrage);
-        /*
         App.get('mainform panel#southpanel').collapse();
-        //form=App.get("VVisitWork window#VisiteWork");
-        form=App.get("mainform window#work");*/
-        /*
-        console.log("form");
-        console.log(form);*/
-        //App.get("mainform window#Work").hidden();
-        //App.get("mainform window#Work").show();
-        //App.get("mainform window#Work").reset();
-        //App.get("mainform window#Work").removeAll();
-        
-        //App.get("mainform").show();
-        //App.get('VVisitWork window#Work').setValue('');
-        App.get('mainform panel#southpanel').collapse();
-        //var form=App.get("mainform window#Work");
-        //var form=App.get("mainform panel#VisiteWork");
         var form=App.get("mainform panel#Work");
-        //var form=App.get("mainform panel#VSaisie");
-        //var form=me;
-        //var form=App.get("VVisitWork window#Work");
- //       var form = App.get("VVisitWork window#VisiteWork");
-        //var form = App.get("VVisitWork window#VisiteWork2");
-        //var form = App.get("VVisitWork");
-        
-        
-        
- /*       App.get("VVisitWork window#VisiteWork").show();
-        var form = App.get("VVisitWork window#VisiteWork");*/
-        
-        //App.get("VVisitWork window#VisiteWork");
-        console.log("form");
-        console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-        //for (var i=0;i<form.items.length;i++) form.items[i].remove();
+    },
+    visit_select: function(me,store) {
+        App.get('mainform panel#southpanel').collapse();
+        var form=App.get("mainform panel#Work");
+        form.idOuvrage=store.data.idVisiteOuvrage;
+        form.show();
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
