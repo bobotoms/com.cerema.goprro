@@ -1305,7 +1305,7 @@ App.controller.define('CMain', {
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
-        }*/
+        }
     },
     onLoad: function(p)
     {
