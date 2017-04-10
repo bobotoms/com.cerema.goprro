@@ -1191,7 +1191,7 @@ App.controller.define('CMain', {
         
             //var panel=App.get(me.up('panel'));//.up('panel').up('panel'));
             //var panel=me.up;('window');//.up('panel');//.up('panel');
-            var panel=App.get(me.up('panel'),"grid").up('panel'));
+            var panel=App.get(me.up('panel'),"grid").up('panel');
             //var dataStore=App.get(me.up('panel'),"grid")
         
         /**/console.log("panel");
