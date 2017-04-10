@@ -1253,7 +1253,7 @@ App.controller.define('CMain', {
     
 	},
     add_visit_select: function(me,store) {
-        var form=App.get('mainform');
+        var form=App.get('mainform panel#Work');
         for (var i=0;i<form.items.length;i++) form.items[i].remove();
             //App.reset(me);
             //App.reset(App.get("mainform window#Work"));
