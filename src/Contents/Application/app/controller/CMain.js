@@ -1286,12 +1286,14 @@ App.controller.define('CMain', {
             });
         };
     },
-    visit_work: function(me, store)
+    visit_work: function(me, store, record)
     {
         console.log("me");
         console.log(me);
         console.log("store");
         console.log(store);
+        console.log("record");
+        console.log(record);
         var panel=me.up('panel');
         console.log("panel");
         console.log(panel);
