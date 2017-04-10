@@ -212,6 +212,9 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VVisit_onShow"
             },
+            "VAddVisit grid#checkcolumn":{
+                click: "checkColumnAddV"
+            },
 /*            "VAddVisit checkcolumn#select": {
                 click: "add_visit_marquer"
             },*/
@@ -222,6 +225,12 @@ App.controller.define('CMain', {
         });
 
     },
+    checkColumnAddV: function(me, store)
+    {
+        console.log("checkColumn");
+        console.log(store.data);
+    }
+    ,
     up_onclick: function(p, record)
     {
         App.view.create('VShowDoc', {
