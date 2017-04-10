@@ -1294,7 +1294,7 @@ App.controller.define('CMain', {
     },
     showMapV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel3'),{
-                        zoom: 10,
+                        zoom: 8,
                         center: new google.maps.LatLng('43.299999','5.4'),
                         mapTypeId: google.maps.MapTypeId.MAP
         });
