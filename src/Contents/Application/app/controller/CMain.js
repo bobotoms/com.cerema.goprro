@@ -1353,24 +1353,24 @@ App.controller.define('CMain', {
                  if(response[i].idOuvrage == idOuvrage)
                 {
                     data.push({
-                    idOuvrage:response[i].idOuvrage,
-                    nomOuvrage:response[i].nomOuvrage,
-                    nomDepartement:response[i].nomDepartement,
-                    oa_x:response[i].oa_x,
-                    oa_y:response[i].oa_y,
+                        idOuvrage:response[i].idOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y,
                         select:true
                     })
                 }
                 else
                 {   
                     data.push({
-                    idOuvrage:response[i].idOuvrage,
-                    nomOuvrage:response[i].nomOuvrage,
-                    nomDepartement:response[i].nomDepartement,
-                    oa_x:response[i].oa_x,
-                    oa_y:response[i].oa_y,
+                        idOuvrage:response[i].idOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y,
                         select:false
-                })
+                    })
                 }
                 
                 if(response[i].idOuvrage == idOuvrage)
