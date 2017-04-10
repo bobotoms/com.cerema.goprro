@@ -1187,7 +1187,7 @@ App.controller.define('CMain', {
         /**/console.log(me);
         /**/console.log("xtype");
         /**/console.log(me.xtype);
-        App.get('VVisitWork window#add_add_visit').show();
+        App.get('VVisitWork grid#add_add_visit').show();
         
         
         var xtype = me.xtype;
