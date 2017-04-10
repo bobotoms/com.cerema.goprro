@@ -1022,12 +1022,13 @@ App.controller.define('CMain', {
                     nomOuvrage:response[i].nomOuvrage,
                     nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
-                    oa_y:response[i].oa_y
+                    oa_y:response[i].oa_y,
+                    select:false
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
             };
             var store=App.store.create({
-                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y", "select"],data:data
             });
             if(store)
             {
