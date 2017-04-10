@@ -1376,11 +1376,11 @@ App.controller.define('CMain', {
                 
                 if(response[i].idOuvrage == idOuvrage)
                 {
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
                 }
                 else
                 {   
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
                 }
                 var store=App.store.create({
                     fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
