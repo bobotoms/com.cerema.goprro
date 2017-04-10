@@ -1286,10 +1286,12 @@ App.controller.define('CMain', {
             });
         };
     },
-    visit_work: function(me)
+    visit_work: function(me, store)
     {
         console.log("me");
         console.log(me);
+        console.log("store");
+        console.log(store);
         
             //var idOuvrage = dataStore.items[i].data.idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
