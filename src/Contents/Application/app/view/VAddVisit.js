@@ -77,12 +77,12 @@ App.view.define('VAddVisit', {
                 xtype: 'checkcolumn',
                 text: "Ajouter",
                 dataIndex: "select",
-                editor: {
+  /*              editor: {
                     xtype: "checkbox",
                     itemId: "select",
                     cls: 'x-grid-checkheader-editor',singleSelect: true,
                     
-                },
+                },*/
                 listeners: {
                         click: function(sm,index,record) {
                             var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
