@@ -219,6 +219,12 @@ App.controller.define('CMain', {
             "VAddVisit checkbox#select":{
                 click: "checkColumnAddV"
             },
+            "VAddVisitWork button#addVisitWork": {
+                click: "add_visit_work"
+            },
+            "VVisitWork button#visitWork": {
+                click: "visit_work"
+            }
 /*            "VAddVisit checkcolumn#select": {
                 click: "add_visit_marquer"
             },*/
@@ -1279,6 +1285,32 @@ App.controller.define('CMain', {
                 });
             });
         };
+    },
+    visit_work: function(me)
+    {
+        var LongDate = App.get('VAddVisit datefield#date').getValue();
+        var date = Ext.Date.format(LongDate, 'Y-m-d');
+        if(LongDate != null)
+        {
+            var mail = Auth.User.mail;
+            var panel=me.up('panel');
+            var dataStore=App.get(me.up('panel'),"grid").getStore().data;
+
+            for (var i=0;i<dataStore.items.length;i++) {
+                if (dataStore.items[i].data.select)
+                {
+                    var idOuvrage = dataStore.items[i].data.idOuvrage;
+                    var tabVisits = [mail, date, idOuvrage]
+
+                    App.Visits.insert(tabVisits,function(response) {
+                    })
+                }
+            };
+              Ext.Msg.alert('GOPRRO',"Visite enregistrée");
+        }
+        else{
+              Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
+        }
     },
     onLoad: function(p)
     {

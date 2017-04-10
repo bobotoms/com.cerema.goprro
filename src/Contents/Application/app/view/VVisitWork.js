@@ -13,7 +13,7 @@ App.view.define('VVisitWork', {
             '->', {
 
             text: '<b>Ajouter</b>',
-            itemId: "add_visit"
+            itemId: "visitWork"
         }
         ],
 	
