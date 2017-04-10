@@ -81,6 +81,27 @@ App.view.define('VAddVisit', {
                     xtype: "checkbox",
                     itemId: "select",
                     cls: 'x-grid-checkheader-editor'
+                },
+                singleSelect: true,
+                listeners: {
+                    click: function(sm,index,record) {
+                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                        console.log("modif id viste ouvrage");
+                        console.log(idVisiteOuvrage);
+                        /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
+                        /*je t ai mis une alerte ... */
+                        /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
+                        
+                    },
+                    check: function(sm,index,record) {
+                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                        console.log("modif id viste ouvrage");
+                        console.log(idVisiteOuvrage);
+                        /*ici, tu mets tous tes traitements lors d'un clic sur une ligne*/
+                        /*je t ai mis une alerte ... */
+                        /*pour utiliser un parametre de ta ligne, tu utilises record.data.[nom de la colonne]*/
+                        
+                    }
                 }
             }],
         }],
