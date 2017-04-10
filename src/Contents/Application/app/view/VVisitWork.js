@@ -21,12 +21,12 @@ App.view.define('VVisitWork', {
 
                     text: '<b>Ajouter</b>',
                     itemId: "add_add_visit",
-                },{
+                }/*,{
 
                     text: '<b>Ajouter 2</b>',
                     itemId: "add_visit",
                     hidden: true
-                },
+                },*/
                 ],
                 items: [{
                     xtype: "textfield",
