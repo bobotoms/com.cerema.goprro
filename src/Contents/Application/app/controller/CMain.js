@@ -1341,9 +1341,31 @@ App.controller.define('CMain', {
     },
     add_visit_work: function(me, store)
     {
-        var panel=me.up('panel');
-        console.log("panel");
-        console.log(panel);
+        var idOuvrage=me.up('panel').idOuvrage;
+        console.log("idOuvrage");
+        console.log(idOuvrage);
+        var mail = Auth.User.mail;
+        
+        App.Visits.select(mail,function(response) {
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                data.push({
+                    idOuvrage:response[i].idOuvrage,
+                    nomOuvrage:response[i].nomOuvrage,
+                    nomDepartement:response[i].nomDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y
+                })
+                if(response[i].idOuvrage == idOuvrage)
+                {
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                }
+                else
+                {   
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                }
+            };
+        });  
   /*      var idOuvrage=me.up('panel').idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
         App.get('VVisitWork').close();
