@@ -78,6 +78,7 @@ App.view.define('VVisit', {
                 dataIndex: "oa_x"
             },
             {
+                text: "Supprimer",
                 xtype: 'actioncolumn',
                 itemId: "delOuvrageVisit", 
                 iconCls: "delgrid",
