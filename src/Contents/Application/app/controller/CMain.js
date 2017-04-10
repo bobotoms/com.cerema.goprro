@@ -1349,7 +1349,7 @@ App.controller.define('CMain', {
         var mail = Auth.User.mail;
         App.get('VAddVisitWork').close();
         TMap.clearMarkers();
-         var store=App.get("VAddVisit").getStore().data;
+         var store=App.get("VAddVisit grid#add_visit").getStore().data;
         console.log("store");
         console.log(store);
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
