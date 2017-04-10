@@ -1201,6 +1201,10 @@ App.controller.define('CMain', {
         });
     },
     add_visit_marquer: function(me, store) {
+        console.log("me me me");
+        console.log(me);
+        console.log("store store store");
+        console.log(store);
         var idOuvrage = sm.store.data.items[record].data.idOuvrage;
         console.log("id ouvrage ADD");
         console.log(idOuvrage);
