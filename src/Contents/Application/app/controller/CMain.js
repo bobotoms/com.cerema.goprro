@@ -1292,7 +1292,9 @@ App.controller.define('CMain', {
         console.log(me);
         console.log("store");
         console.log(store);
-        
+        var panel=App.get(me.up('panel'));
+        console.log("panel");
+        console.log(panel);
             //var idOuvrage = dataStore.items[i].data.idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
         if(date != null)
