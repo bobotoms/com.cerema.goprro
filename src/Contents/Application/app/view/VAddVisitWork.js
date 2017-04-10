@@ -14,7 +14,6 @@ App.view.define('VAddVisitWork', {
 
             text: '<b>Ajouter</b>',
             itemId: "add_add_visit",
-            hidden: true
         }
         ],
 	
