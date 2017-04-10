@@ -232,8 +232,8 @@ App.controller.define('CMain', {
             "VVisitWork button#visitWork": {
                 click: "visit_work"
             },
-            "VAddVisit checkcolumn#select": {
-                checkOn: "add_visit_check"
+            "VAddVisit checkbox#select": {
+                click: "add_visit_check"
             }
         });
 
