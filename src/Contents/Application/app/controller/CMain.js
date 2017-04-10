@@ -1288,16 +1288,7 @@ App.controller.define('CMain', {
     },
     visit_work: function(me, store, record)
     {
-        console.log("me");
-        console.log(me);
-        console.log("store");
-        console.log(store);
-        console.log("record");
-        console.log(record);
         var idOuvrage=me.up('panel').idOuvrage;
-        console.log("idOuvrage");
-        console.log(idOuvrage);
-            //var idOuvrage = dataStore.items[i].data.idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
         App.get('VVisitWork').close();
         if(date != null)
@@ -1338,7 +1329,7 @@ App.controller.define('CMain', {
             Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
-              Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
+              Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
         }
     },
     onLoad: function(p)
