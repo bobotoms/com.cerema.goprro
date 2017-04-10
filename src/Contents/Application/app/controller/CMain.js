@@ -1345,11 +1345,32 @@ App.controller.define('CMain', {
     add_visit_work: function(me, store)
     {
         var idOuvrage=me.up('panel').idOuvrage;
-        var mail = Auth.User.mail;
-        /******************   regarder le nomnb=bre de ligne parcourir chaque ligne(items) si c'est selected on y touche pas sinon on y va ****************************/
-        App.get('VAddVisitWork').close();
         
+        var idOuvrage=me.up('panel').idOuvrage;
+        var mail = Auth.User.mail;
+        App.get('VAddVisitWork').close();
         TMap.clearMarkers();
+         var store=App.store.set("VAddVisit")
+        /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
+         var store=App.store.create
+        
+            var data=[];
+            
+            if blablablanla
+        
+        data.push({
+                        idOuvrage:response[i].idOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y,
+                        select:true
+                    })
+        
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
+        
+        
+        on y touche pas sinon on y va ****************************/
         App.Visits.select(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
