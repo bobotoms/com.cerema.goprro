@@ -1250,6 +1250,7 @@ App.controller.define('CMain', {
     add_visit_select: function(me,store) {
         
             //App.reset(me);
+            App.reset(App.get("mainform window#Work"));
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
