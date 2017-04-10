@@ -1013,14 +1013,7 @@ App.controller.define('CMain', {
         App.get("VAddVisit panel#map").show();
 
         });
-              
-         
         
-        
-        
-        
- 
-       
     },
     showVisit: function(p) {
          console.log("showVisit");
@@ -1045,9 +1038,7 @@ App.controller.define('CMain', {
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
-        });
-        
-        
+        });        
         App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
@@ -1065,7 +1056,6 @@ App.controller.define('CMain', {
                 App.get('VVisit combo#dateVisit').bindStore(store);
                 store.load();
             }
-            
         });
     },
     showVisitDate: function(p) {
