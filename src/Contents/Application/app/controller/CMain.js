@@ -218,10 +218,10 @@ App.controller.define('CMain', {
             },
             "VAddVisit checkbox#select":{
                 click: "checkColumnAddV"
-            },/*
+            },
             "VAddVisitWork button#addVisitWork": {
                 click: "add_visit_work"
-            },*/
+            },
             "VVisitWork button#visitWork": {
                 click: "visit_work"
             }
