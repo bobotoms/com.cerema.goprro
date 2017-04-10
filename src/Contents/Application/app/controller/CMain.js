@@ -1344,7 +1344,6 @@ App.controller.define('CMain', {
     },
     add_visit_work: function(me, store)
     {
-        var idOuvrage=me.up('panel').idOuvrage;
         
         var idOuvrage=me.up('panel').idOuvrage;
         var mail = Auth.User.mail;
