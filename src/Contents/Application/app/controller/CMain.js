@@ -1253,8 +1253,8 @@ App.controller.define('CMain', {
     
 	},
     add_visit_select: function(me,store) {
-        var form=App.get('mainform panel#Work');
-        for (var i=0;i<form.items.length;i++) form.items[i].remove();
+     /*   var form=App.get('mainform panel#Work');
+        for (var i=0;i<form.items.length;i++) form.items[i].remove();*/
             //App.reset(me);
             //App.reset(App.get("mainform window#Work"));
         console.log("add_visit_select");
@@ -1292,6 +1292,7 @@ App.controller.define('CMain', {
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
+        for (var i=0;i<form.items.length;i++) form.items[i].remove();
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
