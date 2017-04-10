@@ -1288,27 +1288,20 @@ App.controller.define('CMain', {
     },
     visit_work: function(me)
     {
-        var LongDate = App.get('VVisit combo#dateVisit').getValue();
-        console.log("date");
-        console.log(LongDate);
-       /* var date = Ext.Date.format(LongDate, 'Y-m-d');
-        if(LongDate != null)
+        console.log("me");
+        console.log(me);
+        
+            //var idOuvrage = dataStore.items[i].data.idOuvrage;
+        var date = App.get('VVisit combo#dateVisit').getValue();
+        if(date != null)
         {
             var mail = Auth.User.mail;
-            var panel=me.up('panel');
-            var dataStore=App.get(me.up('panel'),"grid").getStore().data;
+            
+            var tabVisits = [mail, date, idOuvrage];
 
-            for (var i=0;i<dataStore.items.length;i++) {
-                if (dataStore.items[i].data.select)
-                {
-                    var idOuvrage = dataStore.items[i].data.idOuvrage;
-                    var tabVisits = [mail, date, idOuvrage]
-
-                    App.Visits.insert(tabVisits,function(response) {
-                    })
-                }
-            };
-              Ext.Msg.alert('GOPRRO',"Visite enregistrée");
+            App.Visits.insert(tabVisits,function(response) {
+            })
+            Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
