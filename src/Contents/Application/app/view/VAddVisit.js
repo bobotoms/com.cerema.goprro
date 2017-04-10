@@ -75,7 +75,6 @@ App.view.define('VAddVisit', {
             },
             {
                 xtype: 'checkcolumn',
-                //xtype: 'checkbox',
                 text: "Ajouter",
                 dataIndex: "select",
                 itemId: "select",
