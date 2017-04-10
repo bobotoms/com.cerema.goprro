@@ -1097,7 +1097,7 @@ App.controller.define('CMain', {
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune","visit");
                 };
                 var store=App.store.create({
-                    fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                    fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
                 });
                 if(store)
                 {
