@@ -231,10 +231,10 @@ App.controller.define('CMain', {
             },
             "VVisitWork button#visitWork": {
                 click: "visit_work"
-            }
-/*            "VAddVisit checkcolumn#select": {
+            },
+            "VAddVisit checkcolumn#select": {
                 click: "add_visit_marquer"
-            },*/
+            }
         });
 
         App.init('VMain',function(){
@@ -1199,13 +1199,12 @@ App.controller.define('CMain', {
             center: new google.maps.LatLng('43.299999','5.4'),
             mapTypeId: google.maps.MapTypeId.MAP
         });
-    },/*
-    add_visit_marquer: function(sm,index,record) {
-                        var idOuvrage = sm.store.data.items[record].data.idOuvrage;
-                        console.log("id ouvrage ADD");
-                        console.log(idOuvrage);
-                        
-    },*/
+    },
+    add_visit_marquer: function(me, store) {
+        var idOuvrage = sm.store.data.items[record].data.idOuvrage;
+        console.log("id ouvrage ADD");
+        console.log(idOuvrage);
+    },
     VVisit_onShow: function(me) {
         /**/console.log("VSaisie_onShow");
         /**/console.log("me");
@@ -1342,8 +1341,6 @@ App.controller.define('CMain', {
     add_visit_work: function(me, store)
     {
         var idOuvrage=me.up('panel').idOuvrage;
-        console.log("idOuvrage");
-        console.log(idOuvrage);
         var mail = Auth.User.mail;
         
         App.get('VAddVisitWork').close();
@@ -1391,49 +1388,6 @@ App.controller.define('CMain', {
                 }
             };
         });  
-  /*      var idOuvrage=me.up('panel').idOuvrage;
-        var date = App.get('VVisit combo#dateVisit').getValue();
-        App.get('VVisitWork').close();
-        if(date != null)
-        {
-            var mail = Auth.User.mail;
-            
-            var tabVisits = [mail, date, idOuvrage];
-
-            App.Visits.insert(tabVisits,function(response) {
-                 var tabDate = [mail, date];
-                                    App.Visits.selectVisitDate(tabDate,function(response) {
-                                        var data=[];
-                                        for (var i=0;i<response.length;i++) {
-                                            data.push({
-                                                idOuvrage:response[i].idOuvrage,
-                                                idVisiteOuvrage:response[i].idVisiteOuvrage,
-                                                nomOuvrage:response[i].nomOuvrage,
-                                                nomDepartement:response[i].nomDepartement,
-                                                oa_x:response[i].oa_x,
-                                                oa_y:response[i].oa_y
-                                            })
-
-                                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
-                                        };
-                                        var store=App.store.create({
-                                            fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
-                                        });
-                                        if(store)
-                                        {
-                                            App.get('VVisit grid#gridVisit').bindStore(store);
-                                            store.load();
-                                        }
-                                        App.get('VVisit grid').show();
-
-                                    });
-                
-            })
-            Ext.Msg.alert('GOPRRO',"Visite enregistrée");
-        }
-        else{
-              Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
-        }*/
     },
     onLoad: function(p)
     {
