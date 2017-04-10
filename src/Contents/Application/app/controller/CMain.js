@@ -1187,6 +1187,9 @@ App.controller.define('CMain', {
         /**/console.log(me);
         /**/console.log("xtype");
         /**/console.log(me.xtype);
+        App.get(me,'#add_visit').show();
+        
+        
         var xtype = me.xtype;
         me.element={};
         App.reset(me);
