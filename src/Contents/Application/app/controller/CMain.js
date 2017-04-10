@@ -1350,9 +1350,21 @@ App.controller.define('CMain', {
         App.get('VAddVisitWork').close();
         TMap.clearMarkers();
          var store=me.up('panel');
-         var store=App.get("VAddVisit grid#add_visit");
+        
+        
+        var panel=me.up('panel').up('panel');//.up('panel'));
+            //var panel=me.up;('window');//.up('panel');//.up('panel');
+        var panelGrid=App.get(me.up('panel'),"grid");
+        
+        
+        
+         //var store=App.get("VAddVisit grid#add_visit");
         console.log("store");
         console.log(store);
+        console.log("panel");
+        console.log(panel);
+        console.log("panelGrid");
+        console.log(panelGrid);
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
          var store=App.store.create
         
