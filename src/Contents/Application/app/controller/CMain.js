@@ -1167,8 +1167,8 @@ App.controller.define('CMain', {
         App.get('mainform panel#southpanel').collapse();
         //var form=App.get("mainform window#Work");
         //var form=App.get("mainform panel#VisiteWork");
-        //var form=App.get("mainform panel#Work");
-        var form=App.get("mainform panel#VSaisie");
+        var form=App.get("mainform panel#Work");
+        //var form=App.get("mainform panel#VSaisie");
         //var form=me;
         //var form=App.get("VVisitWork window#Work");
  //       var form = App.get("VVisitWork window#VisiteWork");
