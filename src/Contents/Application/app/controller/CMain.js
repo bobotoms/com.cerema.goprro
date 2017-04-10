@@ -1297,7 +1297,7 @@ App.controller.define('CMain', {
         var panel=me.up('panel');
         console.log("panel");
         console.log(panel);
-        var item=panel.item.item.item;
+        var item=panel.idOuvrage;
         console.log("item");
         console.log(item);
             //var idOuvrage = dataStore.items[i].data.idOuvrage;
