@@ -51,7 +51,12 @@ App.view.define('VVisit', {
             columns: 
             [
             {
-                id: "idtest",
+                itemId: "idOuvrage",
+                hidden: true,
+                flex: 1,
+                dataIndex: "idOuvrage"
+            },
+            {
                 itemId: "idVisiteOuvrage",
                 hidden: true,
                 flex: 1,
