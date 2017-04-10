@@ -6,9 +6,7 @@ App.view.define('VVisitWork', {
 	width: 1200,
 	height: 600,
 	closable: true,
-	layout: "border",
-	            itemId : "VisiteWork",
-	
+	layout: "border",	
 	items: [{
                 region: "west",
                 layout: "vbox",
