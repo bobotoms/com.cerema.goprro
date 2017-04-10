@@ -232,7 +232,7 @@ App.controller.define('CMain', {
             "VVisitWork button#visitWork": {
                 click: "visit_work"
             },
-            "VAddVisit #select": {
+            "VAddVisit checkcolumn#select": {
                 click: "add_visit_check"
             }
         });
