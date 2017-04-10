@@ -1346,8 +1346,10 @@ App.controller.define('CMain', {
     {
         var idOuvrage=me.up('panel').idOuvrage;
         var mail = Auth.User.mail;
-        
+        /******************   regarder le nomnb=bre de ligne parcourir chaque ligne(items) si c'est selected on y touche pas sinon on y va ****************************/
         App.get('VAddVisitWork').close();
+        
+        TMap.clearMarkers();
         App.Visits.select(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
