@@ -1033,6 +1033,29 @@ App.controller.define('CMain', {
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
         
+        App.Visits.select(mail,function(response) {
+            
+        console.log("response");
+        console.log(response);
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                data.push({
+                    idOuvrage:response[i].idOuvrage,
+                    nomOuvrage:response[i].nomOuvrage,
+                    nomDepartement:response[i].nomDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y
+                })
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+            };
+       /*     
+        App.get("VVisit panel#addVisitMap").show();
+        App.get("VAddVisit panel#map").show();*/
+
+        });
+        
+        
+        
         App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
