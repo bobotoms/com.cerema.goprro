@@ -1288,8 +1288,10 @@ App.controller.define('CMain', {
     },
     visit_work: function(me)
     {
-        var LongDate = App.get('VAddVisit datefield#date').getValue();
-        var date = Ext.Date.format(LongDate, 'Y-m-d');
+        var LongDate = App.get('VVisit combo#dateVisit').getValue();
+        console.log("date");
+        console.log("LongDate");
+       /* var date = Ext.Date.format(LongDate, 'Y-m-d');
         if(LongDate != null)
         {
             var mail = Auth.User.mail;
@@ -1310,7 +1312,7 @@ App.controller.define('CMain', {
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
-        }
+        }*/
     },
     onLoad: function(p)
     {
