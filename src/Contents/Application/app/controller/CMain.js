@@ -1263,7 +1263,7 @@ App.controller.define('CMain', {
         //App.get("mainform window#Work").hidden();
         //App.get("mainform window#Work").show();
         //App.get("mainform window#Work").reset();
-        App.get("mainform window#Work").removeAll();
+        //App.get("mainform window#Work").removeAll();
         
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform window#Work");
