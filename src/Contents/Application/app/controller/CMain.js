@@ -196,7 +196,7 @@ App.controller.define('CMain', {
 				click: "add_visit"	
 			},
             "VAddVisit grid#gridVisitAdd": {
-                itemdblclick: "visit_select"
+                itemdblclick: "add_visit_select"
             },
             "VVisit grid#gridVisit": {
                 itemdblclick: "visit_select"
