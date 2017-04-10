@@ -29,13 +29,20 @@ function GMap(l,m)
         if (color == "jaune")
         {
             marker.setZIndex(1);
-            //marker.setIcon('http://maps.google.com/mapfiles/marker_yellow.png'); // affiche un marker jaune
-            marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Chartreuse-icon.png'); // affiche un marker jaune
+            marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Chartreuse-icon.png');
         }
         marker.setMap(TMap.map);
         
         
         if (param == "visit")
+        {
+            marker.addListener('click', function(x) {
+                var form=App.get("mainform panel#Work");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        else if (param == "addvisit")
         {
             marker.addListener('click', function(x) {
                 var form=App.get("mainform panel#Work");
@@ -1017,7 +1024,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
             };
             var store=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
