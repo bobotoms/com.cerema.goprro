@@ -90,13 +90,7 @@ App.view.define('VVisit', {
                 singleSelect: true,
                 listeners: {
                     click: function(sm,index,record) {
-                       // var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                        var idVisiteOuvrage = record.data.idVisiteOuvrage;
-                        /*console.log("idVisiteOuvrage");
-                        console.log(idVisiteOuvrage);
-                        console.log("idVisiteOuvrage2");
-                        console.log(idVisiteOuvrage2);*/
-                        //var data =sm.store.data.items[record].data;
+                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         var grid=this.up('grid');
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
