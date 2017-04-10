@@ -1034,9 +1034,6 @@ App.controller.define('CMain', {
         var mail = Auth.User.mail;
         
         App.Visits.select(mail,function(response) {
-            
-        console.log("response");
-        console.log(response);
             var data=[];
             for (var i=0;i<response.length;i++) {
                 data.push({
@@ -1048,12 +1045,7 @@ App.controller.define('CMain', {
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
-       /*     
-        App.get("VVisit panel#addVisitMap").show();
-        App.get("VAddVisit panel#map").show();*/
-
         });
-        
         
         
         App.Visits.selectVisit(mail,function(response) {
