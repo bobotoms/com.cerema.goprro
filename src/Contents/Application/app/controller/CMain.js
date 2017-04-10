@@ -1286,6 +1286,7 @@ App.controller.define('CMain', {
  /*       App.get("VVisitWork window#VisiteWork").show();
         var form = App.get("VVisitWork window#VisiteWork");*/
         
+        App.get("mainform window#Work").show();
         console.log("form");
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
