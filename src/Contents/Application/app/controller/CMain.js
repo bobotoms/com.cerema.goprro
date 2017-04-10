@@ -1139,8 +1139,7 @@ App.controller.define('CMain', {
     add_visit_select: function(me,store) {
         
         
-        me.element={};
-        App.reset(me);
+      
         //App.get(me,"treepanel").getRootNode().removeAll();
         //App.get(me,"propertygrid").getStore().removeAll();
      /*   var form=App.get('mainform panel#Work');
