@@ -93,6 +93,87 @@ App.view.define('VVisit', {
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
                             {
+                              
+                                
+                                
+                                
+                                
+                                
+                             
+                                
+                                var mail = Auth.User.mail;
+                                TMap.clearMarkers();
+
+                                App.Visits.select(mail,function(response) {
+
+                                console.log("response");
+                                console.log(response);
+                                    var data=[];
+                                    for (var i=0;i<response.length;i++) {
+                                        data.push({
+                                            idOuvrage:response[i].idOuvrage,
+                                            nomOuvrage:response[i].nomOuvrage,
+                                            nomDepartement:response[i].nomDepartement,
+                                            oa_x:response[i].oa_x,
+                                            oa_y:response[i].oa_y
+                                        })
+
+                                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                                    };
+                                    var choixDate = App.get('VVisit combo#dateVisit').getValue();
+                                    var tabDate = [mail, choixDate];
+                                    App.Visits.selectVisitDate(tabDate,function(response) {
+                                        var data=[];
+                                        for (var i=0;i<response.length;i++) {
+                                            data.push({
+                                                idVisiteOuvrage:response[i].idVisiteOuvrage,
+                                                nomOuvrage:response[i].nomOuvrage,
+                                                nomDepartement:response[i].nomDepartement,
+                                                oa_x:response[i].oa_x,
+                                                oa_y:response[i].oa_y
+                                            })
+
+                                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune","visit");
+                                        };
+                                        var store=App.store.create({
+                                            fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                        });
+                                        if(store)
+                                        {
+                                            App.get('VVisit grid#gridVisit').bindStore(store);
+                                            store.load();
+                                        }
+                                        App.get('VVisit grid').show();
+
+                                    });
+
+
+                                });
+                                
+                                
+                                
+                                
+                                
+                                
+                                /*
+                                
+                                
+                                
+                                var store=App.store.create({
+                                    fields:["idZone","idVille","nomVille","nomZone"],data:data
+                                });
+                                if(store)
+                                {
+                                    App.get('VZones grid#T1').bindStore(store);
+                                    store.load();
+                                }
+
+                                App.get('VZones grid').show();*/
+                                
+                                
+                                
+                                
+                                
                                 //grid.store.removeAll();
                                 
                                 /*var store=App.store.create({
