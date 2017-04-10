@@ -1349,7 +1349,8 @@ App.controller.define('CMain', {
         var mail = Auth.User.mail;
         App.get('VAddVisitWork').close();
         TMap.clearMarkers();
-         var store=me.up('panel');
+         //var store=me.up('panel');
+         var store=App.get('VAddVisit grid#gridVisitAdd').getStore();
         
         
         var panel=me.up('panel').up('panel');//.up('panel'));
