@@ -233,7 +233,7 @@ App.controller.define('CMain', {
                 click: "visit_work"
             },
             "VAddVisit checkcolumn#select": {
-                click: "add_visit_marquer"
+                click: "add_visit_check"
             }
         });
 
@@ -1200,7 +1200,7 @@ App.controller.define('CMain', {
             mapTypeId: google.maps.MapTypeId.MAP
         });
     },
-    add_visit_marquer: function(me, store) {
+    add_visit_check: function(me, store) {
         console.log("me me me");
         console.log(me);
         console.log("store store store");
