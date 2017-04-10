@@ -91,6 +91,8 @@ App.view.define('VVisit', {
                 listeners: {
                     click: function(sm,index,record) {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                        console.log("idVisiteOuvrage");
+                        console.log(idVisiteOuvrage);
                         /*var idVisiteOuvrage2 = record.data.idVisiteOuvrage;
                         console.log("idVisiteOuvrage");
                         console.log(idVisiteOuvrage);
