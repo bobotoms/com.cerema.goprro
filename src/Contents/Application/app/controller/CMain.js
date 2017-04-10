@@ -1258,7 +1258,7 @@ App.controller.define('CMain', {
         /*
         console.log("form");
         console.log(form);*/
-        App.get("mainform window#Work").hidden();
+        //App.get("mainform window#Work").hidden();
         App.get("mainform window#Work").show();
         
         
