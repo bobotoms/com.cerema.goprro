@@ -16,6 +16,16 @@ App.view.define('VVisitWork', {
                 width: "25%",
                 split: true,
 	            itemId : "VisiteWork2",
+
+
+
+              bbar: [
+            '->', {
+
+            text: '<b>Enregistrer</b>',
+            itemId: "VisitRecord"
+        }
+        ],
    /*             bbar: [
                     '->', {
 
