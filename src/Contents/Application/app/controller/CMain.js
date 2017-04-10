@@ -1192,8 +1192,8 @@ App.controller.define('CMain', {
             var panel=me.up('panel');
             //var dataStore=App.get(me.up('panel'),"grid")
         
-        /**/console.log("panel");
-        /**/console.log(panel);
+        /**/console.log("window");
+        /**/console.log(window);
         
         var xtype = me.xtype;
         me.element={};
