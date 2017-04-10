@@ -6,6 +6,7 @@ App.view.define('VVisitWork', {
 	width: 1200,
 	height: 600,
 	closable: true,
+    closeAction:'hide',
 	layout: "border",
 	            itemId : "VisiteWork",
 	
