@@ -90,11 +90,9 @@ App.view.define('VVisit', {
                 singleSelect: true,
                 listeners: {
                     click: function(sm,index,record) {
-                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                        console.log("idVisiteOuvrage");
-                        console.log(idVisiteOuvrage);
-                        /*var idVisiteOuvrage2 = record.data.idVisiteOuvrage;
-                        console.log("idVisiteOuvrage");
+                       // var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                        var idVisiteOuvrage = record.data.idVisiteOuvrage;
+                        /*console.log("idVisiteOuvrage");
                         console.log(idVisiteOuvrage);
                         console.log("idVisiteOuvrage2");
                         console.log(idVisiteOuvrage2);*/
