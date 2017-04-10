@@ -195,7 +195,7 @@ App.controller.define('CMain', {
 				click: "add_visit"	
 			},
             "VAddVisit grid#gridVisitAdd": {
-                itemdblclick: "add_visit_select"
+                itemdblclick: "visit_select"
             },
             "VVisit grid#gridVisit": {
                 itemdblclick: "visit_select"
@@ -1136,20 +1136,12 @@ App.controller.define('CMain', {
         }
     
 	},
-    add_visit_select: function(me,store) {
-        console.log("store.data Visit");
-        console.log(store.data);
-        App.get('mainform panel#southpanel').collapse();
-        var form=App.get("mainform panel#Work");
-        form.idOuvrage=store.data.idOuvrage;
-        form.show();
-    },
     visit_select: function(me,store) {
         console.log("store.data Visit");
         console.log(store.data);
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#Work");
-        form.idOuvrage=store.data.idVisiteOuvrage;
+        form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
     showMapAddV: function() {
