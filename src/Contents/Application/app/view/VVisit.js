@@ -154,6 +154,7 @@ App.view.define('VVisit', {
 
             },
             {
+                text: "Modifier",
                 xtype: 'actioncolumn',
                 itemId: "addcom", 
                 iconCls: "pencil",
