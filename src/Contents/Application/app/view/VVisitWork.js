@@ -18,7 +18,7 @@ App.view.define('VVisitWork', {
 
             text: '<b>Ajouter2</b>',
             itemId: "add_add_visit",
-            hiddn: 'true'
+            hidden: true
         }
         ],
 	
@@ -28,17 +28,6 @@ App.view.define('VVisitWork', {
                 width: "25%",
                 split: true,
 	            itemId : "VisiteWork2",
-
-
-
-             
-   /*             bbar: [
-                    '->', {
-
-                    text: '<b>Ajouter</b>',
-                    itemId: "add_add_visit",
-                }
-                ],*/
                 items: [{
                     xtype: "textfield",
                     bindTo: "idOuvrage",
