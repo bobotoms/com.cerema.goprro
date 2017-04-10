@@ -1276,10 +1276,12 @@ App.controller.define('CMain', {
         App.get('mainform panel#southpanel').collapse();
         //var form=App.get("mainform window#Work");
         //var form=App.get("mainform panel#VisiteWork");
+ //       var form=App.get("mainform panel#Work");
         var form=App.get("mainform panel#Work");
         //var form=me;
         //var form=App.get("VVisitWork window#Work");
  //       var form = App.get("VVisitWork window#VisiteWork");
+        var form = App.get("VVisitWork window#VisiteWork2");
         //var form = App.get("VVisitWork");
         
         
@@ -1292,7 +1294,7 @@ App.controller.define('CMain', {
         console.log(form);
         form.idOuvrage=store.data.idOuvrage;
         form.show();
-        for (var i=0;i<form.items.length;i++) form.items[i].remove();
+        //for (var i=0;i<form.items.length;i++) form.items[i].remove();
     },
     showMapAddV: function() {
                     TMap.map = new google.maps.Map(document.getElementById('TMapPanel2'),{
