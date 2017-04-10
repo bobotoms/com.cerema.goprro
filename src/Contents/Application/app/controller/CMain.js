@@ -212,7 +212,7 @@ App.controller.define('CMain', {
             "VVisitWork": {
                 show: "VVisit_onShow"
             },
-            "VAddVisit checkcolumn#select":{
+            "VAddVisit checkbox#select":{
                 click: "checkColumnAddV"
             },
 /*            "VAddVisit checkcolumn#select": {
