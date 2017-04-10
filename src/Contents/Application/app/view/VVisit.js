@@ -96,7 +96,7 @@ App.view.define('VVisit', {
                         console.log(idVisiteOuvrage);
                         console.log("idVisiteOuvrage2");
                         console.log(idVisiteOuvrage2);
-                        //var data =sm.store.data.items[record].data;
+                        var data =sm.store.data.items[record].data;
                         var grid=this.up('grid');
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
