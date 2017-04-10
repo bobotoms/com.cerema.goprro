@@ -1248,6 +1248,8 @@ App.controller.define('CMain', {
     
 	},
     add_visit_select: function(me,store) {
+        
+        App.reset(me);
         console.log("add_visit_select");
         console.log("store.data.idOuvrage");
         console.log(store.data.idOuvrage);
@@ -1260,7 +1262,7 @@ App.controller.define('CMain', {
         console.log(form);*/
         //App.get("mainform window#Work").hidden();
         //App.get("mainform window#Work").show();
-        App.get("mainform window#Work").reset();
+        //App.get("mainform window#Work").reset();
         //App.get("mainform window#Work").removeAll();
         
         App.get('mainform panel#southpanel').collapse();
