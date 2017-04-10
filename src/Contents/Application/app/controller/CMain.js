@@ -140,6 +140,34 @@ App.controller.define('CMain', {
             "VSaisie propertygrid": {
                 edit: "propertygrid_edit"
             },
+            "VVisitWork": {
+                show: "VSaisie_onShow"
+            },
+            "VVisitWork combo#dpt": {
+                select: "dpt_onselect"
+            },
+            "VVisitWork combo#ville": {
+                select: "ville_onselect"
+            },
+            "VVisitWork combo#famille": {
+                select: "famille_select"
+            },
+            "VVisitWork button#add_item": {
+                click: "add_item_click"
+            },
+            "VVisitWork uploadfilemanager#up": {
+                itemdblclick: "up_onclick"
+            },
+            "VVisitWork treepanel": {
+                beforeedit: "treeSaisie_beforeedit",
+                itemclick: "treeSaisie_click"
+            },
+            "VVisitWork button#Record": {
+                click: "new_ouvrage_record"
+            },
+            "VVisitWork propertygrid": {
+                edit: "propertygrid_edit"
+            },
             "VAddItem": {
                 show: "VAddItem_onShow"
             },
