@@ -8,7 +8,14 @@ App.view.define('VVisitWork', {
 	closable: true,
     closeAction:'hide',
 	layout: "border",
-	itemId : "VisiteWork",
+	itemId : "VisiteWork", 
+    bbar: [
+            '->', {
+
+            text: '<b>Enregistrer</b>',
+            itemId: "VisitRecord"
+        }
+        ],
 	
 	items: [{
                 region: "west",
@@ -19,13 +26,7 @@ App.view.define('VVisitWork', {
 
 
 
-              bbar: [
-            '->', {
-
-            text: '<b>Enregistrer</b>',
-            itemId: "VisitRecord"
-        }
-        ],
+             
    /*             bbar: [
                     '->', {
 
