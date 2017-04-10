@@ -121,6 +121,7 @@ App.view.define('VVisit', {
                                         var data=[];
                                         for (var i=0;i<response.length;i++) {
                                             data.push({
+                                                idOuvrage:response[i].idOuvrage,
                                                 idVisiteOuvrage:response[i].idVisiteOuvrage,
                                                 nomOuvrage:response[i].nomOuvrage,
                                                 nomDepartement:response[i].nomDepartement,
@@ -131,7 +132,7 @@ App.view.define('VVisit', {
                                             TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune","visit");
                                         };
                                         var store=App.store.create({
-                                            fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                            fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
                                         });
                                         if(store)
                                         {
