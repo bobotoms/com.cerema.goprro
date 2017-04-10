@@ -84,9 +84,7 @@ App.view.define('VAddVisit', {
                     cls: 'x-grid-checkheader-editor',singleSelect: true,
                     
                 },*/
-                listeners: {
-                    
-                            console.log("listeners select");
+                listeners: {                    
                         click: function(sm,index,record) {
                             console.log("listeners select");
                             var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
