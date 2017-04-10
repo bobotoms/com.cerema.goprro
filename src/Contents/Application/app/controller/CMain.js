@@ -1190,7 +1190,7 @@ App.controller.define('CMain', {
         App.get('VVisitWork #add_add_visit').show();
         
             //var panel=App.get(me.up('panel'));//.up('panel').up('panel'));
-            var panel=me.up('window');//.up('panel');//.up('panel');
+            var panel=me.up;//('window');//.up('panel');//.up('panel');
             //var dataStore=App.get(me.up('panel'),"grid")
         
         /**/console.log("panel");
