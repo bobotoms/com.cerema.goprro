@@ -82,6 +82,7 @@ App.view.define('VAddVisit', {
                     itemId: "select",
                     cls: 'x-grid-checkheader-editor',singleSelect: true,
                     listeners: {
+                            console.log("modif id viste ouvrage");
                         click: function(sm,index,record) {
                             var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             console.log("modif id viste ouvrage");
