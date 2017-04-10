@@ -1346,16 +1346,33 @@ App.controller.define('CMain', {
         console.log(idOuvrage);
         var mail = Auth.User.mail;
         
+        App.get('VAddVisitWork').close();
         App.Visits.select(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
-                data.push({
+                 if(response[i].idOuvrage == idOuvrage)
+                {
+                    data.push({
                     idOuvrage:response[i].idOuvrage,
                     nomOuvrage:response[i].nomOuvrage,
                     nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
-                    oa_y:response[i].oa_y
+                    oa_y:response[i].oa_y,
+                        select:true
+                    })
+                }
+                else
+                {   
+                    data.push({
+                    idOuvrage:response[i].idOuvrage,
+                    nomOuvrage:response[i].nomOuvrage,
+                    nomDepartement:response[i].nomDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y,
+                        select:false
                 })
+                }
+                
                 if(response[i].idOuvrage == idOuvrage)
                 {
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
@@ -1363,6 +1380,14 @@ App.controller.define('CMain', {
                 else
                 {   
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                }
+                var store=App.store.create({
+                    fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
+                });
+                if(store)
+                {
+                    App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
+                    store.load();
                 }
             };
         });  
