@@ -1299,7 +1299,7 @@ App.controller.define('CMain', {
         console.log(idOuvrage);
             //var idOuvrage = dataStore.items[i].data.idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
-        var date = App.get('VVisitWork window').close;
+        var date = App.get('VVisitWork window').close();
         if(date != null)
         {
             var mail = Auth.User.mail;
