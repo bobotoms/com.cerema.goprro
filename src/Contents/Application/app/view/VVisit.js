@@ -87,20 +87,9 @@ App.view.define('VVisit', {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         var data =sm.store.data.items[record].data;
                         var grid=this.up('grid');
-                        //var grid=this('grid');
-                        console.log("del id viste ouvrage");
-                        console.log(idVisiteOuvrage);
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                             if (response === true)
                             {
-                              
-                                
-                                
-                                
-                                
-                                
-                             
-                                
                                 var mail = Auth.User.mail;
                                 TMap.clearMarkers();
 
@@ -149,54 +138,6 @@ App.view.define('VVisit', {
 
 
                                 });
-                                
-                                
-                                
-                                
-                                
-                                
-                                /*
-                                
-                                
-                                
-                                var store=App.store.create({
-                                    fields:["idZone","idVille","nomVille","nomZone"],data:data
-                                });
-                                if(store)
-                                {
-                                    App.get('VZones grid#T1').bindStore(store);
-                                    store.load();
-                                }
-
-                                App.get('VZones grid').show();*/
-                                
-                                
-                                
-                                
-                                
-                                //grid.store.removeAll();
-                                
-                                /*var store=App.store.create({
-                                    fields:["dateVisiteOuvrage"],data:data
-                                });
-                                App.get('VVisit combo#dateVisit').bindStore(store);
-                                store.load();*/
-                                                    //grid.store.removeAll();
-                                //grid.store.reload();
-            //                    grid.reset();
-                                //App.get('mainform panel#timeline').update(results);
-                                //grid.store.load();
-                                //grid.load();
-                                //grid.reload();
-                                    //grid.update();
-                                    //grid.getStore().update();
-                                    //grid.store.update();
-                                    //grid.getStore().load();
-                                    //store.load();
-                                //store.update();
-                                //this.store.load();
-                                //this.grid.store.load();
-                                    //grid.store.load();
                                 Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
 
                             }
