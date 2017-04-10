@@ -1290,7 +1290,7 @@ App.controller.define('CMain', {
     {
         var LongDate = App.get('VVisit combo#dateVisit').getValue();
         console.log("date");
-        console.log("LongDate");
+        console.log(LongDate);
        /* var date = Ext.Date.format(LongDate, 'Y-m-d');
         if(LongDate != null)
         {
