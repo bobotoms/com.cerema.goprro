@@ -1286,7 +1286,7 @@ App.controller.define('CMain', {
             });
         };
     },
-    visit_work: function(me, store, record)
+    visit_work: function(me, store)
     {
         var idOuvrage=me.up('panel').idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
@@ -1331,6 +1331,55 @@ App.controller.define('CMain', {
         else{
               Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
         }
+    },
+    add_visit_work: function(me, store)
+    {
+        var idOuvrage=me.up('panel');
+        console.log("panel");
+        console.log(panel);
+  /*      var idOuvrage=me.up('panel').idOuvrage;
+        var date = App.get('VVisit combo#dateVisit').getValue();
+        App.get('VVisitWork').close();
+        if(date != null)
+        {
+            var mail = Auth.User.mail;
+            
+            var tabVisits = [mail, date, idOuvrage];
+
+            App.Visits.insert(tabVisits,function(response) {
+                 var tabDate = [mail, date];
+                                    App.Visits.selectVisitDate(tabDate,function(response) {
+                                        var data=[];
+                                        for (var i=0;i<response.length;i++) {
+                                            data.push({
+                                                idOuvrage:response[i].idOuvrage,
+                                                idVisiteOuvrage:response[i].idVisiteOuvrage,
+                                                nomOuvrage:response[i].nomOuvrage,
+                                                nomDepartement:response[i].nomDepartement,
+                                                oa_x:response[i].oa_x,
+                                                oa_y:response[i].oa_y
+                                            })
+
+                                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune","visit");
+                                        };
+                                        var store=App.store.create({
+                                            fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                        });
+                                        if(store)
+                                        {
+                                            App.get('VVisit grid#gridVisit').bindStore(store);
+                                            store.load();
+                                        }
+                                        App.get('VVisit grid').show();
+
+                                    });
+                
+            })
+            Ext.Msg.alert('GOPRRO',"Visite enregistrée");
+        }
+        else{
+              Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+        }*/
     },
     onLoad: function(p)
     {
