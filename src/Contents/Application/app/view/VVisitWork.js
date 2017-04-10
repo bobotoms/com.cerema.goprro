@@ -12,8 +12,13 @@ App.view.define('VVisitWork', {
     bbar: [
             '->', {
 
-            text: '<b>Enregistrer</b>',
-            itemId: "VisitRecord"
+            text: '<b>Ajouter</b>',
+            itemId: "add_visit"
+        },{
+
+            text: '<b>Ajouter2</b>',
+            itemId: "add_add_visit",
+            hiddn: 'true'
         }
         ],
 	
