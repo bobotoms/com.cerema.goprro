@@ -1292,7 +1292,7 @@ App.controller.define('CMain', {
         console.log(me);
         console.log("store");
         console.log(store);
-        var panel=App.get(me.up('panel'));
+        var panel=me.up('panel');
         console.log("panel");
         console.log(panel);
             //var idOuvrage = dataStore.items[i].data.idOuvrage;
