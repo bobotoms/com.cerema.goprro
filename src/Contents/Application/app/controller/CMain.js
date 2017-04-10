@@ -89,7 +89,8 @@ App.controller.define('CMain', {
         "References.VZones",
         "VAddVisit",
         "VVisit",
-        "VVisitWork"
+        "VVisitWork",
+        "VAddVisitWork"
     ],
 
     models: [
@@ -210,6 +211,9 @@ App.controller.define('CMain', {
                 show: "showMapIndex"
             },
             "VVisitWork": {
+                show: "VVisit_onShow"
+            },
+            "VAddVisitWork": {
                 show: "VVisit_onShow"
             },
             "VAddVisit checkbox#select":{
@@ -1187,7 +1191,6 @@ App.controller.define('CMain', {
         /**/console.log(me);
         /**/console.log("xtype");
         /**/console.log(me.xtype);
-        App.get('VVisitWork #add_add_visit').show();
         
             //var panel=App.get(me.up('panel'));//.up('panel').up('panel'));
             //var panel=me.up;('window');//.up('panel');//.up('panel');
