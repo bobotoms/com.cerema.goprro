@@ -75,11 +75,11 @@ App.view.define('VAddVisit', {
             },
             {
                 xtype: 'checkcolumn',
-                itemId: "select",
                 text: "Ajouter",
                 dataIndex: "select",
                 editor: {
                     xtype: "checkbox",
+                    itemId: "select",
                     cls: 'x-grid-checkheader-editor'
                 }
             }],
