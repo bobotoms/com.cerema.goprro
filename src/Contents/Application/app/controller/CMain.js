@@ -1299,6 +1299,7 @@ App.controller.define('CMain', {
         console.log(idOuvrage);
             //var idOuvrage = dataStore.items[i].data.idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
+        var date = App.get('VVisitWork window').close;
         if(date != null)
         {
             var mail = Auth.User.mail;
@@ -1306,6 +1307,33 @@ App.controller.define('CMain', {
             var tabVisits = [mail, date, idOuvrage];
 
             App.Visits.insert(tabVisits,function(response) {
+                 var tabDate = [mail, date];
+                                    App.Visits.selectVisitDate(tabDate,function(response) {
+                                        var data=[];
+                                        for (var i=0;i<response.length;i++) {
+                                            data.push({
+                                                idOuvrage:response[i].idOuvrage,
+                                                idVisiteOuvrage:response[i].idVisiteOuvrage,
+                                                nomOuvrage:response[i].nomOuvrage,
+                                                nomDepartement:response[i].nomDepartement,
+                                                oa_x:response[i].oa_x,
+                                                oa_y:response[i].oa_y
+                                            })
+
+                                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune","visit");
+                                        };
+                                        var store=App.store.create({
+                                            fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                        });
+                                        if(store)
+                                        {
+                                            App.get('VVisit grid#gridVisit').bindStore(store);
+                                            store.load();
+                                        }
+                                        App.get('VVisit grid').show();
+
+                                    });
+                
             })
             Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
