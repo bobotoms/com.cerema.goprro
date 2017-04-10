@@ -1259,15 +1259,12 @@ App.controller.define('CMain', {
         console.log("form");
         console.log(form);*/
         //App.get("mainform window#Work").hidden;
-        App.get("mainform window#Work").show;
+        //App.get("mainform window#Work").show;
         
         
         App.get('mainform panel#southpanel').collapse();
-        console.log("store.data.idOuvrage2");
-        console.log(store.data.idOuvrage);
-        var form=App.get("mainform window#Work");
-        console.log("store.data.idOuvrage3");
-        console.log(store.data.idOuvrage);
+        //var form=App.get("mainform window#Work");
+        var form=App.get("VVisitWork window#Work");
  //       var form = App.get("VVisitWork window#VisiteWork");
         //var form = App.get("VVisitWork");
         
