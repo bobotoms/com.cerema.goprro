@@ -209,9 +209,9 @@ App.controller.define('CMain', {
             "mainform":{
                 show: "showMapIndex"
             },
-            "VVisitWork": {
+            /*"VVisitWork": {
                 show: "VSaisie_onShow"
-            },
+            },*/
 /*            "VAddVisit checkcolumn#select": {
                 click: "add_visit_marquer"
             },*/
