@@ -1253,7 +1253,8 @@ App.controller.define('CMain', {
     
 	},
     add_visit_select: function(me,store) {
-        
+        var form=App.get('mainform');
+        for (var i=0;i<form.items.length;i++) form.items[i].remove();
             //App.reset(me);
             //App.reset(App.get("mainform window#Work"));
         console.log("add_visit_select");
