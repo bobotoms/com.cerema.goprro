@@ -1252,8 +1252,7 @@ App.controller.define('CMain', {
         }
     
 	},
-    //add_visit_select: function(me,store) {
-    add_visit_select: function(store) {
+    add_visit_select: function(me,store) {
         
             //App.reset(me);
             //App.reset(App.get("mainform window#Work"));
