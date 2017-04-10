@@ -16,7 +16,7 @@ function GMap(l,m)
 
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
-    TMap.setMarker=function(l,m,title,idOuvrage, color, param, ) {
+    TMap.setMarker=function(l,m,title,idOuvrage, color, param) {
         
               
         var marker=new google.maps.Marker({
@@ -998,7 +998,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage, "", "visit");
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
             var store=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
@@ -1167,7 +1167,7 @@ App.controller.define('CMain', {
                     oa_y:response[i].oa_y
                 })
                 
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune", ,"visit");
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"jaune","visit");
             };
             var store=App.store.create({
                 fields:["idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
