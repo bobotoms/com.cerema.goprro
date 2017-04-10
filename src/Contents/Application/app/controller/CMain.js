@@ -1341,7 +1341,7 @@ App.controller.define('CMain', {
     },
     add_visit_work: function(me, store)
     {
-        var idOuvrage=me.up('panel');
+        var panel=me.up('panel');
         console.log("panel");
         console.log(panel);
   /*      var idOuvrage=me.up('panel').idOuvrage;
