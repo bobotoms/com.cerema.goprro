@@ -91,11 +91,11 @@ App.view.define('VVisit', {
                 listeners: {
                     click: function(sm,index,record) {
                         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                        var idVisiteOuvrage2 = record.data.idVisiteOuvrage;
+                        /*var idVisiteOuvrage2 = record.data.idVisiteOuvrage;
                         console.log("idVisiteOuvrage");
                         console.log(idVisiteOuvrage);
                         console.log("idVisiteOuvrage2");
-                        console.log(idVisiteOuvrage2);
+                        console.log(idVisiteOuvrage2);*/
                         var data =sm.store.data.items[record].data;
                         var grid=this.up('grid');
                         App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
