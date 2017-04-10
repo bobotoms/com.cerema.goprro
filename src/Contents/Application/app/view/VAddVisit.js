@@ -86,6 +86,7 @@ App.view.define('VAddVisit', {
                 },*/
                 listeners: {
                         click: function(sm,index,record) {
+                            console.log("listeners select");
                             var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             console.log("modif id viste ouvrage");
                             console.log(idVisiteOuvrage);
