@@ -1543,9 +1543,11 @@ App.controller.define('CMain', {
         };
         
     },
-    new_visit_ouvrage_record: function(me) {
+    new_visit_ouvrage_record: function(me, store) {
         console.log('me');
         console.log(me);
+        console.log('store 1');
+        console.log(store);
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         console.log('store new visit ouvrage');
