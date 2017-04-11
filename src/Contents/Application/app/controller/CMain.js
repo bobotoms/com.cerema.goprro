@@ -1202,22 +1202,8 @@ App.controller.define('CMain', {
         });
     },
     add_visit_check: function(comp, rowIndex, checked, eOpts) {
-        console.log("comp comp comp");
-        console.log(comp);
-        console.log("rowIndex rowIndex rowIndex");
-        console.log(rowIndex);
-        console.log("checked checked checked");
-        console.log(checked);
-        console.log("eOpts eOpts eOpts");
-        console.log(eOpts);
-  /*      console.log("me me me");
-        console.log(me);
-        console.log("store store store");
-        console.log(store);*/
+        
         var idOuvrage = eOpts.data.idOuvrage;
-        console.log("id ouvrage ADD");
-        console.log(idOuvrage);
-
         var mail = Auth.User.mail;
         App.get('VAddVisitWork').close();
         TMap.clearMarkers();
@@ -1227,45 +1213,13 @@ App.controller.define('CMain', {
         
         for (var i=0;i<store.data.items.length;i++) {
              if(store.data.items[i].data.select == true)
-            {
-                 /*dataAll.push({
-                    idOuvrage:store.data.items[i].data.idOuvrage,
-                    nomOuvrage:store.data.items[i].data.nomOuvrage,
-                    nomDepartement:store.data.items[i].data.nomDepartement,
-                    oa_x:store.data.items[i].data.oa_x,
-                    oa_y:store.data.items[i].data.oa_y,
-                    select:true
-                })*/
-
                 TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
             }
             else
-            {           
-                /*dataAll.push({
-                    idOuvrage:store.data.items[i].data.idOuvrage,
-                    nomOuvrage:store.data.items[i].data.nomOuvrage,
-                    nomDepartement:store.data.items[i].data.nomDepartement,
-                    oa_x:store.data.items[i].data.oa_x,
-                    oa_y:store.data.items[i].data.oa_y,
-                    select:false
-                })*/
+            {
                 TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
             }
         };
-/*        var storeAll=App.store.create({
-            fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
-        });
-        if(storeAll)
-        {
-            App.get('VAddVisit grid#gridVisitAdd').bindStore(storeAll);
-            storeAll.load();
-        };  */
-        
-        
-        
-        
-        
-        
     },
     VVisit_onShow: function(me) {
         /**/console.log("VSaisie_onShow");
