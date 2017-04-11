@@ -1365,11 +1365,12 @@ App.controller.define('CMain', {
         console.log("store");
         console.log(store);
         
-        App.Visits.select(mail,function(response) {
+
         
             var datas=[];
             for (var i=0;i<store.data.items.length;i++) 
             {
+                 App.Visits.select(mail,function(response) {
                  if(store.data.items[i].select == true)
                  {
                      datas.push({
@@ -1481,8 +1482,8 @@ App.controller.define('CMain', {
                         App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                         store.load();
                     }*/
-                };
-        });  
+        });
+                };  
     },
     onLoad: function(p)
     {
