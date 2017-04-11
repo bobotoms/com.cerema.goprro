@@ -1548,9 +1548,16 @@ App.controller.define('CMain', {
         
         
         
-                        var paneltest2 = App.get("VUpVisitWork");
+            var getstore = App.get("VUpVisitWork").getStore();
+            console.log("getstore");
+            console.log(getstore);   
+        
+        
+            var paneltest2 = App.get("VUpVisitWork");
             console.log("paneltest2");
             console.log(paneltest2);
+            //paneltest2.items.items[3].items.items[0].items.items[0].value         id gestionnaire
+        
         
             var paneltest = App.get(me.up('panel'),"grid");
             console.log("paneltest");
