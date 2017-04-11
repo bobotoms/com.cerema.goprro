@@ -1375,6 +1375,7 @@ App.controller.define('CMain', {
                 console.log(store.data.items[i].data.nomOuvrage);
                  if(store.data.items[i].data.select == true)
                 {
+                console.log("if");
                      dataAll.push({
                         idOuvrage:store.data.items[i].data.idOuvrage,
                         nomOuvrage:store.data.items[i].data.nomOuvrage,
@@ -1387,7 +1388,8 @@ App.controller.define('CMain', {
                     TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
                 }
                 else if (store.data.items[i].data.idOuvrage == idOuvrage)
-                {     
+                {  
+                console.log("elseif");   
                         dataAll.push({
                         idOuvrage:store.data.items[i].data.idOuvrage,
                         nomOuvrage:store.data.items[i].data.nomOuvrage,
@@ -1400,7 +1402,8 @@ App.controller.define('CMain', {
                     TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");                
                 }
                 else
-                {   
+                { 
+                console.log("else");  
                     
                         dataAll.push({
                             idOuvrage:store.data.items[i].data.idOuvrage,
