@@ -170,8 +170,8 @@ App.view.define('VVisit', {
         console.log("Modifier");
         console.log(sm.store.data);
         var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-        console.log("idOuvrage");
-        console.log(idOuvrage);
+     /*   console.log("idOuvrage");
+        console.log(idOuvrage);*/
         console.log("idVisiteOuvrage");
         console.log(idVisiteOuvrage);
         //App.get('mainform panel#southpanel').collapse();
