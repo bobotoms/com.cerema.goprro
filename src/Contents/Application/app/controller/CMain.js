@@ -51,7 +51,7 @@ function GMap(l,m)
         {
             marker.addListener('click', function(x) {
                 var form=App.get("mainform panel#Work");
-                form.idVisiteOuvrage=this.itemId;
+                form.idOuvrage=this.itemId;
                 form.show();
             });
         }
@@ -96,17 +96,36 @@ function GMap(l,m)
         
         if (param == "visit")
         {
-            var marker=new google.maps.Marker({
-                position: new google.maps.LatLng(l,m),
-                animation: google.maps.Animation.DROP,
-                title: title,
-                itemId: idVisiteOuvrage
-            });
-            marker.addListener('click', function(x) {
-                var form=App.get("mainform panel#Work");
-                form.idVisiteOuvrage=this.itemId;
-                form.show();
-            });
+            if (idVisiteOuvrage)
+            {
+                var marker=new google.maps.Marker({
+                    position: new google.maps.LatLng(l,m),
+                    animation: google.maps.Animation.DROP,
+                    title: title,
+                    itemId: idVisiteOuvrage
+                });
+                
+                marker.addListener('click', function(x) {
+                    var form=App.get("mainform panel#Work");
+                    form.idVisiteOuvrage=this.itemId;
+                    form.show();
+                });
+            }
+            else
+            {
+                var marker=new google.maps.Marker({
+                    position: new google.maps.LatLng(l,m),
+                    animation: google.maps.Animation.DROP,
+                    title: title,
+                    itemId: idOuvrage
+                });
+                
+                marker.addListener('click', function(x) {
+                    var form=App.get("mainform panel#Work");
+                    form.idOuvrage=this.itemId;
+                    form.show();
+                });
+            }
         }
         else if (param == "addvisit")
         {
@@ -1161,7 +1180,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage"","visit");
             };
         });        
         App.Visits.selectVisit(mail,function(response) {
