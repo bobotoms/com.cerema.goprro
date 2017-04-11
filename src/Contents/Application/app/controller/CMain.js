@@ -1080,6 +1080,7 @@ App.controller.define('CMain', {
             for (var i=0;i<response.length;i++) {
                 data.push({
                     idOuvrage:response[i].idOuvrage,
+                    idVisiteOuvrage:response[i].idVisiteOuvrage,
                     nomOuvrage:response[i].nomOuvrage,
                     nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
