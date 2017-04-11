@@ -18,7 +18,20 @@ function GMap(l,m)
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage, color, param) {
         
-              
+             
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*          
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
@@ -60,7 +73,85 @@ function GMap(l,m)
             });
         }
         TMap.markers.push(marker);
+        return marker;*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   /**/     
+        
+        if (param == "visit")
+        {
+            var marker=new google.maps.Marker({
+                position: new google.maps.LatLng(l,m),
+                animation: google.maps.Animation.DROP,
+                title: title,
+                itemId: idVisiteOuvrage
+            });
+            marker.addListener('click', function(x) {
+                var form=App.get("mainform panel#Work");
+                form.idVisiteOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        else if (param == "addvisit")
+        {
+            var marker=new google.maps.Marker({
+                position: new google.maps.LatLng(l,m),
+                animation: google.maps.Animation.DROP,
+                title: title,
+                itemId: idOuvrage
+            });
+            marker.addListener('click', function(x) {
+                var form=App.get("mainform panel#AddWork");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        else
+        {
+            var marker=new google.maps.Marker({
+                position: new google.maps.LatLng(l,m),
+                animation: google.maps.Animation.DROP,
+                title: title,
+                itemId: idOuvrage
+            });
+            marker.addListener('click', function(x) {
+                hideForms();
+                var form=App.get("mainform panel#Saisie");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        
+        
+        
+        marker.setZIndex(0);
+        if (color == "colorMarker")
+        {
+            marker.setZIndex(1);
+            marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Marker-Outside-Chartreuse-icon.png');
+        }
+        marker.setMap(TMap.map);
+        
+        
+        TMap.markers.push(marker);
         return marker;
+        /**/
     };
     TMap.clearMarkers=function() {
         
