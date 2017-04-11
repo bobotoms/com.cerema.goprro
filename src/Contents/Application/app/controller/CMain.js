@@ -1321,32 +1321,32 @@ App.controller.define('CMain', {
             var tabVisits = [mail, date, idOuvrage];
 
             App.Visits.insert(tabVisits,function(response) {
-                 var tabDate = [mail, date];
-                                    App.Visits.selectVisitDate(tabDate,function(response) {
-                                        var data=[];
-                                        for (var i=0;i<response.length;i++) {
-                                            data.push({
-                                                idOuvrage:response[i].idOuvrage,
-                                                idVisiteOuvrage:response[i].idVisiteOuvrage,
-                                                nomOuvrage:response[i].nomOuvrage,
-                                                nomDepartement:response[i].nomDepartement,
-                                                oa_x:response[i].oa_x,
-                                                oa_y:response[i].oa_y
-                                            })
+                var tabDate = [mail, date];
+                App.Visits.selectVisitDate(tabDate,function(response) {
+                    var data=[];
+                    for (var i=0;i<response.length;i++) {
+                        data.push({
+                            idOuvrage:response[i].idOuvrage,
+                            idVisiteOuvrage:response[i].idVisiteOuvrage,
+                            nomOuvrage:response[i].nomOuvrage,
+                            nomDepartement:response[i].nomDepartement,
+                            oa_x:response[i].oa_x,
+                            oa_y:response[i].oa_y
+                        })
 
-                                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
-                                        };
-                                        var store=App.store.create({
-                                            fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
-                                        });
-                                        if(store)
-                                        {
-                                            App.get('VVisit grid#gridVisit').bindStore(store);
-                                            store.load();
-                                        }
-                                        App.get('VVisit grid').show();
+                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                    };
+                    var store=App.store.create({
+                        fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                    });
+                    if(store)
+                    {
+                        App.get('VVisit grid#gridVisit').bindStore(store);
+                        store.load();
+                    }
+                    App.get('VVisit grid').show();
 
-                                    });
+                });
                 
             })
             Ext.Msg.alert('GOPRRO',"Visite enregistrée");
@@ -1415,6 +1415,59 @@ App.controller.define('CMain', {
             storeAll.load();
         };
         
+    },
+    new_visit_ouvrage_record: function(me) {
+        me.setDisabled(true);
+        var store=App.get(me.up('panel'),"treepanel").getStore().data;
+        App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
+            // On post l'upload
+            App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+                //alert('posté!');
+            });
+            if (!me.up('panel').idVisiteOuvrage) {
+                if (!r.insertId) {
+                    App.notify("Impossible d'enregistrer la fiche");
+                    me.setDisabled(false);
+                    return;
+                };
+                if (r.insertId==0) {
+                    App.notify("Impossible d'enregistrer la fiche");
+                    me.setDisabled(false);
+                    return;
+                };
+            } else r.insertId=me.up('panel').idVisiteOuvrage;
+            var Post=[];
+            for (var i=0;i<store.items.length;i++) {
+                var descr="";
+                var parent=0;
+                if (store.items[i].data.description) descr=store.items[i].data.description;
+                if (store.items[i].data.parentId) {
+                    if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
+                };
+                if (store.items[i].data.leaf) {
+                    var dta={
+                        nomOAElement: descr,
+                        parentOAElement: parent,
+                        idVisiteOuvrage: r.insertId,
+                        idElement: store.items[i].data.name.split('c')[1],
+                        idType: App.get(me.up('panel'),"combo#type").getValue(),
+                        _BLOB: App.get('uploadfilemanager#up').getFiles()
+                    };
+                    if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
+                    Post.push(dta);
+                };
+            };
+            App.Elements.delOuvrage(r.insertId,function(e) {
+                App.DB.post("goprro://visite_oa_elements",Post,function(r){
+                    console.log(r);
+                    App.get('mainform grid#gridO').getStore().load();
+                    me.up('panel').hide();
+                    hideForms();
+                    App.get("mainform grid#gridO").show();
+                    me.setDisabled(false);
+                });
+            });
+        });
     },
     onLoad: function(p)
     {
