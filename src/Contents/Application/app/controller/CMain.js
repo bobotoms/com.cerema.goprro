@@ -1371,8 +1371,8 @@ App.controller.define('CMain', {
         
         App.Visits.select(mail,function(response) {
             for (var i=0;i<store.data.items.length;i++) {
-                console.log("store data items");
-                console.log(store.data.items[i]);
+                console.log("store data items.data");
+                console.log(store.data.items[i].data);
                  if(store.data.items[i].select == true)
                 {
                      dataAll.push({
