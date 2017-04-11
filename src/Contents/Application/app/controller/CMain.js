@@ -1557,13 +1557,16 @@ App.controller.define('CMain', {
             var paneltest2 = App.get("VUpVisitWork");
             console.log("paneltest2");
             console.log(paneltest2);
-             console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
-             console.log(paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
-             console.log(paneltest2.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
-             console.log(paneltest2.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
-             console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
-             console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
-             console.log(paneltest2.items.items[3].items.items[1]);//         Mat necess
+            console.log(paneltest2.items.items[0]);
+            console.log(paneltest2.items.items[1]);
+            console.log(paneltest2.items.items[2]);
+            console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
+            console.log(paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
+            console.log(paneltest2.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
+            console.log(paneltest2.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
+            console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
+            console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
+            console.log(paneltest2.items.items[3].items.items[1]);//         Mat necess
         
         
             var paneltest = App.get(me.up('panel'),"grid");
