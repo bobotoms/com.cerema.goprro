@@ -166,9 +166,16 @@ App.view.define('VVisit', {
                 singleSelect: true,
                 listeners: {
                     click: function(sm,index,record) {
-                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                    
+        console.log("Modifier");
+        var idOuvrage = sm.store.data.items[record].data.idOuvrage;
+        App.get('mainform panel#southpanel').collapse();
+        var form=App.get("mainform panel#UpWork");
+        form.idOuvrage=idOuvrage;
+        form.show();
+                      /*  var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         console.log("modif id viste ouvrage");
-                        console.log(idVisiteOuvrage);
+                        console.log(idVisiteOuvrage);*/
                         
                     }
                 }
