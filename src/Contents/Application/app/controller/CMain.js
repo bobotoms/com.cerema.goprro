@@ -25,7 +25,7 @@ function GMap(l,m)
             title: title,
             itemId: idOuvrage
         });
-        //marker.setZIndex(0);
+        marker.setZIndex(0);
         if (color == "colorMarker")
         {
             marker.setZIndex(1);
