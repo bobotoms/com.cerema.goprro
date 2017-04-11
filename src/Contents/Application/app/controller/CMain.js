@@ -18,53 +18,13 @@ function GMap(l,m)
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage, color, param) {
         
-        if (param == "visit")
-        {
-               
-            var marker=new google.maps.Marker({
-                position: new google.maps.LatLng(l,m),
-                animation: google.maps.Animation.DROP,
-                title: title,
-                itemId: idOuvrage
-                //itemId: idVisiteOuvrage
-            });
-            marker.addListener('click', function(x) {
-                var form=App.get("mainform panel#Work");
-                form.idVisiteOuvrage=this.itemId;
-                form.show();
-            });
-        }
-        else if (param == "addvisit")
-        {
-               
-            var marker=new google.maps.Marker({
-                position: new google.maps.LatLng(l,m),
-                animation: google.maps.Animation.DROP,
-                title: title,
-                itemId: idOuvrage
-            });
-            marker.addListener('click', function(x) {
-                var form=App.get("mainform panel#AddWork");
-                form.idOuvrage=this.itemId;
-                form.show();
-            });
-        }
-        else
-        {
-               
-            var marker=new google.maps.Marker({
-                position: new google.maps.LatLng(l,m),
-                animation: google.maps.Animation.DROP,
-                title: title,
-                itemId: idOuvrage
-            });
-            marker.addListener('click', function(x) {
-                hideForms();
-                var form=App.get("mainform panel#Saisie");
-                form.idOuvrage=this.itemId;
-                form.show();
-            });
-        }
+              
+        var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(l,m),
+            animation: google.maps.Animation.DROP,
+            title: title,
+            itemId: idOuvrage
+        });
         //marker.setZIndex(0);
         if (color == "colorMarker")
         {
@@ -74,7 +34,31 @@ function GMap(l,m)
         marker.setMap(TMap.map);
         
         
-        
+        if (param == "visit")
+        {
+            marker.addListener('click', function(x) {
+                var form=App.get("mainform panel#Work");
+                form.idVisiteOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        else if (param == "addvisit")
+        {
+            marker.addListener('click', function(x) {
+                var form=App.get("mainform panel#AddWork");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
+        else
+        {
+            marker.addListener('click', function(x) {
+                hideForms();
+                var form=App.get("mainform panel#Saisie");
+                form.idOuvrage=this.itemId;
+                form.show();
+            });
+        }
         TMap.markers.push(marker);
         return marker;
     };
@@ -1081,7 +1065,6 @@ App.controller.define('CMain', {
             for (var i=0;i<response.length;i++) {
                 data.push({
                     idOuvrage:response[i].idOuvrage,
-                    idVisiteOuvrage:response[i].idVisiteOuvrage,
                     nomOuvrage:response[i].nomOuvrage,
                     nomDepartement:response[i].nomDepartement,
                     oa_x:response[i].oa_x,
