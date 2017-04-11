@@ -1229,6 +1229,8 @@ App.controller.define('CMain', {
         /**/console.log("VSaisie_onShow");
         /**/console.log("me");
         /**/console.log(me);
+        /**/console.log("me id visite ouvrage");
+        /**/console.log(me.idVisiteOuvrage);
         /**/console.log("xtype");
         /**/console.log(me.xtype);
         
