@@ -1417,13 +1417,13 @@ App.controller.define('CMain', {
             }
         }
 
-        var store=App.store.create({
+        var storeAll=App.store.create({
             fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
         });
-        if(store)
+        if(storeAll)
         {
-            App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
-            store.load();
+            App.get('VAddVisit grid#gridVisitAdd').bindStore(storeAll);
+            storeAll.load();
         };
     });
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
