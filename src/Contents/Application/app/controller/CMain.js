@@ -1169,16 +1169,12 @@ App.controller.define('CMain', {
     
 	},
     visit_select: function(me,store) {
-        console.log("store.data Visit");
-        console.log(store.data);
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#Work");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
     add_visit_select: function(me,store) {
-        console.log("store.data Visit");
-        console.log(store.data);
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#AddWork");
         form.idOuvrage=store.data.idOuvrage;
