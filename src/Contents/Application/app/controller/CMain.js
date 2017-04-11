@@ -1401,7 +1401,7 @@ App.controller.define('CMain', {
                 }
             
             
-        };
+        };/*
         for (var i=0;i<response.length;i++) {
             if(response[i].idOuvrage == idOuvrage)
             {
@@ -1415,7 +1415,7 @@ App.controller.define('CMain', {
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
             }
-        }
+        }*/
 
         var storeAll=App.store.create({
             fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
