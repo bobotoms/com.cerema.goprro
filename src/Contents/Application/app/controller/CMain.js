@@ -1201,13 +1201,15 @@ App.controller.define('CMain', {
             mapTypeId: google.maps.MapTypeId.MAP
         });
     },
-    add_visit_check: function(sm,index,record) {
-        console.log("sm sm sm");
-        console.log(sm);
-        console.log("index index index");
-        console.log(index);
-        console.log("record record record");
-        console.log(record);
+    add_visit_check: function(comp, rowIndex, checked, eOpts) {
+        console.log("comp comp comp");
+        console.log(comp);
+        console.log("rowIndex rowIndex rowIndex");
+        console.log(rowIndex);
+        console.log("checked checked checked");
+        console.log(checked);
+        console.log("eOpts eOpts eOpts");
+        console.log(eOpts);
   /*      console.log("me me me");
         console.log(me);
         console.log("store store store");
