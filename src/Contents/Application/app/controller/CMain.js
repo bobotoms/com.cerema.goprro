@@ -96,7 +96,7 @@ function GMap(l,m)
         
         if (param == "visit")
         {
-            if (Ext.isDefined(idVisiteOuvrage))
+            if (typeof idVisiteOuvrage != 'undefined')
             {
                 var marker=new google.maps.Marker({
                     position: new google.maps.LatLng(l,m),
