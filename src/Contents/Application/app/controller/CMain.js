@@ -1366,7 +1366,6 @@ App.controller.define('CMain', {
                 console.log(store.data.items[i].data.nomOuvrage);
                  if(store.data.items[i].data.select == true)
                 {
-                console.log("if");
                      dataAll.push({
                         idOuvrage:store.data.items[i].data.idOuvrage,
                         nomOuvrage:store.data.items[i].data.nomOuvrage,
@@ -1379,9 +1378,8 @@ App.controller.define('CMain', {
                     TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
                 }
                 else if (store.data.items[i].data.idOuvrage == idOuvrage)
-                {  
-                console.log("elseif");   
-                        dataAll.push({
+                {    
+                    dataAll.push({
                         idOuvrage:store.data.items[i].data.idOuvrage,
                         nomOuvrage:store.data.items[i].data.nomOuvrage,
                         nomDepartement:store.data.items[i].data.nomDepartement,
@@ -1393,23 +1391,17 @@ App.controller.define('CMain', {
                     TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");                
                 }
                 else
-                { 
-                console.log("else");  
-                    
-                        dataAll.push({
-                            idOuvrage:store.data.items[i].data.idOuvrage,
-                            nomOuvrage:store.data.items[i].data.nomOuvrage,
-                            nomDepartement:store.data.items[i].data.nomDepartement,
-                            oa_x:store.data.items[i].data.oa_x,
-                            oa_y:store.data.items[i].data.oa_y,
-                            select:false
-                        })
-                        TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
-                    
-                
+                {  
+                    dataAll.push({
+                        idOuvrage:store.data.items[i].data.idOuvrage,
+                        nomOuvrage:store.data.items[i].data.nomOuvrage,
+                        nomDepartement:store.data.items[i].data.nomDepartement,
+                        oa_x:store.data.items[i].data.oa_x,
+                        oa_y:store.data.items[i].data.oa_y,
+                        select:false
+                    })
+                    TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
                 }
-            
-            
             };
             var storeAll=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
