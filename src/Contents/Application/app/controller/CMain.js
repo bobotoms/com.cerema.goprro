@@ -224,6 +224,9 @@ App.controller.define('CMain', {
             "VAddVisitWork": {
                 show: "VVisit_onShow"
             },
+            "VUpVisitWork": {
+                show: "VVisit_onShow"
+            },
             "VAddVisit checkbox#select":{
                 click: "checkColumnAddV"
             },
