@@ -1480,8 +1480,8 @@ App.controller.define('CMain', {
                     App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                     store.load();
                 }*/
-       //     };
-        });  
+            };
+        };//);  
     },
     onLoad: function(p)
     {
