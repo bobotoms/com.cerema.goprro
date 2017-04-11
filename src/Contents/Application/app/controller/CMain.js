@@ -1623,7 +1623,7 @@ App.controller.define('CMain', {
                     me.setDisabled(false);
                 });
             });
-        });/************** fin requete update   *************************/
+        /************** }); fin requete update   *************************/
         
         
         
