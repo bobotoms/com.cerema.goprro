@@ -1586,6 +1586,9 @@ App.controller.define('CMain', {
             };
             App.Elements.delOuvrage(r.insertId,function(e) {
                 App.DB.post("goprro://visite_oa_elements",Post,function(r){
+                    
+                    console.log('VUpVisitWork');
+                    App.get('VUpVisitWork').close();
                     /*console.log(r);
                     App.get('mainform grid#gridO').getStore().load();
                     me.up('panel').hide();
