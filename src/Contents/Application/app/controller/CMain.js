@@ -1370,7 +1370,7 @@ App.controller.define('CMain', {
         var data=[];
         for (var i=0;i<store.data.items.length;i++) {
                  if(store.data.items[i].select == true)
-                {
+                 {
                      data.push({
                         idOuvrage:response[i].idOuvrage,
                         nomOuvrage:response[i].nomOuvrage,
@@ -1378,7 +1378,7 @@ App.controller.define('CMain', {
                         oa_x:response[i].oa_x,
                         oa_y:response[i].oa_y,
                         select:true
-                    })
+                    });
         
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
                 }
@@ -1409,7 +1409,7 @@ App.controller.define('CMain', {
                         TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
                     }
                 
-                }
+                };
                 var store=App.store.create({
                     fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
                 });
@@ -1417,7 +1417,7 @@ App.controller.define('CMain', {
                 {
                     App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                     store.load();
-                }
+                };
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
          var store=App.store.create
         
@@ -1480,7 +1480,7 @@ App.controller.define('CMain', {
                     App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                     store.load();
                 }*/
-            };
+       //     };
         });  
     },
     onLoad: function(p)
