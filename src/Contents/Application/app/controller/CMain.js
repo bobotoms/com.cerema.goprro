@@ -1479,7 +1479,7 @@ App.controller.define('CMain', {
             Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
-              Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer date.");
+              Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date.");
         }
     },
     add_visit_work: function(me, store)
