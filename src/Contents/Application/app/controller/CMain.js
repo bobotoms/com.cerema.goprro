@@ -1548,6 +1548,9 @@ App.controller.define('CMain', {
         console.log(me);
         console.log('store 1');
         console.log(store);
+        var panel=App.get(me.up('panel'));
+        console.log('panel');
+        console.log(panel);
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         console.log('store new visit ouvrage');
