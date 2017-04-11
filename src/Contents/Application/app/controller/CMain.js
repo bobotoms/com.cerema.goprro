@@ -1275,6 +1275,9 @@ App.controller.define('CMain', {
             App.DB.get('goprro://visite_ouvrages?idVisiteOuvrage='+me.idVisiteOuvrage,me,function(re){
                 if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
                 // On continue par les éléments
+                
+        /**/console.log("me id visite ouvrage 2 ");
+        /**/console.log(me.idVisiteOuvrage);
                 App.DB.get('goprro://visite_oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idVisiteOuvrage='+me.idVisiteOuvrage,function(r){
 
                     var id= App.get(xtype+' combo#dpt').getValue();
