@@ -1561,6 +1561,8 @@ App.controller.define('CMain', {
             });
             console.log("me.up('panel')");
             console.log(me.up('panel'));
+            console.log("r");
+            console.log(r);
             if (!me.up('panel').idVisiteOuvrage) {
                 if (!r.insertId) {
                     App.notify("Impossible d'enregistrer la fiche");
