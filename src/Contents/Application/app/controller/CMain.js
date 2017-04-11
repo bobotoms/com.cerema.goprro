@@ -1226,27 +1226,27 @@ App.controller.define('CMain', {
         for (var i=0;i<store.data.items.length;i++) {
              if(store.data.items[i].data.select == true)
             {
-                 dataAll.push({
+                 /*dataAll.push({
                     idOuvrage:store.data.items[i].data.idOuvrage,
                     nomOuvrage:store.data.items[i].data.nomOuvrage,
                     nomDepartement:store.data.items[i].data.nomDepartement,
                     oa_x:store.data.items[i].data.oa_x,
                     oa_y:store.data.items[i].data.oa_y,
                     select:true
-                })
+                })*/
 
                 TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
             }
             else
             {  
-                dataAll.push({
+                /*dataAll.push({
                     idOuvrage:store.data.items[i].data.idOuvrage,
                     nomOuvrage:store.data.items[i].data.nomOuvrage,
                     nomDepartement:store.data.items[i].data.nomDepartement,
                     oa_x:store.data.items[i].data.oa_x,
                     oa_y:store.data.items[i].data.oa_y,
                     select:false
-                })
+                })*/
                 TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
             }
         };
