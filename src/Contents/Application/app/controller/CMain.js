@@ -1399,7 +1399,7 @@ App.controller.define('CMain', {
                 }
         };
         App.Visits.select(mail,function(response) {
-            for (var i=0;i<store.data.items.length;i++) {
+            for (var i=0;i<response.length;i++) {
                 if(response[i].idOuvrage == idOuvrage)
                 {
                     data.push({
