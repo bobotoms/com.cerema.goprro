@@ -1364,14 +1364,14 @@ App.controller.define('CMain', {
          //var store=App.get("VAddVisit grid#add_visit");
         console.log("store");
         console.log(store);
-        
+        var items = store.data.items;
 
         
             var datas=[];
-            for (var i=0;i<store.data.items.length;i++) 
+            for (var i=0;i<items.length;i++) 
             {
                  App.Visits.select(mail,function(response) {
-                 if(store.data.items[i].select == true)
+                 if(items[i].select == true)
                  {
                      datas.push({
                         idOuvrage:response[i].idOuvrage,
