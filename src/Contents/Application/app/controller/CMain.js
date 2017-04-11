@@ -1544,7 +1544,85 @@ App.controller.define('CMain', {
         
     },
     new_visit_ouvrage_record: function(me, store) {
-        console.log('me');
+    
+        
+        
+        
+        
+        
+        
+        
+        me.setDisabled(true);
+        var store=App.get(me.up('panel'),"treepanel").getStore().data;
+        App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
+            // On post l'upload
+            App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+                //alert('posté!');
+            });
+            if (!me.up('panel').idOuvrage) {
+                if (!r.insertId) {
+                    App.notify("Impossible d'enregistrer la fiche");
+                    me.setDisabled(false);
+                    return;
+                };
+                if (r.insertId==0) {
+                    App.notify("Impossible d'enregistrer la fiche");
+                    me.setDisabled(false);
+                    return;
+                };
+            } else r.insertId=me.up('panel').idOuvrage;
+            var Post=[];
+            for (var i=0;i<store.items.length;i++) {
+                var descr="";
+                var parent=0;
+                if (store.items[i].data.description) descr=store.items[i].data.description;
+                if (store.items[i].data.parentId) {
+                    if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
+                };
+                if (store.items[i].data.leaf) {
+                    var dta={
+                        nomOAElement: descr,
+                        parentOAElement: parent,
+                        idOuvrage: r.insertId,
+                        idElement: store.items[i].data.name.split('c')[1],
+                        idType: App.get(me.up('panel'),"combo#type").getValue(),
+                        _BLOB: App.get('uploadfilemanager#up').getFiles()
+                    };
+                    if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
+                    Post.push(dta);
+                };
+            };
+            App.Elements.delOuvrage(r.insertId,function(e) {
+                App.DB.post("goprro://oa_elements",Post,function(r){
+                    console.log(r);
+                    App.get('mainform grid#gridO').getStore().load();
+                    me.up('panel').hide();
+                    hideForms();
+                    App.get("mainform grid#gridO").show();
+                    me.setDisabled(false);
+                });
+            });
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*console.log('me');
         console.log(me);
         console.log('store 1');
         console.log(store);
@@ -1604,9 +1682,9 @@ App.controller.define('CMain', {
                     hideForms();
                     App.get("mainform grid#gridO").show();
                     me.setDisabled(false);*/
-                });
+/*                });
             });
-        });
+        });*/
     },
     onLoad: function(p)
     {
