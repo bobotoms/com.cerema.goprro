@@ -1544,6 +1544,8 @@ App.controller.define('CMain', {
         
     },
     new_visit_ouvrage_record: function(me) {
+        console.log('me');
+        console.log(me);
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         console.log('store new visit ouvrage');
