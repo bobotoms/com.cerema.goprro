@@ -1350,23 +1350,14 @@ App.controller.define('CMain', {
         var mail = Auth.User.mail;
         App.get('VAddVisitWork').close();
         TMap.clearMarkers();
-         //var store=me.up('panel');
          var store=App.get('VAddVisit grid#gridVisitAdd').getStore();
         
         
-        
-        var panel=me.up('panel').up('panel');//.up('panel'));
-            //var panel=me.up;('window');//.up('panel');//.up('panel');
+        /*
+        var panel=me.up('panel').up('panel');
         var panelGrid=App.get(me.up('panel'),"grid");
-        
-        
-        
-         //var store=App.get("VAddVisit grid#add_visit");
-        console.log("store.data.items");
-        console.log(store.data.items);
-        
-        
-        
+        */
+                
         var dataAll=[];
         
         App.Visits.select(mail,function(response) {
@@ -1420,21 +1411,6 @@ App.controller.define('CMain', {
             
             
             };
-      /*      for (var i=0;i<response.length;i++) {
-                if(response[i].idOuvrage == idOuvrage)
-                {
-                    dataAll.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y,
-                        select:true
-                    })
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
-                }
-            }*/
-
             var storeAll=App.store.create({
                 fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
             });
@@ -1444,70 +1420,7 @@ App.controller.define('CMain', {
                 storeAll.load();
             };
         });
-        /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
-         var store=App.store.create
         
-            var data=[];
-            
-            if blablablanla
-        
-        data.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y,
-                        select:true
-                    })
-        
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
-        
-        
-        on y touche pas sinon on y va ****************************/
- /*       App.Visits.select(mail,function(response) {
-            var data=[];
-            for (var i=0;i<response.length;i++) {
-                 if(response[i].idOuvrage == idOuvrage)
-                {
-                    data.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y,
-                        select:true
-                    })
-                }
-                else
-                {   
-                    data.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y,
-                        select:false
-                    })
-                }
-                
-                if(response[i].idOuvrage == idOuvrage)
-                {
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
-                }
-                else
-                {   
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
-                }
-                var store=App.store.create({
-                    fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
-                });
-                if(store)
-                {
-                    App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
-                    store.load();
-                }*/
-   //         };
-   //     });  
     },
     onLoad: function(p)
     {
