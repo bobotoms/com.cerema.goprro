@@ -1398,31 +1398,30 @@ App.controller.define('CMain', {
                 
                 }
         };
-        
-        if(response[i].idOuvrage == idOuvrage)
-        {
-            data.push({
-                idOuvrage:response[i].idOuvrage,
-                nomOuvrage:response[i].nomOuvrage,
-                nomDepartement:response[i].nomDepartement,
-                oa_x:response[i].oa_x,
-                oa_y:response[i].oa_y,
-                select:true
-            })
-            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
-        }
-        else
-        {
-        };
-        var store=App.store.create({
-            fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
-        });
-        if(store)
-        {
-            App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
-            store.load();
-        };
-                
+        App.Visits.select(mail,function(response) {
+            for (var i=0;i<store.data.items.length;i++) {
+                if(response[i].idOuvrage == idOuvrage)
+                {
+                    data.push({
+                        idOuvrage:response[i].idOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y,
+                        select:true
+                    })
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
+                }
+            }
+            var store=App.store.create({
+                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
+            });
+            if(store)
+            {
+                App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
+                store.load();
+            };
+        });  
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
          var store=App.store.create
         
@@ -1485,8 +1484,8 @@ App.controller.define('CMain', {
                     App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
                     store.load();
                 }*/
-            };
-        });  
+   //         };
+   //     });  
     },
     onLoad: function(p)
     {
