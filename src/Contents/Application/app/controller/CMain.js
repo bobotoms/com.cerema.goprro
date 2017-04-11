@@ -25,7 +25,8 @@ function GMap(l,m)
                 position: new google.maps.LatLng(l,m),
                 animation: google.maps.Animation.DROP,
                 title: title,
-                itemId: idVisiteOuvrage
+                itemId: idOuvrage
+                //itemId: idVisiteOuvrage
             });
             marker.addListener('click', function(x) {
                 var form=App.get("mainform panel#Work");
