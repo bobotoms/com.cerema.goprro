@@ -1367,12 +1367,12 @@ App.controller.define('CMain', {
         
         App.Visits.select(mail,function(response) {
         
-            var data=[];
+            var datas=[];
             for (var i=0;i<store.data.items.length;i++) 
             {
                  if(store.data.items[i].select == true)
                  {
-                     data.push({
+                     datas.push({
                         idOuvrage:response[i].idOuvrage,
                         nomOuvrage:response[i].nomOuvrage,
                         nomDepartement:response[i].nomDepartement,
@@ -1387,7 +1387,7 @@ App.controller.define('CMain', {
                 {   
                     if(response[i].idOuvrage == idOuvrage)
                     {
-                        data.push({
+                        datas.push({
                             idOuvrage:response[i].idOuvrage,
                             nomOuvrage:response[i].nomOuvrage,
                             nomDepartement:response[i].nomDepartement,
@@ -1399,7 +1399,7 @@ App.controller.define('CMain', {
                     }
                     else
                     {   
-                        data.push({
+                        datas.push({
                             idOuvrage:response[i].idOuvrage,
                             nomOuvrage:response[i].nomOuvrage,
                             nomDepartement:response[i].nomDepartement,
@@ -1412,7 +1412,7 @@ App.controller.define('CMain', {
 
                 };
                 var store=App.store.create({
-                    fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
+                    fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:datas
                 });
                 if(store)
                 {
