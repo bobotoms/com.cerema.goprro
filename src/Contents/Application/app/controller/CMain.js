@@ -1351,7 +1351,7 @@ App.controller.define('CMain', {
         /**/console.log(me);
         /**/console.log("me id visite ouvrage");
         /**/console.log(me.idVisiteOuvrage);
-        /**/console.log("xtype");
+        /**/console.log("xtype on show");
         /**/console.log(me.xtype);
         
             //var panel=App.get(me.up('panel'));//.up('panel').up('panel'));
