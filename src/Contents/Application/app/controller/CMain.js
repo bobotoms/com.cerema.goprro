@@ -1245,7 +1245,7 @@ App.controller.define('CMain', {
                     })
 
                 console.log('showvisitdate2');
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,response[i].idVisiteOuvrage,"colorMarker","visit");
                 };
                 var store=App.store.create({
                     fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
