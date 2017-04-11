@@ -1183,6 +1183,7 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
+                console.log('showvisit');
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
         });        
@@ -1226,6 +1227,7 @@ App.controller.define('CMain', {
                     oa_y:response[i].oa_y
                 })
                 
+                console.log('showvisitdate');
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
             var choixDate = App.get('VVisit combo#dateVisit').getValue();
@@ -1242,6 +1244,7 @@ App.controller.define('CMain', {
                         oa_y:response[i].oa_y
                     })
 
+                console.log('showvisitdate2');
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
                 };
                 var store=App.store.create({
@@ -1453,6 +1456,7 @@ App.controller.define('CMain', {
                             oa_y:response[i].oa_y
                         })
 
+                console.log('visitwork');
                         TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
                     };
                     var store=App.store.create({
