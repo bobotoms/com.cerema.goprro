@@ -169,7 +169,7 @@ App.view.define('VVisit', {
                     
         console.log("Modifier");
         console.log(sm.store.data);
-        var idOuvrage = sm.store.data.items[record].data.idOuvrage;
+        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
         console.log("idOuvrage");
         console.log(idOuvrage);
         console.log("idVisiteOuvrage");
