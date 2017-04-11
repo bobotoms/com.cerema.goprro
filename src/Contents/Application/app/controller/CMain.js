@@ -1548,7 +1548,7 @@ App.controller.define('CMain', {
         
         
         
-                        var paneltest2 = App.get("VUpVisitWork grid");
+                        var paneltest2 = App.get("VUpVisitWork");
             console.log("paneltest2");
             console.log(paneltest2);
         
