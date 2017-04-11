@@ -1398,14 +1398,7 @@ App.controller.define('CMain', {
                 
                 }
             
-            var store=App.store.create({
-                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
-            });
-            if(store)
-            {
-                App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
-                store.load();
-            };
+            
         };
         App.Visits.select(mail,function(response) {
             for (var i=0;i<response.length;i++) {
@@ -1422,7 +1415,15 @@ App.controller.define('CMain', {
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
                 }
             }
-        });  
+        });
+        var store=App.store.create({
+                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:data
+            });
+            if(store)
+            {
+                App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
+                store.load();
+            };
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
          var store=App.store.create
         
