@@ -1570,7 +1570,7 @@ App.controller.define('CMain', {
                     me.setDisabled(false);
                     return;
                 };
-            } else r.insertId=me.up('panel').idOuvrage;
+            } else r.insertId=me.up('panel').idVisiteOuvrage;
             var Post=[];
             for (var i=0;i<store.items.length;i++) {
                 var descr="";
