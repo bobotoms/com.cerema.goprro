@@ -1481,7 +1481,7 @@ App.controller.define('CMain', {
                     store.load();
                 }*/
             };
-        };//);  
+        }//);  
     },
     onLoad: function(p)
     {
