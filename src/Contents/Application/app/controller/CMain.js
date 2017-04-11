@@ -1372,28 +1372,28 @@ App.controller.define('CMain', {
                  if(store.data.items[i].select == true)
                 {
                      data.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y,
+                        idOuvrage:store.data.items[i].data.idOuvrage,
+                        nomOuvrage:store.data.items[i].data.nomOuvrage,
+                        nomDepartement:store.data.items[i].data.nomDepartement,
+                        oa_x:store.data.items[i].data.oa_x,
+                        oa_y:store.data.items[i].data.oa_y,
                         select:true
                     })
         
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
+                    TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
                 }
                 else
                 {   
                     
                         data.push({
-                            idOuvrage:response[i].idOuvrage,
-                            nomOuvrage:response[i].nomOuvrage,
-                            nomDepartement:response[i].nomDepartement,
-                            oa_x:response[i].oa_x,
-                            oa_y:response[i].oa_y,
+                            idOuvrage:store.data.items[i].data.idOuvrage,
+                            nomOuvrage:store.data.items[i].data.nomOuvrage,
+                            nomDepartement:store.data.items[i].data.nomDepartement,
+                            oa_x:store.data.items[i].data.oa_x,
+                            oa_y:store.data.items[i].data.oa_y,
                             select:false
                         })
-                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
+                        TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
                     
                 
                 }
