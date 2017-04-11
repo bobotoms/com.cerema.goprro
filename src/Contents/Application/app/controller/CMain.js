@@ -31,7 +31,6 @@ function GMap(l,m)
         
         
         
-        /*          
         var marker=new google.maps.Marker({
             position: new google.maps.LatLng(l,m),
             animation: google.maps.Animation.DROP,
@@ -55,6 +54,14 @@ function GMap(l,m)
                 form.show();
             });
         }
+        else if (param == "workvisit")
+        {
+            marker.addListener('click', function(x) {
+                var form=App.get("mainform panel#AddWork");
+                form.idVisiteOuvrage=this.itemId;
+                form.show();
+            });
+        }
         else if (param == "addvisit")
         {
             marker.addListener('click', function(x) {
@@ -73,7 +80,7 @@ function GMap(l,m)
             });
         }
         TMap.markers.push(marker);
-        return marker;*/
+        return marker;
         
         
         
@@ -94,7 +101,7 @@ function GMap(l,m)
         
    /**/     
         
-        if (param == "visit")
+   /*     if (param == "visit")
         {
             if (typeof idVisiteOuvrage != 'undefined')
             {
@@ -172,7 +179,7 @@ function GMap(l,m)
         
         
         TMap.markers.push(marker);
-        return marker;
+        return marker;*/
         /**/
     };
     TMap.clearMarkers=function() {
@@ -1183,7 +1190,6 @@ App.controller.define('CMain', {
                     oa_x:response[i].oa_x,
                     oa_y:response[i].oa_y
                 })
-                console.log('showvisit');
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
         });        
@@ -1227,7 +1233,6 @@ App.controller.define('CMain', {
                     oa_y:response[i].oa_y
                 })
                 
-                console.log('showvisitdate');
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
             var choixDate = App.get('VVisit combo#dateVisit').getValue();
@@ -1244,8 +1249,7 @@ App.controller.define('CMain', {
                         oa_y:response[i].oa_y
                     })
 
-                console.log('showvisitdate2');
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,response[i].idVisiteOuvrage,"colorMarker","visit");
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","workvisit");
                 };
                 var store=App.store.create({
                     fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
