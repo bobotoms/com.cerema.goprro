@@ -9,13 +9,13 @@ App.view.define('VVisitWork', {
     closeAction:'hide',
 	layout: "border",
 	//itemId : "VisiteWork", 
-/*    bbar: [
+    bbar: [
             '->', {
 
             text: '<b>Ajouter</b>',
             itemId: "visitWork"
         }
-        ],*/
+        ],
 	
 	items: [{
                 region: "west",
