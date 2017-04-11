@@ -12,7 +12,7 @@ App.view.define('VVisitWork', {
     bbar: [
             '->', {
 
-            text: '<b>Ajouter</b>',
+            text: '<b>Ajouter1</b>',
             itemId: "visitWork"
         }
         ],
