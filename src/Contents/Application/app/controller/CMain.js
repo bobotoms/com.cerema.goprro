@@ -98,6 +98,7 @@ function GMap(l,m)
         {
             if (typeof idVisiteOuvrage != 'undefined')
             {
+                console.log('dans param id visite');
                 var marker=new google.maps.Marker({
                     position: new google.maps.LatLng(l,m),
                     animation: google.maps.Animation.DROP,
@@ -113,6 +114,7 @@ function GMap(l,m)
             }
             else
             {
+                console.log('dans param id ouvrage');
                 var marker=new google.maps.Marker({
                     position: new google.maps.LatLng(l,m),
                     animation: google.maps.Animation.DROP,
