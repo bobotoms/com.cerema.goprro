@@ -1548,7 +1548,7 @@ App.controller.define('CMain', {
         console.log(me);
         console.log('store 1');
         console.log(store);
-        var panel=App.get(me.up('panel'));
+        var panel=me.up('panel');
         console.log('panel');
         console.log(panel);
         me.setDisabled(true);
