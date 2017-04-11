@@ -1402,29 +1402,30 @@ App.controller.define('CMain', {
             
             
         };
-            for (var i=0;i<response.length;i++) {
-                if(response[i].idOuvrage == idOuvrage)
-                {
-                    dataAll.push({
-                        idOuvrage:response[i].idOuvrage,
-                        nomOuvrage:response[i].nomOuvrage,
-                        nomDepartement:response[i].nomDepartement,
-                        oa_x:response[i].oa_x,
-                        oa_y:response[i].oa_y,
-                        select:true
-                    })
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
-                }
-            }
-        });
-        var store=App.store.create({
-                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
-            });
-            if(store)
+        for (var i=0;i<response.length;i++) {
+            if(response[i].idOuvrage == idOuvrage)
             {
-                App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
-                store.load();
-            };
+                dataAll.push({
+                    idOuvrage:response[i].idOuvrage,
+                    nomOuvrage:response[i].nomOuvrage,
+                    nomDepartement:response[i].nomDepartement,
+                    oa_x:response[i].oa_x,
+                    oa_y:response[i].oa_y,
+                    select:true
+                })
+                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
+            }
+        }
+
+        var store=App.store.create({
+            fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
+        });
+        if(store)
+        {
+            App.get('VAddVisit grid#gridVisitAdd').bindStore(store);
+            store.load();
+        };
+    });
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
          var store=App.store.create
         
