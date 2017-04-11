@@ -115,6 +115,7 @@ function GMap(l,m)
             else
             {
                 console.log('dans param id ouvrage');
+                console.log(idOuvrage);
                 var marker=new google.maps.Marker({
                     position: new google.maps.LatLng(l,m),
                     animation: google.maps.Animation.DROP,
