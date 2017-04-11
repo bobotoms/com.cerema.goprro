@@ -57,7 +57,7 @@ function GMap(l,m)
         else if (param == "workvisit")
         {
             marker.addListener('click', function(x) {
-                var form=App.get("mainform panel#AddWork");
+                var form=App.get("mainform panel#UpWork");
                 form.idVisiteOuvrage=this.itemId;
                 form.show();
             });
