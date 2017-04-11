@@ -1567,9 +1567,11 @@ App.controller.define('CMain', {
         
         
         
-        me.setDisabled(true);
+/*        me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
-        App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
+        App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){*/
+        
+        /************** mettre ici requete update   *************************/
             // On post l'upload
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
@@ -1621,7 +1623,7 @@ App.controller.define('CMain', {
                     me.setDisabled(false);
                 });
             });
-        });
+        });/************** fin requete update   *************************/
         
         
         
