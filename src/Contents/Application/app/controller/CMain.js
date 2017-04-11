@@ -843,7 +843,7 @@ App.controller.define('CMain', {
             }
 
             App.get('VZones grid').show();
-        });
+        })
     },
     add_ref: function(me) {
         var grid=me.up('grid');
