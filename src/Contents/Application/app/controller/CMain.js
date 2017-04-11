@@ -361,7 +361,10 @@ App.controller.define('CMain', {
             },
             "VUpVisitWork button#Record": {
                 click: "new_visit_ouvrage_record"
-            }
+            },
+            "VUpVisitWork button#add_item": {
+                click: "add_item_click"
+            },
         });
 
         App.init('VMain',function(){
@@ -1548,9 +1551,7 @@ App.controller.define('CMain', {
         
         
         
-            var getstore = App.get("VUpVisitWork").getStore();
-            console.log("getstore");
-            console.log(getstore);   
+   
         
         
             var paneltest2 = App.get("VUpVisitWork");
