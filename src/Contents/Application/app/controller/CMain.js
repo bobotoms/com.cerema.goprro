@@ -97,7 +97,8 @@ App.controller.define('CMain', {
         "VAddVisit",
         "VVisit",
         "VVisitWork",
-        "VAddVisitWork"
+        "VAddVisitWork",
+        "VUpVisitWork"
     ],
 
     models: [
@@ -234,6 +235,9 @@ App.controller.define('CMain', {
             },
             "VAddVisit checkcolumn#select": {
                 checkchange: "add_visit_check"
+            },
+            "VUpVisitWork button#Record": {
+                click: "new_visit_ouvrage_record"
             }
         });
 
