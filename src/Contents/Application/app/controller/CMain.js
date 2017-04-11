@@ -1393,7 +1393,7 @@ App.controller.define('CMain', {
                             oa_x:response[i].oa_x,
                             oa_y:response[i].oa_y,
                             select:true
-                        })
+                        });
                         TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
                     }
                     else
@@ -1405,7 +1405,7 @@ App.controller.define('CMain', {
                             oa_x:response[i].oa_x,
                             oa_y:response[i].oa_y,
                             select:false
-                        })
+                        });
                         TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","addvisit");
                     }
                 
