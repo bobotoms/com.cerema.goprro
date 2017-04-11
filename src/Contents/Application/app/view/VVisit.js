@@ -169,9 +169,10 @@ App.view.define('VVisit', {
                     
         console.log("Modifier");
         console.log(sm.store.data);
-                        var grid=this.up('grid');
         var idOuvrage = sm.store.data.items[record].data.idOuvrage;
-        App.get('mainform panel#southpanel').collapse();
+        console.log("idOuvrage");
+        console.log(idOuvrage);
+        //App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#UpWork");
         form.idOuvrage=idOuvrage;
         form.show();
