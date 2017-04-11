@@ -1214,14 +1214,10 @@ App.controller.define('CMain', {
         console.log(me);
         console.log("store store store");
         console.log(store);*/
-        var idOuvrage = sm.store.data.items[record].data.idOuvrage;
+        var idOuvrage = eOpts.data.idOuvrage;
         console.log("id ouvrage ADD");
         console.log(idOuvrage);
-        
-        
-        
- /*       
-        var idOuvrage=me.up('panel').idOuvrage;
+
         var mail = Auth.User.mail;
         App.get('VAddVisitWork').close();
         TMap.clearMarkers();
@@ -1241,10 +1237,10 @@ App.controller.define('CMain', {
                     select:true
                 })*/
 
-/*                TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
+                TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
             }
             else
-            {           */
+            {           
                 /*dataAll.push({
                     idOuvrage:store.data.items[i].data.idOuvrage,
                     nomOuvrage:store.data.items[i].data.nomOuvrage,
@@ -1253,10 +1249,10 @@ App.controller.define('CMain', {
                     oa_y:store.data.items[i].data.oa_y,
                     select:false
                 })*/
-/*                TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
+                TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"","addvisit");
             }
-        };          */
-     /*   var storeAll=App.store.create({
+        };
+/*        var storeAll=App.store.create({
             fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
         });
         if(storeAll)
