@@ -222,7 +222,7 @@ App.controller.define('CMain', {
                 show: "VVisit_onShow"
             },
             "VAddVisitWork": {
-                show: "VVisit_onShow"
+                show: "VSaisie_onShow"
             },
             "VUpVisitWork": {
                 show: "VVisit_onShow"
@@ -1245,7 +1245,7 @@ App.controller.define('CMain', {
         App.reset(me);
         App.get(me,"treepanel").getRootNode().removeAll();
         App.get(me,"propertygrid").getStore().removeAll();
-        if (me.idOuvrage) {
+        if (me.idVisiteOuvrage) {
             function getElements(PARAM,PARAMX,PARAMZ,ndx,cb) {
                 App.Elements.getSelect(PARAM[ndx],App.get(me,"combo#type").getValue(),function(r){
                     console.log(r);
@@ -1270,10 +1270,10 @@ App.controller.define('CMain', {
             App.get(me,'combo#famille').setDisabled(true);
             App.get(me,'combo#type').setDisabled(true);
             // On charge les premiers items
-            App.DB.get('goprro://ouvrages?idOuvrage='+me.idOuvrage,me,function(re){
+            App.DB.get('goprro://visite_ouvrages?idVisiteOuvrage='+me.idVisiteOuvrage,me,function(re){
                 if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
                 // On continue par les éléments
-                App.DB.get('goprro://oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idOuvrage='+me.idOuvrage,function(r){
+                App.DB.get('goprro://visite_oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idVisiteOuvrage='+me.idVisiteOuvrage,function(r){
 
                     var id= App.get(xtype+' combo#dpt').getValue();
                     if (id) {
