@@ -1360,7 +1360,7 @@ App.controller.define('CMain', {
                 
         var dataAll=[];
         
-        App.Visits.select(mail,function(response) {
+  //      App.Visits.select(mail,function(response) {
             for (var i=0;i<store.data.items.length;i++) {
                 console.log("store data items.data.nomOuvrage");
                 console.log(store.data.items[i].data.nomOuvrage);
@@ -1411,7 +1411,7 @@ App.controller.define('CMain', {
                 App.get('VAddVisit grid#gridVisitAdd').bindStore(storeAll);
                 storeAll.load();
             };
-        });
+ //       });
         
     },
     onLoad: function(p)
