@@ -1212,7 +1212,8 @@ App.controller.define('CMain', {
         var dataAll=[];
         
         for (var i=0;i<store.data.items.length;i++) {
-             if(store.data.items[i].data.select == true)
+            if(store.data.items[i].data.select == true)
+            {
                 TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
             }
             else
