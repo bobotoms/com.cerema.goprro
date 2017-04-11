@@ -1546,6 +1546,8 @@ App.controller.define('CMain', {
     new_visit_ouvrage_record: function(me) {
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
+        console.log('store new visit ouvrage');
+        console.log(store);
         App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
             // On post l'upload
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
