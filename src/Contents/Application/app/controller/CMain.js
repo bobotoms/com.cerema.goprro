@@ -1560,6 +1560,7 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[0]);
             console.log(paneltest2.items.items[1]);
             console.log(paneltest2.items.items[2]);
+            console.log(paneltest2.items.items[3]);
             console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
