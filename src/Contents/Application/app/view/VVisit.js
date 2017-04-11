@@ -172,9 +172,11 @@ App.view.define('VVisit', {
         var idOuvrage = sm.store.data.items[record].data.idOuvrage;
         console.log("idOuvrage");
         console.log(idOuvrage);
+        console.log("idVisiteOuvrage");
+        console.log(idVisiteOuvrage);
         //App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#UpWork");
-        form.idOuvrage=idOuvrage;
+        form.idOuvrage=idVisiteOuvrage;
         form.show();
                       /*  var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         console.log("modif id viste ouvrage");
