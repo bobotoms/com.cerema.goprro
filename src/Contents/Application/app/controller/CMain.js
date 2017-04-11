@@ -339,7 +339,7 @@ App.controller.define('CMain', {
                 show: "showMapIndex"
             },
             "VVisitWork": {
-                show: "VVisit_onShow"
+                show: "VVisit_saisie"
             },
             "VAddVisitWork": {
                 show: "VSaisie_onShow"
