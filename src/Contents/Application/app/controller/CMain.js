@@ -1249,7 +1249,7 @@ App.controller.define('CMain', {
                         oa_y:response[i].oa_y
                     })
 
-                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","workvisit");
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idVisiteOuvrage,"colorMarker","workvisit");
                 };
                 var store=App.store.create({
                     fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
@@ -1292,7 +1292,6 @@ App.controller.define('CMain', {
     
 	},
     visit_select: function(me,store) {
-        
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#UpWork");
         form.idVisiteOuvrage=store.data.idVisiteOuvrage;
