@@ -1548,7 +1548,7 @@ App.controller.define('CMain', {
         
         
         
-                        var paneltest = App.get(me.up('panel'),"grid").getValue();
+                        var paneltest = App.get(me.up('panel'),"grid");
             console.log("paneltest");
             console.log(paneltest);
         
