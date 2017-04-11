@@ -1292,9 +1292,10 @@ App.controller.define('CMain', {
     
 	},
     visit_select: function(me,store) {
+        
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#UpWork");
-        form.idOuvrage=store.data.idOuvrage;
+        form.idVisiteOuvrage=store.data.idVisiteOuvrage;
         form.show();
     },
     add_visit_select: function(me,store) {
