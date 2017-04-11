@@ -1368,7 +1368,9 @@ App.controller.define('CMain', {
         
         
         var data=[];
-        for (var i=0;i<store.data.items.length;i++) {
+        
+        App.Visits.select(mail,function(response) {
+            for (var i=0;i<store.data.items.length;i++) {
                  if(store.data.items[i].select == true)
                 {
                      data.push({
@@ -1400,7 +1402,6 @@ App.controller.define('CMain', {
             
             
         };
-        App.Visits.select(mail,function(response) {
             for (var i=0;i<response.length;i++) {
                 if(response[i].idOuvrage == idOuvrage)
                 {
