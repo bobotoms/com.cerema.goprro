@@ -1201,16 +1201,22 @@ App.controller.define('CMain', {
             mapTypeId: google.maps.MapTypeId.MAP
         });
     },
-    add_visit_check: function(me, store) {
-        console.log("me me me");
+    add_visit_check: function(sm,index,record) {
+        console.log("sm sm sm");
+        console.log(sm);
+        console.log("index index index");
+        console.log(index);
+        console.log("record record record");
+        console.log(record);
+  /*      console.log("me me me");
         console.log(me);
         console.log("store store store");
-        console.log(store);
+        console.log(store);*/
         var idOuvrage = sm.store.data.items[record].data.idOuvrage;
         console.log("id ouvrage ADD");
         console.log(idOuvrage);
         
-        
+        sm,index,record
         
         
         
