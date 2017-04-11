@@ -106,7 +106,7 @@ function GMap(l,m)
                 });
                 
                 marker.addListener('click', function(x) {
-                    var form=App.get("mainform panel#Work");
+                    var form=App.get("mainform panel#UpWork");
                     form.idVisiteOuvrage=this.itemId;
                     form.show();
                 });
