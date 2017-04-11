@@ -1386,6 +1386,19 @@ App.controller.define('CMain', {
         
                     TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
                 }
+                else if (store.data.items[i].data.idOuvrage == idOuvrage)
+                {     
+                        dataAll.push({
+                        idOuvrage:store.data.items[i].data.idOuvrage,
+                        nomOuvrage:store.data.items[i].data.nomOuvrage,
+                        nomDepartement:store.data.items[i].data.nomDepartement,
+                        oa_x:store.data.items[i].data.oa_x,
+                        oa_y:store.data.items[i].data.oa_y,
+                        select:true
+                    })
+        
+                    TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");                
+                }
                 else
                 {   
                     
@@ -1403,31 +1416,31 @@ App.controller.define('CMain', {
                 }
             
             
-        };
-        for (var i=0;i<response.length;i++) {
-            if(response[i].idOuvrage == idOuvrage)
-            {
-                dataAll.push({
-                    idOuvrage:response[i].idOuvrage,
-                    nomOuvrage:response[i].nomOuvrage,
-                    nomDepartement:response[i].nomDepartement,
-                    oa_x:response[i].oa_x,
-                    oa_y:response[i].oa_y,
-                    select:true
-                })
-                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
-            }
-        }
+            };
+      /*      for (var i=0;i<response.length;i++) {
+                if(response[i].idOuvrage == idOuvrage)
+                {
+                    dataAll.push({
+                        idOuvrage:response[i].idOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y,
+                        select:true
+                    })
+                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","addvisit");
+                }
+            }*/
 
-        var storeAll=App.store.create({
-            fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
+            var storeAll=App.store.create({
+                fields:["idOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y","select"],data:dataAll
+            });
+            if(storeAll)
+            {
+                App.get('VAddVisit grid#gridVisitAdd').bindStore(storeAll);
+                storeAll.load();
+            };
         });
-        if(storeAll)
-        {
-            App.get('VAddVisit grid#gridVisitAdd').bindStore(storeAll);
-            storeAll.load();
-        };
-    });
         /******************   regarder le nomnbre de ligne parcourir chaque ligne(items) si c'est selected :
          var store=App.store.create
         
