@@ -1216,8 +1216,6 @@ App.controller.define('CMain', {
         console.log("id ouvrage ADD");
         console.log(idOuvrage);
         
-        sm,index,record
-        
         
         
  /*       
