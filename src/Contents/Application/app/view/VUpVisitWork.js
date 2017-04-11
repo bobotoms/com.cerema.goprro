@@ -21,7 +21,7 @@ App.view.define('VUpVisitWork', {
                 layout: "vbox",
                 width: "25%",
                 split: true,
-	            itemId : "VisiteWork2",
+	            itemId : "UpVisiteWork",
                 items: [{
                     xtype: "textfield",
                     bindTo: "idOuvrage",
