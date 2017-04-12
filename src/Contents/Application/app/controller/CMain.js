@@ -1564,24 +1564,34 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[3].items.items[1]);
         
         
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
+        //         longitude
+        //         latitude
+        //         pr debut
+        //         pr fin
+        //         longueur
+        //         hauteur
+        //         surface
+        
+        //         Famille ----Grisé----
+        //         Type ----Grisé----
+        //         Departement
+        //         Geologie
+        //         Axe
+        //         Ville
+        //         Zone
+        //         Nom ouvrage
+        //         Etiquette
+        
             console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
-        //         id gestionnaire
+        
+        //         Materiel necessaire
+        //         coupure route
+        //         acces
         
             var paneltest = App.get(me.up('panel'),"grid");
             console.log("paneltest");
