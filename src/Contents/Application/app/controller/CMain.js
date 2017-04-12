@@ -1567,7 +1567,7 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
-            console.log(paneltest2.items.items[3].items.items[1]);//         Mat necess
+            console.log(paneltest2.items.items[3].items.items[1]);
         
         
             var paneltest = App.get(me.up('panel'),"grid");
