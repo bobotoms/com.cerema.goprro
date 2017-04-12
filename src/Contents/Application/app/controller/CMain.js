@@ -1559,9 +1559,9 @@ App.controller.define('CMain', {
             console.log(paneltest2);
             console.log(paneltest2.items.items[0]);
             console.log(paneltest2.items.items[1]);
-            console.log(paneltest2.items.items[2]);
+            /*console.log(paneltest2.items.items[2]);
             console.log(paneltest2.items.items[3]);
-            console.log(paneltest2.items.items[3].items.items[1]);
+            console.log(paneltest2.items.items[3].items.items[1]);*/
         
         
         //         longitude
