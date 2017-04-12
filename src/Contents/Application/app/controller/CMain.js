@@ -1572,13 +1572,20 @@ App.controller.define('CMain', {
         //         hauteur
         //         surface
         
-        //         Famille ----Grisé----
-        //         Type ----Grisé----
-        //         Departement
-        //         Geologie
-        //         Axe
-        //         Ville
-        //         Zone
+            console.log("Famille");//         Famille
+            console.log(paneltest2.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
+            console.log("Type");//         Type
+            console.log(paneltest2.items.items[2].items.items[0].items.items[1].value);////         Type ----Grisé----
+            console.log("Departement");//         Departement
+            console.log(paneltest2.items.items[2].items.items[0].items.items[2].value);////         Departement
+            console.log("Geologie");//         Geologie
+            console.log(paneltest2.items.items[2].items.items[0].items.items[3].value);////         Geologie
+            console.log("Axe");//         Axe
+            console.log(paneltest2.items.items[2].items.items[1].items.items[0].value);//         Axe
+            console.log("Ville");//         Ville
+            console.log(paneltest2.items.items[2].items.items[1].items.items[1].value);//         Ville
+            console.log("Zone");//         Nom ouvrage
+            console.log(paneltest2.items.items[2].items.items[1].items.items[2].value);//         Zone
         
             console.log("Nom ouvrage");//         Nom ouvrage
             console.log(paneltest2.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
