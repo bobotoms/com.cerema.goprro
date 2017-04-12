@@ -1547,12 +1547,6 @@ App.controller.define('CMain', {
         
     },
     new_visit_ouvrage_record: function(me, store) {
-    
-        
-        
-        
-   
-        
         
             var form = App.get("VUpVisitWork");
         
