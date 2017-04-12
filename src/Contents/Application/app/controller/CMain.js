@@ -1582,7 +1582,8 @@ App.controller.define('CMain', {
         
             console.log("Nom ouvrage");//         Nom ouvrage
             console.log(paneltest2.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
-        //         Etiquette
+            console.log("Etiquette");//         Nom ouvrage
+            console.log(paneltest2.items.items[2].items.items[2].items.items[1].value);//         Etiquette
         
             console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
