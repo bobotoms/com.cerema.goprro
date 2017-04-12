@@ -1563,7 +1563,6 @@ App.controller.define('CMain', {
             console.log(form.items.items[0].items.items[1].items.items[5].value);//         longueur
             console.log(form.items.items[0].items.items[1].items.items[6].value);//         hauteur
             console.log(form.items.items[0].items.items[1].items.items[7].value);//         surface
-        
             console.log(form.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
             console.log(form.items.items[2].items.items[0].items.items[1].value);////         Type ----Grisé----
             console.log(form.items.items[2].items.items[0].items.items[2].value);////         Departement
@@ -1571,17 +1570,14 @@ App.controller.define('CMain', {
             console.log(form.items.items[2].items.items[1].items.items[0].value);//         Axe
             console.log(form.items.items[2].items.items[1].items.items[1].value);//         Ville
             console.log(form.items.items[2].items.items[1].items.items[2].value);//         Zone
-        
             console.log(form.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
             console.log(form.items.items[2].items.items[2].items.items[1].value);//         Etiquette
-        
             console.log(form.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
             console.log(form.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
             console.log(form.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
             console.log(form.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
             console.log(form.items.items[3].items.items[0].items.items[4].value);//         id poseur
             console.log(form.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
-        
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[0].value);//         Materiel necessaire
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
