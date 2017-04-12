@@ -1555,47 +1555,24 @@ App.controller.define('CMain', {
         
         
             var paneltest2 = App.get("VUpVisitWork");
-            console.log("paneltest2");
-            console.log(paneltest2);
-            console.log(paneltest2.items.items[0]);
-            console.log(paneltest2.items.items[1]);
-            /*console.log(paneltest2.items.items[2]);
-            console.log(paneltest2.items.items[3]);
-            console.log(paneltest2.items.items[3].items.items[1]);*/
         
-            console.log("longitude");
             console.log(paneltest2.items.items[0].items.items[1].items.items[1].value);//         longitude
-            console.log("latitude");
             console.log(paneltest2.items.items[0].items.items[1].items.items[2].value);//         latitude
-            console.log("pr debut");
             console.log(paneltest2.items.items[0].items.items[1].items.items[3].value);//         pr debut
-            console.log("pr fin");
             console.log(paneltest2.items.items[0].items.items[1].items.items[4].value);//         pr fin
-            console.log("longueur");
             console.log(paneltest2.items.items[0].items.items[1].items.items[5].value);//         longueur
-            console.log("hauteur");
             console.log(paneltest2.items.items[0].items.items[1].items.items[6].value);//         hauteur
-            console.log("surface");
             console.log(paneltest2.items.items[0].items.items[1].items.items[7].value);//         surface
         
-            console.log("Famille");//         Famille
             console.log(paneltest2.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
-            console.log("Type");//         Type
             console.log(paneltest2.items.items[2].items.items[0].items.items[1].value);////         Type ----Grisé----
-            console.log("Departement");//         Departement
             console.log(paneltest2.items.items[2].items.items[0].items.items[2].value);////         Departement
-            console.log("Geologie");//         Geologie
             console.log(paneltest2.items.items[2].items.items[0].items.items[3].value);////         Geologie
-            console.log("Axe");//         Axe
             console.log(paneltest2.items.items[2].items.items[1].items.items[0].value);//         Axe
-            console.log("Ville");//         Ville
             console.log(paneltest2.items.items[2].items.items[1].items.items[1].value);//         Ville
-            console.log("Zone");//         Nom ouvrage
             console.log(paneltest2.items.items[2].items.items[1].items.items[2].value);//         Zone
         
-            console.log("Nom ouvrage");//         Nom ouvrage
             console.log(paneltest2.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
-            console.log("Etiquette");//         Nom ouvrage
             console.log(paneltest2.items.items[2].items.items[2].items.items[1].value);//         Etiquette
         
             console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
@@ -1605,12 +1582,39 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
         
-            console.log("Materiel necessaire");
             console.log(paneltest2.items.items[3].items.items[1].items.items[0].items.items[0].value);//         Materiel necessaire
-            console.log("coupure route");
             console.log(paneltest2.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
-            console.log("acces");
             console.log(paneltest2.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
+        
+            var longitude= paneltest2.items.items[0].items.items[1].items.items[1].value);//         longitude
+            var latitude= paneltest2.items.items[0].items.items[1].items.items[2].value);//         latitude
+            var debut= paneltest2.items.items[0].items.items[1].items.items[3].value);//         pr debut
+            var fin= paneltest2.items.items[0].items.items[1].items.items[4].value);//         pr fin
+            var longueur= paneltest2.items.items[0].items.items[1].items.items[5].value);//         longueur
+            var hauteur= paneltest2.items.items[0].items.items[1].items.items[6].value);//         hauteur
+            var surface= paneltest2.items.items[0].items.items[1].items.items[7].value);//         surface
+        
+            var famille= paneltest2.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
+            var type= paneltest2.items.items[2].items.items[0].items.items[1].value);////         Type ----Grisé----
+            var departement= paneltest2.items.items[2].items.items[0].items.items[2].value);////         Departement
+            var geologie= paneltest2.items.items[2].items.items[0].items.items[3].value);////         Geologie
+            var axe= paneltest2.items.items[2].items.items[1].items.items[0].value);//         Axe
+            var ville= paneltest2.items.items[2].items.items[1].items.items[1].value);//         Ville
+            var zone= paneltest2.items.items[2].items.items[1].items.items[2].value);//         Zone
+        
+            var ouvrage= paneltest2.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
+            var etiquette= paneltest2.items.items[2].items.items[2].items.items[1].value);//         Etiquette
+        
+            var idGest= paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
+            var TxtGest= paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
+            var idForun= paneltest2.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
+            var TxtFourn= paneltest2.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
+            var idPos= paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
+            var TxtPos= paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
+        
+            var materiel= paneltest2.items.items[3].items.items[1].items.items[0].items.items[0].value);//         Materiel necessaire
+            var coupure= paneltest2.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
+            var acces= paneltest2.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
         
             var paneltest = App.get(me.up('panel'),"grid");
             console.log("paneltest");
