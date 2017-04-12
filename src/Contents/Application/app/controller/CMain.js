@@ -1563,14 +1563,20 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[3]);
             console.log(paneltest2.items.items[3].items.items[1]);*/
         
-        
-        //         longitude
-        //         latitude
-        //         pr debut
-        //         pr fin
-        //         longueur
-        //         hauteur
-        //         surface
+            console.log("longitude");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[1].value);//         longitude
+            console.log("latitude");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[2].value);//         latitude
+            console.log("pr debut");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[3].value);//         pr debut
+            console.log("pr fin");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[4].value);//         pr fin
+            console.log("longueur");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[5].value);//         longueur
+            console.log("hauteur");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[6].value);//         hauteur
+            console.log("surface");
+            console.log(paneltest2.items.items[0].items.items[1].items.items[7].value);//         surface
         
             console.log("Famille");//         Famille
             console.log(paneltest2.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
