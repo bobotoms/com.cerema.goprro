@@ -1625,6 +1625,7 @@ App.controller.define('CMain', {
         
         /************** mettre ici requete update   *************************/
             // On post l'upload
+        App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
             });
@@ -1679,7 +1680,8 @@ App.controller.define('CMain', {
                     me.setDisabled(false);
                 });
             });
-        /************** }); fin requete update   *************************/
+        });
+        /**************  fin requete update   *************************/
         
         
         

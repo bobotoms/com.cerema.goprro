@@ -96,6 +96,45 @@ Visits = {
                 cb(err)
             };
         });       
+    },
+    updateOuvrageVisit: function(o,cb) {
+        
+        var longitude= o['0'];
+        var latitude= o['1'];
+        var debut= o['2'];
+        var fin= o['3'];
+        var longueur= o['4'];
+        var hauteur= o['5'];
+        var surface= o['6'];
+        var famille= o['7'];
+        var type= o['8'];
+        var departement= o['9'];
+        var geologie= o['10'];
+        var axe= o['11'];
+        var ville= o['12'];
+        var zone= o['13'];
+        var ouvrage= o['14'];
+        var etiquette= o['15'];
+        var idGest= o['16'];
+        var TxtGest= o['17'];
+        var idFourn= o['18'];
+        var TxtFourn= o['19'];
+        var idPos= o['20'];
+        var TxtPos= o['21'];
+        var materiel= o['22'];
+        var coupure= o['23'];
+        var acces= o['24'];
+        
+        
+ 		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = "+o,function(err,result){
+             if (!err) {
+                var response=true;
+                cb(response);
+            } else {
+                var err=false;
+                cb(err)
+            };
+        });       
     }
 };
 
