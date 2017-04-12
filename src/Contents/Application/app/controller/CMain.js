@@ -1599,9 +1599,12 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
         
-        //         Materiel necessaire
-        //         coupure route
-        //         acces
+            console.log("Materiel necessaire");
+            console.log(paneltest2.items.items[3].items.items[1].items.items[0].items.items[0].value);//         Materiel necessaire
+            console.log("coupure route");
+            console.log(paneltest2.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
+            console.log("acces");
+            console.log(paneltest2.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
         
             var paneltest = App.get(me.up('panel'),"grid");
             console.log("paneltest");
