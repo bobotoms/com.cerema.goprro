@@ -1561,14 +1561,27 @@ App.controller.define('CMain', {
             console.log(paneltest2.items.items[1]);
             console.log(paneltest2.items.items[2]);
             console.log(paneltest2.items.items[3]);
+            console.log(paneltest2.items.items[3].items.items[1]);
+        
+        
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
             console.log(paneltest2.items.items[3].items.items[0].items.items[4].value);//         id poseur
             console.log(paneltest2.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
-            console.log(paneltest2.items.items[3].items.items[1]);
-        
+        //         id gestionnaire
+        //         id gestionnaire
+        //         id gestionnaire
         
             var paneltest = App.get(me.up('panel'),"grid");
             console.log("paneltest");
@@ -1586,11 +1599,15 @@ App.controller.define('CMain', {
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
             });
-            console.log("me.up('panel')");
-            console.log(me.up('panel'));
+ /*           console.log("me.up('panel')");
+            console.log(me.up('panel'));*/
             console.log("r");
             console.log(r);
+            console.log("r.insertId");
+            console.log(r.insertId);
             if (!me.up('panel').idVisiteOuvrage) {
+            console.log("r.insertId");
+            console.log(r.insertId);
                 if (!r.insertId) {
                     App.notify("Impossible d'enregistrer la fiche");
                     me.setDisabled(false);
