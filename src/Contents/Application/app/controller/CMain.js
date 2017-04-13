@@ -1293,6 +1293,8 @@ App.controller.define('CMain', {
                     var date = Ext.Date.format(LongDate, 'Y-m-d');
                     console.log("date");
                     console.log(date);
+                    console.log("LongDate.length");
+                    console.log(LongDate.length);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
                     if(LongDate.length <= 1)
                     {
