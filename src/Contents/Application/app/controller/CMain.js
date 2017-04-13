@@ -1283,9 +1283,10 @@ App.controller.define('CMain', {
                 
                 console.log("response campagne");
                 console.log(response);
+                console.log(response.insertId);
                 if (response != "periode")
                 {
-
+                    var idCampagne = response.insertId;
                     for (var i=0;i<dataStore.items.length;i++) {
                         if (dataStore.items[i].data.select)
                         {
@@ -1309,9 +1310,6 @@ App.controller.define('CMain', {
                                 if((date >= dateDebut)&&(date <= dateFin))
                                {
 
-                                        console.log("response");
-                                        console.log(response);
-                                        //idCampagne = reponse .......
                                         var tabVisits = [mail, date, idOuvrage, idCampagne];
 
                                         App.Visits.insert(tabVisits,function(response) {
