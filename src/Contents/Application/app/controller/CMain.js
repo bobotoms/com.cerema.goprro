@@ -1221,7 +1221,6 @@ App.controller.define('CMain', {
         App.get("mainform panel#visit").show();
         console.log("VVisit combo#idCampagne");
         console.log( App.get("VVisit combo#idCampagne").getValue());
-        var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
         var mail = Auth.User.mail;
         TMap.clearMarkers();
         App.Visits.select(mail,function(response) {
@@ -1240,8 +1239,8 @@ App.controller.define('CMain', {
                 
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
-            var choixDate = App.get('VVisit combo#dateVisit').getValue();
-            var tabDate = [mail, choixDate, idCampagne];
+            var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
+            var tabDate = [mail, idCampagne];
             App.Visits.selectVisitDate(tabDate,function(response) {
                 var data=[];
                 for (var i=0;i<response.length;i++) {
