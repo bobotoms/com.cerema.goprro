@@ -18,8 +18,6 @@ App.view.define('VAddVisit', {
         //width: 820,
         height: 430,
 
-
-
         tbar: [
         {
             fieldLabel: "Période visite début",
@@ -66,14 +64,14 @@ App.view.define('VAddVisit', {
                 flex: 1,
                 dataIndex: "nomOuvrage"
             },
-   /*         {
+            {
                 fieldLabel: "Date visite",
                 itemId: "date",
                 xtype: "datefield",
                 format: 'd m Y',
                 dateFormat: 'c',
                 width: 200
-            },*/
+            },
             {
                 text: "Dpt",
                 width: 150,
