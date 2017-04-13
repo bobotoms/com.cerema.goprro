@@ -74,9 +74,11 @@ App.view.define('VAddVisit', {
                 xtype: 'datecolumn', 
                 text: "Date visite",
                 itemId: "dateVisite",
-                editable: true,
+                 
+    renderer: Ext.util.Format.dateRenderer(Date.patterns.ShortDate)
+ /*               editable: true,
                 width: 200,
-                /*editor: {
+                editor: {
                     xtype: "datefield",
                     format: 'd m Y',
                     dateFormat: 'c',  
