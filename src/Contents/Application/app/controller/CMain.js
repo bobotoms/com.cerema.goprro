@@ -1224,8 +1224,7 @@ App.controller.define('CMain', {
         var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
         var mail = Auth.User.mail;
         TMap.clearMarkers();
-        var tabSelect = [mail, idCampagne];
-        App.Visits.select(tabSelect,function(response) {
+        App.Visits.select(mail,function(response) {
             
         console.log("response");
         console.log(response);
@@ -1242,7 +1241,7 @@ App.controller.define('CMain', {
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
             var choixDate = App.get('VVisit combo#dateVisit').getValue();
-            var tabDate = [mail, choixDate];
+            var tabDate = [mail, choixDate, idCampagne];
             App.Visits.selectVisitDate(tabDate,function(response) {
                 var data=[];
                 for (var i=0;i<response.length;i++) {
