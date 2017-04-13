@@ -86,7 +86,7 @@ Visits = {
                 else {
                     console.log("err insert date periode");
                     console.log(err);
-                    var err=false;
+                    var err="periode";
 					cb(err)			
 				};
             } else {
