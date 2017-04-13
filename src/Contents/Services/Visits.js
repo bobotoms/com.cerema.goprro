@@ -147,6 +147,7 @@ Visits = {
                 cb(response);
             } else {
                 console.log("false");
+                console.log(err);
                 var err=false;
                 cb(err)
             };
