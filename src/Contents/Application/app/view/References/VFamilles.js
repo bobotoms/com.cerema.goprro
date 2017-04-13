@@ -34,7 +34,7 @@ App.view.define('References.VFamilles', {
                     plugins: [
                         {
                             ptype: "cellediting",
-                            clicksToEdit: 2
+                            clicksToEdit: 1
                         }
                     ],
                     columns: [
