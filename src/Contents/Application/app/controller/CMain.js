@@ -1294,7 +1294,7 @@ App.controller.define('CMain', {
                     console.log("date");
                     console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                    if(LongDate)
+                    if(dataStore.items[i].data.date)
                     {
               //          if((date >= dateDebut)&&(date <= dateFin))
                 //        {
@@ -1310,7 +1310,7 @@ App.controller.define('CMain', {
                         })
          /*               }
                         else{
-                              Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisi");
+                              Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisie");
                         }*/
                     }
                     else{
