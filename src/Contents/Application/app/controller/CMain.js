@@ -1327,7 +1327,9 @@ App.controller.define('CMain', {
                 }
                 else
                 {
-                    Ext.Msg.alert('GOPRRO',"Cette période existe déja ou empiète sur une période existante");
+                    App.Visits.delCampagne(idCampagne,function(response) {
+                        Ext.Msg.alert('GOPRRO',"Cette période existe déja ou empiète sur une période existante");
+                    })
                 }
                 
              });
