@@ -29,7 +29,7 @@ App.view.define('VVisit', {
             itemId: "idCampagne",
             fieldLabel: "Période de visite",
             padding: 5,
-            displayField: "dateDebut",
+            displayField: "idCampagne",
             valueField: "idCampagne",
             editable: false,
             store: App.store.create("goprro://campagne",{autoLoad:true}),
