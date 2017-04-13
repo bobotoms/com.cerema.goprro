@@ -1549,7 +1549,6 @@ App.controller.define('CMain', {
     new_visit_ouvrage_record: function(me, store) {
         
             var form = App.get("VUpVisitWork");
-            console.log("form");
             console.log(form.idVisiteOuvrage);
             console.log(form.items.items[0].items.items[1].items.items[1].value);//         longitude
             console.log(form.items.items[0].items.items[1].items.items[2].value);//         latitude
@@ -1577,6 +1576,7 @@ App.controller.define('CMain', {
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
         
+            var longitude= form.idVisiteOuvrage.value;//         idVisiteOuvrage
             var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
             var latitude= form.items.items[0].items.items[1].items.items[2].value;//         latitude
             var debut= form.items.items[0].items.items[1].items.items[3].value;//         pr debut
