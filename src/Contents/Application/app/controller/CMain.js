@@ -1294,7 +1294,7 @@ App.controller.define('CMain', {
                     console.log("date");
                     console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                    if(Ext.isDefined(LongDate))
+                    if(LongDate !== undefined)
                     {
               //          if(date >= 'undefined'))
                 //        {
