@@ -1,13 +1,7 @@
 Visits = {
     select: function(o,cb) {
         
-        var mail = o['0'];
-                    console.log("mail");
-                    console.log(mail);
-        var idCampagne = o['1'];
-                    console.log("idCampagne");
-                    console.log(idCampagne);
- 		Visits.using('db').query("goprro","SELECT * FROM ouvrages left join familles on ouvrages.idFamille=familles.idFamille left join types on types.idType=ouvrages.idType left join geologies on geologies.idGeologie=ouvrages.idGeologie left join situations on situations.idSituation=ouvrages.idSituation left join acces on acces.idAcces=ouvrages.idAcces left join departements on departements.idDepartement=ouvrages.idDepartement WHERE idCampagne = "+idCampagne+" departements.idDter = (SELECT idDter FROM users WHERE mail='"+mail+"')",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM ouvrages left join familles on ouvrages.idFamille=familles.idFamille left join types on types.idType=ouvrages.idType left join geologies on geologies.idGeologie=ouvrages.idGeologie left join situations on situations.idSituation=ouvrages.idSituation left join acces on acces.idAcces=ouvrages.idAcces left join departements on departements.idDepartement=ouvrages.idDepartement WHERE epartements.idDter = (SELECT idDter FROM users WHERE mail='"+o+"')",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
@@ -38,13 +32,13 @@ Visits = {
     selectVisitDate: function(o,cb) {
         
         var mail = o['0'];
-        var date = o['1'];
+        var idCampagne = o['1'];
         console.log("mail");
         console.log(mail);
         console.log("date");
         console.log(date);
         
- 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"')",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE idCampagne = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"')",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
