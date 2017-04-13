@@ -1312,9 +1312,10 @@ App.controller.define('CMain', {
                     else{
                           Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour l'ouvrage : "+nomOuvrage);
                     }
+                    
+                    Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                 }
             };
-              Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date de début et une date de fin");
