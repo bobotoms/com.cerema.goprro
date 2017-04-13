@@ -134,6 +134,17 @@ Visits = {
             };
             });
         },
+    delCampagne: function(o,cb) {
+ 		Visits.using('db').query("goprro","DELETE FROM campagne WHERE idcampagne = "+o,function(err,result){
+             if (!err) {
+                var response=true;
+                cb(response);
+            } else {
+                var err=false;
+                cb(err)
+            };
+        });       
+    },
     delOuvrageVisit: function(o,cb) {
  		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = "+o,function(err,result){
              if (!err) {
