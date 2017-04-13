@@ -1269,8 +1269,6 @@ App.controller.define('CMain', {
     },
     add_visit: function(me, store) {
         
-        var LongDate = App.get('VAddVisit datecolumn#date').getValue();
-        var date = Ext.Date.format(LongDate, 'Y-m-d');
         var LongDateDebut = App.get('VAddVisit datefield#dateDebut').getValue();
         var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
         var LongDateFin = App.get('VAddVisit datefield#dateFin').getValue();
@@ -1286,6 +1284,12 @@ App.controller.define('CMain', {
                 {
                      var tabCampagne = [mail, dateDebut, dateFin];
                         
+        console.log("dataStore.items[i].data.idOuvrage");
+        console.log(dataStore.items[i].data);
+        //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
+        var LongDate = dataStore.items[i].data.date;
+        var date = Ext.Date.format(LongDate, 'Y-m-d');
+                    
                     App.Visits.insertCampagne(tabCampagne,function(response) { 
                         console.log("response");
                         console.log(response);
