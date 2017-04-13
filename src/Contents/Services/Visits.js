@@ -84,7 +84,7 @@ Visits = {
                         });
                 }
                 else {
-                    console.log("err insert");
+                    console.log("err insert date periode");
                     console.log(err);
                     var err=false;
 					cb(err)			
