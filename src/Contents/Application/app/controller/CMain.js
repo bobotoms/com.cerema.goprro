@@ -1221,7 +1221,7 @@ App.controller.define('CMain', {
         App.get("mainform panel#visit").show();
         console.log("VVisit combo#idCampagne");
         console.log( App.get("VVisit combo#idCampagne"));
-        var idCampagne =  App.get("VVisit combo#idCampagne");
+        var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
         var mail = Auth.User.mail;
         TMap.clearMarkers();
         var tabSelect = [mail, idCampagne];
