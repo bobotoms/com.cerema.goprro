@@ -66,6 +66,11 @@ App.view.define('VVisit', {
                 itemId: "nomOuvrage",
                 flex: 1,
                 dataIndex: "nomOuvrage"
+            },{
+                text: "Date visite",
+                itemId: "dateVisiteOuvrage",
+                flex: 1,
+                dataIndex: "dateVisiteOuvrage"
             },
             {
                 text: "Dpt",
