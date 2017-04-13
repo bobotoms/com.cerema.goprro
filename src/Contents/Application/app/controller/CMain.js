@@ -1280,6 +1280,7 @@ App.controller.define('CMain', {
             var dataStore=App.get(me.up('panel'),"grid").getStore().data;
             var tabCampagne = [mail, dateDebut, dateFin];
             App.Visits.insertCampagne(tabCampagne,function(response) { 
+                
                 console.log("response campagne");
                 console.log(response);
                 
