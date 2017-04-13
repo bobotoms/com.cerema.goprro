@@ -92,7 +92,7 @@ Visits = {
         var date = o['1'];
         var numOuvrage = o['2'];
         var idCampagne = o['3'];
-        Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"') AND idOuvrage = '"+numOuvrage+"' AND idCampagne= "+idCampagne+"",function(err,result){
+        /*Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE dateVisiteOuvrage = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"') AND idOuvrage = '"+numOuvrage+"' AND idCampagne= "+idCampagne+"",function(err,result){
             if (!err) {
                 if (result.length === 0)
                 {
@@ -121,7 +121,7 @@ Visits = {
                 var err=false;
                 cb(err)			
             };
-            });
+            });*/
         },
     delOuvrageVisit: function(o,cb) {
  		Visits.using('db').query("goprro","DELETE FROM visite_ouvrages WHERE idVisiteOuvrage = "+o,function(err,result){
