@@ -22,8 +22,16 @@ App.view.define('VAddVisit', {
 
         tbar: [
         {
-            fieldLabel: "Date visite",
-            itemId: "date",
+            fieldLabel: "Période visite début",
+            itemId: "dateDebut",
+            xtype: "datefield",
+            format: 'd m Y',
+            dateFormat: 'c',
+            width: 200
+        },
+        {
+            fieldLabel: "Période visite fin",
+            itemId: "dateFin",
             xtype: "datefield",
             format: 'd m Y',
             dateFormat: 'c',
