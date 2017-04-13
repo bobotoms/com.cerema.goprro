@@ -1285,10 +1285,12 @@ App.controller.define('CMain', {
                      var tabCampagne = [mail, dateDebut, dateFin];
                         
                     console.log("dataStore.items[i].data.idOuvrage");
-                    console.log(dataStore.items[i].data);
+                    console.log(dataStore.items[i].data.idOuvrage);
                     //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
                     var LongDate = dataStore.items[i].data.date;
                     var date = Ext.Date.format(LongDate, 'Y-m-d');
+                    console.log("date");
+                    console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
                     if(date != null)
                     {
