@@ -65,8 +65,8 @@ App.view.define('VAddVisit', {
                 dataIndex: "nomOuvrage"
             },
             {
-                xtype: 'actioncolumn',
-                fieldLabel: "Date visite",
+                xtype: 'datecolumn',
+                text: "Date visite",
                 itemId: "dateVisite",
                 width: 200,
                 editor: {
