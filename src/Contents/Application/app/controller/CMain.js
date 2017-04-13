@@ -1246,7 +1246,10 @@ App.controller.define('CMain', {
                 for (var i=0;i<response.length;i++) {
                     data.push({
                         idOuvrage:response[i].idOuvrage,
+                        idCampagne:response[i].idCampagne,
                         idVisiteOuvrage:response[i].idVisiteOuvrage,
+                        idDepartement:response[i].idDepartement,
+                        dateVisiteOuvrage:response[i].dateVisiteOuvrage,
                         nomOuvrage:response[i].nomOuvrage,
                         nomDepartement:response[i].nomDepartement,
                         oa_x:response[i].oa_x,
@@ -1256,7 +1259,7 @@ App.controller.define('CMain', {
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idVisiteOuvrage,"colorMarker","workvisit");
                 };
                 var store=App.store.create({
-                    fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                    fields:["idOuvrage","idCampagne","idVisiteOuvrage","idDepartement","nomOuvrage","dateVisiteOuvrage","nomDepartement","oa_x","oa_y"],data:data
                 });
                 if(store)
                 {
