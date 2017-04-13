@@ -1291,7 +1291,7 @@ App.controller.define('CMain', {
                         console.log(response);
                         //idCampagne = reponse .......
                         var idOuvrage = dataStore.items[i].data.idOuvrage;
-                        var tabVisits = [mail, date, idOuvrage, idCampagne]
+                        var tabVisits = [mail, date, idOuvrage, idCampagne];
 
                         App.Visits.insert(tabVisits,function(response) {
                         })
