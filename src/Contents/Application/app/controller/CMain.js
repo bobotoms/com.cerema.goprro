@@ -1271,7 +1271,11 @@ App.controller.define('CMain', {
         
         var LongDate = App.get('VAddVisit datefield#date').getValue();
         var date = Ext.Date.format(LongDate, 'Y-m-d');
-        if(LongDate != null)
+        var LongDateDebut = App.get('VAddVisit datefield#dateDebut').getValue();
+        var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
+        var LongDateFin = App.get('VAddVisit datefield#dateFin').getValue();
+        var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
+        if((LongDateDebut != null) AND (LongDateFin != null))
         {
             var mail = Auth.User.mail;
             var panel=me.up('panel');
@@ -1280,17 +1284,24 @@ App.controller.define('CMain', {
             for (var i=0;i<dataStore.items.length;i++) {
                 if (dataStore.items[i].data.select)
                 {
-                    var idOuvrage = dataStore.items[i].data.idOuvrage;
-                    var tabVisits = [mail, date, idOuvrage]
+                     var tabCampagne = [mail, dateDebut, dateFin]
+                        
+                    App.Visits.insertCampagne(tabCampagne,function(response) { 
+                        console.log("response");
+                        console.log(response);
+                        idCampagne = reponse .......
+                        var idOuvrage = dataStore.items[i].data.idOuvrage;
+                        var tabVisits = [mail, date, idOuvrage, idCampagne]
 
-                    App.Visits.insert(tabVisits,function(response) {
+                        App.Visits.insert(tabVisits,function(response) {
+                        })
                     })
                 }
             };
               Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
-              Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date");
+              Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date de début et une date de fin");
         }
     
 	},
