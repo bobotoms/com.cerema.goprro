@@ -1549,7 +1549,8 @@ App.controller.define('CMain', {
     new_visit_ouvrage_record: function(me, store) {
         
             var form = App.get("VUpVisitWork");
-        
+            console.log("form");
+            console.log(form);
             console.log(form.items.items[0].items.items[1].items.items[1].value);//         longitude
             console.log(form.items.items[0].items.items[1].items.items[2].value);//         latitude
             console.log(form.items.items[0].items.items[1].items.items[3].value);//         pr debut
