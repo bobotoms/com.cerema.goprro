@@ -1494,6 +1494,7 @@ App.controller.define('CMain', {
     },
     visit_work: function(me, store)
     {
+        /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
         var idOuvrage=me.up('panel').idOuvrage;
         var date = App.get('VVisit combo#dateVisit').getValue();
         App.get('VVisitWork').close();
