@@ -36,14 +36,6 @@ App.view.define('VVisit', {
             store: App.store.create("goprro://campagne",{autoLoad:true}),
         }
         ],
-/*       bbar: [
-            '->', {
-
-            text: '<b>Enregistrer</b>',
-            itemId: "VisitRecord"
-        }
-        ],*/
-
         items: [
         {
             xtype: "grid",
