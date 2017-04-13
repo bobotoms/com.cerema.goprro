@@ -1284,22 +1284,28 @@ App.controller.define('CMain', {
                 {
                      var tabCampagne = [mail, dateDebut, dateFin];
                         
-        console.log("dataStore.items[i].data.idOuvrage");
-        console.log(dataStore.items[i].data);
-        //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
-        var LongDate = dataStore.items[i].data.date;
-        var date = Ext.Date.format(LongDate, 'Y-m-d');
-                    
-                    App.Visits.insertCampagne(tabCampagne,function(response) { 
-                        console.log("response");
-                        console.log(response);
-                        //idCampagne = reponse .......
-                        var idOuvrage = dataStore.items[i].data.idOuvrage;
-                        var tabVisits = [mail, date, idOuvrage, idCampagne];
+                    console.log("dataStore.items[i].data.idOuvrage");
+                    console.log(dataStore.items[i].data);
+                    //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
+                    var LongDate = dataStore.items[i].data.date;
+                    var date = Ext.Date.format(LongDate, 'Y-m-d');
+                    var nomOuvrage = dataStore.items[i].data.nomOuvrage;
+                    if(date != null)
+                    {
+                        App.Visits.insertCampagne(tabCampagne,function(response) { 
+                            console.log("response");
+                            console.log(response);
+                            //idCampagne = reponse .......
+                            var idOuvrage = dataStore.items[i].data.idOuvrage;
+                            var tabVisits = [mail, date, idOuvrage, idCampagne];
 
-                        App.Visits.insert(tabVisits,function(response) {
+                            App.Visits.insert(tabVisits,function(response) {
+                            })
                         })
-                    })
+                    }
+                    else{
+                          Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour l'ouvrage : "+nomOuvrage);
+                    }
                 }
             };
               Ext.Msg.alert('GOPRRO',"Visite enregistrée");
