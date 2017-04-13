@@ -101,7 +101,7 @@ Visits = {
         
         console.log("idVisiteOuvrage");
         var idVisiteOuvrage= o['0'];
-        console.log(o);
+        console.log(idVisiteOuvrage);
         console.log("longitude");
         var longitude= o['1'];
         console.log(longitude);
