@@ -56,21 +56,6 @@ App.view.define('VAddVisit', {
                     clicksToEdit: 1
                 }
             ],
-            items: [
-  //      {
-            {
-                xtype: 'datecolumn', 
-                text: "Date visite",
-                itemId: "dateVisite",
-                width: 200,
-                //editor: {
-                    xtype: "datefield",
-                    format: 'd m Y',
-                    dateFormat: 'c',  
-                //},
-                
-            },
-                ],
             columns: 
             [
             {
@@ -84,6 +69,18 @@ App.view.define('VAddVisit', {
                 itemId: "nomOuvrage",
                 flex: 1,
                 dataIndex: "nomOuvrage"
+            },
+            {
+                xtype: 'datefieldcolumn', 
+                text: "Date visite",
+                itemId: "dateVisite",
+                width: 200,
+                //editor: {
+                    //xtype: "datefield",
+                    format: 'd m Y',
+                    dateFormat: 'c',  
+                //},
+                
             },
             {
                 text: "Dpt",
