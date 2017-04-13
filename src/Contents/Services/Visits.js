@@ -35,8 +35,8 @@ Visits = {
         var idCampagne = o['1'];
         console.log("mail");
         console.log(mail);
-        console.log("date");
-        console.log(date);
+        console.log("idCampagne");
+        console.log(idCampagne);
         
  		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE idCampagne = '"+idCampagne+"' AND idUser = (select idUser from users where mail='"+mail+"')",function(err,result){
             if (!err) {
