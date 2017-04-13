@@ -24,8 +24,8 @@ App.view.define('VVisit', {
         {
             
             xtype: "combo",
- /*           format: 'd m Y',
-            dateFormat: 'c',*/
+            format: 'd m Y',
+            dateFormat: 'c',
             itemId: "idCampagne",
             fieldLabel: "Période de visite",
             padding: 5,
