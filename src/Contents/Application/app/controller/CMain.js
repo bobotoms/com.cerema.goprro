@@ -1662,13 +1662,9 @@ App.controller.define('CMain', {
                 };
             };
             App.Elements.delOuvrage(r.insertId,function(e) {
-                App.DB.post("goprro://oa_elements",Post,function(r){
-                    console.log(r);
-                    App.get('mainform grid#gridO').getStore().load();
-                    me.up('panel').hide();
-                    hideForms();
-                    App.get("mainform grid#gridO").show();
-                    me.setDisabled(false);
+                App.DB.post("goprro://visite_oa_elements",Post,function(r){
+                    Ext.Msg.alert('GOPRRO',"Modification enregistrée");
+                    
                 });
             });
         });
