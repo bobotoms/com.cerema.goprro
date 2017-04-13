@@ -33,7 +33,7 @@ App.view.define('VVisit', {
             valueField: "idCampagne",
             editable: false,
             store: App.store.create("goprro://campagne",{autoLoad:true}),
-        },
+        }
         ],
 /*       bbar: [
             '->', {
