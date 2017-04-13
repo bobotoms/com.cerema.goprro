@@ -1576,7 +1576,7 @@ App.controller.define('CMain', {
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
         
-            var idVisiteOuvrage= form.idVisiteOuvrage.value;//   
+            var idVisiteOuvrage= form.idVisiteOuvrage;//   
             console.log("idVisiteOuvrage");      idVisiteOuvrage
             console.log(idVisiteOuvrage);      idVisiteOuvrage
             var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
