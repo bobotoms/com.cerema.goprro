@@ -21,14 +21,14 @@ App.view.define('VAddVisit', {
 
 
         tbar: [
-/*        {
+        {
             fieldLabel: "Période visite début",
             itemId: "dateDebut",
             xtype: "datefield",
             format: 'd m Y',
             dateFormat: 'c',
             width: 200
-        },
+        }/*,
         {
             fieldLabel: "Période visite fin",
             itemId: "dateFin",
