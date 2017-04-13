@@ -35,7 +35,7 @@ App.view.define('References.VTypes', {
                     plugins: [
                         {
                             ptype: "cellediting",
-                            clicksToEdit: 2
+                            clicksToEdit: 1
                         }
                     ],
                     columns: [
