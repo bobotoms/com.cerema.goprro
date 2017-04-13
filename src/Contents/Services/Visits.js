@@ -99,31 +99,32 @@ Visits = {
     },
     updateOuvrageVisit: function(o,cb) {
         
-        var longitude= o['0'];
-        var latitude= o['1'];
-        var debut= o['2'];
-        var fin= o['3'];
-        var longueur= o['4'];
-        var hauteur= o['5'];
-        var surface= o['6'];
-        var famille= o['7'];
-        var type= o['8'];
-        var departement= o['9'];
-        var geologie= o['10'];
-        var axe= o['11'];
-        var ville= o['12'];
-        var zone= o['13'];
-        var ouvrage= o['14'];
-        var etiquette= o['15'];
-        var idGest= o['16'];
-        var TxtGest= o['17'];
-        var idFourn= o['18'];
-        var TxtFourn= o['19'];
-        var idPos= o['20'];
-        var TxtPos= o['21'];
-        var materiel= o['22'];
-        var coupure= o['23'];
-        var acces= o['24'];
+        var idVisiteOuvrage= o['0'];
+        var longitude= o['1'];
+        var latitude= o['2'];
+        var debut= o['3'];
+        var fin= o['4'];
+        var longueur= o['5'];
+        var hauteur= o['6'];
+        var surface= o['7'];
+        var famille= o['8'];
+        var type= o['9'];
+        var departement= o['10'];
+        var geologie= o['11'];
+        var axe= o['12'];
+        var ville= o['13'];
+        var zone= o['14'];
+        var ouvrage= o['15'];
+        var etiquette= o['16'];
+        var idGest= o['17'];
+        var TxtGest= o['18'];
+        var idFourn= o['19'];
+        var TxtFourn= o['20'];
+        var idPos= o['21'];
+        var TxtPos= o['22'];
+        var materiel= o['23'];
+        var coupure= o['24'];
+        var acces= o['25'];
         
         
  		Visits.using('db').query("goprro","UPDATE visite_ouvrages (idFamille, idType, idDepartement, idZone, idGeologie, idSituation, idAcces, nomOuvrage, etiquetteOuvrage, idGestionnaire, idMaitreOuvrage, idFournisseur, idPoseur, datePose, PRDebut, PRFin, PRSens, oa_x, oa_y, oa_z, materiel, modif, creation, actif, idVille, idAxe, longueur, hauteur, surface, id_gestionnaire, id_fournisseur, id_poseur, coupure_route, acces, materiels, txt_fournisseur, txt_poseur, txt_gestionnaire, _BLOB) SELECT '"+date+"', (select idUser from users where mail='"+mail+"'), idOuvrage, idFamille, idType, idDepartement, idZone, idGeologie, idSituation, idAcces, nomOuvrage, etiquetteOuvrage, idGestionnaire, idMaitreOuvrage, idFournisseur, idPoseur, datePose, PRDebut, PRFin, PRSens, oa_x, oa_y, oa_z, materiel, modif, creation, actif, idVille, idAxe, longueur, hauteur, surface, id_gestionnaire, id_fournisseur, id_poseur, coupure_route, acces, materiels, txt_fournisseur, txt_poseur, txt_gestionnaire, _BLOB FROM ouvrages WHERE idOuvrage='"+numOuvrage+"'",function(err,result){
