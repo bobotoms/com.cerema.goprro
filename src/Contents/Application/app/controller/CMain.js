@@ -1292,7 +1292,7 @@ App.controller.define('CMain', {
                     console.log("date");
                     console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                    if(date != null)
+                    if((date != null) && (date != "")
                     {
                         App.Visits.insertCampagne(tabCampagne,function(response) { 
                             console.log("response");
