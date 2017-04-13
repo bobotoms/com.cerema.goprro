@@ -1294,7 +1294,7 @@ App.controller.define('CMain', {
                     console.log("date");
                     console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                    if(dataStore.items[i].data.date)
+                    if(dataStore.items[i].data.date !== undefined)
                     {
               //          if((date >= dateDebut)&&(date <= dateFin))
                 //        {
