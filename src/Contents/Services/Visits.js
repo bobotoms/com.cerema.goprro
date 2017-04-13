@@ -51,12 +51,15 @@ Visits = {
         });       
     },
   	insertCampagne: function(o,cb) {
-        console.log("mail");
         var mail = o['0'];
-        console.log("datedebut");
+        console.log("mail");
+        console.log(mail);
         var dateDebut = o['1'];
-        console.log("datefin");
+        console.log("datedebut");
+        console.log(dateDebut);
         var dateFin = o['2'];
+        console.log("datefin");
+        console.log(dateFin);
         Visits.using('db').query("goprro","SELECT * FROM campagne WHERE dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' AND idGestionnaire = (select idUser from users where mail='"+mail+"')",function(err,result){
             if (!err) {
                 if (result.length === 0)
