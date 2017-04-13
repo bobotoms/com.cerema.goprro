@@ -1294,9 +1294,9 @@ App.controller.define('CMain', {
                     console.log("date");
                     console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                    if(LongDate !== undefined)
+                    if(LongDate)
                     {
-              //          if(date >= 'undefined'))
+              //          if((date >= dateDebut)&&(date <= dateFin))
                 //        {
                         App.Visits.insertCampagne(tabCampagne,function(response) { 
                             console.log("response");
@@ -1308,6 +1308,10 @@ App.controller.define('CMain', {
                             App.Visits.insert(tabVisits,function(response) {
                             })
                         })
+                        }
+                        else{
+                              Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisi");
+                        }
                     }
                     else{
                           Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour l'ouvrage : "+nomOuvrage);
