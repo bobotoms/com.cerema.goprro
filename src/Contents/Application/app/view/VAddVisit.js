@@ -71,7 +71,7 @@ App.view.define('VAddVisit', {
                 dataIndex: "nomOuvrage"
             },
             {
-                xtype: 'datefield', 
+                xtype: 'datecolumn', 
                 text: "Date visite",
                 itemId: "dateVisite",
                 width: 200,
