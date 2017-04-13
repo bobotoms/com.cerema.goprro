@@ -32,7 +32,7 @@ App.view.define('VVisit', {
             displayField: "{dateDebut} {dateFin}",
             valueField: "idCampagne",
             editable: false,
-            store: App.store.create("goprro://campagne{dateDebut(d m Y)}",{autoLoad:true}),
+            store: App.store.create("goprro://campagne",{format: 'd m Y', autoLoad:true}),
         }
         ],
 /*       bbar: [
