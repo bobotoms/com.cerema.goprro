@@ -26,7 +26,7 @@ App.view.define('VAddVisit', {
             format: 'd m Y',
             dateFormat: 'c',
             width: 200
-        }/*,
+        },
         {
             fieldLabel: "Période visite fin",
             itemId: "dateFin",
@@ -34,7 +34,7 @@ App.view.define('VAddVisit', {
             format: 'd m Y',
             dateFormat: 'c',
             width: 200
-        }*/
+        }
         ],
        bbar: [
             '->', {
