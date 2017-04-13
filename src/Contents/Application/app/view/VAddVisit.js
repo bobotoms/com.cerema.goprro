@@ -75,7 +75,11 @@ App.view.define('VAddVisit', {
                 text: "Date visite",
                 itemId: "dateVisite",
                 dataIndex: 'Date', 
-                renderer: Ext.util.Format.dateRenderer(Date.patterns)
+                renderer: {
+                xtype: "datefield",
+                    format: 'd m Y',
+                    dateFormat: 'c',
+                }
  /*               editable: true,
                 width: 200,
                 editor: {
