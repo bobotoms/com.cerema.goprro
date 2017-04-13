@@ -1311,8 +1311,6 @@ App.controller.define('CMain', {
                             App.Visits.insert(tabVisits,function(response) {
                             })
                         });
-                    
-                        Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                         }
                         else{
                               Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisie");
@@ -1323,6 +1321,8 @@ App.controller.define('CMain', {
                     }
                 }
             };
+                    
+            //Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date de début et une date de fin");
