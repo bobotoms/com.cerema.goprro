@@ -1275,7 +1275,7 @@ App.controller.define('CMain', {
         var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
         var LongDateFin = App.get('VAddVisit datefield#dateFin').getValue();
         var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
-        if((LongDateDebut != null) AND (LongDateFin != null))
+        if((LongDateDebut != null) & (LongDateFin != null))
         {
             var mail = Auth.User.mail;
             var panel=me.up('panel');
