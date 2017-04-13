@@ -1314,12 +1314,12 @@ App.controller.define('CMain', {
                         else{
                               Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisie");
                         }*/
+                    
+                        Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                     }
                     else{
                           Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour l'ouvrage : "+nomOuvrage);
                     }
-                    
-                    Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                 }
             };
         }
