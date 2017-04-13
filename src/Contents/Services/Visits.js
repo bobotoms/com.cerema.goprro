@@ -139,11 +139,14 @@ Visits = {
         
         //, materiel = '"+materiel+"     ?
         //, materiels = '"+materiel+"'   ?
+                console.log("avant sql");
  		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = '"+famille+"', idType = '"+type+"', idDepartement = '"+departement+"', idZone = '"+zone+"', idGeologie = '"+geologie+"',  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = '"+idGest+"', idFourn = '"+idVisiteOuvrage+"', idPoseur = '"+idPos+"', PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = '"+ville+"', idAxe = '"+axe+"', longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = '"+idGest+"', id_fournisseur = '"+idFourn+"', id_poseur = '"+idPos+"', coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
              if (!err) {
+                console.log("true");
                 var response=true;
                 cb(response);
             } else {
+                console.log("false");
                 var err=false;
                 cb(err)
             };
