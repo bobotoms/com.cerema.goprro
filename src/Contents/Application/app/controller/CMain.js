@@ -1286,6 +1286,7 @@ App.controller.define('CMain', {
                         
                     console.log("dataStore.items[i].data.idOuvrage");
                     console.log(dataStore.items[i].data.idOuvrage);
+                    var idOuvrage = dataStore.items[i].data.idOuvrage;
                     //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
                     var LongDate = dataStore.items[i].data.date;
                     console.log("LongDate");
@@ -1301,16 +1302,15 @@ App.controller.define('CMain', {
                     {
                         if((date >= dateDebut)&&(date <= dateFin))
                        {
-                        App.Visits.insertCampagne(tabCampagne,function(response) { 
-                            console.log("response");
-                            console.log(response);
-                            //idCampagne = reponse .......
-                            var idOuvrage = dataStore.items[i].data.idOuvrage;
-                            var tabVisits = [mail, date, idOuvrage, idCampagne];
+                            App.Visits.insertCampagne(tabCampagne,function(response) { 
+                                console.log("response");
+                                console.log(response);
+                                //idCampagne = reponse .......
+                                var tabVisits = [mail, date, idOuvrage, idCampagne];
 
-                            App.Visits.insert(tabVisits,function(response) {
-                            })
-                        });
+                                App.Visits.insert(tabVisits,function(response) {
+                                })
+                            });
                         }
                         else{
                               Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisie");
