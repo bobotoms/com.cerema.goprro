@@ -63,15 +63,15 @@ App.view.define('VAddVisit', {
                 itemId: "nomOuvrage",
                 flex: 1,
                 dataIndex: "nomOuvrage"
-            }/*,
+            },
             {
                 fieldLabel: "Date visite",
-                itemId: "date",
+                itemId: "dateVisite",
                 xtype: "datefield",
                 format: 'd m Y',
                 dateFormat: 'c',
                 width: 200
-            }*/,
+            },
             {
                 text: "Dpt",
                 width: 150,
