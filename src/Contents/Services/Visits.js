@@ -80,13 +80,13 @@ Visits = {
                         });
                 }
                 else {
-                    console.log("err");
+                    console.log("err insert");
                     console.log(err);
                     var err=false;
 					cb(err)			
 				};
             } else {
-                console.log("err");
+                console.log("err select");
                 console.log(err);
                 var err=false;
                 cb(err)			
