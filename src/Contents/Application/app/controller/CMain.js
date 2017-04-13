@@ -1329,7 +1329,7 @@ App.controller.define('CMain', {
                 }
                 else
                 {
-                    Ext.Msg.alert('GOPRRO',"Cette période existe déja ou ampiète sur une période existante");
+                    Ext.Msg.alert('GOPRRO',"Cette période existe déja ou empiète sur une période existante");
                 }
                 
              });
