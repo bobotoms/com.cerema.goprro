@@ -1288,6 +1288,8 @@ App.controller.define('CMain', {
                     console.log(dataStore.items[i].data.idOuvrage);
                     //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
                     var LongDate = dataStore.items[i].data.date;
+                    console.log("LongDate");
+                    console.log(LongDate);
                     var date = Ext.Date.format(LongDate, 'Y-m-d');
                     console.log("date");
                     console.log(date);
