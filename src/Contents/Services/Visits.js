@@ -126,8 +126,20 @@ Visits = {
         var coupure= o['24'];
         var acces= o['25'];
         
-        //, oa_z = '"+idVisiteOuvrage+"'
- 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = '"+famille+"', idType = '"+type+"', idDepartement = '"+departement+"', idZone = '"+zone+"', idGeologie = '"+geologie+"', idSituation = '"+idVisiteOuvrage+"', idAcces = '"+idVisiteOuvrage+"', nomOuvrage = '"+idVisiteOuvrage+"', etiquetteOuvrage = '"+idVisiteOuvrage+"', idGestionnaire = '"+idVisiteOuvrage+"', idMaitreOuvrage = '"+idVisiteOuvrage+"', idFournisseur = '"+idVisiteOuvrage+"', idPoseur = '"+idVisiteOuvrage+"', datePose = '"+idVisiteOuvrage+"', PRDebut = '"+idVisiteOuvrage+"', PRFin = '"+idVisiteOuvrage+"', PRSens = '"+idVisiteOuvrage+"', oa_x = '"+longitude+"', oa_y = '"+latitude+"', materiel = '"+idVisiteOuvrage+"', modif = '"+idVisiteOuvrage+"', creation = '"+idVisiteOuvrage+"', actif = '"+idVisiteOuvrage+"', idVille = '"+idVisiteOuvrage+"', idAxe = '"+idVisiteOuvrage+"', longueur = '"+idVisiteOuvrage+"', hauteur = '"+idVisiteOuvrage+"', surface = '"+idVisiteOuvrage+"', id_gestionnaire = '"+idVisiteOuvrage+"', id_fournisseur = '"+idVisiteOuvrage+"', id_poseur = '"+idVisiteOuvrage+"', coupure_route = '"+idVisiteOuvrage+"', acces = '"+idVisiteOuvrage+"', materiels = '"+idVisiteOuvrage+"', txt_fournisseur = '"+idVisiteOuvrage+"', txt_poseur = '"+idVisiteOuvrage+"', txt_gestionnaire = '"+idVisiteOuvrage+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
+        //, oa_z = '"++"'
+        //, idSituation = '"++"'
+        //, idAcces = '"++"',
+        // , idMaitreOuvrage = '"++"'
+        //, datePose = '"++"'
+        //, PRSens = '"++"'
+        
+        //, modif = '"++"'
+        //, creation = '"++"'
+        //, actif = '"++"'
+        
+        //, materiel = '"+materiel+"     ?
+        //, materiels = '"+materiel+"'   ?
+ 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = '"+famille+"', idType = '"+type+"', idDepartement = '"+departement+"', idZone = '"+zone+"', idGeologie = '"+geologie+"',  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = '"+idGest+"', idFourn = '"+idVisiteOuvrage+"', idPoseur = '"+idPos+"', PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = '"+ville+"', idAxe = '"+axe+"', longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = '"+idGest+"', id_fournisseur = '"+idFourn+"', id_poseur = '"+idPos+"', coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
              if (!err) {
                 var response=true;
                 cb(response);
