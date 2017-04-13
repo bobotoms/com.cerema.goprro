@@ -52,11 +52,19 @@ App.view.define('VAddVisit', {
                 flex: 1,
                 dataIndex: "idOuvrage"
             },
-                {
+            {
                 text: "Ouvrage disponible",
                 itemId: "nomOuvrage",
                 flex: 1,
                 dataIndex: "nomOuvrage"
+            },
+            {
+                fieldLabel: "Date visite",
+                itemId: "date",
+                xtype: "datefield",
+                format: 'd m Y',
+                dateFormat: 'c',
+                width: 200
             },
             {
                 text: "Dpt",
