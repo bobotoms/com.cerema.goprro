@@ -1292,10 +1292,12 @@ App.controller.define('CMain', {
                     console.log(LongDate);
                     var date = Ext.Date.format(LongDate, 'Y-m-d');
                     console.log("date");
-                    console.log(date);typeof idVisiteOuvrage != 'undefined'
+                    console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
                     if(typeof (LongDate != 'undefined'))
                     {
+              //          if(date >= 'undefined'))
+                //        {
                         App.Visits.insertCampagne(tabCampagne,function(response) { 
                             console.log("response");
                             console.log(response);
