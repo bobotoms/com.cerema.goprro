@@ -1576,7 +1576,7 @@ App.controller.define('CMain', {
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
             console.log(form.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
         
-            var longitude= form.idVisiteOuvrage.value;//         idVisiteOuvrage
+            var idVisiteOuvrage= form.idVisiteOuvrage.value;//         idVisiteOuvrage
             var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
             var latitude= form.items.items[0].items.items[1].items.items[2].value;//         latitude
             var debut= form.items.items[0].items.items[1].items.items[3].value;//         pr debut
@@ -1607,7 +1607,7 @@ App.controller.define('CMain', {
             var coupure= form.items.items[3].items.items[1].items.items[0].items.items[1].value;//         coupure route
             var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
                 
-            var paramUpdate = [longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
+            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
         
         
 /*        me.setDisabled(true);
