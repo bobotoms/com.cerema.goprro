@@ -71,15 +71,17 @@ App.view.define('VAddVisit', {
                 dataIndex: "nomOuvrage"
             },
             {
-                xtype: 'datecolumn', 
+                xtype: 'daterenderer', 
                 text: "Date visite",
                 itemId: "dateVisite",
+                    format: 'd m Y',
+                    dateFormat: 'c',
                 //dataIndex: 'Date', 
-                renderer: {
+                /*renderer: {
                     xtype: "datefield",
                     format: 'd m Y',
                     dateFormat: 'c',
-                }
+                }*/
  /*               editable: true,
                 width: 200,
                 editor: {
