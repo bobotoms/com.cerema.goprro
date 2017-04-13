@@ -1289,7 +1289,7 @@ App.controller.define('CMain', {
                     App.Visits.insertCampagne(tabCampagne,function(response) { 
                         console.log("response");
                         console.log(response);
-                        idCampagne = reponse .......
+                        //idCampagne = reponse .......
                         var idOuvrage = dataStore.items[i].data.idOuvrage;
                         var tabVisits = [mail, date, idOuvrage, idCampagne]
 
