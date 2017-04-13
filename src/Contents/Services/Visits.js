@@ -62,6 +62,10 @@ Visits = {
         console.log(dateFin);
         Visits.using('db').query("goprro","SELECT * FROM campagne WHERE dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' AND idGestionnaire = (select idUser from users where mail='"+mail+"')",function(err,result){
             if (!err) {
+                    console.log("result");
+                    console.log(result);
+                    console.log("result.length");
+                    console.log(result.length);
                 if (result.length === 0)
                 {
                     
