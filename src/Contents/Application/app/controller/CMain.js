@@ -1294,7 +1294,7 @@ App.controller.define('CMain', {
                     console.log("date");
                     console.log(date);
                     var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                    if((LongDate != null) && (LongDate != ""))
+                    if((LongDate != null) && (LongDate != "undefined"))
                     {
                         App.Visits.insertCampagne(tabCampagne,function(response) { 
                             console.log("response");
