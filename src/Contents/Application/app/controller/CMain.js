@@ -1269,7 +1269,7 @@ App.controller.define('CMain', {
     },
     add_visit: function(me, store) {
         
-        var LongDate = App.get('VAddVisit datefield#date').getValue();
+        var LongDate = App.get('VAddVisit datecolumn#date').getValue();
         var date = Ext.Date.format(LongDate, 'Y-m-d');
         var LongDateDebut = App.get('VAddVisit datefield#dateDebut').getValue();
         var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
