@@ -317,7 +317,7 @@ App.controller.define('CMain', {
             "VRefs grid#T1": {
                 edit: "ref_grid_edit"
             },
-            "VVisit combo#dateVisit": {
+            "VVisit combo#idCampagne": {
                 select: "showVisitDate"
             },
 			"VAddVisit button#VisitRecord": {
@@ -1219,10 +1219,13 @@ App.controller.define('CMain', {
         App.get('mainform panel#southpanel').collapse();
         //hideForms();
         App.get("mainform panel#visit").show();
+        console.log("VVisit combo#idCampagne");
+        console.log( App.get("VVisit combo#idCampagne"));
+        var idCampagne =  App.get("VVisit combo#idCampagne");
         var mail = Auth.User.mail;
         TMap.clearMarkers();
-        
-        App.Visits.select(mail,function(response) {
+        var tabSelect = [mail, idCampagne];
+        App.Visits.select(tabSelect,function(response) {
             
         console.log("response");
         console.log(response);
