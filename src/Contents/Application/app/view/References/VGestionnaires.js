@@ -33,7 +33,7 @@ App.view.define('References.VGestionnaires', {
                     plugins: [
                         {
                             ptype: "cellediting",
-                            clicksToEdit: 2
+                            clicksToEdit: 1
                         }
                     ],
                     columns: [
