@@ -38,7 +38,7 @@ Visits = {
         console.log("date");
         console.log(date);
         
- 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE idCampagne = '"+date+"' AND idUser = (select idUser from users where mail='"+mail+"')",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE idCampagne = '"+idCampagne+"' AND idUser = (select idUser from users where mail='"+mail+"')",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
