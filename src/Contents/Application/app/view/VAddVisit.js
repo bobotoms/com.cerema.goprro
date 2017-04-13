@@ -75,11 +75,11 @@ App.view.define('VAddVisit', {
                 text: "Date visite",
                 itemId: "dateVisite",
                 width: 200,
-                editor: {
-                    xtype: "datefield",
+                //editor: {
+                //    xtype: "datefield",
                     format: 'd m Y',
                     dateFormat: 'c',  
-                },
+                //},
                 
             },
             {
