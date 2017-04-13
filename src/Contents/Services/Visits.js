@@ -59,7 +59,7 @@ Visits = {
             if (!err) {
                 if (result.length === 0)
                 {
-                    Visits.using('db').query("goprro","INSERT INTO campagne (idGestionnaire, dateDebut, dateFin) VALUES ((select idUser from users where mail='"+mail+"'), '"+dateDebut+"', '"+dateFin+"'",function(err,result){
+                    Visits.using('db').query("goprro","INSERT INTO campagne (idGestionnaire, dateDebut, dateFin) VALUES ((select idUser from users where mail='"+mail+"'), '"+dateDebut+"', '"+dateFin+"')",function(err,result){
                             if (!err) {            
                                 console.log("result");
                                 console.log(result);
