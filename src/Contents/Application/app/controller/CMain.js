@@ -1283,47 +1283,54 @@ App.controller.define('CMain', {
                 
                 console.log("response campagne");
                 console.log(response);
-                
-                for (var i=0;i<dataStore.items.length;i++) {
-                    if (dataStore.items[i].data.select)
-                    {
+                if (response != "periode")
+                {
 
-                        console.log("dataStore.items[i].data.idOuvrage");
-                        console.log(dataStore.items[i].data.idOuvrage);
-                        var idOuvrage = dataStore.items[i].data.idOuvrage;
-                        //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
-                        var LongDate = dataStore.items[i].data.date;
-                        console.log("LongDate");
-                        console.log(LongDate);
-                        var date = Ext.Date.format(LongDate, 'Y-m-d');
-                        console.log("date");
-                        console.log(date);
-                        console.log("date.length");
-                        console.log(date.length);
-                        var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                  //      if(date.length >= 1)
-                        if(LongDate !== undefined)
+                    for (var i=0;i<dataStore.items.length;i++) {
+                        if (dataStore.items[i].data.select)
                         {
-                            if((date >= dateDebut)&&(date <= dateFin))
-                           {
 
-                                    console.log("response");
-                                    console.log(response);
-                                    //idCampagne = reponse .......
-                                    var tabVisits = [mail, date, idOuvrage, idCampagne];
+                            console.log("dataStore.items[i].data.idOuvrage");
+                            console.log(dataStore.items[i].data.idOuvrage);
+                            var idOuvrage = dataStore.items[i].data.idOuvrage;
+                            //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
+                            var LongDate = dataStore.items[i].data.date;
+                            console.log("LongDate");
+                            console.log(LongDate);
+                            var date = Ext.Date.format(LongDate, 'Y-m-d');
+                            console.log("date");
+                            console.log(date);
+                            console.log("date.length");
+                            console.log(date.length);
+                            var nomOuvrage = dataStore.items[i].data.nomOuvrage;
+                      //      if(date.length >= 1)
+                            if(LongDate !== undefined)
+                            {
+                                if((date >= dateDebut)&&(date <= dateFin))
+                               {
 
-                                    App.Visits.insert(tabVisits,function(response) {
-                                    })
+                                        console.log("response");
+                                        console.log(response);
+                                        //idCampagne = reponse .......
+                                        var tabVisits = [mail, date, idOuvrage, idCampagne];
+
+                                        App.Visits.insert(tabVisits,function(response) {
+                                        })
+                                }
+                                else{
+                                      Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisie");
+                                }
                             }
                             else{
-                                  Ext.Msg.alert('GOPRRO',"la date de visite pour l'ouvrage "+nomOuvrage+" ne correspond pas à la période choisie");
+                                  Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour l'ouvrage : "+nomOuvrage);
                             }
                         }
-                        else{
-                              Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour l'ouvrage : "+nomOuvrage);
-                        }
-                    }
-                };
+                    };
+                }
+                else
+                {
+                    Ext.Msg.alert('GOPRRO',"Cette période existe déja ou ampiète sur une période existante");
+                }
                 
              });
                     
