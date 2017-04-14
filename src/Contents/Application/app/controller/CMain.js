@@ -1566,6 +1566,9 @@ App.controller.define('CMain', {
         var idOuvrage=me.up('panel').idOuvrage;
         console.log("idOuvrage");
         console.log(idOuvrage);
+        var idOuvrage2= App.get('VVisitWork textfield#idOuvrage').getValue();
+        console.log("idOuvrage2");
+        console.log(idOuvrage2);
         var idCampagne = App.get('VVisit combo#idCampagne').getValue();
         console.log("idCampagne");
         console.log(idCampagne);
