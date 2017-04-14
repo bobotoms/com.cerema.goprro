@@ -1559,7 +1559,7 @@ App.controller.define('CMain', {
         var date = Ext.Date.format(longDate, 'Y-m-d');
         console.log("date");
         console.log(date);
-        /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
+        /***************** proposer choix date ou annuler si annuler retour ecran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
         var idOuvrage= App.get('VVisitWork textfield#idOuvrage').getValue();
         console.log("idOuvrage");
         console.log(idOuvrage);
@@ -1578,7 +1578,7 @@ App.controller.define('CMain', {
         console.log(LongDateDebut);
         console.log("dateDebut");
         console.log(dateDebut);
-            var LongDateFin =  Ext.Date.parse(response[0],"c");
+            var LongDateFin =  Ext.Date.parse(response[0].dateFin,"c");
             var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
         console.log("LongDateFin");
         console.log(LongDateFin);
