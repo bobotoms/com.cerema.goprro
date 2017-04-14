@@ -1351,10 +1351,14 @@ App.controller.define('CMain', {
                 if (response != "periode")
                 {
                     var idCampagne = response.insertId;
+                    var compteurSelect = 0;
+                    var compteurAdd = 0;
                     for (var i=0;i<dataStore.items.length;i++) {
                         if (dataStore.items[i].data.select)
                         {
-
+                            compteurSelect ++;
+                            console.log("compteurSelect");
+                            console.log(compteurSelect);
                             console.log("dataStore.items[i].data.idOuvrage");
                             console.log(dataStore.items[i].data.idOuvrage);
                             var idOuvrage = dataStore.items[i].data.idOuvrage;
@@ -1377,7 +1381,9 @@ App.controller.define('CMain', {
                                         var tabVisits = [mail, date, idOuvrage, idCampagne];
 
                                         App.Visits.insert(tabVisits,function(response) {
-                                            
+                                            compteurAdd ++;
+                                            console.log("compteurAdd");
+                                            console.log(compteurAdd);
                                         })
                                 }
                                 else{
@@ -1394,7 +1400,10 @@ App.controller.define('CMain', {
                             }
                         }
                     };
-                Ext.Msg.alert('GOPRRO',"Visite enregistrée");
+                    if (compteurSelect === compteurAdd)
+                    {
+                        Ext.Msg.alert('GOPRRO',"Visite enregistrée");
+                    }
                 }
                 else
                 {
