@@ -1196,7 +1196,7 @@ App.controller.define('CMain', {
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
         });        
-        App.Visits.selectVisit(mail,function(response) {
+   /*     App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
                 var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
@@ -1209,6 +1209,27 @@ App.controller.define('CMain', {
             };
             var store=App.store.create({
                 fields:["date"],data:data
+            });
+            if(store)
+            {
+                App.get('VVisit combo#idCampagne').bindStore(store);
+                store.load();
+            }
+        });*/
+        App.Visits.selectVisit(mail,function(response) {
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+            /*    var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
+                var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
+                var dateF = Ext.Date.parse(response[i].dateFin,"c");
+                var dateFin = Ext.Date.format(dateLong, 'Y-m-d');*/
+                var idCampagne = response[i].idCampagne;
+                data.push({
+                    idCampagne:idCampagne
+                })
+            };
+            var store=App.store.create({
+                fields:["idCampagne"],data:data
             });
             if(store)
             {
