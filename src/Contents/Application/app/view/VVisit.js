@@ -23,7 +23,7 @@ App.view.define('VVisit', {
         tbar: [
         {
             
-            xtype: "combo",
+   /*         xtype: "combo",
             format: 'd m Y',
             dateFormat: 'c',
             itemId: "periode",
@@ -33,7 +33,18 @@ App.view.define('VVisit', {
             displayField: "periode",
             valueField: "periode",
             editable: false,
-            //store: App.store.create("goprro://campagne",{autoLoad:true}),
+            //store: App.store.create("goprro://campagne",{autoLoad:true}),*/
+            xtype: "combo",
+            format: 'd m Y',
+            dateFormat: 'c',
+            itemId: "idCampagne",
+            fieldLabel: "Période de visite",
+            padding: 5,
+            //displayField: "{dateDebut} {dateFin}",
+            displayField: "idCampagne",
+            valueField: "idCampagne",
+            editable: false,
+            store: App.store.create("goprro://campagne",{autoLoad:true}),
         }
         ],
         items: [
