@@ -1567,8 +1567,8 @@ App.controller.define('CMain', {
         console.log("idOuvrage");
         console.log(idOuvrage);
         var idCampagne = App.get('VVisit combo#idCampagne').getValue();
-        console.log("date");
-        console.log(date);
+        console.log("idCampagne");
+        console.log(idCampagne);
         App.get('VVisitWork').close();
         if(date != null)
         {
