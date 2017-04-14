@@ -57,7 +57,7 @@ App.view.define('VVisit', {
                 dataIndex: "dateFin",
                 displayField: "dateFin"
              }]
-           }
+           },
      //       renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
             store: App.store.create("goprro://campagne{dateDebut,dateFin}",{autoLoad:true}),
      /*       renderer: function(value,a,b,c){
