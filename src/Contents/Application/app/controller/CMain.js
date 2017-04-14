@@ -1223,7 +1223,7 @@ App.controller.define('CMain', {
                 var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
                 var dateF = Ext.Date.parse(response[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateLong, 'Y-m-d');
-                var idCampagne = response[i].dateDebut;
+                var idCampagne = response[i].idCampagne;
                 data.push({
                     idCampagne:idCampagne
                 })
