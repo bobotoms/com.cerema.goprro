@@ -1572,13 +1572,13 @@ App.controller.define('CMain', {
         console.log("response idCampagne");
         console.log(response);
             
-            var LongDateDebut = response.dateDebut;
+            var LongDateDebut = response[0].dateDebut;
             var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
         console.log("LongDateDebut");
         console.log(LongDateDebut);
         console.log("dateDebut");
         console.log(dateDebut);
-            var LongDateFin =  response.dateFin;
+            var LongDateFin =  response[0].dateFin;
             var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
         console.log("LongDateFin");
         console.log(LongDateFin);
