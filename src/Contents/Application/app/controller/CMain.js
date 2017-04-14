@@ -1587,6 +1587,8 @@ App.controller.define('CMain', {
 
             App.get('VDate').close();
             App.get('VVisitWork').close();
+            App.get('VDate datefield#dateVisitWork').reset();
+            
              if((date >= dateDebut)&&(date <= dateFin))
             {
 
