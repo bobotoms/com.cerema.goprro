@@ -1394,6 +1394,7 @@ App.controller.define('CMain', {
                             }
                         }
                     };
+                Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                 }
                 else
                 {
