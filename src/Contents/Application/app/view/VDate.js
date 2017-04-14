@@ -19,7 +19,7 @@ App.view.define('VDate', {
 	
 	items: [{
         fieldLabel: "Date visite",
-        itemId: "dateVistWork",
+        itemId: "dateVisitWork",
         xtype: "datefield",
         format: 'd m Y',
         dateFormat: 'c',
