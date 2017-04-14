@@ -1255,6 +1255,8 @@ App.controller.define('CMain', {
                     periode:dateDebut+' '+dateFin
                 })
             };
+                console.log("data");
+                console.log(data);
             var store=App.store.create({
                 fields:["periode"],data:data
             });
