@@ -1623,7 +1623,7 @@ App.controller.define('CMain', {
             else{
                 Ext.Msg.alert('GOPRRO',"La date de visite d'un ou plusieurs ouvrage(s) ne correspond pas à la période choisie");
             }
-        }
+        });
     },
     add_visit_work: function(me, store)
     {
