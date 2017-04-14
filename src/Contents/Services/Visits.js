@@ -137,7 +137,7 @@ Visits = {
         },
     delCampagneVisite: function(o,cb) {
         
-        Visits.using('db').query("goprro","SELECT * FROM visite_ouvrage WHERE idCampagne = "+o,function(err,result){
+        Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE idCampagne = "+o,function(err,result){
             if (!err) {
                 if (result.length === 0)
                 {
