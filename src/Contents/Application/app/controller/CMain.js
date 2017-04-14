@@ -1574,7 +1574,7 @@ App.controller.define('CMain', {
             var tabVisits = [mail, date, idOuvrage, idCampagne];
 
             App.Visits.insert(tabVisits,function(response) {
-                var tabDate = [mail, date];
+                var tabDate = [mail, idCampagne];
                 App.Visits.selectVisitDate(tabDate,function(response) {
                     var data=[];
                     for (var i=0;i<response.length;i++) {
