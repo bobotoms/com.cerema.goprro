@@ -1621,7 +1621,7 @@ App.controller.define('CMain', {
                 Ext.Msg.alert('GOPRRO',"Visite enregistrée");
             }
             else{
-                Ext.Msg.alert('GOPRRO',"La date de visite d'un ou plusieurs ouvrage(s) ne correspond pas à la période choisie");
+                Ext.Msg.alert('GOPRRO',"La date de visite de l'ouvrage ne correspond pas à la période");
             }
         });
     },
