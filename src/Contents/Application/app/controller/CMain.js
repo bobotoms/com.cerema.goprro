@@ -1557,33 +1557,15 @@ App.controller.define('CMain', {
     {
         var longDate = App.get('VDate datefield#dateVisitWork').getValue();
         var date = Ext.Date.format(longDate, 'Y-m-d');
-        console.log("date");
-        console.log(date);
-        /***************** proposer choix date ou annuler si annuler retour ecran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
         var idOuvrage= App.get('VVisitWork textfield#idOuvrage').getValue();
-        console.log("idOuvrage");
-        console.log(idOuvrage);
         var idCampagne = App.get('VVisit combo#idCampagne').getValue();
-        console.log("idCampagne");
-        console.log(idCampagne);
         
         App.Visits.selectCampagne(idCampagne,function(response) {
             
-        console.log("response idCampagne");
-        console.log(response);
-            
             var LongDateDebut = Ext.Date.parse(response[0].dateDebut,"c");
             var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
-        console.log("LongDateDebut");
-        console.log(LongDateDebut);
-        console.log("dateDebut");
-        console.log(dateDebut);
             var LongDateFin =  Ext.Date.parse(response[0].dateFin,"c");
             var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
-        console.log("LongDateFin");
-        console.log(LongDateFin);
-        console.log("dateFin");
-        console.log(dateFin);
 
             App.get('VDate').close();
             App.get('VVisitWork').close();
@@ -1613,7 +1595,6 @@ App.controller.define('CMain', {
                                 oa_y:response[i].oa_y
                             })
 
-                    console.log('visitwork');
                             TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idVisiteOuvrage,"colorMarker","workvisit");
                         };
                         var store=App.store.create({
