@@ -135,6 +135,36 @@ Visits = {
             };
             });
         },
+    delCampagneVisite: function(o,cb) {
+        
+        Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idCampagne = "+o,function(err,result){
+            if (!err) {
+                if (result.length === 0)
+                {
+                    Visits.using('db').query("goprro","DELETE FROM campagne WHERE idcampagne = "+o,function(err,result){
+                         if (!err) {
+                            var response=true;
+                            cb(response);
+                        } else {
+                            var err=false;
+                            cb(err)
+                        };
+                    });     
+                }
+                else {
+                    console.log("err");
+                    console.log(err);
+                    var err=false;
+					cb(err)			
+				};
+            } else {
+                console.log("err");
+                console.log(err);
+                var err=false;
+                cb(err)			
+            };
+            });
+        },
     delCampagne: function(o,cb) {
  		Visits.using('db').query("goprro","DELETE FROM campagne WHERE idcampagne = "+o,function(err,result){
              if (!err) {
