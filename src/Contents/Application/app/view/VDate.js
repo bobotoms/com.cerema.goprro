@@ -4,7 +4,7 @@ App.view.define('VDate', {
 	alias : 'widget.VDate',
 	border: false,
 	width: 300,
-	height: 75,
+	height: 80,
 	closable: true,
     closeAction:'hide',
 	layout: "border",
