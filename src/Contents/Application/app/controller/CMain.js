@@ -1574,8 +1574,16 @@ App.controller.define('CMain', {
             
             var LongDateDebut = response.dateDebut;
             var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
+        console.log("LongDateDebut");
+        console.log(LongDateDebut);
+        console.log("dateDebut");
+        console.log(dateDebut);
             var LongDateFin =  response.dateFin;
             var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
+        console.log("LongDateFin");
+        console.log(LongDateFin);
+        console.log("dateFin");
+        console.log(dateFin);
 
             App.get('VDate').close();
             App.get('VVisitWork').close();
