@@ -1554,7 +1554,7 @@ App.controller.define('CMain', {
         Ext.Msg.confirm('Delete', 'Supprimer ouvrage de la visite pour cette période', function(btn){
         });
         /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
-        var idOuvrage=me.up('panel').idOuvrage;
+/*        var idOuvrage=me.up('panel').idOuvrage;
         var date = App.get('VVisit combo#idCampagne').getValue();
         App.get('VVisitWork').close();
         if(date != null)
@@ -1597,7 +1597,7 @@ App.controller.define('CMain', {
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date.");
-        }
+        }*/
     },
     add_visit_work: function(me, store)
     {
