@@ -1247,8 +1247,12 @@ App.controller.define('CMain', {
                 var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
                 var dateF = Ext.Date.parse(response[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateF, 'Y-m-d');
-                console.log("dateDebut");
-                console.log(dateDebut);
+                console.log("dateDeb");
+                console.log(dateDeb);
+                console.log("dateFin");
+                console.log(dateFin);
+                console.log("dateF");
+                console.log(dateF);
                 console.log("dateFin");
                 console.log(dateFin);
                 data.push({
