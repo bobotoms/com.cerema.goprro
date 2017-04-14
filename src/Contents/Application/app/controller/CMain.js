@@ -1220,7 +1220,7 @@ App.controller.define('CMain', {
             var data=[];
             for (var i=0;i<response.length;i++) {
                 var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
-                var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
+                var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
                /* var dateF = Ext.Date.parse(response[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateLong, 'Y-m-d');*/
                 var dateDebut = response[i].idCampagne;
