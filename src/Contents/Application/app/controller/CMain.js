@@ -1239,7 +1239,7 @@ App.controller.define('CMain', {
             }
         });*/
         
-        
+        /*
         App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
@@ -1269,7 +1269,7 @@ App.controller.define('CMain', {
                 App.get('VVisit combo#periode').bindStore(store);
                 store.load();
             }
-        });
+        });*/
     },
     showVisitDate: function(p) {
         App.get('mainform panel#southpanel').collapse();
