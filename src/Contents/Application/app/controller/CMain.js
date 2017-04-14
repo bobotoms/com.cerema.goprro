@@ -1875,7 +1875,7 @@ App.controller.define('CMain', {
     VDate_onShow: function(me)
     {
         App.get("mainform window#Date").show();
-        
+        App.get("mainform window#Date").show();
     },
     onLoad: function(p)
     {
