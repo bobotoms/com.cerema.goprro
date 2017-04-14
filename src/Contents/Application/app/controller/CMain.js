@@ -1256,7 +1256,7 @@ App.controller.define('CMain', {
             });
             if(store)
             {
-                App.get('VVisit combo#idCampagne').bindStore(store);
+                App.get('VVisit combo#periode').bindStore(store);
                 store.load();
             }
         });
