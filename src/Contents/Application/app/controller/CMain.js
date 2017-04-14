@@ -1215,7 +1215,7 @@ App.controller.define('CMain', {
                 App.get('VVisit combo#idCampagne').bindStore(store);
                 store.load();
             }
-        });*/
+        });*//*
         App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
@@ -1223,7 +1223,7 @@ App.controller.define('CMain', {
                 var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
                /* var dateF = Ext.Date.parse(response[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateF, 'Y-m-d');*/
-                var idCampagne = response[i].idCampagne;
+/*                var idCampagne = response[i].idCampagne;
                 data.push({
                     idCampagne:idCampagne,
                     dateDebut:dateDebut
@@ -1237,7 +1237,7 @@ App.controller.define('CMain', {
                 App.get('VVisit combo#idCampagne').bindStore(store);
                 store.load();
             }
-        });
+        });*/
     },
     showVisitDate: function(p) {
         App.get('mainform panel#southpanel').collapse();
