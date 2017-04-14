@@ -46,6 +46,7 @@ App.view.define('VVisit', {
             editable: false,
             store: App.store.create("goprro://campagne",{autoLoad:true}),
             renderer: function(value,a,b,c){
+                Ext.Msg.alert('GOPRRO',"test renderer");
                 console.log("value");
                 console.log(value);
                 console.log("a");
