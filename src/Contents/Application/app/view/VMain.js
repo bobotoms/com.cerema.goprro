@@ -154,6 +154,11 @@ App.view.define('VMain', {
                     xtype: "VUpVisitWork",
                     itemId: "UpWork",
                     hidden: true
+                },
+                {
+                    xtype: "VDate",
+                    itemId: "Date",
+                    hidden: true
                 }
             ]
         }

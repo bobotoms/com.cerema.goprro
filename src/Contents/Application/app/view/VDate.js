@@ -13,7 +13,7 @@ App.view.define('VDate', {
             '->', {
 
             text: '<b>Ajouter</b>',
-            itemId: "visitWork"
+            itemId: "visitWorkDate"
         }
         ],
 	
