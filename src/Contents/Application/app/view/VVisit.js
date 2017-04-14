@@ -40,11 +40,25 @@ App.view.define('VVisit', {
             itemId: "idCampagne",
             fieldLabel: "Période de visite",
             padding: 5,
-            displayField: "dateDebut dateFin",
+            //displayField: "dateDebut dateFin",
             //displayField: "idCampagne",
             valueField: "idCampagne",
             editable: false,
-            renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
+            field: {
+              xtype: "combo",
+              layout: 'hbox',
+              flex: 1,
+              items: [{
+                itemId: "dateDebut",
+                dataIndex: "idCampagne",
+                displayField: "idCampagne"
+                }, {
+                itemId: "dateFin",
+                dataIndex: "dateFin",
+                displayField: "dateFin"
+             }]
+           }
+     //       renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
             store: App.store.create("goprro://campagne{dateDebut,dateFin}",{autoLoad:true}),
      /*       renderer: function(value,a,b,c){
                 Ext.Msg.alert('GOPRRO',"test renderer");
