@@ -1238,6 +1238,28 @@ App.controller.define('CMain', {
                 store.load();
             }
         });*/
+        
+        
+        App.Visits.selectVisit(mail,function(response) {
+            var data=[];
+            for (var i=0;i<response.length;i++) {
+                var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
+                var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
+                var dateF = Ext.Date.parse(response[i].dateFin,"c");
+                var dateFin = Ext.Date.format(dateF, 'Y-m-d');
+                data.push({
+                    periode:dateDebut+' '+dateFin
+                })
+            };
+            var store=App.store.create({
+                fields:["periode"],data:data
+            });
+            if(store)
+            {
+                App.get('VVisit combo#idCampagne').bindStore(store);
+                store.load();
+            }
+        });
     },
     showVisitDate: function(p) {
         App.get('mainform panel#southpanel').collapse();
