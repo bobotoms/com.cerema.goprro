@@ -1178,7 +1178,7 @@ App.controller.define('CMain', {
         
         //App.store.familles.load();
             App.get('VVisit grid#gridVisit').store.removeAll();
-            App.get('VVisit combo#periode').reset();
+            App.get('VVisit combo#idCampagne').reset();
         hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
