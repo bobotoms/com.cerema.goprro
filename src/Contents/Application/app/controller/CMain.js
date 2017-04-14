@@ -218,7 +218,8 @@ App.controller.define('CMain', {
         "VVisit",
         "VVisitWork",
         "VAddVisitWork",
-        "VUpVisitWork"
+        "VUpVisitWork",
+        "VDate"
     ],
 
     models: [
@@ -354,6 +355,9 @@ App.controller.define('CMain', {
                 click: "add_visit_work"
             },
             "VVisitWork button#visitWork": {
+                click: "VDate_onShow"
+            },
+            "VDate button#visitWorkDate": {
                 click: "visit_work"
             },
             "VAddVisit checkcolumn#select": {
@@ -1867,6 +1871,11 @@ App.controller.define('CMain', {
 /*                });
             });
         });*/
+    },
+    VDate_onShow: function(me)
+    {
+        App.get("mainform window#Date").show();
+        
     },
     onLoad: function(p)
     {
