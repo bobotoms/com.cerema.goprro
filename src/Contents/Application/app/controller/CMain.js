@@ -1344,10 +1344,6 @@ App.controller.define('CMain', {
             var dataStore=App.get(me.up('panel'),"grid").getStore().data;
             var tabCampagne = [mail, dateDebut, dateFin];
             App.Visits.insertCampagne(tabCampagne,function(response) { 
-                
-                console.log("response campagne");
-                console.log(response);
-                console.log(response.insertId);
                 if (response != "periode")
                 {
                     var idCampagne = response.insertId;
@@ -1357,22 +1353,10 @@ App.controller.define('CMain', {
                         if (dataStore.items[i].data.select)
                         {
                             compteurSelect ++;
-                            console.log("compteurSelect");
-                            console.log(compteurSelect);
-                            console.log("dataStore.items[i].data.idOuvrage");
-                            console.log(dataStore.items[i].data.idOuvrage);
                             var idOuvrage = dataStore.items[i].data.idOuvrage;
-                            //var LongDate = App.get('VAddVisit datecolumn#date').getValue();
                             var LongDate = dataStore.items[i].data.date;
-                            console.log("LongDate");
-                            console.log(LongDate);
                             var date = Ext.Date.format(LongDate, 'Y-m-d');
-                            console.log("date");
-                            console.log(date);
-                            console.log("date.length");
-                            console.log(date.length);
                             var nomOuvrage = dataStore.items[i].data.nomOuvrage;
-                      //      if(date.length >= 1)
                             if(LongDate !== undefined)
                             {
                                 if((date >= dateDebut)&&(date <= dateFin))
@@ -1382,8 +1366,6 @@ App.controller.define('CMain', {
 
                                         App.Visits.insert(tabVisits,function(response) {
                                             compteurAdd ++;
-                                            console.log("compteurAdd");
-                                            console.log(compteurAdd);
                                             if (compteurSelect === compteurAdd)
                                             {
                                                 Ext.Msg.alert('GOPRRO',"Visite enregistrée");
