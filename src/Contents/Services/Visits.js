@@ -17,7 +17,7 @@ Visits = {
     selectVisit: function(o,cb) {
                     console.log("o");
                     console.log(o);
- 		Visits.using('db').query("goprro","SELECT idCampagne FROM campagne WHERE idGestionnaire = (select idUser from users where mail='"+o+"')",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idGestionnaire = (select idUser from users where mail='"+o+"')",function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
