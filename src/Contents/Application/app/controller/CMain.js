@@ -1384,6 +1384,10 @@ App.controller.define('CMain', {
                                             compteurAdd ++;
                                             console.log("compteurAdd");
                                             console.log(compteurAdd);
+                                            if (compteurSelect === compteurAdd)
+                                            {
+                                                Ext.Msg.alert('GOPRRO',"Visite enregistrée");
+                                            }
                                         })
                                 }
                                 else{
@@ -1400,10 +1404,7 @@ App.controller.define('CMain', {
                             }
                         }
                     };
-                    if (compteurSelect === compteurAdd)
-                    {
-                        Ext.Msg.alert('GOPRRO',"Visite enregistrée");
-                    }
+                    
                 }
                 else
                 {
