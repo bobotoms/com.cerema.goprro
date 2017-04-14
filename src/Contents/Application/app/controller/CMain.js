@@ -1555,29 +1555,23 @@ App.controller.define('CMain', {
     },
     visit_work: function(me, store)
     {
-        console.log("me");
-        console.log(me);
-        console.log("store");
-        console.log(store);
         var date = App.get('VDate datefield#dateVisitWork').getValue();
         console.log("date");
         console.log(date);
         /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
-        var idOuvrage=me.up('panel').idOuvrage;
-        console.log("idOuvrage");
-        console.log(idOuvrage);
         var idOuvrage2= App.get('VVisitWork textfield#idOuvrage').getValue();
         console.log("idOuvrage2");
         console.log(idOuvrage2);
         var idCampagne = App.get('VVisit combo#idCampagne').getValue();
         console.log("idCampagne");
         console.log(idCampagne);
+        App.get('VDate').close();
         App.get('VVisitWork').close();
         if(date != null)
         {
             var mail = Auth.User.mail;
             
-            var tabVisits = [mail, date, idOuvrage];
+            var tabVisits = [mail, date, idOuvrage, idCampagne];
 
             App.Visits.insert(tabVisits,function(response) {
                 var tabDate = [mail, date];
