@@ -45,6 +45,22 @@ App.view.define('VVisit', {
             valueField: "idCampagne",
             editable: false,
             store: App.store.create("goprro://campagne",{autoLoad:true}),
+            renderer: function(value,a,b,c){
+                console.log("value");
+                console.log(value);
+                console.log("a");
+                console.log(a);
+                console.log("b");
+                console.log(b);
+                console.log("c");
+                console.log(c);
+/*
+                var items=App.store.familles.data.items;
+                var Items={};
+                for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
+                return Items[value];*/
+
+            },
         }
         ],
         items: [
