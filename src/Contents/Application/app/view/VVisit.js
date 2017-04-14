@@ -26,14 +26,14 @@ App.view.define('VVisit', {
             xtype: "combo",
             format: 'd m Y',
             dateFormat: 'c',
-            itemId: "idCampagne",
+            itemId: "periode",
             fieldLabel: "Période de visite",
             padding: 5,
             //displayField: "{dateDebut} {dateFin}",
-            displayField: "idCampagne",
-           // valueField: "idCampagne",
+            displayField: "periode",
+            valueField: "periode",
             editable: false,
-            store: App.store.create("goprro://campagne",{autoLoad:true}),
+            //store: App.store.create("goprro://campagne",{autoLoad:true}),
         }
         ],
         items: [
