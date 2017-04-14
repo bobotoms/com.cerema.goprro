@@ -1223,13 +1223,13 @@ App.controller.define('CMain', {
                 var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
                 var dateF = Ext.Date.parse(response[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateLong, 'Y-m-d');*/
-                var idCampagne = response[i].dateDebut;
+                var dateDebut = response[i].dateDebut;
                 data.push({
-                    idCampagne:idCampagne
+                    dateDebut:dateDebut
                 })
             };
             var store=App.store.create({
-                fields:["idCampagne"],data:data
+                fields:["dateDebut"],data:data
             });
             if(store)
             {
