@@ -100,70 +100,70 @@ App.view.define('VVisit', {
                            Ext.Msg.confirm('Delete', 'supprimé ouvrage de la visite pour cette période', function(btn){
                                console.log("btn");
                                console.log(btn);
-                           if(btn === 'Oui'){
+                           if(btn === 'yes'){
                                var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                        var grid=this.up('grid');
-                        App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
-                            if (response === true)
-                            {
-                                var mail = Auth.User.mail;
-                                TMap.clearMarkers();
+                                var grid=this.up('grid');
+                                App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
+                                    if (response === true)
+                                    {
+                                        var mail = Auth.User.mail;
+                                        TMap.clearMarkers();
 
-                                App.Visits.select(mail,function(response) {
+                                        App.Visits.select(mail,function(response) {
 
-                                console.log("response");
-                                console.log(response);
-                                    var data=[];
-                                    for (var i=0;i<response.length;i++) {
-                                        data.push({
-                                            idOuvrage:response[i].idOuvrage,
-                                            nomOuvrage:response[i].nomOuvrage,
-                                            nomDepartement:response[i].nomDepartement,
-                                            oa_x:response[i].oa_x,
-                                            oa_y:response[i].oa_y
-                                        })
+                                        console.log("response");
+                                        console.log(response);
+                                            var data=[];
+                                            for (var i=0;i<response.length;i++) {
+                                                data.push({
+                                                    idOuvrage:response[i].idOuvrage,
+                                                    nomOuvrage:response[i].nomOuvrage,
+                                                    nomDepartement:response[i].nomDepartement,
+                                                    oa_x:response[i].oa_x,
+                                                    oa_y:response[i].oa_y
+                                                })
 
-                                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
-                                    };
-                                    var choixDate = App.get('VVisit combo#dateVisit').getValue();
-                                    var tabDate = [mail, choixDate];
-                                    App.Visits.selectVisitDate(tabDate,function(response) {
-                                        var data=[];
-                                        for (var i=0;i<response.length;i++) {
-                                            data.push({
-                                                idOuvrage:response[i].idOuvrage,
-                                                idVisiteOuvrage:response[i].idVisiteOuvrage,
-                                                nomOuvrage:response[i].nomOuvrage,
-                                                nomDepartement:response[i].nomDepartement,
-                                                oa_x:response[i].oa_x,
-                                                oa_y:response[i].oa_y
-                                            })
+                                                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
+                                            };
+                                            var choixDate = App.get('VVisit combo#dateVisit').getValue();
+                                            var tabDate = [mail, choixDate];
+                                            App.Visits.selectVisitDate(tabDate,function(response) {
+                                                var data=[];
+                                                for (var i=0;i<response.length;i++) {
+                                                    data.push({
+                                                        idOuvrage:response[i].idOuvrage,
+                                                        idVisiteOuvrage:response[i].idVisiteOuvrage,
+                                                        nomOuvrage:response[i].nomOuvrage,
+                                                        nomDepartement:response[i].nomDepartement,
+                                                        oa_x:response[i].oa_x,
+                                                        oa_y:response[i].oa_y
+                                                    })
 
-                                            TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
-                                        };
-                                        var store=App.store.create({
-                                            fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                                                };
+                                                var store=App.store.create({
+                                                    fields:["idOuvrage","idVisiteOuvrage","nomOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                                });
+                                                if(store)
+                                                {
+                                                    App.get('VVisit grid#gridVisit').bindStore(store);
+                                                    store.load();
+                                                }
+                                                App.get('VVisit grid').show();
+
+                                            });
+
+
                                         });
-                                        if(store)
-                                        {
-                                            App.get('VVisit grid#gridVisit').bindStore(store);
-                                            store.load();
-                                        }
-                                        App.get('VVisit grid').show();
+                                        Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
 
-                                    });
-
+                                    }
+                                    else
+                                    {
+                                        Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+                                    }
 
                                 });
-                                Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
-
-                            }
-                            else
-                            {
-                                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
-                            }
-            
-                        });
                            }
                            else{
                               //some code
