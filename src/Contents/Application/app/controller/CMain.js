@@ -1555,7 +1555,8 @@ App.controller.define('CMain', {
     },
     visit_work: function(me, store)
     {
-        var date = App.get('VDate datefield#dateVisitWork').getValue();
+        var longDate = App.get('VDate datefield#dateVisitWork').getValue();
+        var date = Ext.Date.format(longDate, 'Y-m-d');
         console.log("date");
         console.log(date);
         /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
