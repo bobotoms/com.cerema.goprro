@@ -3,8 +3,8 @@ App.view.define('VDate', {
     extend: "Ext.window.Window",
 	alias : 'widget.VDate',
 	border: false,
-	width: 200,
-	height: 100,
+	width: 300,
+	height: 200,
 	closable: true,
     closeAction:'hide',
 	layout: "border",
@@ -19,7 +19,7 @@ App.view.define('VDate', {
 	
 	items: [{
         fieldLabel: "Date visite",
-        itemId: "dateDebut",
+        itemId: "dateVistWork",
         xtype: "datefield",
         format: 'd m Y',
         dateFormat: 'c',
