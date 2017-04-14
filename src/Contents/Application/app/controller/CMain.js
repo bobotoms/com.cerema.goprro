@@ -1571,9 +1571,9 @@ App.controller.define('CMain', {
         console.log("response idCampagne");
         console.log(response);
             
-            var LongDateDebut = App.get('VAddVisit datefield#dateDebut').getValue();
+            var LongDateDebut = response.dateDebut;
             var dateDebut = Ext.Date.format(LongDateDebut, 'Y-m-d');
-            var LongDateFin = App.get('VAddVisit datefield#dateFin').getValue();
+            var LongDateFin =  response.dateFin;
             var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
 
             App.get('VDate').close();
