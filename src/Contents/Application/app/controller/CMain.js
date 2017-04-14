@@ -1559,9 +1559,16 @@ App.controller.define('CMain', {
         console.log(me);
         console.log("store");
         console.log(store);
+        var date = App.get('VDate datefield#dateVisitWork').getValue();
+        console.log("date");
+        console.log(date);
         /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
         var idOuvrage=me.up('panel').idOuvrage;
-        var date = App.get('VVisit combo#idCampagne').getValue();
+        console.log("idOuvrage");
+        console.log(idOuvrage);
+        var idCampagne = App.get('VVisit combo#idCampagne').getValue();
+        console.log("date");
+        console.log(date);
         App.get('VVisitWork').close();
         if(date != null)
         {
