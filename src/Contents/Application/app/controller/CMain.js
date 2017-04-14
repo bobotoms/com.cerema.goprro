@@ -1210,7 +1210,7 @@ App.controller.define('CMain', {
             });
             if(store)
             {
-                App.get('VVisit combo#dateVisit').bindStore(store);
+                App.get('VVisit combo#idCampagne').bindStore(store);
                 store.load();
             }
         });
