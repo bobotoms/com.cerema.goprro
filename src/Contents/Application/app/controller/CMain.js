@@ -1199,18 +1199,20 @@ App.controller.define('CMain', {
         App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
-                var dateLong = Ext.Date.parse(response[i].dateVisiteOuvrage,"c");
-                var date = Ext.Date.format(dateLong, 'Y-m-d');
+                var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
+                var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
+                var dateF = Ext.Date.parse(response[i].dateFin,"c");
+                var dateFin = Ext.Date.format(dateLong, 'Y-m-d');
                 data.push({
-                    dateVisiteOuvrage:date
+                    date:dateDebut+' '+dateFin
                 })
             };
             var store=App.store.create({
-                fields:["dateVisiteOuvrage"],data:data
+                fields:["date"],data:data
             });
             if(store)
             {
-                App.get('VVisit combo#dateVisite').bindStore(store);
+                App.get('VVisit combo#idCampagne').bindStore(store);
                 store.load();
             }
         });
