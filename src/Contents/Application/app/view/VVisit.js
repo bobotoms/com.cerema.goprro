@@ -104,61 +104,63 @@ App.view.define('VVisit', {
                            if(btn === 'yes'){
                                var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                                 App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
+                                var idCampagne = App.get('VVisit #idCampagne').getValue();
                                     if (response === true)
                                     {
-                                        var mail = Auth.User.mail;
-                                        TMap.clearMarkers();
+                                         App.Visits.delCampagneVisite(idCampagne,function(response) {
+                                            var mail = Auth.User.mail;
+                                            TMap.clearMarkers();
 
-                                        App.Visits.select(mail,function(response) {
+                                            App.Visits.select(mail,function(response) {
 
-                                        console.log("response");
-                                        console.log(response);
-                                            var data=[];
-                                            for (var i=0;i<response.length;i++) {
-                                                data.push({
-                                                    idOuvrage:response[i].idOuvrage,
-                                                    nomOuvrage:response[i].nomOuvrage,
-                                                    nomDepartement:response[i].nomDepartement,
-                                                    oa_x:response[i].oa_x,
-                                                    oa_y:response[i].oa_y
-                                                })
-
-                                                TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
-                                            };
-                                            var idCampagne = App.get('VVisit #idCampagne').getValue();
-                                            var tabDate = [mail, idCampagne];
-                                            App.Visits.selectVisitDate(tabDate,function(response) {
+                                            console.log("response");
+                                            console.log(response);
                                                 var data=[];
                                                 for (var i=0;i<response.length;i++) {
                                                     data.push({
                                                         idOuvrage:response[i].idOuvrage,
-                                                        idCampagne:response[i].idCampagne,
-                                                        idVisiteOuvrage:response[i].idVisiteOuvrage,
-                                                        idDepartement:response[i].idDepartement,
-                                                        dateVisiteOuvrage:response[i].dateVisiteOuvrage,
                                                         nomOuvrage:response[i].nomOuvrage,
                                                         nomDepartement:response[i].nomDepartement,
                                                         oa_x:response[i].oa_x,
                                                         oa_y:response[i].oa_y
                                                     })
 
-                                                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                                                    TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
                                                 };
-                                                var store=App.store.create({
-                                                    fields:["idOuvrage","idCampagne","idVisiteOuvrage","idDepartement","nomOuvrage","dateVisiteOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                                var tabDate = [mail, idCampagne];
+                                                App.Visits.selectVisitDate(tabDate,function(response) {
+                                                    var data=[];
+                                                    for (var i=0;i<response.length;i++) {
+                                                        data.push({
+                                                            idOuvrage:response[i].idOuvrage,
+                                                            idCampagne:response[i].idCampagne,
+                                                            idVisiteOuvrage:response[i].idVisiteOuvrage,
+                                                            idDepartement:response[i].idDepartement,
+                                                            dateVisiteOuvrage:response[i].dateVisiteOuvrage,
+                                                            nomOuvrage:response[i].nomOuvrage,
+                                                            nomDepartement:response[i].nomDepartement,
+                                                            oa_x:response[i].oa_x,
+                                                            oa_y:response[i].oa_y
+                                                        })
+
+                                                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                                                    };
+                                                    var store=App.store.create({
+                                                        fields:["idOuvrage","idCampagne","idVisiteOuvrage","idDepartement","nomOuvrage","dateVisiteOuvrage","nomDepartement","oa_x","oa_y"],data:data
+                                                    });
+                                                    if(store)
+                                                    {
+                                                        App.get('VVisit grid#gridVisit').bindStore(store);
+                                                        store.load();
+                                                    }
+                                                    App.get('VVisit grid').show();
+
                                                 });
-                                                if(store)
-                                                {
-                                                    App.get('VVisit grid#gridVisit').bindStore(store);
-                                                    store.load();
-                                                }
-                                                App.get('VVisit grid').show();
+
 
                                             });
-
-
+                                            Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
                                         });
-                                        Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
 
                                     }
                                     else
