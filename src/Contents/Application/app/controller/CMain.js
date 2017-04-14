@@ -1230,7 +1230,7 @@ App.controller.define('CMain', {
                 })
             };
             var store=App.store.create({
-                fields:["idCampagne dateDebut"],data:data
+                fields:["dateDebut"],data:data
             });
             if(store)
             {
