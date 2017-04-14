@@ -1317,6 +1317,8 @@ App.controller.define('CMain', {
                                         var tabVisits = [mail, date, idOuvrage, idCampagne];
 
                                         App.Visits.insert(tabVisits,function(response) {
+                                            
+                                            Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                                         })
                                 }
                                 else{
@@ -1341,7 +1343,6 @@ App.controller.define('CMain', {
                 
              });
                     
-            Ext.Msg.alert('GOPRRO',"Visite enregistrée");
         }
         else{
               Ext.Msg.alert('GOPRRO',"Merci d'indiquer une date de début et une date de fin");
