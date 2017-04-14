@@ -97,12 +97,12 @@ App.view.define('VVisit', {
                 singleSelect: true,
                 listeners: {
                     click: function(sm,index,record) {
+                           var grid=this.up('grid');
                            Ext.Msg.confirm('Delete', 'supprimé ouvrage de la visite pour cette période', function(btn){
                                console.log("btn");
                                console.log(btn);
                            if(btn === 'yes'){
                                var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                                var grid=this.up('grid');
                                 App.Visits.delOuvrageVisit(idVisiteOuvrage,function(response) {
                                     if (response === true)
                                     {
