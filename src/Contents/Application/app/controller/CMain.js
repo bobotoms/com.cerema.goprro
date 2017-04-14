@@ -1551,7 +1551,7 @@ App.controller.define('CMain', {
     },
     visit_work: function(me, store)
     {
-        Ext.Msg.confirm('Date', 'Supprimer ouvrage de la visite pour cette période', function(btn){
+        Ext.Msg.confirm('Datepicker', 'Supprimer ouvrage de la visite pour cette période', function(btn){
         });
         /***************** proposer choix date ou annuler si annuler retour eran sinon vérifier si date correspond a periode si oui ajouter ouvrage a la visite ne pas oublier l'id campagne********/
 /*        var idOuvrage=me.up('panel').idOuvrage;
