@@ -46,7 +46,7 @@ App.view.define('VVisit', {
             editable: false,
      //       renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
             renderer: Ext.dateDebut.parse('2012-01-11', 'Y-m-d'),
-            store: App.store.create("goprro://campagne{dateDebut}",{autoLoad:true, dateFormat: 'c', format: 'd m Y'}),
+            store: App.store.create("goprro://campagne{dateDebut}",{autoLoad:true}),
      /*       renderer: function(value,a,b,c){
                 Ext.Msg.alert('GOPRRO',"test renderer");
                 console.log("value");
