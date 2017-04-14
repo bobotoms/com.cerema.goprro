@@ -1223,17 +1223,17 @@ App.controller.define('CMain', {
                 var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
                 var dateF = Ext.Date.parse(response[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateLong, 'Y-m-d');*/
-                var dateDebut = response[i].dateDebut;
+                var dateDebut = response[i].idCampagne;
                 data.push({
-                    dateDebut:dateDebut
+                    idCampagne:idCampagne
                 })
             };
             var store=App.store.create({
-                fields:["dateDebut"],data:data
+                fields:["idCampagne"],data:data
             });
             if(store)
             {
-                App.get('VVisit combo#dateDebut').bindStore(store);
+                App.get('VVisit combo#idCampagne').bindStore(store);
                 store.load();
             }
         });
