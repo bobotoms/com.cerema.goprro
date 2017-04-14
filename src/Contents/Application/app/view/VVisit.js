@@ -186,7 +186,6 @@ App.view.define('VVisit', {
 
 
                                             });
-                                            Ext.Msg.alert('GOPRRO',"Ouvrage supprimé de la visite.");
                                         });
 
                                     }
