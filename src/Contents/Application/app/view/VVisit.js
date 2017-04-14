@@ -125,7 +125,7 @@ App.view.define('VVisit', {
 
                                                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
                                             };
-                                            var idCampagne = App.get('VVisit combo#idCampagne').getValue();
+                                            var idCampagne = App.get('VVisit #idCampagne').getValue();
                                             var tabDate = [mail, idCampagne];
                                             App.Visits.selectVisitDate(tabDate,function(response) {
                                                 var data=[];
