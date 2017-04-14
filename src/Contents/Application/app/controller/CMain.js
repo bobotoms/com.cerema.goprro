@@ -1378,7 +1378,6 @@ App.controller.define('CMain', {
 
                                         App.Visits.insert(tabVisits,function(response) {
                                             
-                                            Ext.Msg.alert('GOPRRO',"Visite enregistrée");
                                         })
                                 }
                                 else{
