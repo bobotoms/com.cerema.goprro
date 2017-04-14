@@ -40,12 +40,12 @@ App.view.define('VVisit', {
             itemId: "idCampagne",
             fieldLabel: "Période de visite",
             padding: 5,
-            //displayField: "{dateDebut} {dateFin}",
-            displayField: "idCampagne",
+            displayField: "{dateDebut} {dateFin}",
+            //displayField: "idCampagne",
             valueField: "idCampagne",
             editable: false,
             store: App.store.create("goprro://campagne",{autoLoad:true}),
-            renderer: function(value,a,b,c){
+     /*       renderer: function(value,a,b,c){
                 Ext.Msg.alert('GOPRRO',"test renderer");
                 console.log("value");
                 console.log(value);
@@ -61,7 +61,7 @@ App.view.define('VVisit', {
                 for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
                 return Items[value];*/
 
-            },
+//            },
         }
         ],
         items: [
