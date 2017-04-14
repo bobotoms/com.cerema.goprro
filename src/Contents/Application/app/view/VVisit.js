@@ -46,8 +46,8 @@ App.view.define('VVisit', {
             editable: false,
             store: App.store.create("goprro://campagne{dateDebut}",{autoLoad:true}),
      //       renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
-            renderer: Ext.Date.Parse(dateDebut, 'Y-m-d'),
-     /*       renderer: function(value,a,b,c){
+     //       renderer: Ext.Date.Parse(dateDebut, 'Y-m-d'),
+   /*         renderer: function(value,a,b,c){
                 Ext.Msg.alert('GOPRRO',"test renderer");
                 console.log("value");
                 console.log(value);
@@ -57,7 +57,7 @@ App.view.define('VVisit', {
                 console.log(b);
                 console.log("c");
                 console.log(c);
-/*
+
                 var items=App.store.familles.data.items;
                 var Items={};
                 for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
