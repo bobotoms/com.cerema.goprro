@@ -36,7 +36,7 @@ App.view.define('VAddNews', {
                 items: [{
                     xtype: "combo",
                     itemId: "diffusion",
-                    fieldLabel: "Diffusion",
+                    fieldLabel: "Portée du message",
                     displayField: "diffusion",
                     valueField: "diffusion",
                     editable: false,
