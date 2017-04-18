@@ -1602,6 +1602,96 @@ App.controller.define('CMain', {
                 //alert('posté!');
             });
             });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        App.DB.get('goprro://visite_ouvrages?idVisiteOuvrage='+idVisiteOuvrage,me,function(re){
+                if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
+                // On continue par les éléments
+                App.DB.get('goprro://visite_oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idVisiteOuvrage='+idVisiteOuvrage,function(r){
+
+                    var id= App.get(xtype+' combo#dpt').getValue();
+                    if (id) {
+                        var record = App.get('VVisit combo#dpt').findRecordByValue(id).get('codeDepartement');
+                        console.log(record);
+                        var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+record);
+                        App.get(xtype+' combo#ville').bindStore(store);
+                        store.load();
+                    };
+
+
+                    //var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+re.data[0].idVille);
+                    //App.get('VSaisie combo#zone').bindStore(store);
+                    //store.load();
+                    var PARAM=[];
+                    var PARAMX=[];
+                    var PARAMZ=[];
+                    var CARACT=[];
+                    if (r.data.length>0) {
+                        for (var i=0;i<r.data.length;i++) {
+                            PARAM.push(r.data[i].idElement);
+                            PARAMX.push(r.data[i].nomOAElement);
+                            PARAMZ.push(r.data[i].idOAElement);
+                            if (r.data[i].caracteristiques) CARACT[r.data[i].idOAElement]=JSON.parse(r.data[i].caracteristiques); else CARACT[r.data[i].idOAElement]=[];
+                        };
+                        getElements(PARAM,PARAMX,PARAMZ,0,function(){
+                            var store=App.get(me,"treepanel").getStore().data;
+                            console.log('all done.');
+                            for (var i=0;i<store.items.length;i++) {
+                                if (CARACT[store.items[i].data.id]) store.items[i].properties=CARACT[store.items[i].data.id];
+                            };
+                            console.log(store);
+                        });
+                    }
+                });
+            });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
  /*           console.log("me.up('panel')");
             console.log(me.up('panel'));*/
 /*            console.log("r");
