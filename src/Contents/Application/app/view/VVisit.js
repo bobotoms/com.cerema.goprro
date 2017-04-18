@@ -78,10 +78,10 @@ App.view.define('VVisit', {
                 dataIndex: "nomDepartement",
                 valueField: "idDepartement",
                 renderer: function(value, data, record){
-                        store: App.store.create('goprro://departements', {
+                       return store: App.store.create('goprro://departements', {
                             autoLoad: true
                         }),
-                    return date;
+                    //return date;
                 }
             },
             {
