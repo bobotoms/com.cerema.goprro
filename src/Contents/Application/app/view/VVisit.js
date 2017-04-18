@@ -163,7 +163,7 @@ App.view.define('VVisit', {
                                 });
                            }
                            else{
-                              //some code
+                                Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
                            }
                          });
                         
