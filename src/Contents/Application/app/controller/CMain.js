@@ -1171,22 +1171,17 @@ App.controller.define('CMain', {
             App.Visits.selectVisitDate(tabDate,function(response) {
                 var data=[];
                 for (var i=0;i<response.length;i++) {
-                    
-                    App.Visits.selectDept(response[i].idDepartement,function(resp) {
-                        console.log("response dept");
-                        console.log(resp[0].nomDepartement);
-                        data.push({
-                            idOuvrage:response[i].idOuvrage,
-                            idCampagne:response[i].idCampagne,
-                            idVisiteOuvrage:response[i].idVisiteOuvrage,
-                            idDepartement:response[i].idDepartement,
-                            dateVisiteOuvrage:response[i].dateVisiteOuvrage,
-                            nomOuvrage:response[i].nomOuvrage,
-                            nomDepartement:resp[0].nomDepartement,
-                            oa_x:response[i].oa_x,
-                            oa_y:response[i].oa_y
-                        })
-                    });
+                    data.push({
+                        idOuvrage:response[i].idOuvrage,
+                        idCampagne:response[i].idCampagne,
+                        idVisiteOuvrage:response[i].idVisiteOuvrage,
+                        idDepartement:response[i].idDepartement,
+                        dateVisiteOuvrage:response[i].dateVisiteOuvrage,
+                        nomOuvrage:response[i].nomOuvrage,
+                        nomDepartement:response[i].nomDepartement,
+                        oa_x:response[i].oa_x,
+                        oa_y:response[i].oa_y
+                    })
 
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idVisiteOuvrage,"colorMarker","workvisit");
                 };
