@@ -992,7 +992,7 @@ App.controller.define('CMain', {
     },
     del_ref: function(me,store) {
         var grid=me.up('grid');
-       Ext.Msg.confirm('Delete', 'Êtes-vous sûr de vouloir supprimer le référentiel ?', function(btn){
+       Ext.Msg.confirm('Delete', 'Êtes-vous sûr de vouloir supprimer le(s) référentiel(s) ?', function(btn){
            console.log("btn");
            console.log(btn);
        if(btn === 'yes'){
