@@ -111,10 +111,10 @@ App.view.define('VVisit', {
                                     if (response === true)
                                     {
                                          App.Visits.delCampagneVisite(idCampagne,function(response) {
-                                            var mail = Auth.User.mail;
+                                            var idDter = Auth.User.idDter;
                                             TMap.clearMarkers();
 
-                                            App.Visits.select(mail,function(response) {
+                                            App.Visits.select(idDter,function(response) {
 
                                             console.log("response");
                                             console.log(response);

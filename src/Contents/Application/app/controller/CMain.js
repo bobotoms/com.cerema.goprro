@@ -1054,14 +1054,11 @@ App.controller.define('CMain', {
         App.get('mainform panel#southpanel').collapse();
         hideForms();
         App.get("mainform panel#addVisit").show();
-        var mail = Auth.User.mail;
-        console.log("mail");
-        console.log(mail);
-        
+        var idDter = Auth.User.idDter;        
         
         TMap.clearMarkers();
         
-        App.Visits.select(mail,function(response) {
+        App.Visits.select(idDter,function(response) {
             
         console.log("response");
         console.log(response);
@@ -1098,9 +1095,9 @@ App.controller.define('CMain', {
         App.get('VVisit combo#idCampagne').reset();
         hideForms();
         App.get("mainform panel#visit").show();
-        var mail = Auth.User.mail;
+        var idDter = Auth.User.idDter;
         
-        App.Visits.select(mail,function(response) {
+        App.Visits.select(idDter,function(response) {
             
          console.log("response");
          console.log(response);
@@ -1148,9 +1145,10 @@ App.controller.define('CMain', {
         App.get("mainform panel#visit").show();
         console.log("VVisit combo#idCampagne");
         console.log( App.get("VVisit combo#idCampagne").getValue());
-        var mail = Auth.User.mail;
+        var idUser = Auth.User.idUser;
+        var idDter = Auth.User.idDter;
         TMap.clearMarkers();
-        App.Visits.select(mail,function(response) {
+        App.Visits.select(idDter,function(response) {
             
         console.log("response");
         console.log(response);
@@ -1167,7 +1165,7 @@ App.controller.define('CMain', {
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
             var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
-            var tabDate = [mail, idCampagne];
+            var tabDate = [idUser, idCampagne];
             App.Visits.selectVisitDate(tabDate,function(response) {
                 var data=[];
                 for (var i=0;i<response.length;i++) {
