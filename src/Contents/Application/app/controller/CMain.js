@@ -1347,10 +1347,10 @@ App.controller.define('CMain', {
         
         
         
-                       console.log("dans r comboVisitDate");
+                       console.log("/***************** dans r comboVisitDate ***************************/");
         var dataCombo=[];
         App.DB.get('goprro://campagne',function(r){
-            console.log("r comboVisitDate");
+            console.log("/*************************** r comboVisitDate ***********************/");
             console.log(r);
             
             
