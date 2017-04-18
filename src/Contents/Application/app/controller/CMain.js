@@ -1635,7 +1635,7 @@ App.controller.define('CMain', {
                         _BLOB: App.get('uploadfilemanager#up').getFiles()
                     };
                     if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
-                    Post.push(dta);*/
+                    Post.push(dta);
                 };
             });
             App.Elements.delOuvrage(r.insertId,function(e) {
