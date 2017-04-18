@@ -50,12 +50,13 @@ Visits = {
         
         var mail = o['0'];
         var idCampagne = o['1'];
+        var idUser = o['2'];
         console.log("mail");
         console.log(mail);
         console.log("idCampagne");
         console.log(idCampagne);
         
- 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages WHERE idCampagne = "+idCampagne+" AND idUser = (select idUser from users where mail='"+mail+"')",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages left join departements on departements.idDepartement=visite_ouvrages.idDepartement WHERE idCampagne = "+idCampagne+" AND idUser = "+idUser,function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
