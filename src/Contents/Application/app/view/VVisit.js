@@ -75,7 +75,7 @@ App.view.define('VVisit', {
             {
                 text: "Dpt",
                 width: 150,
-                dataIndex: "nomDepartement"
+                dataIndex: "idDepartement"
             },
             {
                 text: "Longitude",
