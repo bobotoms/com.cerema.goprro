@@ -46,7 +46,7 @@ App.view.define('VVisit', {
             editable: false,
     //        store: App.store.campagne,
             //store: App.store.create("goprro://campagne{dateDebut}",{autoLoad:true}),
-            store: App.store.create("goprro://campagne",{autoLoad:true}),
+            //store: App.store.create("goprro://campagne",{autoLoad:true}),
      //       renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
      //       renderer: Ext.Date.Parse(dateDebut, 'Y-m-d'),
    /*         renderer: function(value,a,b,c){
@@ -66,12 +66,12 @@ App.view.define('VVisit', {
                 return Items[value];*/
 
 //            },
-            renderer: function (value, metadata, record){
+  /*          renderer: function (value, metadata, record){
                 
                 console.log("value");
                 console.log(value);
                 return value;
-            }
+            }*/
         }
         ],
         items: [
