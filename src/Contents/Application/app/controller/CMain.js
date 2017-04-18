@@ -1619,7 +1619,7 @@ App.controller.define('CMain', {
                 // On continue par les éléments
                 App.DB.get('goprro://visite_oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idVisiteOuvrage='+idVisiteOuvrage,function(r){
 
-                    var id= App.get(xtype+' combo#dpt').getValue();
+                    var id= App.get('VVisit combo#dpt').getValue();
                     if (id) {
                         var record = App.get('VVisit combo#dpt').findRecordByValue(id).get('codeDepartement');
                         console.log(record);
