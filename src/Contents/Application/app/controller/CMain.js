@@ -1205,6 +1205,7 @@ App.controller.define('CMain', {
         if((LongDateDebut != null) && (LongDateFin != null))
         {
             var mail = Auth.User.mail;
+            var idUser = Auth.User.idUser;
             var panel=me.up('panel');
             var dataStore=App.get(me.up('panel'),"grid").getStore().data;
             var tabCampagne = [mail, dateDebut, dateFin];
@@ -1227,7 +1228,7 @@ App.controller.define('CMain', {
                                 if((date >= dateDebut)&&(date <= dateFin))
                                {
 
-                                        var tabVisits = [mail, date, idOuvrage, idCampagne];
+                                        var tabVisits = [idUser, date, idOuvrage, idCampagne];
 
                                         App.Visits.insert(tabVisits,function(response) {
                                             compteurAdd ++;
