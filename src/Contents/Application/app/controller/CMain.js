@@ -1597,9 +1597,10 @@ App.controller.define('CMain', {
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
             });
+            });
  /*           console.log("me.up('panel')");
             console.log(me.up('panel'));*/
-            console.log("r");
+/*            console.log("r");
             console.log(r);
             console.log("r.insertId");
             console.log(r.insertId);
@@ -1644,7 +1645,7 @@ App.controller.define('CMain', {
                     
                 });
             });
-        });
+        });*/
         /**************  fin requete update   *************************/
         
         
