@@ -77,16 +77,8 @@ App.view.define('VVisit', {
                 width: 150,
                 dataIndex: "idDepartement",
                 renderer: function(value, data, record){
-                         console.log("value");
-                         console.log(value);
-                         console.log("data");
-                         console.log(data);
-                         console.log("record");
-                         console.log(record);
                      App.Visits.selectDept(value,function(response) {
-                         console.log("response");
-                         console.log(response);
-                        return response;
+                        return response[0].nomDepartement;
                      });
                 }
             },
