@@ -1905,12 +1905,8 @@ App.controller.define('CMain', {
                  if(store.data.items[i].data.select == true)
                 {
                      data.push({
-                        idOuvrage:store.data.items[i].data.idOuvrage,
-                        nomOuvrage:store.data.items[i].data.nomOuvrage,
-                        nomDepartement:store.data.items[i].data.nomDepartement,
-                        oa_x:store.data.items[i].data.oa_x,
-                        oa_y:store.data.items[i].data.oa_y,
-                        select:true
+                        idCampagne:store.data.items[i].data.idOuvrage,
+                        periode:store.data.items[i].data.nomOuvrage
                     })
 
                     TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
