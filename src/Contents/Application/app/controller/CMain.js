@@ -700,9 +700,11 @@ App.controller.define('CMain', {
         console.log("addnews me");
         console.log(me);
         
-        var mail = Auth.User.mail;
+        var idUser = Auth.User.idUser;
+        var diffusion = App.get('VAddNews combo#diffusion').getValue();
         var news = App.get('VAddNews textarea#texteNote').getValue();
-        var tabNews = [mail, news]
+        var importance = App.get('VAddNews combo#importance').getValue();
+        var tabNews = [idUser, diffusion, news, importance]
         App.AddNews.insert(tabNews,function(response) {
             App.get('VAddNews').close();
             if (response === true)
