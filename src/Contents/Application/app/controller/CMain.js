@@ -716,7 +716,7 @@ App.controller.define('CMain', {
             if (response === true)
             {
                 Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
-                var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+                var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p><p>%TAG%</p></div></li>';
                 var tpl=[];
                 App.Notes.getAll({},function(e,r) {
                      var idDter = Auth.User.idDter;
@@ -728,6 +728,7 @@ App.controller.define('CMain', {
                             results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
                             results=results.replace('%POSTER%',r.result.data[i].nomprenom);
                             results=results.replace('%COMMENT%',r.result.data[i].texteNote);
+                            results=results.replace('%TAG%',r.result.data[i].importance);
                             tpl.push(results);
                         }
                     };
@@ -1789,7 +1790,7 @@ App.controller.define('CMain', {
         });
         App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
         // load wiki
-        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p><p>%TAG%</p></div></li>';
         var tpl=[];
         App.Notes.getAll({},function(e,r) {
             
@@ -1801,6 +1802,7 @@ App.controller.define('CMain', {
                         results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
                         results=results.replace('%POSTER%',r.result.data[i].nomprenom);
                         results=results.replace('%COMMENT%',r.result.data[i].texteNote);
+                        results=results.replace('%TAG%',r.result.data[i].importance);
                         tpl.push(results);
                     }
             };
