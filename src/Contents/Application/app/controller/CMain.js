@@ -711,13 +711,17 @@ App.controller.define('CMain', {
                 var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
                 var tpl=[];
                 App.Notes.getAll({},function(e,r) {
-                    console.log(r);
-                    for (var i=0;i<r.result.data.length;i++) {
-                        var results=html;
-                        results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
-                        results=results.replace('%POSTER%',r.result.data[i].nomprenom);
-                        results=results.replace('%COMMENT%',r.result.data[i].texteNote);
-                        tpl.push(results);
+                     var idDter = Auth.User.idDter;
+            
+                    for (var i=0;i<r.result.data.length;i++) {   
+                        if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
+                        {
+                            var results=html;
+                            results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
+                            results=results.replace('%POSTER%',r.result.data[i].nomprenom);
+                            results=results.replace('%COMMENT%',r.result.data[i].texteNote);
+                            tpl.push(results);
+                        }
                     };
                     results='<ul class="timeline">'+tpl.join('')+'</ul>';
                     App.get('mainform panel#timeline').update(results);
@@ -1774,7 +1778,6 @@ App.controller.define('CMain', {
     onLoad: function(p)
     {
         Auth.login(function(){
-            console.log("Auth.User");
             console.log(Auth.User);
         });
         App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
@@ -1782,18 +1785,11 @@ App.controller.define('CMain', {
         var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         var tpl=[];
         App.Notes.getAll({},function(e,r) {
-            console.log("r");
-            console.log(r);
-            console.log("r.result.data[i].diffusion");
-            console.log(r.result.data[0].diffusion);
             
             var idDter = Auth.User.idDter;
-            console.log("Auth.User.idDter");
-            console.log(Auth.User.idDter);
             for (var i=0;i<r.result.data.length;i++) {
                 if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
                     {
-                        console.log("dans if");
                         var results=html;
                         results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
                         results=results.replace('%POSTER%',r.result.data[i].nomprenom);
