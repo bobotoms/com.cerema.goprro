@@ -169,8 +169,6 @@ Visits = {
                     });     
                 }
                 else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
@@ -205,10 +203,16 @@ Visits = {
         });       
     },
     selectDept: function(o,cb) {
+                    console.log("o");
+                    console.log(o);
  		Visits.using('db').query("goprro","SELECT nomDepartement FROM departements WHERE codeDepartement = "+o,function(err,result){
             if (!err) {
+                    console.log("result");
+                    console.log(result);
 					cb(result);			
 				} else {
+                    console.log("err");
+                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
