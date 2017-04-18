@@ -204,6 +204,16 @@ Visits = {
             };
         });       
     },
+    selectDept: function(o,cb) {
+ 		Visits.using('db').query("goprro","SELECT nomDepartement FROM departements WHERE codeDepartement = "+o,function(err,result){
+            if (!err) {
+					cb(result);			
+				} else {
+                    var err=false;
+					cb(err)			
+				};
+        });       
+    },
     updateOuvrageVisit: function(o,cb) {
         
         console.log("idVisiteOuvrage");
