@@ -322,7 +322,8 @@ App.controller.define('CMain', {
                 edit: "ref_grid_edit"
             },
             "VVisit combo#idCampagne": {
-                edit: "comboVisitDate"
+                click: "comboVisitDate"
+                //beforeselect
             },
             "VVisit combo#idCampagne": {
                 select: "showVisitDate"
