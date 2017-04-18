@@ -75,17 +75,7 @@ App.view.define('VVisit', {
             {
                 text: "Dpt",
                 width: 150,
-                dataIndex: "idDepartement",
-                renderer: function(value, data, record){
-                     App.Visits.selectDept(value,function(response) {
-                         console.log("response");
-                         console.log(response);
-                         console.log("response[0].nomDepartement");
-                         console.log(response[0].nomDepartement);
-                         var dept = response[0].nomDepartement
-                        return dept;
-                     });
-                }
+                dataIndex: "nomDepartement",
             },
             {
                 text: "Longitude",
