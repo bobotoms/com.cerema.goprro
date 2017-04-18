@@ -82,8 +82,10 @@ App.view.define('VVisit', {
                          console.log(response);
                          console.log("response[0].nomDepartement");
                          console.log(response[0].nomDepartement);
-                        return response[0].nomDepartement;
+                         var dept = response[0].nomDepartement
+                        return dept;
                      });
+                     //   return dept;
                 }
             },
             {
