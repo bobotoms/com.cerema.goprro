@@ -66,10 +66,11 @@ App.view.define('VVisit', {
                 return Items[value];*/
 
 //            },
-            renderer = function (value, metadata, record){
+            renderer: function (value, metadata, record){
                 
                 console.log("value");
                 console.log(value);
+                return value;
             }
         }
         ],
