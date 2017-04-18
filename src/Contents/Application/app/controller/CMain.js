@@ -716,7 +716,7 @@ App.controller.define('CMain', {
             if (response === true)
             {
                 Ext.Msg.alert('GOPRRO',"Votre commentaire est enregistré.");
-                var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p><p style="color:#6fc173">%TAG%</p></div></li>';
+                var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p><p style="color:#6fc173; font-weight:bold">%TAG%</p></div></li>';
                 var tpl=[];
                 App.Notes.getAll({},function(e,r) {
                      var idDter = Auth.User.idDter;
@@ -1790,7 +1790,7 @@ App.controller.define('CMain', {
         });
         App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
         // load wiki
-        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p><p style="color:#6fc173">%TAG%</p></div></li>';
+        var html='<li><p class="timeline-date">%DATE%</p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p><p style="color:#6fc173; font-weight:bold">%TAG%</p></div></li>';
         var tpl=[];
         App.Notes.getAll({},function(e,r) {
             
