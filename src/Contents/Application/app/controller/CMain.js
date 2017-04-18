@@ -1908,8 +1908,6 @@ App.controller.define('CMain', {
                         idCampagne:store.data.items[i].data.idOuvrage,
                         periode:store.data.items[i].data.nomOuvrage
                     })
-
-                    TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
                 }
             }
             
