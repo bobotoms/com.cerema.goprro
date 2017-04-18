@@ -209,10 +209,6 @@ App.controller.define('CMain', {
             "VRefs grid#T1": {
                 edit: "ref_grid_edit"
             },
- /*           "VVisit combo#idCampagne": {
-               // click: "comboVisitDate"
-                beforeselect: "comboVisitDate"
-            },*/
             "VVisit combo#idCampagne": {
                 select: "showVisitDate"
             },
