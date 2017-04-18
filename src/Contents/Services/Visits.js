@@ -202,7 +202,7 @@ Visits = {
             };
         });       
     },
-    selectDept: function(o,cb) {
+/*    selectDept: function(o,cb) {
                     console.log("o");
                     console.log(o);
  		Visits.using('db').query("goprro","SELECT nomDepartement FROM departements WHERE codeDepartement = "+o,function(err,result){
@@ -217,7 +217,7 @@ Visits = {
 					cb(err)			
 				};
         });       
-    },
+    },*/
     updateOuvrageVisit: function(o,cb) {
         
         console.log("idVisiteOuvrage");
