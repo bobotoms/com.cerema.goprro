@@ -191,6 +191,8 @@ function GMap(l,m)
 
    // App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
     App.DB.get("goprro://ouvrages{oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
+        console.log("r map");
+        console.log(r);
         for (var i=0;i<r.data.length;i++) {
             TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
         }
