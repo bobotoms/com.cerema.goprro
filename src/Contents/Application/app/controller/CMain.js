@@ -1895,7 +1895,7 @@ App.controller.define('CMain', {
     comboVisitDate: function(me)
     {
         console.log("dans r comboVisitDate");
-        var dataAll=[];
+        var data=[];
         App.DB.get('goprro://campagne',function(r){
             console.log("r comboVisitDate");
             console.log(r);
@@ -1904,7 +1904,7 @@ App.controller.define('CMain', {
             for (var i=0;i<r.result.data.length;i++) {
                  if(store.data.items[i].data.select == true)
                 {
-                     dataAll.push({
+                     data.push({
                         idOuvrage:store.data.items[i].data.idOuvrage,
                         nomOuvrage:store.data.items[i].data.nomOuvrage,
                         nomDepartement:store.data.items[i].data.nomDepartement,
