@@ -17,7 +17,7 @@ Visits = {
     selectVisit: function(o,cb) {
                     console.log("o");
                     console.log(o);
- 		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idGestionnaire = (select idUser from users where mail='"+o+"')",function(err,result){
+ 		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idGestionnaire = "+o,function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
@@ -69,16 +69,16 @@ Visits = {
         });       
     },
   	insertCampagne: function(o,cb) {
-        var mail = o['0'];
-        console.log("mail");
-        console.log(mail);
+        var idUser = o['0'];
+        console.log("idUser");
+        console.log(idUser);
         var dateDebut = o['1'];
         console.log("datedebut");
         console.log(dateDebut);
         var dateFin = o['2'];
         console.log("datefin");
         console.log(dateFin);
-        Visits.using('db').query("goprro","SELECT * FROM campagne WHERE dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' AND idGestionnaire = (select idUser from users where mail='"+mail+"')",function(err,result){
+        Visits.using('db').query("goprro","SELECT * FROM campagne WHERE dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' AND idGestionnaire = '"+idUser,function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
@@ -88,7 +88,7 @@ Visits = {
                 {
                     
                     console.log("avant insert");
-                    Visits.using('db').query("goprro","INSERT INTO campagne (idGestionnaire, dateDebut, dateFin) VALUES ((select idUser from users where mail='"+mail+"'), '"+dateDebut+"', '"+dateFin+"')",function(err,result){
+                    Visits.using('db').query("goprro","INSERT INTO campagne (idGestionnaire, dateDebut, dateFin) VALUES ("+idUser+", '"+dateDebut+"', '"+dateFin+"')",function(err,result){
                             if (!err) {            
                                 console.log("result");
                                 console.log(result);
