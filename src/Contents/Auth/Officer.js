@@ -39,8 +39,17 @@ Officer = {
                     console.log("*************************************officer using**********************************");
                     Officer.using('db').store('goprro','select idUser, idDter from users where mail ="'+mail+'"',function(err,res){
                         if (!err) {
-        
-                    console.log("*************************************officer using 2 **********************************");
+                            console.log("*************************************officer using 2 **********************************");
+                            var response={
+                                lastname: result.data[0].nom,
+                                firstname: result.data[0].prenom,
+                                idDter: res.data[0].idDter,
+                                idUser: res.data[0].idUser,
+                                uid: result.data[0].kage,
+                                mail: mail,
+                                profiles: Officer.getProfile(mail.split('@')[0])
+                            };
+                            cb(response);
                         } 
                         else
                         {
@@ -48,14 +57,6 @@ Officer = {
                             cb(err);
                         }
                     });
-                    var response={
-                        lastname: result.data[0].nom,
-                        firstname: result.data[0].prenom,
-                        uid: result.data[0].kage,
-                        mail: mail,
-                        profiles: Officer.getProfile(mail.split('@')[0])
-                    };
-                    cb(response);
                 } else cb(err);
             });
         }
