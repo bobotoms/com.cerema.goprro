@@ -65,7 +65,11 @@ App.view.define('VVisit', {
                 flex: 1,
                 format: 'd m Y',
                 dateFormat: 'c',
-                dataIndex: "dateVisiteOuvrage"
+                dataIndex: "dateVisiteOuvrage",
+                renderer: function(value, data, record){
+                    console.log("test");
+                    
+                }
             },
             {
                 text: "Dpt",
