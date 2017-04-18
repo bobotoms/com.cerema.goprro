@@ -1774,6 +1774,7 @@ App.controller.define('CMain', {
     onLoad: function(p)
     {
         Auth.login(function(){
+            console.log("Auth.User");
             console.log(Auth.User);
         });
         App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
