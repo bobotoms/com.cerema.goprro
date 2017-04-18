@@ -67,7 +67,12 @@ App.view.define('VVisit', {
                 dateFormat: 'c',
                 dataIndex: "dateVisiteOuvrage",
                 renderer: function(value, data, record){
-                    console.log("test");
+                    console.log("value");
+                    console.log(value);
+                    console.log("data");
+                    console.log(data);
+                    console.log("record");
+                    console.log(record);
                     
                 }
             },
