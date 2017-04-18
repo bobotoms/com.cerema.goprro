@@ -1228,11 +1228,13 @@ App.controller.define('CMain', {
             console.log("/*************************** r comboVisitDate ***********************/");
             console.log(r);
             
+                       console.log("/************r.data.length****************/");
+                       console.log(r.data.length);
             
-            for (var i=0;i<r.result.data.length;i++) {
+            for (var i=0;i<r.data.length;i++) {
                 
-                var dateDeb = r.result.data[i].dateDebut;
-                var dateF = r.result.data[i].dateFin;
+                var dateDeb = r.data[i].dateDebut;
+                var dateF = r.data[i].dateFin;
                        console.log("/************dateDeb****************/");
                        console.log(dateDeb);
                        console.log("/***********dateF*******************/");
