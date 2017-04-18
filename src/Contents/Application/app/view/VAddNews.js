@@ -4,7 +4,7 @@ App.view.define('VAddNews', {
     extend: "Ext.window.Window",
     alias : 'widget.VAddNews',
     width: 400,
-    height: 250,
+    height: 230,
     closable: true,
     layout: "hbox",
     border: false,
