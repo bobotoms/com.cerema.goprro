@@ -31,7 +31,7 @@ Officer = {
 
 			 profile=profile.username;
 			 */
-
+/*
             var mail=profile.username.email;
             Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
                 if (!err) {
@@ -48,6 +48,59 @@ Officer = {
         }
 
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    		 */
+                    console.log("********************************officer using google*****************************************");
+
+            var mail=profile.username.email;
+            Officer.using('db').store('bpclight','select kage,nom,prenom from agents where kage in (select kage from mela where libmela="'+mail+'")',function(err,result){
+      /*          if (!err) {
+                    console.log("*************************************officer using**********************************");
+                    Officer.using('db').store('goprro','select idUser, idDter from users where mail ="'+mail+'")',function(err,res){*/
+                        if (!err) {
+                    console.log("************************************officer using 2*************************************");
+                            var response={
+                                lastname: result.data[0].nom,
+                                firstname: result.data[0].prenom,
+                                idDter: res.data[0].idDter,
+                                idUser: res.data[0].idUser,
+                                uid: result.data[0].kage,
+                                mail: mail,
+                                profiles: Officer.getProfile(mail.split('@')[0])
+                            };
+                            cb(response);
+           /*             } else
+                        {
+                    console.log("***************************************officer using err 2***************************************");
+                            cb(err);
+                        }*/
+                    });        
+                } else
+                {
+                    console.log("********************************officer using err***************************************");
+                    cb(err);
+                }
+            });
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 };
 
 module.exports = Officer;
