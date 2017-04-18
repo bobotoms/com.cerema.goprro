@@ -322,6 +322,9 @@ App.controller.define('CMain', {
                 edit: "ref_grid_edit"
             },
             "VVisit combo#idCampagne": {
+                click: "comboVisitDate"
+            },
+            "VVisit combo#idCampagne": {
                 select: "showVisitDate"
             },
 			"VAddVisit button#VisitRecord": {
@@ -1888,6 +1891,40 @@ App.controller.define('CMain', {
     {
         App.get("mainform window#Date").show();
         App.get("mainform window#Date").show();
+    },
+    comboVisitDate: function(me)
+    {
+        var dataAll=[];
+        App.DB.get('goprro://campagne',function(r){
+            console.log("r comboVisitDate");
+            console.log(r);
+            
+            
+            for (var i=0;i<r.result.data.length;i++) {
+                 if(store.data.items[i].data.select == true)
+                {
+                     dataAll.push({
+                        idOuvrage:store.data.items[i].data.idOuvrage,
+                        nomOuvrage:store.data.items[i].data.nomOuvrage,
+                        nomDepartement:store.data.items[i].data.nomDepartement,
+                        oa_x:store.data.items[i].data.oa_x,
+                        oa_y:store.data.items[i].data.oa_y,
+                        select:true
+                    })
+
+                    TMap.setMarker(store.data.items[i].data.oa_y,store.data.items[i].data.oa_x,store.data.items[i].data.nomOuvrage,store.data.items[i].data.idOuvrage,"colorMarker","addvisit");
+                }
+            }
+            
+            var store=App.store.create({
+                fields:["idCampagne","periode"],data:dataAll
+            });
+            if(storeAll)
+            {
+                App.get('VAddVisit grid#gridVisitAdd').bindStore(storeAll);
+                storeAll.load();
+            };
+        });
     },
     onLoad: function(p)
     {
