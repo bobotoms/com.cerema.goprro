@@ -102,7 +102,7 @@ App.view.define('VVisit', {
                 text: "Date visite",
                 itemId: "dateVisiteOuvrage",
                 flex: 1,
-                dateFormat: 'c',
+                format: 'd m Y',
                 dataIndex: "dateVisiteOuvrage"
             },
             {
