@@ -77,8 +77,13 @@ App.view.define('VVisit', {
                 width: 150,
                 dataIndex: "nomDepartement",
                 valueField: "idDepartement",
-                store : App.store.create('goprro://departements', { autoLoad: true }),
-                    //return date;
+                renderer: function(value, data, record){
+                     App.Visits.selectDept(value,function(response) {
+                         console.log("response");
+                         console.log(response);
+                        return response;
+                     }
+                }
             },
             {
                 text: "Longitude",
