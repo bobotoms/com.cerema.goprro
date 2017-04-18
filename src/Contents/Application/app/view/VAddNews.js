@@ -8,6 +8,16 @@ App.view.define('VAddNews', {
     closable: true,
     layout: "hbox",
     border: false,
+    bbar: [
+            '->', {
+            xtype: "button",
+            itemId: "addNews",
+            text: "Valider",
+            margin: {
+                left: 5
+            }
+        }
+    ],
     items: [
         {
             region: "center",
@@ -63,15 +73,7 @@ App.view.define('VAddNews', {
                             value: "Non-important"
                         }
                     ]})
-                },
-                    {
-                        xtype: "button",
-                        itemId: "addNews",
-                        text: "Valider",
-                        margin: {
-                            left: 5
-                        }
-                    }]
+                }]
             }]
         }
     ]
