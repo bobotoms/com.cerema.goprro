@@ -1421,12 +1421,12 @@ App.controller.define('CMain', {
              if((date >= dateDebut)&&(date <= dateFin))
             {
 
-                var mail = Auth.User.mail;
+                var idUser = Auth.User.idUser;
 
-                var tabVisits = [mail, date, idOuvrage, idCampagne];
+                var tabVisits = [idUser, date, idOuvrage, idCampagne];
 
                 App.Visits.insert(tabVisits,function(response) {
-                    var tabDate = [mail, idCampagne];
+                    var tabDate = [idUser, idCampagne];
                     App.Visits.selectVisitDate(tabDate,function(response) {
                         var data=[];
                         for (var i=0;i<response.length;i++) {

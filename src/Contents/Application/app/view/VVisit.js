@@ -130,7 +130,8 @@ App.view.define('VVisit', {
 
                                                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
                                                 };
-                                                var tabDate = [mail, idCampagne];
+                                                var idUser = Auth.User.idUser;
+                                                var tabDate = [idUser, idCampagne];
                                                 App.Visits.selectVisitDate(tabDate,function(response) {
                                                     var data=[];
                                                     for (var i=0;i<response.length;i++) {
