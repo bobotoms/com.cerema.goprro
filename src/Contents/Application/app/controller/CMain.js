@@ -1249,16 +1249,17 @@ App.controller.define('CMain', {
                        console.log(r.data[i].idCampagne);
    /*             if(store.data.items[i].data.select == true)
                 {*/
+                var periode = dateDebut+' / '+dateFin;
                      dataCombo.push({
-                        idCampagne:r.data[i].idCampagne
-                      //  periode:store.data.items[i].data.nomOuvrage
+                        idCampagne:r.data[i].idCampagne,
+                        periode:periode
                     })
   //              }
             }
             
             var storeCombo=App.store.create({
-            //    fields:["idCampagne","periode"],data:dataCombo
-                fields:["idCampagne"],data:dataCombo
+                fields:["idCampagne","periode"],data:dataCombo
+            //    fields:["idCampagne"],data:dataCombo
             });
             if(storeCombo)
             {
