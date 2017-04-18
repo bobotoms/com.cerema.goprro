@@ -1,10 +1,12 @@
 AddNews = {
     insert: function(o,cb) {
 
-        var mail = o['0'];
-        var note = o['1'];
+        var idUser = o['0'];
+        var diffusion = o['1'];
+        var note = o['2'];
+        var importance = o['3'];
 
-        AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, texteNote, idUser) VALUES (NOW(), '"+note+"', (select idUser from users where mail='"+mail+"'))",function(err,result){
+        AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, diffusion, texteNote, importance, idUser) VALUES (NOW(), '"+diffusion+"', '"+note+"', '"+importance+"', '"+idUser+"')",function(err,result){
             if (!err) {
                 var response=true;
                 cb(response);
