@@ -703,7 +703,7 @@ App.controller.define('CMain', {
         var idUser = Auth.User.idUser;
         var diffusion = App.get('VAddNews combo#diffusion').getValue();
         var news = App.get('VAddNews textarea#texteNote').getValue();
-        var importance = App.get('VAddNews combo#importance').getValue();
+        var importance = App.get('VAddNews combo#tag').getValue();
         
         console.log("idUser");
         console.log(idUser);
