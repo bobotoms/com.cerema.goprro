@@ -75,7 +75,14 @@ App.view.define('VVisit', {
             {
                 text: "Dpt",
                 width: 150,
-                dataIndex: "idDepartement"
+                dataIndex: "nomDepartement",
+                valueField: "idDepartement",
+                renderer: function(value, data, record){
+                        store: App.store.create('goprro://departements', {
+                            autoLoad: true
+                        }),
+                    return date;
+                }
             },
             {
                 text: "Longitude",
