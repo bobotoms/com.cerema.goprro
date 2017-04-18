@@ -1337,6 +1337,44 @@ App.controller.define('CMain', {
                     store.load();
                 }
                 App.get('VVisit grid').show();
+                
+                
+                
+                
+                console.log("dans r comboVisitDate");
+        var dataCombo=[];
+        App.DB.get('goprro://campagne',function(r){
+            console.log("r comboVisitDate");
+            console.log(r);
+            
+            
+            for (var i=0;i<r.result.data.length;i++) {
+                if(store.data.items[i].data.select == true)
+                {
+                     dataCombo.push({
+                        idCampagne:store.data.items[i].data.idOuvrage,
+                        periode:store.data.items[i].data.nomOuvrage
+                    })
+                }
+            }
+            
+            var storeCombo=App.store.create({
+                fields:["idCampagne","periode"],data:dataCombo
+            });
+            if(storeCombo)
+            {
+                App.get('VVisit combo#idCampagne').bindStore(storeCombo);
+                storeCombo.load();
+            };
+        });
+                
+                
+                
+                
+                
+                
+                
+                
 
             });
         });
