@@ -1210,56 +1210,24 @@ App.controller.define('CMain', {
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
         });
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-            
-        
-        
-                       console.log("/***************** dans r comboVisitDate ***************************/");
+     
         var dataCombo=[];
         App.DB.get('goprro://campagne',function(r){
-            console.log("/*************************** r comboVisitDate ***********************/");
-            console.log(r);
-            
-                       console.log("/************r.data.length****************/");
-                       console.log(r.data.length);
             
             for (var i=0;i<r.data.length;i++) {
-                
-                
                 var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
                 var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
                 var dateF = Ext.Date.parse(r.data[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateF, 'Y-m-d');
- /*               var dateDeb = r.data[i].dateDebut;
-                var dateF = r.data[i].dateFin;*/
-                       console.log("/************dateDeb****************/");
-                       console.log(dateDebut);
-                       console.log("/***********dateF*******************/");
-                       console.log(dateFin);
-                       console.log("/***********idCampagne*******************/");
-                       console.log(r.data[i].idCampagne);
-   /*             if(store.data.items[i].data.select == true)
-                {*/
                 var periode = dateDebut+' / '+dateFin;
-                     dataCombo.push({
-                        idCampagne:r.data[i].idCampagne,
-                        periode:periode
-                    })
-  //              }
+                dataCombo.push({
+                    idCampagne:r.data[i].idCampagne,
+                    periode:periode
+                })
             }
             
             var storeCombo=App.store.create({
                 fields:["idCampagne","periode"],data:dataCombo
-            //    fields:["idCampagne"],data:dataCombo
             });
             if(storeCombo)
             {
@@ -1267,91 +1235,6 @@ App.controller.define('CMain', {
                 storeCombo.load();
             };
         });
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-   /*     App.Visits.selectVisit(mail,function(response) {
-            var data=[];
-            for (var i=0;i<response.length;i++) {
-                var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
-                var dateDebut = Ext.Date.format(dateLong, 'Y-m-d');
-                var dateF = Ext.Date.parse(response[i].dateFin,"c");
-                var dateFin = Ext.Date.format(dateLong, 'Y-m-d');
-                data.push({
-                    date:dateDebut+' '+dateFin
-                })
-            };
-            var store=App.store.create({
-                fields:["date"],data:data
-            });
-            if(store)
-            {
-                App.get('VVisit combo#idCampagne').bindStore(store);
-                store.load();
-            }
-        });*//*
-        App.Visits.selectVisit(mail,function(response) {
-            var data=[];
-            for (var i=0;i<response.length;i++) {
-                var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
-                var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
-               /* var dateF = Ext.Date.parse(response[i].dateFin,"c");
-                var dateFin = Ext.Date.format(dateF, 'Y-m-d');*/
-/*                var idCampagne = response[i].idCampagne;
-                data.push({
-                    idCampagne:idCampagne,
-                    dateDebut:dateDebut
-                })
-            };
-            var store=App.store.create({
-                fields:["dateDebut"],data:data
-            });
-            if(store)
-            {
-                App.get('VVisit combo#idCampagne').bindStore(store);
-                store.load();
-            }
-        });*/
-        
-        /*
-        App.Visits.selectVisit(mail,function(response) {
-            var data=[];
-            for (var i=0;i<response.length;i++) {
-                var dateDeb = Ext.Date.parse(response[i].dateDebut,"c");
-                var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
-                var dateF = Ext.Date.parse(response[i].dateFin,"c");
-                var dateFin = Ext.Date.format(dateF, 'Y-m-d');
-                console.log("dateDeb");
-                console.log(dateDeb);
-                console.log("dateFin");
-                console.log(dateFin);
-                console.log("dateF");
-                console.log(dateF);
-                console.log("dateFin");
-                console.log(dateFin);
-                data.push({
-                    periode:dateDebut+' '+dateFin
-                })
-            };
-                console.log("data");
-                console.log(data);
-            var store=App.store.create({
-                fields:["periode"],data:data
-            });
-            if(store)
-            {
-                App.get('VVisit combo#periode').bindStore(store);
-                store.load();
-            }
-        });*/
     },
     showVisitDate: function(p) {
         App.get('mainform panel#southpanel').collapse();
