@@ -1894,6 +1894,7 @@ App.controller.define('CMain', {
     },
     comboVisitDate: function(me)
     {
+        console.log("dans r comboVisitDate");
         var dataAll=[];
         App.DB.get('goprro://campagne',function(r){
             console.log("r comboVisitDate");
