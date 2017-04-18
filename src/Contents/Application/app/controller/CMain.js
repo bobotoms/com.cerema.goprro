@@ -1902,7 +1902,7 @@ App.controller.define('CMain', {
             
             
             for (var i=0;i<r.result.data.length;i++) {
-                 if(store.data.items[i].data.select == true)
+                if(store.data.items[i].data.select == true)
                 {
                      data.push({
                         idCampagne:store.data.items[i].data.idOuvrage,
