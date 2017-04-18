@@ -394,6 +394,8 @@ App.controller.define('CMain', {
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
+            console.log("App.get('uploadfilemanager#up').getFiles()");
+            console.log(App.get('uploadfilemanager#up').getFiles());
             // On post l'upload
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
