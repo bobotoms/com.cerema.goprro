@@ -704,6 +704,19 @@ App.controller.define('CMain', {
         var diffusion = App.get('VAddNews combo#diffusion').getValue();
         var news = App.get('VAddNews textarea#texteNote').getValue();
         var importance = App.get('VAddNews combo#importance').getValue();
+        
+        console.log("idUser");
+        console.log(idUser);
+        
+        console.log("diffusion");
+        console.log(diffusion);
+        
+        console.log("news");
+        console.log(news);
+        
+        console.log("importance");
+        console.log(importance);
+        
         var tabNews = [idUser, diffusion, news, importance];
         App.AddNews.insert(tabNews,function(response) {
             App.get('VAddNews').close();
