@@ -78,6 +78,10 @@ App.view.define('VVisit', {
                 dataIndex: "idDepartement",
                 renderer: function(value, data, record){
                      App.Visits.selectDept(value,function(response) {
+                         console.log("response");
+                         console.log(response);
+                         console.log("response[0].nomDepartement");
+                         console.log(response[0].nomDepartement);
                         return response[0].nomDepartement;
                      });
                 }
