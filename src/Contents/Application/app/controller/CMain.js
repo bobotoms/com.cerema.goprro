@@ -1338,10 +1338,16 @@ App.controller.define('CMain', {
                 }
                 App.get('VVisit grid').show();
                 
-                
-                
-                
-                console.log("dans r comboVisitDate");
+            });
+        });
+        
+        
+        
+        
+        
+        
+        
+                       console.log("dans r comboVisitDate");
         var dataCombo=[];
         App.DB.get('goprro://campagne',function(r){
             console.log("r comboVisitDate");
@@ -1367,17 +1373,15 @@ App.controller.define('CMain', {
                 storeCombo.load();
             };
         });
-                
-                
-                
-                
-                
-                
-                
-                
-
-            });
-        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
     },
     add_visit: function(me, store) {
         
