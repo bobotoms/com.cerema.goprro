@@ -1150,8 +1150,6 @@ App.controller.define('CMain', {
         TMap.clearMarkers();
         App.Visits.select(idDter,function(response) {
             
-        console.log("response");
-        console.log(response);
             var data=[];
             for (var i=0;i<response.length;i++) {
                 data.push({
