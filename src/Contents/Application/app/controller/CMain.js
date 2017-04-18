@@ -1167,8 +1167,12 @@ App.controller.define('CMain', {
             var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
             var tabDate = [idUser, idCampagne];
             App.Visits.selectVisitDate(tabDate,function(response) {
+                console.log("response");
+                console.log(response);
                 var data=[];
                 for (var i=0;i<response.length;i++) {
+                console.log("response[i].nomDepartement");
+                console.log(response[i].nomDepartement);
                     data.push({
                         idOuvrage:response[i].idOuvrage,
                         idCampagne:response[i].idCampagne,
