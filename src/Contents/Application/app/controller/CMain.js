@@ -1126,9 +1126,9 @@ App.controller.define('CMain', {
             
             for (var i=0;i<r.data.length;i++) {
                 var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
-                var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
+                var dateDebut = Ext.Date.format(dateDeb, 'd-m-Y');
                 var dateF = Ext.Date.parse(r.data[i].dateFin,"c");
-                var dateFin = Ext.Date.format(dateF, 'Y-m-d');
+                var dateFin = Ext.Date.format(dateF, 'd-m-Y');
                 var periode = dateDebut+' / '+dateFin;
                 dataCombo.push({
                     idCampagne:r.data[i].idCampagne,
@@ -1335,13 +1335,7 @@ App.controller.define('CMain', {
         /**/console.log("xtype on show");
         /**/console.log(me.xtype);
         
-            //var panel=App.get(me.up('panel'));//.up('panel').up('panel'));
-            //var panel=me.up;('window');//.up('panel');//.up('panel');
-            var panel=App.get(me.up('panel'),"grid");
-            //var dataStore=App.get(me.up('panel'),"grid")
-        
-        /**/console.log("panel");
-        /**/console.log(panel);
+        var panel=App.get(me.up('panel'),"grid");
         
         var xtype = me.xtype;
         me.element={};
@@ -1388,10 +1382,6 @@ App.controller.define('CMain', {
                         store.load();
                     };
 
-
-                    //var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+re.data[0].idVille);
-                    //App.get('VSaisie combo#zone').bindStore(store);
-                    //store.load();
                     var PARAM=[];
                     var PARAMX=[];
                     var PARAMZ=[];
