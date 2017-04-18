@@ -696,7 +696,10 @@ App.controller.define('CMain', {
         App.view.create('VAddNews',{modal:true}).show().center();
     },
     add_news: function(me) {
-
+        
+        console.log("addnews me");
+        console.log(me);
+        
         var mail = Auth.User.mail;
         var news = App.get('VAddNews textarea#texteNote').getValue();
         var tabNews = [mail, news]
