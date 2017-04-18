@@ -142,7 +142,7 @@ App.view.define('VVisit', {
                                                             oa_y:response[i].oa_y
                                                         })
 
-                                                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","visit");
+                                                        TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"colorMarker","workvisit");
                                                     };
                                                     var store=App.store.create({
                                                         fields:["idOuvrage","idCampagne","idVisiteOuvrage","idDepartement","nomOuvrage","dateVisiteOuvrage","nomDepartement","oa_x","oa_y"],data:data
