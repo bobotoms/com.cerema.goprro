@@ -16,7 +16,7 @@ App.view.define('VAddNews', {
             itemId: "add_news",
             split:true,
             items: [{
-                layout: "hbox",
+                layout: "vbox",
                 border: false,
                 height: 200,
                 padding: {
