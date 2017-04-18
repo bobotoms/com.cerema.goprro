@@ -76,6 +76,11 @@ App.view.define('VVisit', {
                 text: "Dpt",
                 width: 150,
                 dataIndex: "nomDepartement",
+                renderer: function(value, data, record){
+                    console.log("value");
+                    console.log(value);
+                    
+                }
             },
             {
                 text: "Longitude",
