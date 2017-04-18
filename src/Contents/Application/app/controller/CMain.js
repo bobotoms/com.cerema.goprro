@@ -1219,6 +1219,7 @@ App.controller.define('CMain', {
         
         
         
+                
             
         
         
@@ -1233,23 +1234,29 @@ App.controller.define('CMain', {
             
             for (var i=0;i<r.data.length;i++) {
                 
-                var dateDeb = r.data[i].dateDebut;
-                var dateF = r.data[i].dateFin;
+                
+                var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
+                var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
+                var dateF = Ext.Date.parse(r.data[i]..dateFin,"c");
+                var dateFin = Ext.Date.format(dateF, 'Y-m-d');
+ /*               var dateDeb = r.data[i].dateDebut;
+                var dateF = r.data[i].dateFin;*/
                        console.log("/************dateDeb****************/");
-                       console.log(dateDeb);
+                       console.log(dateDebut);
                        console.log("/***********dateF*******************/");
-                       console.log(dateF);
-                if(store.data.items[i].data.select == true)
-                {
+                       console.log(dateFin);
+   /*             if(store.data.items[i].data.select == true)
+                {*/
                      dataCombo.push({
-                        idCampagne:store.data.items[i].data.idOuvrage,
-                        periode:store.data.items[i].data.nomOuvrage
+                        idCampagne:r.data[i].idCampagne
+                      //  periode:store.data.items[i].data.nomOuvrage
                     })
-                }
+  //              }
             }
             
             var storeCombo=App.store.create({
-                fields:["idCampagne","periode"],data:dataCombo
+            //    fields:["idCampagne","periode"],data:dataCombo
+                fields:["idCampagne"],data:dataCombo
             });
             if(storeCombo)
             {
