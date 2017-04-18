@@ -1637,7 +1637,7 @@ App.controller.define('CMain', {
                     if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
                     Post.push(dta);
                 };
-            });
+            };
             App.Elements.delOuvrage(r.insertId,function(e) {
                 App.DB.post("goprro://visite_oa_elements",Post,function(r){
                     Ext.Msg.alert('GOPRRO',"Modification enregistrée");
