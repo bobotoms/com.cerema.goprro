@@ -1184,12 +1184,9 @@ App.controller.define('CMain', {
         
     },
     showVisit: function(p) {
-         console.log("showVisit");
         App.get('mainform panel#southpanel').collapse();
-        
-        //App.store.familles.load();
-            App.get('VVisit grid#gridVisit').store.removeAll();
-            App.get('VVisit combo#idCampagne').reset();
+        App.get('VVisit grid#gridVisit').store.removeAll();
+        App.get('VVisit combo#idCampagne').reset();
         hideForms();
         App.get("mainform panel#visit").show();
         var mail = Auth.User.mail;
