@@ -1204,11 +1204,11 @@ App.controller.define('CMain', {
         var dateFin = Ext.Date.format(LongDateFin, 'Y-m-d');
         if((LongDateDebut != null) && (LongDateFin != null))
         {
-            var mail = Auth.User.mail;
+            //var mail = Auth.User.mail;
             var idUser = Auth.User.idUser;
             var panel=me.up('panel');
             var dataStore=App.get(me.up('panel'),"grid").getStore().data;
-            var tabCampagne = [mail, dateDebut, dateFin];
+            var tabCampagne = [idUser, dateDebut, dateFin];
             App.Visits.insertCampagne(tabCampagne,function(response) { 
                 if (response != "periode")
                 {
