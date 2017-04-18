@@ -704,7 +704,7 @@ App.controller.define('CMain', {
         var diffusion = App.get('VAddNews combo#diffusion').getValue();
         var news = App.get('VAddNews textarea#texteNote').getValue();
         var importance = App.get('VAddNews combo#importance').getValue();
-        var tabNews = [idUser, diffusion, news, importance]
+        var tabNews = [idUser, diffusion, news, importance];
         App.AddNews.insert(tabNews,function(response) {
             App.get('VAddNews').close();
             if (response === true)
