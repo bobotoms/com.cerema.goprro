@@ -72,7 +72,7 @@ App.view.define('VVisit', {
                     var longDate =  Ext.Date.parse(value,"c");
                     console.log("longDate");
                     console.log(longDate);
-                    var date = Ext.Date.format(longDate, 'Y-m-d');
+                    var date = Ext.Date.format(longDate, 'd-m-Y');
                    // var date = Ext.Date.format(value, 'd-m-Y');
                     console.log("date");
                     console.log(date);
