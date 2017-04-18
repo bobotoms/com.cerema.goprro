@@ -1172,9 +1172,9 @@ App.controller.define('CMain', {
                 var data=[];
                 for (var i=0;i<response.length;i++) {
                     
-                    App.Visits.selectDept(response[i].idDepartement,function(response) {
+                    App.Visits.selectDept(response[i].idDepartement,function(resp) {
                         console.log("response dept");
-                        console.log(response);
+                        console.log(resp[0].nomDepartement);
                         data.push({
                             idOuvrage:response[i].idOuvrage,
                             idCampagne:response[i].idCampagne,
@@ -1182,7 +1182,7 @@ App.controller.define('CMain', {
                             idDepartement:response[i].idDepartement,
                             dateVisiteOuvrage:response[i].dateVisiteOuvrage,
                             nomOuvrage:response[i].nomOuvrage,
-                            nomDepartement:response[i].nomDepartement,
+                            nomDepartement:resp[0].nomDepartement,
                             oa_x:response[i].oa_x,
                             oa_y:response[i].oa_y
                         })
