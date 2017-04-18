@@ -1793,7 +1793,7 @@ App.controller.define('CMain', {
             for (var i=0;i<r.result.data.length;i++) {
                 if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
                     {
-                        console.log("if");
+                        console.log("dans if");
                         var results=html;
                         results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
                         results=results.replace('%POSTER%',r.result.data[i].nomprenom);
