@@ -1209,7 +1209,56 @@ App.controller.define('CMain', {
                 })
                 TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idOuvrage,"","visit");
             };
-        });        
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+                       console.log("/***************** dans r comboVisitDate ***************************/");
+        var dataCombo=[];
+        App.DB.get('goprro://campagne',function(r){
+            console.log("/*************************** r comboVisitDate ***********************/");
+            console.log(r);
+            
+            
+            for (var i=0;i<r.result.data.length;i++) {
+                if(store.data.items[i].data.select == true)
+                {
+                     dataCombo.push({
+                        idCampagne:store.data.items[i].data.idOuvrage,
+                        periode:store.data.items[i].data.nomOuvrage
+                    })
+                }
+            }
+            
+            var storeCombo=App.store.create({
+                fields:["idCampagne","periode"],data:dataCombo
+            });
+            if(storeCombo)
+            {
+                App.get('VVisit combo#idCampagne').bindStore(storeCombo);
+                storeCombo.load();
+            };
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
    /*     App.Visits.selectVisit(mail,function(response) {
             var data=[];
             for (var i=0;i<response.length;i++) {
@@ -1340,48 +1389,6 @@ App.controller.define('CMain', {
                 
             });
         });
-        
-        
-        
-        
-        
-        
-        
-                       console.log("/***************** dans r comboVisitDate ***************************/");
-        var dataCombo=[];
-        App.DB.get('goprro://campagne',function(r){
-            console.log("/*************************** r comboVisitDate ***********************/");
-            console.log(r);
-            
-            
-            for (var i=0;i<r.result.data.length;i++) {
-                if(store.data.items[i].data.select == true)
-                {
-                     dataCombo.push({
-                        idCampagne:store.data.items[i].data.idOuvrage,
-                        periode:store.data.items[i].data.nomOuvrage
-                    })
-                }
-            }
-            
-            var storeCombo=App.store.create({
-                fields:["idCampagne","periode"],data:dataCombo
-            });
-            if(storeCombo)
-            {
-                App.get('VVisit combo#idCampagne').bindStore(storeCombo);
-                storeCombo.load();
-            };
-        });
-        
-        
-        
-        
-        
-        
-        
-        
-        
     },
     add_visit: function(me, store) {
         
