@@ -1186,7 +1186,7 @@ App.controller.define('CMain', {
                             oa_x:response[i].oa_x,
                             oa_y:response[i].oa_y
                         })
-                    }
+                    };
 
                     TMap.setMarker(response[i].oa_y,response[i].oa_x,response[i].nomOuvrage,response[i].idVisiteOuvrage,"colorMarker","workvisit");
                 };
