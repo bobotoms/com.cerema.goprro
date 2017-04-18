@@ -1078,7 +1078,7 @@ App.controller.define('CMain', {
             {
                 grid.getStore().load();
             }
-            Ext.Msg.alert('GOPRRO',"Suppression enregistré.");
+            //Ext.Msg.alert('GOPRRO',"Suppression enregistré.");
        }
        else
        {
