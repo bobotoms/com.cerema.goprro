@@ -24,11 +24,45 @@ App.view.define('VAddNews', {
                     left: 10
                 },
                 items: [{
+                    xtype: "combo",
+                    itemId: "diffusion",
+                    fieldLabel: "Diffusion",
+                    valueField: "diffusion",
+                    editable: false,
+                    store: App.store.create({fields:["diffusion"],data:[
+                        {
+                            value: "DTer"
+                        },
+                        {
+                            value: "National"
+                        }
+                    ]})
+                },{
                     xtype: "textarea",
                     itemId: "texteNote",
                     valueField: "texteNote",
                     fieldLabel: "Note",
                     width: 350
+                },{
+                    xtype: "combobox",
+                    itemId: "importance",
+                    fieldLabel: "Niveau d'importance",
+                    valueField: "tag",
+                    editable: false,
+                    store: App.store.create({fields:["tag"],data:[
+                        {
+                            value: "Urgent"
+                        },
+                        {
+                            value: "Non-urgent"
+                        },
+                        {
+                            value: "Important"
+                        },
+                        {
+                            value: "Non-important"
+                        }
+                    ]})
                 },
                     {
                         xtype: "button",
