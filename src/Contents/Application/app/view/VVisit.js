@@ -82,7 +82,7 @@ App.view.define('VVisit', {
                          console.log("response");
                          console.log(response);
                         return response;
-                     }
+                     });
                 }
             },
             {
