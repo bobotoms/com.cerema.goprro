@@ -42,10 +42,10 @@ App.view.define('VAddNews', {
                     editable: false,
                     store: App.store.create({fields:["diffusion"],data:[
                         {
-                            value: "DTer"
+                            diffusion: "DTer"
                         },
                         {
-                            value: "National"
+                            diffusion: "National"
                         }
                     ]})
                 },{
@@ -63,16 +63,16 @@ App.view.define('VAddNews', {
                     editable: false,
                     store: App.store.create({fields:["tag"],data:[
                         {
-                            value: "Urgent"
+                            tag: "Urgent"
                         },
                         {
-                            value: "Non-urgent"
+                            tag: "Non-urgent"
                         },
                         {
-                            value: "Important"
+                            tag: "Important"
                         },
                         {
-                            value: "Non-important"
+                            tag: "Non-important"
                         }
                     ]})
                 }]
