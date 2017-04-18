@@ -14,7 +14,7 @@ AddNews = {
         console.log("importance");
         console.log(importance);
 
-        AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, diffusion, texteNote, importance, idUser) VALUES (NOW(), '"+diffusion+"', '"+note+"', '"+importance+"', '"+idUser+"')",function(err,result){
+        AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, diffusion, texteNote, importance, idUser) VALUES (NOW(), "+diffusion+", '"+note+"', '"+importance+"', "+idUser+")",function(err,result){
             if (!err) {
                 var response=true;
                 cb(response);
