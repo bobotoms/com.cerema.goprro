@@ -1785,7 +1785,7 @@ App.controller.define('CMain', {
             console.log("r");
             console.log(r);
             console.log("r.result.data[i].diffusion");
-            console.log(r.result.data[i].diffusion);
+            console.log(r.result.data[0].diffusion);
             
             var idDter = Auth.User.idDter;
             console.log("Auth.User.idDter");
