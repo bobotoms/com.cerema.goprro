@@ -1141,10 +1141,7 @@ App.controller.define('CMain', {
     },
     showVisitDate: function(p) {
         App.get('mainform panel#southpanel').collapse();
-        //hideForms();
         App.get("mainform panel#visit").show();
-        console.log("VVisit combo#idCampagne");
-        console.log( App.get("VVisit combo#idCampagne").getValue());
         var idUser = Auth.User.idUser;
         var idDter = Auth.User.idDter;
         TMap.clearMarkers();
@@ -1165,12 +1162,8 @@ App.controller.define('CMain', {
             var idCampagne =  App.get("VVisit combo#idCampagne").getValue();
             var tabDate = [idUser, idCampagne];
             App.Visits.selectVisitDate(tabDate,function(response) {
-                console.log("response");
-                console.log(response);
                 var data=[];
                 for (var i=0;i<response.length;i++) {
-                console.log("response[i].nomDepartement");
-                console.log(response[i].nomDepartement);
                     data.push({
                         idOuvrage:response[i].idOuvrage,
                         idCampagne:response[i].idCampagne,
