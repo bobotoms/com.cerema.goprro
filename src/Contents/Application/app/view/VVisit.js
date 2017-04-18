@@ -67,15 +67,8 @@ App.view.define('VVisit', {
                 dateFormat: 'c',
                 dataIndex: "dateVisiteOuvrage",
                 renderer: function(value, data, record){
-                    console.log("value");
-                    console.log(value);
                     var longDate =  Ext.Date.parse(value,"c");
-                    console.log("longDate");
-                    console.log(longDate);
                     var date = Ext.Date.format(longDate, 'd-m-Y');
-                   // var date = Ext.Date.format(value, 'd-m-Y');
-                    console.log("date");
-                    console.log(date);
                     return date;
                 }
             },
