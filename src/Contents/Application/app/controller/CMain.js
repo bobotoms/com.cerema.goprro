@@ -1594,6 +1594,8 @@ App.controller.define('CMain', {
         /************** mettre ici requete update   *************************/
             // On post l'upload
         App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
+            console.log("App.get('uploadfilemanager#up').getFiles()");
+            console.log(App.get('uploadfilemanager#up').getFiles());
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
             });
