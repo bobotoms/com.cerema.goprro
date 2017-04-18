@@ -1599,7 +1599,7 @@ App.controller.define('CMain', {
             });
  /*           console.log("me.up('panel')");
             console.log(me.up('panel'));*/
-            console.log("r");
+ /*           console.log("r");
             console.log(r);
             console.log("r.insertId");
             console.log(r.insertId);
@@ -1635,7 +1635,7 @@ App.controller.define('CMain', {
                         _BLOB: App.get('uploadfilemanager#up').getFiles()
                     };
                     if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
-                    Post.push(dta);
+                    Post.push(dta);*/
                 };
             };
             App.Elements.delOuvrage(r.insertId,function(e) {
@@ -1644,7 +1644,7 @@ App.controller.define('CMain', {
                     
                 });
             });
-        });
+//        });
         /**************  fin requete update   *************************/
         
         
