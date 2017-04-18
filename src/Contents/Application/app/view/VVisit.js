@@ -80,6 +80,10 @@ App.view.define('VVisit', {
                 renderer: function(value, data, record){
                          console.log("value");
                          console.log(value);
+                         console.log("data");
+                         console.log(data);
+                         console.log("record");
+                         console.log(record);
                      App.Visits.selectDept(value,function(response) {
                          console.log("response");
                          console.log(response);
