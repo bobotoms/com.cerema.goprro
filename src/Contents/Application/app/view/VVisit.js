@@ -40,7 +40,7 @@ App.view.define('VVisit', {
             itemId: "idCampagne",
             fieldLabel: "Période de visite",
             padding: 5,
-                width: 150,
+                width: 400,
             //displayField: "dateDebut",
             displayField: "periode",
             //displayField: "idCampagne",
