@@ -697,9 +697,6 @@ App.controller.define('CMain', {
     },
     add_news: function(me) {
         
-        console.log("addnews me");
-        console.log(me);
-        
         var idUser = Auth.User.idUser;
         var dif = App.get('VAddNews combo#diffusion').getValue();
         var news = App.get('VAddNews textarea#texteNote').getValue();
@@ -712,17 +709,6 @@ App.controller.define('CMain', {
         {
             var diffusion = Auth.User.idDter;;
         }
-        console.log("idUser");
-        console.log(idUser);
-        
-        console.log("diffusion");
-        console.log(diffusion);
-        
-        console.log("news");
-        console.log(news);
-        
-        console.log("importance");
-        console.log(importance);
         
         var tabNews = [idUser, diffusion, news, importance];
         App.AddNews.insert(tabNews,function(response) {
@@ -748,7 +734,6 @@ App.controller.define('CMain', {
                     results='<ul class="timeline">'+tpl.join('')+'</ul>';
                     App.get('mainform panel#timeline').update(results);
                 });
-                // setTimeout(function(){window.location.reload();},2500);
             }
             else
             {
