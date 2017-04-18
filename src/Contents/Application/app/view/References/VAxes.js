@@ -9,7 +9,6 @@ App.view.define('References.VAxes', {
             region: "center",
             padding: 5,
             border: false,
-            //cls: "referentiel",
             itemId: "ref_axes",
             split:true,
             width: 350,
@@ -17,7 +16,6 @@ App.view.define('References.VAxes', {
             items: [
                 {
                     xtype: "grid",
-                    //itemId: "nomFamille",
                     title: "Axes",
                     border: false,
                     tbar: [{
@@ -27,7 +25,6 @@ App.view.define('References.VAxes', {
                         '->',
                         {
                             text: "Ajouter",
-                            //itemId: "clickUpdate"
                             itemId: "addRef"
                         }],
                     plugins: [
@@ -59,20 +56,7 @@ App.view.define('References.VAxes', {
                                 valueField: "nomAxe",
                             },
                         }
-                        /*,
-                         {
-                         xtype: 'actioncolumn',
-                         text: "Supprimer",
-                         itemId: "delRef",
-                         items: [
-                         {
-                         iconCls: "delgrid",
-                         }]
-                         }*/
                     ],
-
-                    //store: App.store.create("App.Refs.select",{autoLoad: true}),
-                    //store: App.store.create('goprro://axes',{autoLoad: true}),
                     store: App.store.create({fields:["value"],data:[]}),
                     itemId: "T1",
                     title: "Axes",
