@@ -202,7 +202,7 @@ App.view.define('VSaisie', {
                     },
                     itemId: "ville",
                     fieldLabel: "Ville",
-                    bindTo: "idDepartement",
+                    bindTo: "idVille",
                     store: App.store.create({fields:[],data:[]}),
                     editable: false,
                     width: "80%",
