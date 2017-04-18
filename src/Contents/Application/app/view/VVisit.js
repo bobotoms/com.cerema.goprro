@@ -78,6 +78,8 @@ App.view.define('VVisit', {
                 dataIndex: "nomDepartement",
                 valueField: "idDepartement",
                 renderer: function(value, data, record){
+                         console.log("value");
+                         console.log(value);
                      App.Visits.selectDept(value,function(response) {
                          console.log("response");
                          console.log(response);
