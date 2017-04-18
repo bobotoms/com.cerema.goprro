@@ -1237,7 +1237,7 @@ App.controller.define('CMain', {
                 
                 var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
                 var dateDebut = Ext.Date.format(dateDeb, 'Y-m-d');
-                var dateF = Ext.Date.parse(r.data[i]..dateFin,"c");
+                var dateF = Ext.Date.parse(r.data[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateF, 'Y-m-d');
  /*               var dateDeb = r.data[i].dateDebut;
                 var dateF = r.data[i].dateFin;*/
@@ -1245,6 +1245,8 @@ App.controller.define('CMain', {
                        console.log(dateDebut);
                        console.log("/***********dateF*******************/");
                        console.log(dateFin);
+                       console.log("/***********idCampagne*******************/");
+                       console.log(r.data[i].idCampagne);
    /*             if(store.data.items[i].data.select == true)
                 {*/
                      dataCombo.push({
