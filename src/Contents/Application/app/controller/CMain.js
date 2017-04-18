@@ -1081,7 +1081,7 @@ App.controller.define('CMain', {
        else
        {
             Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
-       }
+       };
         Ext.Msg.alert('GOPRRO',"Suppression enregistré.");
     },
     ref_grid_edit: function(ed,o) {
