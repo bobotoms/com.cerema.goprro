@@ -1230,6 +1230,13 @@ App.controller.define('CMain', {
             
             
             for (var i=0;i<r.result.data.length;i++) {
+                
+                var dateDeb = r.result.data[i].dateDebut;
+                var dateF = r.result.data[i].dateFin;
+                       console.log("/************dateDeb****************/");
+                       console.log(dateDeb);
+                       console.log("/***********dateF*******************/");
+                       console.log(dateF);
                 if(store.data.items[i].data.select == true)
                 {
                      dataCombo.push({
