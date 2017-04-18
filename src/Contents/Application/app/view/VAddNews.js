@@ -59,6 +59,7 @@ App.view.define('VAddNews', {
                     itemId: "importance",
                     fieldLabel: "Niveau d'importance",
                     valueField: "tag",
+                    displayField: "tag",
                     editable: false,
                     store: App.store.create({fields:["tag"],data:[
                         {
