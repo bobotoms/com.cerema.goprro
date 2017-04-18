@@ -17,63 +17,16 @@ App.view.define('VVisit', {
         split:true,
         //width: 820,
         height: 430,
-
-
-
         tbar: [
         {
-            
-   /*         xtype: "combo",
-            format: 'd m Y',
-            dateFormat: 'c',
-            itemId: "periode",
-            fieldLabel: "Période de visite",
-            padding: 5,
-            //displayField: "{dateDebut} {dateFin}",
-            displayField: "periode",
-            valueField: "periode",
-            editable: false,
-            //store: App.store.create("goprro://campagne",{autoLoad:true}),*/
             xtype: "combo",
-            /*format: 'd m Y',
-            dateFormat: 'c',*/
             itemId: "idCampagne",
             fieldLabel: "Période de visite",
             padding: 5,
-                width: 300,
-            //displayField: "dateDebut",
+            width: 300,
             displayField: "periode",
-            //displayField: "idCampagne",
             valueField: "idCampagne",
             editable: false,
-    //        store: App.store.campagne,
-            //store: App.store.create("goprro://campagne{dateDebut}",{autoLoad:true}),
-            //store: App.store.create("goprro://campagne",{autoLoad:true}),
-     //       renderer: Ext.util.Format.dateRenderer('mm/dd/yy'),
-     //       renderer: Ext.Date.Parse(dateDebut, 'Y-m-d'),
-   /*         renderer: function(value,a,b,c){
-                Ext.Msg.alert('GOPRRO',"test renderer");
-                console.log("value");
-                console.log(value);
-                console.log("a");
-                console.log(a);
-                console.log("b");
-                console.log(b);
-                console.log("c");
-                console.log(c);
-
-                var items=App.store.familles.data.items;
-                var Items={};
-                for (var i=0;i<items.length;i++) Items[items[i].data.idFamille]=items[i].data.nomFamille;
-                return Items[value];*/
-
-//            },
-  /*          renderer: function (value, metadata, record){
-                
-                console.log("value");
-                console.log(value);
-                return value;
-            }*/
         }
         ],
         items: [
