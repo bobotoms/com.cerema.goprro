@@ -991,89 +991,97 @@ App.controller.define('CMain', {
         grid.getStore().insert(grid.getStore().data.items.length,{});
     },
     del_ref: function(me,store) {
-
-        var tabName = App.get('VRefs #cboRefs').getValue()
         var grid=me.up('grid');
-        for (var i=0;i<grid.getStore().data.items.length;i++) {
-            if (grid.getStore().data.items[i].data.select)
-            {
-
-                console.log("Dans if");
-                switch (tabName) {
-                    case "axes":
-                        var id = grid.getStore().data.items[i].data.idAxe;
-                        var idTab = "idAxe";
-                        break;
-                    case "familles":
-                        var id = grid.getStore().data.items[i].data.idFamille;
-                        var idTab = "idFamille";
-                        break;
-                    case "fournisseurs":
-                        var id = grid.getStore().data.items[i].data.idFournisseurs;
-                        var idTab = "idFournisseurs";
-                        break;
-                    case "geologies":
-                        var id = grid.getStore().data.items[i].data.idGeologie;
-                        var idTab = "idGeologie";
-                        break;
-                    case "gestionnaires":
-                        var id = grid.getStore().data.items[i].data.idGestionnaires;
-                        var idTab = "idGestionnaires";
-                        break;
-                    case "poseurs":
-                        var id = grid.getStore().data.items[i].data.idPoseurs;
-                        var idTab = "idPoseurs";
-                        break;
-                    case "types":
-                        var id = grid.getStore().data.items[i].data.idType;
-                        var idTab = "idType";
-                        break;
-                    case "zones":
-                        var id = grid.getStore().data.items[i].data.idZone;
-                        var idTab = "idZone";
-                        break;
-                    default:
-                        Ext.Msg.alert('GOPRRO',"Erreur lors de la suppression");
-                        break;
-                }
-
-                var tabRefs = [tabName, idTab, id];
-                App.Refs.del(tabRefs,function(response) {
-                    if (response !== true)
-                        Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
-
-                })
-            }
-        }
-        if(tabName == "zones")
-        {
-            var choix = App.get('VZones combo#cboDepartements').getValue();
-            App.Refs.selectZones(choix,function(response) {
-                var data=[];
-                for (var i=0;i<response.length;i++) {
-                    data.push({
-                        idZone:response[i].idZone,
-                        idVille:response[i].idVille,
-                        nomVille:response[i].nomVille,
-                        nomZone:response[i].nomZone
-                    })
-                };
-                var store=App.store.create({
-                    fields:["idZone","idVille","nomVille","nomZone"],data:data
-                });
-                if(store)
+       Ext.Msg.confirm('Delete', 'Supprimer l\'ouvrage de la visite pour cette période', function(btn){
+           console.log("btn");
+           console.log(btn);
+       if(btn === 'yes'){
+            var tabName = App.get('VRefs #cboRefs').getValue()
+            for (var i=0;i<grid.getStore().data.items.length;i++) {
+                if (grid.getStore().data.items[i].data.select)
                 {
-                    App.get('VZones grid#T1').bindStore(store);
-                    store.load();
-                }
 
-                App.get('VZones grid').show();
-            });
-        }
-        else
-        {
-            grid.getStore().load();
-        }
+                    console.log("Dans if");
+                    switch (tabName) {
+                        case "axes":
+                            var id = grid.getStore().data.items[i].data.idAxe;
+                            var idTab = "idAxe";
+                            break;
+                        case "familles":
+                            var id = grid.getStore().data.items[i].data.idFamille;
+                            var idTab = "idFamille";
+                            break;
+                        case "fournisseurs":
+                            var id = grid.getStore().data.items[i].data.idFournisseurs;
+                            var idTab = "idFournisseurs";
+                            break;
+                        case "geologies":
+                            var id = grid.getStore().data.items[i].data.idGeologie;
+                            var idTab = "idGeologie";
+                            break;
+                        case "gestionnaires":
+                            var id = grid.getStore().data.items[i].data.idGestionnaires;
+                            var idTab = "idGestionnaires";
+                            break;
+                        case "poseurs":
+                            var id = grid.getStore().data.items[i].data.idPoseurs;
+                            var idTab = "idPoseurs";
+                            break;
+                        case "types":
+                            var id = grid.getStore().data.items[i].data.idType;
+                            var idTab = "idType";
+                            break;
+                        case "zones":
+                            var id = grid.getStore().data.items[i].data.idZone;
+                            var idTab = "idZone";
+                            break;
+                        default:
+                            Ext.Msg.alert('GOPRRO',"Erreur lors de la suppression");
+                            break;
+                    }
+
+                    var tabRefs = [tabName, idTab, id];
+                    App.Refs.del(tabRefs,function(response) {
+                        if (response !== true)
+                            Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+
+                    })
+                }
+            }
+            if(tabName == "zones")
+            {
+                var choix = App.get('VZones combo#cboDepartements').getValue();
+                App.Refs.selectZones(choix,function(response) {
+                    var data=[];
+                    for (var i=0;i<response.length;i++) {
+                        data.push({
+                            idZone:response[i].idZone,
+                            idVille:response[i].idVille,
+                            nomVille:response[i].nomVille,
+                            nomZone:response[i].nomZone
+                        })
+                    };
+                    var store=App.store.create({
+                        fields:["idZone","idVille","nomVille","nomZone"],data:data
+                    });
+                    if(store)
+                    {
+                        App.get('VZones grid#T1').bindStore(store);
+                        store.load();
+                    }
+
+                    App.get('VZones grid').show();
+                });
+            }
+            else
+            {
+                grid.getStore().load();
+            }
+       }
+       else
+       {
+            Ext.Msg.alert('GOPRRO',"Une erreur s'est produite, merci de réessayer.");
+       }
         Ext.Msg.alert('GOPRRO',"Suppression enregistré.");
     },
     ref_grid_edit: function(ed,o) {
