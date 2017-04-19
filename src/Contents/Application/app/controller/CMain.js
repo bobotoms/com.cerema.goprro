@@ -577,7 +577,7 @@ App.controller.define('CMain', {
         var CStore=App.get(me.up('panel'),"treepanel#T1").getStore();
         var oldRoot = CStore.getRootNode(),
             newRoot = clone(oldRoot);
-        App.get('VSaisie treepanel').getStore().setRootNode(newRoot);
+        App.get('VUpVisitWork treepanel').getStore().setRootNode(newRoot);
         me.up('window').close();
     },
     AddItem_click: function(me) {
