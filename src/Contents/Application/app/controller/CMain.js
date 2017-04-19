@@ -174,6 +174,12 @@ App.controller.define('CMain', {
             "VAddItem button#RemoveItem": {
                 click: "RemoveItem_click"
             },
+            "VAddVisitItem button#AddItem": {
+                click: "AddItem_click"
+            },
+            "VAddVisitItem button#RemoveItem": {
+                click: "RemoveItem_click"
+            },
             "VAddItem button#validate": {
                 click: "validate_catalog"
             },
