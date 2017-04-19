@@ -1523,10 +1523,14 @@ App.controller.define('CMain', {
         };
         
     },
-    new_visit_ouvrage_record: function(me, store) {
+    new_visit_ouvrage_record: function(me, store, data) {
         
-            console.log("menew visit ouvrage record");
+            console.log("me new visit ouvrage record");
             console.log(me);
+            console.log("store new visit ouvrage record");
+            console.log(store);
+            console.log("data new visit ouvrage record");
+            console.log(data);
         
             var form = App.get("VUpVisitWork");
             console.log(form.idVisiteOuvrage);
