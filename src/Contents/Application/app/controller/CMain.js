@@ -1661,7 +1661,11 @@ App.controller.define('CMain', {
                     var id = '"id":'+filesUpload[i].filename;
                     var blob = '{'+docId+filename+filetype+filesize+id+'}';
                 }
-            };
+            }
+        else
+        {
+            var blob = null;
+        };
             var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
