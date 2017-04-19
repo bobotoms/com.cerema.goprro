@@ -1650,18 +1650,25 @@ App.controller.define('CMain', {
             {
                 console.log("filesupload");
                 var filesUpload = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
-                    var blob = '[]';
+                    var blob = [];
                 console.log("filesUpload.length");
                 console.log(filesUpload.length);
                 for (var i=0;i<filesUpload.length;i++) {
                     console.log("for");
                     console.log(filesUpload[i].filename);
-                    var docId = '"docId":'+filesUpload[i].docId+',';
+    /*                var docId = '"docId":'+filesUpload[i].docId+',';
                     var filename = '"filename":'+filesUpload[i].filename+',';
                     var filetype = '"filetype":'+filesUpload[i].filesize+',';
                     var filesize= '"filesize":'+filesUpload[i].filetype+',';
-                    var id = '"id":'+filesUpload[i].id;
-                    var blob = '{'+docId+filename+filetype+filesize+id+'}';
+                    var id = '"id":'+filesUpload[i].id;*/
+                
+                    blob.push({
+                        docId:filesUpload[i].docId,
+                        filename:filesUpload[i].filename,
+                        filetype:filesUpload[i].filetype,
+                        filesize:filesUpload[i].filesize,
+                        id:filesUpload[i].id,
+                    });
                 }
             }
         else
