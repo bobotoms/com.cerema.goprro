@@ -1648,9 +1648,21 @@ App.controller.define('CMain', {
             console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         if (App.get('VUpVisitWork uploadfilemanager#up').getFiles())
             {
-            var blob = '';
+                console.log("filesupload");
+                var filesUpload = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
+                    var blob = '[]';
+                for (var i=0;i<filesUpload.length;i++) {
+                    console.log("for");
+                    console.log(filesUpload[i].filename);
+                    var docId = '"docId":'+filesUpload[i].docId+',';
+                    var filename = '"filename":'+filesUpload[i].filename+',';
+                    var filetype = '"filetype":'+filesUpload[i].filename+',';
+                    var filesize= '"filesize":'+filesUpload[i].filename+',';
+                    var id = '"id":'+filesUpload[i].filename;
+                    var blob = '{'+docId+filename+filetype+filesize+id+'}';
+                }
             };
-            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
+            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
         
