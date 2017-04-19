@@ -1643,7 +1643,7 @@ App.controller.define('CMain', {
             var coupure= form.items.items[3].items.items[1].items.items[0].items.items[1].value;//         coupure route
             var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
                 
-        
+  /*      
             console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
             console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         if (App.get('VUpVisitWork uploadfilemanager#up').getFiles())
@@ -1662,7 +1662,7 @@ App.controller.define('CMain', {
                     var filesize= '"filesize":'+filesUpload[i].filetype+',';
                     var id = '"id":'+filesUpload[i].id;*/
                 
-                    blob.push({
+ /*                   blob.push({
                         docId:filesUpload[i].docId,
                         filename:filesUpload[i].filename,
                         filetype:filesUpload[i].filetype,
@@ -1674,7 +1674,10 @@ App.controller.define('CMain', {
         else
         {
             var blob = null;
-        };
+            var blob = null;
+        };*/
+        
+            var blob = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
             var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
@@ -1734,7 +1737,7 @@ App.controller.define('CMain', {
                             idVisiteOuvrage: r.insertId,
                             idElement: store.items[i].data.name.split('c')[1],
                             idType: App.get(me.up('panel'),"combo#type").getValue(),
-                            _BLOB: App.get('uploadfilemanager#up').getFiles()
+                            _BLOB: App.get('VUpVisitWork uploadfilemanager#up').getFiles()
                         };
                         if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
                         Post.push(dta);
