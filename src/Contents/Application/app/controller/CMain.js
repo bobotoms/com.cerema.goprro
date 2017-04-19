@@ -1673,7 +1673,7 @@ App.controller.define('CMain', {
             
         console.log("me.up('panel') visit");
         console.log(me.up('panel'));
-            if (!me.up('panel').idOuvrage) {
+            if (!me.up('panel').idVisiteOuvrage) {
                 if (!r.insertId) {
                     App.notify("Impossible d'enregistrer la fiche");
                     me.setDisabled(false);
