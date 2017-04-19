@@ -152,6 +152,9 @@ App.controller.define('CMain', {
             "VSaisie uploadfilemanager#up": {
                 itemdblclick: "up_onclick"
             },
+            "VUpVisitWork uploadfilemanager#up": {
+                itemdblclick: "up_onclick"
+            },
             "VSaisie treepanel": {
                 beforeedit: "treeSaisie_beforeedit",
                 itemclick: "treeSaisie_click"
