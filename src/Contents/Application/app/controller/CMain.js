@@ -1656,9 +1656,9 @@ App.controller.define('CMain', {
                     console.log(filesUpload[i].filename);
                     var docId = '"docId":'+filesUpload[i].docId+',';
                     var filename = '"filename":'+filesUpload[i].filename+',';
-                    var filetype = '"filetype":'+filesUpload[i].filename+',';
-                    var filesize= '"filesize":'+filesUpload[i].filename+',';
-                    var id = '"id":'+filesUpload[i].filename;
+                    var filetype = '"filetype":'+filesUpload[i].filesize+',';
+                    var filesize= '"filesize":'+filesUpload[i].filetype+',';
+                    var id = '"id":'+filesUpload[i].id;
                     var blob = '{'+docId+filename+filetype+filesize+id+'}';
                 }
             }
