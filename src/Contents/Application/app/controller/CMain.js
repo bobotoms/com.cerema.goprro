@@ -1670,6 +1670,9 @@ App.controller.define('CMain', {
             App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                 //alert('posté!');
             });
+            
+        console.log("me.up('panel') visit");
+        console.log(me.up('panel'));
             if (!me.up('panel').idOuvrage) {
                 if (!r.insertId) {
                     App.notify("Impossible d'enregistrer la fiche");
