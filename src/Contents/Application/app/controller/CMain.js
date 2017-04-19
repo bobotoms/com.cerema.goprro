@@ -1658,8 +1658,6 @@ App.controller.define('CMain', {
         
         
         App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
-            console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
-            console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         
             //me.setDisabled(true);
             var store=App.get(me.up('panel'),"treepanel").getStore().data;
@@ -1668,8 +1666,10 @@ App.controller.define('CMain', {
             App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
                 console.log("App.get('uploadfilemanager#up').getFiles()");
                 console.log(App.get('uploadfilemanager#up').getFiles());
+            console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
+            console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
                 // On post l'upload
-                App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+                App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
                     //alert('posté!');
                 });
 
