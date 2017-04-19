@@ -1680,7 +1680,8 @@ App.controller.define('CMain', {
             var blob = null;
         };*/
         
-            var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+                    var blob = [];
+            blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));
             //var blob = blobJson.replace("\\","\\\\");
         console.log("blob");
         console.log(blob);
