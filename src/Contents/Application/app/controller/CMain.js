@@ -1663,7 +1663,7 @@ App.controller.define('CMain', {
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         console.log("store visit");
         console.log(store);
-        App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
+        App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
             console.log("App.get('uploadfilemanager#up').getFiles()");
             console.log(App.get('uploadfilemanager#up').getFiles());
             // On post l'upload
@@ -1704,7 +1704,7 @@ App.controller.define('CMain', {
                 };
             };
             App.Elements.delOuvrage(r.insertId,function(e) {
-                App.DB.post("goprro://oa_elements",Post,function(r){
+                App.DB.post("goprro://visite_oa_elements",Post,function(r){
                     console.log(r);
                     App.get('mainform grid#gridO').getStore().load();
                     me.up('panel').hide();
