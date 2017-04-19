@@ -110,7 +110,8 @@ App.controller.define('CMain', {
         "VVisitWork",
         "VAddVisitWork",
         "VUpVisitWork",
-        "VDate"
+        "VDate",
+        "VAddVisitItem"
     ],
 
     models: [
