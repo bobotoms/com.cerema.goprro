@@ -1680,7 +1680,8 @@ App.controller.define('CMain', {
             var blob = null;
         };*/
         
-            var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+            var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+            var blob = blobJson.replace('\','\\');
             var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
