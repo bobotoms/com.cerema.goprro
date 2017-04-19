@@ -1657,64 +1657,67 @@ App.controller.define('CMain', {
         
         
         
+        App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
+            console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
+            console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         
-        
-        //me.setDisabled(true);
-        var store=App.get(me.up('panel'),"treepanel").getStore().data;
-        console.log("store visit");
-        console.log(store);
-        App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
-            console.log("App.get('uploadfilemanager#up').getFiles()");
-            console.log(App.get('uploadfilemanager#up').getFiles());
-            // On post l'upload
-            App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
-                //alert('posté!');
-            });
-            
-        console.log("me.up('panel') visit");
-        console.log(me.up('panel'));
-            if (!me.up('panel').idVisiteOuvrage) {
-        console.log(" if me.up('panel') visit");
-                if (!r.insertId) {
-                    App.notify("Impossible d'enregistrer la fiche");
-                    me.setDisabled(false);
-                    return;
-                };
-                if (r.insertId==0) {
-                    App.notify("Impossible d'enregistrer la fiche");
-                    me.setDisabled(false);
-                    return;
-                };
-            } else r.insertId=me.up('panel').idVisiteOuvrage;
-            console.log(" else me.up('panel') visit");
-            var Post=[];
-            for (var i=0;i<store.items.length;i++) {
-                var descr="";
-                var parent=0;
-                if (store.items[i].data.description) descr=store.items[i].data.description;
-                if (store.items[i].data.parentId) {
-                    if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
-                };
-                if (store.items[i].data.leaf) {
-                    var dta={
-                        nomOAElement: descr,
-                        parentOAElement: parent,
-                        idVisiteOuvrage: r.insertId,
-                        idElement: store.items[i].data.name.split('c')[1],
-                        idType: App.get(me.up('panel'),"combo#type").getValue(),
-                        _BLOB: App.get('uploadfilemanager#up').getFiles()
+            //me.setDisabled(true);
+            var store=App.get(me.up('panel'),"treepanel").getStore().data;
+            console.log("store visit");
+            console.log(store);
+            App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
+                console.log("App.get('uploadfilemanager#up').getFiles()");
+                console.log(App.get('uploadfilemanager#up').getFiles());
+                // On post l'upload
+                App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+                    //alert('posté!');
+                });
+
+            console.log("me.up('panel') visit");
+            console.log(me.up('panel'));
+                if (!me.up('panel').idVisiteOuvrage) {
+            console.log(" if me.up('panel') visit");
+                    if (!r.insertId) {
+                        App.notify("Impossible d'enregistrer la fiche");
+                        me.setDisabled(false);
+                        return;
                     };
-                    if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
-                    Post.push(dta);
+                    if (r.insertId==0) {
+                        App.notify("Impossible d'enregistrer la fiche");
+                        me.setDisabled(false);
+                        return;
+                    };
+                } else r.insertId=me.up('panel').idVisiteOuvrage;
+                console.log(" else me.up('panel') visit");
+                var Post=[];
+                for (var i=0;i<store.items.length;i++) {
+                    var descr="";
+                    var parent=0;
+                    if (store.items[i].data.description) descr=store.items[i].data.description;
+                    if (store.items[i].data.parentId) {
+                        if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
+                    };
+                    if (store.items[i].data.leaf) {
+                        var dta={
+                            nomOAElement: descr,
+                            parentOAElement: parent,
+                            idVisiteOuvrage: r.insertId,
+                            idElement: store.items[i].data.name.split('c')[1],
+                            idType: App.get(me.up('panel'),"combo#type").getValue(),
+                            _BLOB: App.get('uploadfilemanager#up').getFiles()
+                        };
+                        if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
+                        Post.push(dta);
+                    };
                 };
-            };
-            App.Elements.delVisitOuvrage(r.insertId,function(e) {
-                App.DB.post("goprro://visite_oa_elements",Post,function(r){
-                    
-                    App.get('VUpVisitWork').close();
+                App.Elements.delVisitOuvrage(r.insertId,function(e) {
+                    App.DB.post("goprro://visite_oa_elements",Post,function(r){
+
+                        App.get('VUpVisitWork').close();
+                    });
                 });
             });
-        });
+            });
         
         
         
