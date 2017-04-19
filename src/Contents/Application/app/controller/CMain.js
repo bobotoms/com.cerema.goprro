@@ -558,9 +558,8 @@ App.controller.define('CMain', {
         console.log(obj.record);
     },
     validate_catalog: function(me) {
-        /**/console.log("xtype on validate_catalog");
-        /**/console.log(me.xtype);
-        var xtype = me.xtype;
+        /**/console.log("me on validate_catalog");
+        /**/console.log(me);
         
         var clone = function(node) {
             var result = node.copy(),
