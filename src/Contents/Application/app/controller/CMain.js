@@ -1646,13 +1646,104 @@ App.controller.define('CMain', {
             var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        me.setDisabled(true);
+        var store=App.get(me.up('panel'),"treepanel").getStore().data;
+        App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
+            console.log("App.get('uploadfilemanager#up').getFiles()");
+            console.log(App.get('uploadfilemanager#up').getFiles());
+            // On post l'upload
+            App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+                //alert('posté!');
+            });
+            if (!me.up('panel').idOuvrage) {
+                if (!r.insertId) {
+                    App.notify("Impossible d'enregistrer la fiche");
+                    me.setDisabled(false);
+                    return;
+                };
+                if (r.insertId==0) {
+                    App.notify("Impossible d'enregistrer la fiche");
+                    me.setDisabled(false);
+                    return;
+                };
+            } else r.insertId=me.up('panel').idOuvrage;
+            var Post=[];
+            for (var i=0;i<store.items.length;i++) {
+                var descr="";
+                var parent=0;
+                if (store.items[i].data.description) descr=store.items[i].data.description;
+                if (store.items[i].data.parentId) {
+                    if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
+                };
+                if (store.items[i].data.leaf) {
+                    var dta={
+                        nomOAElement: descr,
+                        parentOAElement: parent,
+                        idOuvrage: r.insertId,
+                        idElement: store.items[i].data.name.split('c')[1],
+                        idType: App.get(me.up('panel'),"combo#type").getValue(),
+                        _BLOB: App.get('uploadfilemanager#up').getFiles()
+                    };
+                    if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
+                    Post.push(dta);
+                };
+            };
+            App.Elements.delOuvrage(r.insertId,function(e) {
+                App.DB.post("goprro://oa_elements",Post,function(r){
+                    console.log(r);
+                    App.get('mainform grid#gridO').getStore().load();
+                    me.up('panel').hide();
+                    hideForms();
+                    App.get("mainform grid#gridO").show();
+                    me.setDisabled(false);
+                });
+            });
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+        
+        
+        
+        
+        
+        
+        
 /*        me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){*/
         
         /************** mettre ici requete update   *************************/
             // On post l'upload
-        App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
+/*        App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
             console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
             console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
             /*App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
@@ -1665,7 +1756,7 @@ App.controller.define('CMain', {
             
             
             
-            function getElements(PARAM,PARAMX,PARAMZ,ndx,cb) {
+/*            function getElements(PARAM,PARAMX,PARAMZ,ndx,cb) {
                 App.Elements.getSelect(PARAM[ndx],App.get(me,"combo#type").getValue(),function(r){
                     console.log(r);
                     if (!r[r.length-1].leaf) r[r.length-1].text="<b>"+r[r.length-1].text+"</b>";
@@ -1712,7 +1803,7 @@ App.controller.define('CMain', {
             });
         
         
-        
+  */      
         
         
         
