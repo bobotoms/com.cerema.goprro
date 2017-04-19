@@ -1643,6 +1643,10 @@ App.controller.define('CMain', {
             var coupure= form.items.items[3].items.items[1].items.items[0].items.items[1].value;//         coupure route
             var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
                 
+        
+            console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
+            console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+            var blob = '';
             var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
         
         
@@ -1664,10 +1668,8 @@ App.controller.define('CMain', {
             console.log("store visit");
             console.log(store);
             App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
-                console.log("App.get('uploadfilemanager#up').getFiles()");
-                console.log(App.get('uploadfilemanager#up').getFiles());
-            console.log("App.get('VUpVisitWork uploadfilemanager#up').getFiles()");
-            console.log(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+                
+                //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
                 // On post l'upload
                 App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
                     //alert('posté!');
