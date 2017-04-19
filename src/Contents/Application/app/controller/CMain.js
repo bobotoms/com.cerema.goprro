@@ -1674,6 +1674,7 @@ App.controller.define('CMain', {
         console.log("me.up('panel') visit");
         console.log(me.up('panel'));
             if (!me.up('panel').idVisiteOuvrage) {
+        console.log(" if me.up('panel') visit");
                 if (!r.insertId) {
                     App.notify("Impossible d'enregistrer la fiche");
                     me.setDisabled(false);
@@ -1684,7 +1685,8 @@ App.controller.define('CMain', {
                     me.setDisabled(false);
                     return;
                 };
-            } else r.insertId=me.up('panel').idOuvrage;
+            } else r.insertId=me.up('panel').idVisiteOuvrage;
+            console.log(" else me.up('panel') visit");
             var Post=[];
             for (var i=0;i<store.items.length;i++) {
                 var descr="";
@@ -1697,7 +1699,7 @@ App.controller.define('CMain', {
                     var dta={
                         nomOAElement: descr,
                         parentOAElement: parent,
-                        idOuvrage: r.insertId,
+                        idVisiteOuvrage: r.insertId,
                         idElement: store.items[i].data.name.split('c')[1],
                         idType: App.get(me.up('panel'),"combo#type").getValue(),
                         _BLOB: App.get('uploadfilemanager#up').getFiles()
