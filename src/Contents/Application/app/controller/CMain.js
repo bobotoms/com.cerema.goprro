@@ -173,6 +173,9 @@ App.controller.define('CMain', {
             "VAddItem button#validate": {
                 click: "validate_catalog"
             },
+            "VAddVisitItem button#validate": {
+                click: "validate_visit_catalog"
+            },
             "VCharacteristics combo#cboType": {
                 select: "charact_cbotype_select"
             },
@@ -557,16 +560,21 @@ App.controller.define('CMain', {
         if (!obj.record.data.leaf) return false;
         console.log(obj.record);
     },
-    validate_catalog: function(me) {
-        /**/console.log("me on validate_catalog");
-        /**/console.log(me);
-        /**/console.log("me.up('window') validate_catalog");
-        /**/console.log(me.up('window'));
-        /**/console.log("me.up('panel') validate_catalog");
-        /**/console.log(me.up('panel').up());
-        /**/console.log(" App.get(me.up('panel'),treepanel#T1) validate_catalog");
-        /**/console.log(App.get(me.up('panel'),"treepanel#T1"));
-        
+    validate_catalog: function(me) {        
+        var clone = function(node) {
+            var result = node.copy(),
+                len = node.childNodes ? node.childNodes.length : 0,
+                i;
+            for (i = 0; i < len; i++) result.appendChild(clone(node.childNodes[i]));
+            return result;
+        };
+        var CStore=App.get(me.up('panel'),"treepanel#T1").getStore();
+        var oldRoot = CStore.getRootNode(),
+            newRoot = clone(oldRoot);
+        App.get('VSaisie treepanel').getStore().setRootNode(newRoot);
+        me.up('window').close();
+    },
+    validate_visit_catalog: function(me) {        
         var clone = function(node) {
             var result = node.copy(),
                 len = node.childNodes ? node.childNodes.length : 0,
