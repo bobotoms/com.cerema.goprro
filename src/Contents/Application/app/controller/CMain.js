@@ -1659,7 +1659,7 @@ App.controller.define('CMain', {
         
         
         
-        me.setDisabled(true);
+        //me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
         console.log("store visit");
         console.log(store);
