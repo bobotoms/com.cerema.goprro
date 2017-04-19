@@ -1525,6 +1525,9 @@ App.controller.define('CMain', {
     },
     new_visit_ouvrage_record: function(me, store) {
         
+            console.log("menew visit ouvrage record");
+            console.log(me);
+        
             var form = App.get("VUpVisitWork");
             console.log(form.idVisiteOuvrage);
             console.log(form.items.items[0].items.items[1].items.items[1].value);//         longitude
@@ -1665,7 +1668,72 @@ App.controller.define('CMain', {
         
         
         
-        
+        if (me.idOuvrage) {
+            function getElements(PARAM,PARAMX,PARAMZ,ndx,cb) {
+                App.Elements.getSelect(PARAM[ndx],App.get(me,"combo#type").getValue(),function(r){
+                    console.log(r);
+                    if (!r[r.length-1].leaf) r[r.length-1].text="<b>"+r[r.length-1].text+"</b>";
+                    if (PARAMX[ndx]) r[r.length-1].description=PARAMX[ndx];
+                    if (PARAMZ[ndx]) r[r.length-1].id=PARAMZ[ndx];
+                    for (var i=0;i<r.length;i++) {
+                        var xnode=App.get(me,"treepanel").getRootNode().store.getNodeById('c'+r[i].parent);
+                        if (!xnode) {
+                            if (!App.get(me,"treepanel").getRootNode().store.getNodeById(r[i].id)) App.get(me,"treepanel").getRootNode().appendChild(r[i]);
+                        } else {
+                            if (!App.get(me,"treepanel").getRootNode().store.getNodeById(r[i].id)) xnode.appendChild(r[i]);
+                        };
+                        App.get(me,"treepanel").expandAll();
+                    }
+                    if (ndx+1<PARAM.length) getElements(PARAM,PARAMX,PARAMZ,ndx+1,cb); else cb();
+                });
+            };
+            var store=App.store.create('goprro://types',{autoLoad:true});
+            App.get(me,'combo#type').bindStore(store);
+            App.get(me,'combo#type').getStore().load();
+            App.get(me,'combo#famille').setDisabled(true);
+            App.get(me,'combo#type').setDisabled(true);
+            // On charge les premiers items
+            App.DB.get('goprro://ouvrages?idOuvrage='+me.idOuvrage,me,function(re){
+                if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
+                // On continue par les éléments
+                App.DB.get('goprro://oa_elements{idOAElement,idElement,nomOAElement,caracteristiques}?idOuvrage='+me.idOuvrage,function(r){
+
+                    var id= App.get('VSaisie combo#dpt').getValue();
+                    if (id) {
+                        var record = App.get('VSaisie combo#dpt').findRecordByValue(id).get('codeDepartement');
+                        console.log(record);
+                        var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+record);
+                        App.get('VSaisie combo#ville').bindStore(store);
+                        store.load();
+                    };
+
+
+                    //var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+re.data[0].idVille);
+                    //App.get('VSaisie combo#zone').bindStore(store);
+                    //store.load();
+                    var PARAM=[];
+                    var PARAMX=[];
+                    var PARAMZ=[];
+                    var CARACT=[];
+                    if (r.data.length>0) {
+                        for (var i=0;i<r.data.length;i++) {
+                            PARAM.push(r.data[i].idElement);
+                            PARAMX.push(r.data[i].nomOAElement);
+                            PARAMZ.push(r.data[i].idOAElement);
+                            if (r.data[i].caracteristiques) CARACT[r.data[i].idOAElement]=JSON.parse(r.data[i].caracteristiques); else CARACT[r.data[i].idOAElement]=[];
+                        };
+                        getElements(PARAM,PARAMX,PARAMZ,0,function(){
+                            var store=App.get(me,"treepanel").getStore().data;
+                            console.log('all done.');
+                            for (var i=0;i<store.items.length;i++) {
+                                if (CARACT[store.items[i].data.id]) store.items[i].properties=CARACT[store.items[i].data.id];
+                            };
+                            console.log(store);
+                        });
+                    }
+                });
+            });
+        };
         
         
         
