@@ -558,6 +558,10 @@ App.controller.define('CMain', {
         console.log(obj.record);
     },
     validate_catalog: function(me) {
+        /**/console.log("xtype on show");
+        /**/console.log(me.xtype);
+        var xtype = me.xtype;
+        
         var clone = function(node) {
             var result = node.copy(),
                 len = node.childNodes ? node.childNodes.length : 0,
@@ -1326,7 +1330,6 @@ App.controller.define('CMain', {
         /**/console.log(me.idVisiteOuvrage);
         /**/console.log("xtype on show");
         /**/console.log(me.xtype);
-        
         var panel=App.get(me.up('panel'),"grid");
         
         var xtype = me.xtype;
