@@ -1651,6 +1651,8 @@ App.controller.define('CMain', {
                 console.log("filesupload");
                 var filesUpload = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
                     var blob = '[]';
+                console.log("filesupload.length");
+                console.log(filesupload.length);
                 for (var i=0;i<filesUpload.length;i++) {
                     console.log("for");
                     console.log(filesUpload[i].filename);
