@@ -1528,7 +1528,7 @@ App.controller.define('CMain', {
             console.log("me new visit ouvrage record");
             console.log(me);
             console.log("me up panel new visit ouvrage record");
-            console.log(App.get(me.up('panel'));
+            console.log(App.get(me.up('panel')));
             console.log("store new visit ouvrage record");
             console.log(store);
             console.log("data new visit ouvrage record");
