@@ -1708,7 +1708,7 @@ App.controller.define('CMain', {
                     Post.push(dta);
                 };
             };
-            App.Elements.delOuvrage(r.insertId,function(e) {
+            App.Elements.delVisitOuvrage(r.insertId,function(e) {
                 App.DB.post("goprro://visite_oa_elements",Post,function(r){
                     console.log(r);
                     App.get('mainform grid#gridO').getStore().load();
