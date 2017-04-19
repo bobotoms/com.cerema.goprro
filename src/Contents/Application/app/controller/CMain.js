@@ -1661,6 +1661,8 @@ App.controller.define('CMain', {
         
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
+        console.log("store visit");
+        console.log(store);
         App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
             console.log("App.get('uploadfilemanager#up').getFiles()");
             console.log(App.get('uploadfilemanager#up').getFiles());
