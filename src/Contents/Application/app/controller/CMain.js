@@ -165,6 +165,9 @@ App.controller.define('CMain', {
             "VAddItem": {
                 show: "VAddItem_onShow"
             },
+            "VAddVisitItem": {
+                show: "VAddVisitItem_onShow"
+            },
             "VAddItem button#AddItem": {
                 click: "AddItem_click"
             },
@@ -262,7 +265,7 @@ App.controller.define('CMain', {
                 click: "new_visit_ouvrage_record"
             },
             "VUpVisitWork button#add_item": {
-                click: "add_item_click"
+                click: "add_visit_item_click"
             },
         });
 
@@ -644,8 +647,30 @@ App.controller.define('CMain', {
             App.get(me,'treepanel#T0').expandAll();
         });
     },
+    VAddVisitItem_onShow: function(me) {
+        var clone = function(node) {
+            var result = node.copy(),
+                len = node.childNodes ? node.childNodes.length : 0,
+                i;
+            for (i = 0; i < len; i++) result.appendChild(clone(node.childNodes[i]));
+            return result;
+        };
+        var CStore=App.get("VUpVisitWork treepanel").getStore();
+        var oldRoot = CStore.getRootNode(),
+            newRoot = clone(oldRoot);
+        App.get(me,'treepanel#T1').getStore().setRootNode(newRoot);
+        App.get(me,'treepanel#T1').expandAll();
+        App.get(me,'treepanel#T0').getStore().getProxy().extraParams.type=me.type_item;
+        App.get(me,'treepanel#T0').getStore().load();
+        App.get(me,'treepanel#T0').getStore().on('load',function(){
+            App.get(me,'treepanel#T0').expandAll();
+        });
+    },
     add_item_click: function(me) {
         App.view.create('VAddItem',{modal: true,type_item: App.get(me.up('panel').up('panel').up('panel'),'combo#type').getValue()}).show().center();
+    },
+    add_visit_item_click: function(me) {
+        App.view.create('VAddVisitItem',{modal: true,type_item: App.get(me.up('panel').up('panel').up('panel'),'combo#type').getValue()}).show().center();
     },
     famille_select: function(me) {
         App.get('VSaisie combo#type').setValue('');
