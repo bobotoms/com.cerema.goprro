@@ -564,6 +564,8 @@ App.controller.define('CMain', {
         /**/console.log(me.up('window').up('panel'));
         /**/console.log("me.up('panel') validate_catalog");
         /**/console.log(me.up('panel').up('panel'));
+        /**/console.log(" App.get(me.up('panel').up('panel') validate_catalog");
+        /**/console.log(App.get(me.up('panel').up('panel')));
         
         var clone = function(node) {
             var result = node.copy(),
