@@ -560,6 +560,10 @@ App.controller.define('CMain', {
     validate_catalog: function(me) {
         /**/console.log("me on validate_catalog");
         /**/console.log(me);
+        /**/console.log("me.up('window') validate_catalog");
+        /**/console.log(me.up('window'));
+        /**/console.log("me.up('panel') validate_catalog");
+        /**/console.log(me.up('panel'));
         
         var clone = function(node) {
             var result = node.copy(),
