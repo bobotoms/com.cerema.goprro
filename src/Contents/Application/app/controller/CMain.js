@@ -561,9 +561,9 @@ App.controller.define('CMain', {
         /**/console.log("me on validate_catalog");
         /**/console.log(me);
         /**/console.log("me.up('window') validate_catalog");
-        /**/console.log(me.up('window').up('panel'));
+        /**/console.log(me.up('window'));
         /**/console.log("me.up('panel') validate_catalog");
-        /**/console.log(me.up('panel').up('panel'));
+        /**/console.log(me.up('panel').up());
         /**/console.log(" App.get(me.up('panel'),treepanel#T1) validate_catalog");
         /**/console.log(App.get(me.up('panel'),"treepanel#T1"));
         
