@@ -187,17 +187,17 @@ App.view.define('VVisit', {
                 listeners: {
                     click: function(sm,index,record) {
                     
-        console.log("Modifier");
-        console.log(sm.store.data);
-        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-     /*   console.log("idOuvrage");
-        console.log(idOuvrage);*/
-        console.log("idVisiteOuvrage");
-        console.log(idVisiteOuvrage);
-        //App.get('mainform panel#southpanel').collapse();
-        var form=App.get("mainform panel#UpWork");
-        form.idVisiteOuvrage=idVisiteOuvrage;
-        form.show();
+                        console.log("Modifier");
+                        console.log(sm.store.data);
+                        var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
+                     /*   console.log("idOuvrage");
+                        console.log(idOuvrage);*/
+                        console.log("idVisiteOuvrage");
+                        console.log(idVisiteOuvrage);
+                        //App.get('mainform panel#southpanel').collapse();
+                        var form=App.get("mainform panel#UpWork");
+                        form.idVisiteOuvrage=idVisiteOuvrage;
+                        form.show();
                       /*  var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                         console.log("modif id viste ouvrage");
                         console.log(idVisiteOuvrage);*/
