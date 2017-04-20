@@ -1651,7 +1651,12 @@ App.controller.define('CMain', {
             var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
                 
  
-        
+            var storePanel=App.get(me.up('panel'),"treepanel");
+            console.log("storePanel");
+            console.log(storePanel);
+            var storePanelStore=App.get(me.up('panel'),"treepanel").getStore().data;
+            console.log("storePanelStore");
+            console.log(storePanelStore);
        /*             var blob = [];
             blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));*/
                    
