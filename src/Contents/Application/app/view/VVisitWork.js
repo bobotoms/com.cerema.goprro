@@ -46,7 +46,6 @@ App.view.define('VVisitWork', {
                     }, {
                         xtype: "textfield",
                         fieldLabel: "Longitude",
-                        disabled: true,
                         bindTo: "oa_y",
                         width: "100%",
                         margin: {
@@ -57,7 +56,6 @@ App.view.define('VVisitWork', {
                     }, {
                         xtype: "textfield",
                         fieldLabel: "Latitude",
-                        disabled: true,
                         bindTo: "oa_x",
                         width: "100%",
                         margin: {
@@ -68,7 +66,6 @@ App.view.define('VVisitWork', {
                     }, {
                         xtype: "textfield",
                         fieldLabel: "PR Début",
-                        disabled: true,
                         bindTo: "PRDebut",
                         width: "100%",
                         margin: {
@@ -79,7 +76,6 @@ App.view.define('VVisitWork', {
                     }, {
                         xtype: "textfield",
                         fieldLabel: "PR Fin",
-                        disabled: true,
                         bindTo: "PRFin",
                         width: "100%",
                         margin: {
@@ -91,7 +87,6 @@ App.view.define('VVisitWork', {
                         xtype: "textfield",
 
                         fieldLabel: "Longueur (en m)", 
-                        disabled: true,
 						bindTo: "longueur",
                         width: "100%",
                         margin: {
@@ -103,7 +98,6 @@ App.view.define('VVisitWork', {
                         xtype: "textfield",
 
                         fieldLabel: "Hauteur (en m)", 
-                        disabled: true,
 						bindTo: "hauteur",
                         width: "100%",
                         margin: {
@@ -115,7 +109,6 @@ App.view.define('VVisitWork', {
                         xtype: "textfield",
 
                         fieldLabel: "Surface (en m<sup>2</sup>)", 
-                        disabled: true,
 						bindTo: "surface",
                         width: "100%",
                         margin: {
@@ -139,7 +132,6 @@ App.view.define('VVisitWork', {
                     items: [{
                         xtype: "combo",
                         fieldLabel: "Famille",
-                        disabled: true,
                         bindTo: "idFamille",
                         itemId: "famille",
                         editable: false,
@@ -152,7 +144,6 @@ App.view.define('VVisitWork', {
                     }, {
                         xtype: "combo",
                         fieldLabel: "Type",
-                        disabled: true,
                         bindTo: "idType",
                         itemId: "type",
                         editable: false,
@@ -176,7 +167,6 @@ App.view.define('VVisitWork', {
 
 						itemId: "dpt",
                         fieldLabel: "Département",
-                        disabled: true,
                         bindTo: "idDepartement",
                         store: App.store.create("goprro://departements", {
                             autoLoad: true
@@ -192,7 +182,6 @@ App.view.define('VVisitWork', {
                             left: 5
                         },
                         fieldLabel: "Géologie",
-                        disabled: true,
                         bindTo: "idGeologie",
                         store: App.store.create("goprro://geologies", {
                             autoLoad: true
@@ -210,7 +199,7 @@ App.view.define('VVisitWork', {
                     items: [{
                         xtype: "combo",
                         fieldLabel: "Axe",
-                        disabled: true,
+
                         width: "20%", 
 						bindTo: "idAxe",
                         store: App.store.create("goprro://axes",{autoLoad:true}),
@@ -227,7 +216,6 @@ App.view.define('VVisitWork', {
 
 						itemId: "ville",
                         fieldLabel: "Ville", 
-                        disabled: true,
 						bindTo: "idGeologie",
                         store: App.store.create({fields:[],data:[]}),
                         editable: false,
@@ -239,7 +227,6 @@ App.view.define('VVisitWork', {
                     }, {
                         xtype: "combo",
                         fieldLabel: "Zone",
-                        disabled: true,
 						itemId: "zone",
 						editable: false,
 						displayField: "nomZone",
@@ -266,7 +253,6 @@ App.view.define('VVisitWork', {
 							flex: 1,
 							border: false,
 							fieldLabel: "Nom de l'ouvrage",
-                        disabled: true,
 							bindTo: "nomOuvrage",
 							labelAlign: "top"
 						}, {
@@ -275,7 +261,6 @@ App.view.define('VVisitWork', {
 							padding: 10,
 							border: false,
 							fieldLabel: "Etiquette",
-                        disabled: true,
 							bindTo: "etiquetteOuvrage",
 							labelAlign: "top"
 						}						
@@ -288,7 +273,6 @@ App.view.define('VVisitWork', {
                     height: 200,
                     items: [{
                         xtype: "treepanel",
-                        disabled: true,
                         flex: 2,
                         height: "100%",
                         border: false,
@@ -334,7 +318,6 @@ App.view.define('VVisitWork', {
                         layout: "fit",
                         items: [{
                             xtype: 'propertygrid',
-                        disabled: true,
                             flex: 1,
                             border: false,
                             height: "100%",
@@ -345,7 +328,6 @@ App.view.define('VVisitWork', {
                 }, {
 
                     xtype: "uploadfilemanager",
-                        disabled: true,
 					itemId: "up",
                     flex: 1,
                     width: "100%",
