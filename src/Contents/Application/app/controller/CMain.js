@@ -1758,7 +1758,7 @@ App.controller.define('CMain', {
                     });
                 });
             });
-            });
+        });
         
         
         
