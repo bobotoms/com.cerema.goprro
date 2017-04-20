@@ -327,6 +327,29 @@ Visits = {
                 cb(err)
             };
         });       
+    },
+    updateOuvrageVisit: function(o,cb) {
+        
+        console.log("idVisiteOuvrage");
+        var idVisiteOuvrage= o['0'];
+        console.log(idVisiteOuvrage);
+        console.log("blob");
+        var blob= o['1'];
+        console.log(blob);
+        
+        
+ 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET _BLOB = '"+blob+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
+             if (!err) {
+                console.log("true");
+                var response=true;
+                cb(response);
+            } else {
+                console.log("false");
+                console.log(err);
+                var err=false;
+                cb(err)
+            };
+        });       
     }
 };
 
