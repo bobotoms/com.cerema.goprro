@@ -1692,10 +1692,8 @@ App.controller.define('CMain', {
         
         
         
+       
         
-        
-        console.log("store");
-        console.log(store);
         
         
         
@@ -1717,6 +1715,8 @@ App.controller.define('CMain', {
                 // On post l'upload
                 App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
                         var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+            console.log("blob visit");
+            console.log(blob);
                     var tabUpBlob = [idVisiteOuvrage, blob];
                      App.Visits.updateBlobVisit(blob,function(response) {
         
