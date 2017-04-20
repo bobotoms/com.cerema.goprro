@@ -66,13 +66,13 @@ App.view.define('VAddNews', {
                             tag: "Urgent"
                         },
                         {
-                            tag: "Non-urgent"
-                        },
-                        {
                             tag: "Important"
                         },
                         {
-                            tag: "Non-important"
+                            tag: "Normal"
+                        },
+                        {
+                            tag: "Information"
                         }
                     ]})
                 }]
