@@ -244,64 +244,63 @@ Visits = {
         console.log("surface");
         var surface= o['7'];
         console.log(surface);
-  /*      console.log("famille");
+        console.log("famille");
         var famille= o['8'];
         console.log(famille);
         console.log("type");
         var type= o['9'];
-        console.log(type);*/
+        console.log(type);
         console.log("departement");
-        var departement= o['8'];
+        var departement= o['10'];
         console.log(departement);
         console.log("geologiel");
-        var geologie= o['9'];
+        var geologie= o['11'];
         console.log(geologie);
         console.log("axe");
-        var axe= o['10'];
+        var axe= o['12'];
         console.log(axe);
         console.log("ville");
-        var ville= o['11'];
+        var ville= o['13'];
         console.log(ville);
         console.log("zone");
-        var zone= o['12'];
+        var zone= o['14'];
         console.log(zone);
         console.log("ouvrage");
-        var ouvrage= o['13'];
+        var ouvrage= o['15'];
         console.log(ouvrage);
         console.log("etiquette");
-        var etiquette= o['14'];
+        var etiquette= o['16'];
         console.log(etiquette);
         console.log("idGest");
-        var idGest= o['15'];
+        var idGest= o['17'];
         console.log(idGest);
         console.log("TxtGest");
-        var TxtGest= o['16'];
+        var TxtGest= o['18'];
         console.log(TxtGest);
         console.log("idFourn");
-        var idFourn= o['17'];
+        var idFourn= o['19'];
         console.log(idFourn);
         console.log("TxtFourn");
-        var TxtFourn= o['18'];
+        var TxtFourn= o['20'];
         console.log(TxtFourn);
         console.log("idPos");
-        var idPos= o['19'];
+        var idPos= o['21'];
         console.log(idPos);
         console.log("TxtPos");
-        var TxtPos= o['20'];
+        var TxtPos= o['22'];
         console.log(TxtPos);
         console.log("materiel");
-        var materiel= o['21'];
+        var materiel= o['23'];
         console.log(materiel);
         console.log("coupure");
-        var coupure= o['22'];
+        var coupure= o['24'];
         console.log(coupure);
         console.log("acces");
-        var acces= o['23'];
+        var acces= o['25'];
         console.log(acces);
-        var blob= o['24'];
+        var blob= o['26'];
         console.log(blob);
         
-                    var blobJson = JSON.stringify(blob);
         //, oa_z = '"++"'
         //, idSituation = '"++"'
         //, idAcces = '"++"',
@@ -316,7 +315,7 @@ Visits = {
         //, materiel = '"+materiel+"     ?
         //, materiels = '"+materiel+"'   ?
                 console.log("avant sql");
- 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idDepartement = "+departement+", idZone = "+zone+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blobJson+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
+ 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = "+famille+", idType = "+type+", idDepartement = "+departement+", idZone = "+zone+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blob+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
              if (!err) {
                 console.log("true");
                 var response=true;
