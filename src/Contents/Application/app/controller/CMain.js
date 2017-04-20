@@ -1707,7 +1707,7 @@ App.controller.define('CMain', {
             var store=App.get(me.up('panel'),"treepanel").getStore().data;
             console.log("store visit");
             console.log(store);
-            App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
+            //App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
                 
                 //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
                 // On post l'upload
@@ -1715,10 +1715,10 @@ App.controller.define('CMain', {
                     //alert('posté!');
                 });
 
-            console.log("me.up('panel') visit");
-            console.log(me.up('panel'));
+                console.log("me.up('panel') visit");
+                console.log(me.up('panel'));
                 if (!me.up('panel').idVisiteOuvrage) {
-            console.log(" if me.up('panel') visit");
+                console.log(" if me.up('panel') visit");
                     if (!r.insertId) {
                         App.notify("Impossible d'enregistrer la fiche");
                         me.setDisabled(false);
@@ -1759,7 +1759,7 @@ App.controller.define('CMain', {
                     });
                 });
             });
-            });
+            //});
         
         
         
