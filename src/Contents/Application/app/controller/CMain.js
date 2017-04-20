@@ -2187,7 +2187,7 @@ App.controller.define('CMain', {
         });
         App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
         // load wiki
-        var html='<li><p class="timeline-date">%DATE%<span style="color:#6fc173; font-weight:bold">%TAG%</span></p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+        var html='<li><p class="timeline-date">%DATE%<br /><span style="color:#6fc173; font-weight:bold">%TAG%</span></p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
         var tpl=[];
         App.Notes.getAll({},function(e,r) {
             
