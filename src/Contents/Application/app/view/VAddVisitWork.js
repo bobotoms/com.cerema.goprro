@@ -265,7 +265,7 @@ App.view.define('VAddVisitWork', {
 							flex: 1,
 							border: false,
 							fieldLabel: "Nom de l'ouvrage",
-                        disabled: true,
+                            disabled: true,
 							bindTo: "nomOuvrage",
 							labelAlign: "top"
 						}, {
@@ -274,7 +274,7 @@ App.view.define('VAddVisitWork', {
 							padding: 10,
 							border: false,
 							fieldLabel: "Etiquette",
-                        disabled: true,
+                            disabled: true,
 							bindTo: "etiquetteOuvrage",
 							labelAlign: "top"
 						}						
@@ -333,7 +333,7 @@ App.view.define('VAddVisitWork', {
                         layout: "fit",
                         items: [{
                             xtype: 'propertygrid',
-                        disabled: true,
+                            disabled: true,
                             flex: 1,
                             border: false,
                             height: "100%",
@@ -375,6 +375,7 @@ App.view.define('VAddVisitWork', {
                     items: [{
                             xtype: "combo",
                             fieldLabel: "Gestionnaire",
+                            disabled: true,
                             editable: false,
                             itemId: "cboclient",
 
@@ -391,12 +392,14 @@ App.view.define('VAddVisitWork', {
 							width: "100%",
 
 							bindTo: "txt_gestionnaire",
+                            disabled: true,
 							padding: 4,
 							flex: 1
 						},
 						{
                             xtype: "combo",
                             fieldLabel: "Fournisseur",
+                            disabled: true,
                             itemId: "cboservice",
                             editable: false,
 
@@ -409,6 +412,7 @@ App.view.define('VAddVisitWork', {
                             width: "100%"
                         }, {
 							xtype: "textarea",
+                            disabled: true,
 							padding: 4,
 							width: "100%",
 
@@ -418,6 +422,7 @@ App.view.define('VAddVisitWork', {
 						{
                             xtype: "combo",
                             fieldLabel: "Poseur",
+                            disabled: true,
                             itemId: "cboposeur",
                             editable: false,
 
@@ -431,6 +436,7 @@ App.view.define('VAddVisitWork', {
                         },
 						{
 							xtype: "textarea",
+                            disabled: true,
 							width: "100%",
 
 							bindTo: "txt_poseur",
@@ -450,6 +456,7 @@ App.view.define('VAddVisitWork', {
                             items: [{
                                     xtype: "htmleditor",
                                     fieldLabel: "Matériel(s) nécessaire(s)",
+                                    disabled: true,
                                     labelAlign: "top",
                                     labelWidth: 150,
                                     padding: 10,
@@ -459,6 +466,7 @@ App.view.define('VAddVisitWork', {
                                 }, {
                                     xtype: "textfield",
                                     fieldLabel: "Nécessité coupure route",
+                                    disabled: true,
                                     labelAlign: "top",
 
                                     bindTo: "coupure_route",
@@ -467,6 +475,7 @@ App.view.define('VAddVisitWork', {
                                     width: "100%"
                                 }, {
 									fieldLabel: "Accès",
+                                    disabled: true,
 									bindTo: "acces",
 									labelAlign: "top",
 									xtype: "htmleditor",
