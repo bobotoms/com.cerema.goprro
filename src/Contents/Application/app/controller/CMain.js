@@ -1624,8 +1624,8 @@ App.controller.define('CMain', {
             var hauteur= form.items.items[0].items.items[1].items.items[6].value;//         hauteur
             var surface= form.items.items[0].items.items[1].items.items[7].value;//         surface
         
-       //     var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
-       //     var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
+            var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
+            var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
             var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
             var geologie= form.items.items[2].items.items[0].items.items[3].value;////         Geologie
             var axe= form.items.items[2].items.items[1].items.items[0].value;//         Axe
@@ -1687,7 +1687,7 @@ App.controller.define('CMain', {
             //var blob = blobJson.replace("\\","\\\\");
         console.log("blob");
         console.log(blob);
-            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
+            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
         
