@@ -1734,8 +1734,9 @@ App.controller.define('CMain', {
                         me.setDisabled(false);
                         return;
                     };
-                } else r.insertId=me.up('panel').idVisiteOuvrage;
+                } else 
                 console.log(" else me.up('panel') visit");*/
+                //r.insertId=me.up('panel').idVisiteOuvrage;
                 var Post=[];
                 for (var i=0;i<store.items.length;i++) {
                     var descr="";
@@ -1748,7 +1749,7 @@ App.controller.define('CMain', {
                         var dta={
                             nomOAElement: descr,
                             parentOAElement: parent,
-                            idVisiteOuvrage: r.insertId,
+                            idVisiteOuvrage: idVisiteOuvrage,
                             idElement: store.items[i].data.name.split('c')[1],
                             idType: App.get(me.up('panel'),"combo#type").getValue(),
                             _BLOB: App.get('VUpVisitWork uploadfilemanager#up').getFiles()
@@ -1757,7 +1758,7 @@ App.controller.define('CMain', {
                         Post.push(dta);
                     };
                 };
-                App.Elements.delVisitOuvrage(r.insertId,function(e) {
+                App.Elements.delVisitOuvrage(idVisiteOuvrage,function(e) {
                     App.DB.post("goprro://visite_oa_elements",Post,function(r){
 
                         App.get('VUpVisitWork').close();
