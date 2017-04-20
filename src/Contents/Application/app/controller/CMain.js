@@ -1686,9 +1686,7 @@ App.controller.define('CMain', {
             //var blob = blobJson.replace("\\","\\\\");
         console.log("blob");
         console.log(blob);
-            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
-        paramUpdate.push(blob);
-        
+            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
         
@@ -1744,9 +1742,9 @@ App.controller.define('CMain', {
                             nomOAElement: descr,
                             parentOAElement: parent,
                             idVisiteOuvrage: r.insertId,
-                            idElement: store.items[i].data.name.split('c')[1]//,
-                        //    idType: App.get(me.up('panel'),"combo#type").getValue(),
-                         //   _BLOB: JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles())
+                            idElement: store.items[i].data.name.split('c')[1],
+                            idType: App.get(me.up('panel'),"combo#type").getValue(),
+                            _BLOB: JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles())
                         };
                         if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
                         Post.push(dta);
