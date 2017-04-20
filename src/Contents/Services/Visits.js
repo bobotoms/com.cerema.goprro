@@ -299,6 +299,7 @@ Visits = {
         var acces= o['25'];
         console.log(acces);
         var blob= o['26'];
+        console.log("blob");
         console.log(blob);
         
         //, oa_z = '"++"'
@@ -327,7 +328,7 @@ Visits = {
                 cb(err)
             };
         });       
-    },
+    }/*,
     updateBlobVisit: function(o,cb) {
         
         console.log("idVisiteOuvrage");
@@ -350,7 +351,7 @@ Visits = {
                 cb(err)
             };
         });       
-    }
+    }*/
 };
 
 module.exports = Visits;
