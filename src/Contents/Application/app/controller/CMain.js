@@ -1582,107 +1582,91 @@ App.controller.define('CMain', {
     },
     new_visit_ouvrage_record: function(me, store, data) {
         
-            console.log("me new visit ouvrage record");
-            console.log(me);
-            console.log("me up panel new visit ouvrage record");
-            console.log(App.get(me.up('panel'),"treepanel"));
-            console.log("store new visit ouvrage record");
-            console.log(store);
-            console.log("data new visit ouvrage record");
-            console.log(data);
-        
-            var form = App.get("VUpVisitWork");
-            console.log(form.idVisiteOuvrage);
-            console.log(form.items.items[0].items.items[1].items.items[1].value);//         longitude
-            console.log(form.items.items[0].items.items[1].items.items[2].value);//         latitude
-            console.log(form.items.items[0].items.items[1].items.items[3].value);//         pr debut
-            console.log(form.items.items[0].items.items[1].items.items[4].value);//         pr fin
-            console.log(form.items.items[0].items.items[1].items.items[5].value);//         longueur
-            console.log(form.items.items[0].items.items[1].items.items[6].value);//         hauteur
-            console.log(form.items.items[0].items.items[1].items.items[7].value);//         surface
-            console.log(form.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
-            console.log(form.items.items[2].items.items[0].items.items[1].value);////         Type ----Grisé----
-            console.log(form.items.items[2].items.items[0].items.items[2].value);////         Departement
-            console.log(form.items.items[2].items.items[0].items.items[3].value);////         Geologie
-            console.log(form.items.items[2].items.items[1].items.items[0].value);//         Axe
-            console.log(form.items.items[2].items.items[1].items.items[1].value);//         Ville
-            console.log(form.items.items[2].items.items[1].items.items[2].value);//         Zone
-            console.log(form.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
-            console.log(form.items.items[2].items.items[2].items.items[1].value);//         Etiquette
-            console.log(form.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
-            console.log(form.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
-            console.log(form.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
-            console.log(form.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
-            console.log(form.items.items[3].items.items[0].items.items[4].value);//         id poseur
-            console.log(form.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
-            console.log(form.items.items[3].items.items[1].items.items[0].items.items[0].value);//         Materiel necessaire
-            console.log(form.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
-            console.log(form.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
-        
-            var idVisiteOuvrage= form.idVisiteOuvrage;//   
-            console.log("idVisiteOuvrage");      idVisiteOuvrage
-            console.log(idVisiteOuvrage);      idVisiteOuvrage
-            var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
-            var latitude= form.items.items[0].items.items[1].items.items[2].value;//         latitude
-            var debut= form.items.items[0].items.items[1].items.items[3].value;//         pr debut
-            var fin= form.items.items[0].items.items[1].items.items[4].value;//         pr fin
-            var longueur= form.items.items[0].items.items[1].items.items[5].value;//         longueur
-            var hauteur= form.items.items[0].items.items[1].items.items[6].value;//         hauteur
-            var surface= form.items.items[0].items.items[1].items.items[7].value;//         surface
-        
-            var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
-            var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
-            var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
-            var geologie= form.items.items[2].items.items[0].items.items[3].value;////         Geologie
-            var axe= form.items.items[2].items.items[1].items.items[0].value;//         Axe
-            var ville= form.items.items[2].items.items[1].items.items[1].value;//         Ville
-            var zone= form.items.items[2].items.items[1].items.items[2].value;//         Zone
-        
-            var ouvrage= form.items.items[2].items.items[2].items.items[0].value;//         Nom ouvrage
-            var etiquette= form.items.items[2].items.items[2].items.items[1].value;//         Etiquette
-        
-            var idGest= form.items.items[3].items.items[0].items.items[0].value;//         id gestionnaire
-            var TxtGest= form.items.items[3].items.items[0].items.items[1].value;//         text gestionnaire
-            var idFourn= form.items.items[3].items.items[0].items.items[2].value;//         id fournisseur
-            var TxtFourn= form.items.items[3].items.items[0].items.items[3].value; //        text gestionnaire
-            var idPos= form.items.items[3].items.items[0].items.items[4].value;//         id poseur
-            var TxtPos= form.items.items[3].items.items[0].items.items[5].value;//         text gestionnaire
-        
-            var materiel= form.items.items[3].items.items[1].items.items[0].items.items[0].value;//         Materiel necessaire
-            var coupure= form.items.items[3].items.items[1].items.items[0].items.items[1].value;//         coupure route
-            var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
-                
- 
-            var storePanel=App.get(me.up('panel'),"treepanel");
-            console.log("storePanel");
-            console.log(storePanel);
-            var storePanelStore=App.get(me.up('panel'),"treepanel").getStore().data;
-            console.log("storePanelStore");
-            console.log(storePanelStore);
-       /*             var blob = [];
-            blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));*/
-                   
-            //        var blob = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
-        
-                        var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
-            var blob = blobJson.replace(/\\/g,"\\\\");
-            console.log("blob");
-            console.log(blob);
-            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
-        
-        
-        
-        
-        
-        
-       
-        
-        
-        
-        
-        
-        
-        
+        console.log("me new visit ouvrage record");
+        console.log(me);
+        console.log("me up panel new visit ouvrage record");
+        console.log(App.get(me.up('panel'),"treepanel"));
+        console.log("store new visit ouvrage record");
+        console.log(store);
+        console.log("data new visit ouvrage record");
+        console.log(data);
+
+        var form = App.get("VUpVisitWork");
+        console.log(form.idVisiteOuvrage);
+        console.log(form.items.items[0].items.items[1].items.items[1].value);//         longitude
+        console.log(form.items.items[0].items.items[1].items.items[2].value);//         latitude
+        console.log(form.items.items[0].items.items[1].items.items[3].value);//         pr debut
+        console.log(form.items.items[0].items.items[1].items.items[4].value);//         pr fin
+        console.log(form.items.items[0].items.items[1].items.items[5].value);//         longueur
+        console.log(form.items.items[0].items.items[1].items.items[6].value);//         hauteur
+        console.log(form.items.items[0].items.items[1].items.items[7].value);//         surface
+        console.log(form.items.items[2].items.items[0].items.items[0].value);////         Famille ----Grisé----
+        console.log(form.items.items[2].items.items[0].items.items[1].value);////         Type ----Grisé----
+        console.log(form.items.items[2].items.items[0].items.items[2].value);////         Departement
+        console.log(form.items.items[2].items.items[0].items.items[3].value);////         Geologie
+        console.log(form.items.items[2].items.items[1].items.items[0].value);//         Axe
+        console.log(form.items.items[2].items.items[1].items.items[1].value);//         Ville
+        console.log(form.items.items[2].items.items[1].items.items[2].value);//         Zone
+        console.log(form.items.items[2].items.items[2].items.items[0].value);//         Nom ouvrage
+        console.log(form.items.items[2].items.items[2].items.items[1].value);//         Etiquette
+        console.log(form.items.items[3].items.items[0].items.items[0].value);//         id gestionnaire
+        console.log(form.items.items[3].items.items[0].items.items[1].value);//         text gestionnaire
+        console.log(form.items.items[3].items.items[0].items.items[2].value);//         id fournisseur
+        console.log(form.items.items[3].items.items[0].items.items[3].value); //        text gestionnaire
+        console.log(form.items.items[3].items.items[0].items.items[4].value);//         id poseur
+        console.log(form.items.items[3].items.items[0].items.items[5].value);//         text gestionnaire
+        console.log(form.items.items[3].items.items[1].items.items[0].items.items[0].value);//         Materiel necessaire
+        console.log(form.items.items[3].items.items[1].items.items[0].items.items[1].value);//         coupure route
+        console.log(form.items.items[3].items.items[1].items.items[0].items.items[2].value);//         acces
+
+        var idVisiteOuvrage= form.idVisiteOuvrage;//   
+        console.log("idVisiteOuvrage");      idVisiteOuvrage
+        console.log(idVisiteOuvrage);      idVisiteOuvrage
+        var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
+        var latitude= form.items.items[0].items.items[1].items.items[2].value;//         latitude
+        var debut= form.items.items[0].items.items[1].items.items[3].value;//         pr debut
+        var fin= form.items.items[0].items.items[1].items.items[4].value;//         pr fin
+        var longueur= form.items.items[0].items.items[1].items.items[5].value;//         longueur
+        var hauteur= form.items.items[0].items.items[1].items.items[6].value;//         hauteur
+        var surface= form.items.items[0].items.items[1].items.items[7].value;//         surface
+
+        var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
+        var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
+        var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
+        var geologie= form.items.items[2].items.items[0].items.items[3].value;////         Geologie
+        var axe= form.items.items[2].items.items[1].items.items[0].value;//         Axe
+        var ville= form.items.items[2].items.items[1].items.items[1].value;//         Ville
+        var zone= form.items.items[2].items.items[1].items.items[2].value;//         Zone
+
+        var ouvrage= form.items.items[2].items.items[2].items.items[0].value;//         Nom ouvrage
+        var etiquette= form.items.items[2].items.items[2].items.items[1].value;//         Etiquette
+
+        var idGest= form.items.items[3].items.items[0].items.items[0].value;//         id gestionnaire
+        var TxtGest= form.items.items[3].items.items[0].items.items[1].value;//         text gestionnaire
+        var idFourn= form.items.items[3].items.items[0].items.items[2].value;//         id fournisseur
+        var TxtFourn= form.items.items[3].items.items[0].items.items[3].value; //        text gestionnaire
+        var idPos= form.items.items[3].items.items[0].items.items[4].value;//         id poseur
+        var TxtPos= form.items.items[3].items.items[0].items.items[5].value;//         text gestionnaire
+
+        var materiel= form.items.items[3].items.items[1].items.items[0].items.items[0].value;//         Materiel necessaire
+        var coupure= form.items.items[3].items.items[1].items.items[0].items.items[1].value;//         coupure route
+        var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
+
+
+        var storePanel=App.get(me.up('panel'),"treepanel");
+        console.log("storePanel");
+        console.log(storePanel);
+        var storePanelStore=App.get(me.up('panel'),"treepanel").getStore().data;
+        console.log("storePanelStore");
+        console.log(storePanelStore);
+   /*             var blob = [];
+        blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));*/
+
+        //        var blob = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
+
+                    var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+        var blob = blobJson.replace(/\\/g,"\\\\");
+        var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
         
