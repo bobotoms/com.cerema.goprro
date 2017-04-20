@@ -159,6 +159,10 @@ App.controller.define('CMain', {
                 beforeedit: "treeSaisie_beforeedit",
                 itemclick: "treeSaisie_click"
             },
+            "VUpVisitWork treepanel": {
+                beforeedit: "treeSaisie_beforeedit",
+                itemclick: "treeSaisie_click"
+            },
             "VSaisie button#Record": {
                 click: "new_ouvrage_record"
             },
