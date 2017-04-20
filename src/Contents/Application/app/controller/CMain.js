@@ -413,6 +413,8 @@ App.controller.define('CMain', {
     new_ouvrage_record: function(me) {
         me.setDisabled(true);
         var store=App.get(me.up('panel'),"treepanel").getStore().data;
+            console.log("App.get(me.up('panel'),\"treepanel\").getStore().data");
+            console.log(store);
         App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
             console.log("App.get('uploadfilemanager#up').getFiles()");
             console.log(App.get('uploadfilemanager#up').getFiles());
