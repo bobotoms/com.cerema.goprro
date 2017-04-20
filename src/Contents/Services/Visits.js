@@ -220,102 +220,34 @@ Visits = {
     },*/
     updateOuvrageVisit: function(o,cb) {
         
-        console.log("idVisiteOuvrage");
         var idVisiteOuvrage= o['0'];
-        console.log(idVisiteOuvrage);
-        console.log("longitude");
         var longitude= o['1'];
-        console.log(longitude);
-        console.log("latitude");
         var latitude= o['2'];
-        console.log(latitude);
-        console.log("debut");
         var debut= o['3'];
-        console.log(debut);
-        console.log("fin");
         var fin= o['4'];
-        console.log(fin);
-        console.log("longueur");
         var longueur= o['5'];
-        console.log(longueur);
-        console.log("hauteur");
         var hauteur= o['6'];
-        console.log(hauteur);
-        console.log("surface");
         var surface= o['7'];
-        console.log(surface);
-        console.log("famille");
         var famille= o['8'];
-        console.log(famille);
-        console.log("type");
         var type= o['9'];
-        console.log(type);
-        console.log("departement");
         var departement= o['10'];
-        console.log(departement);
-        console.log("geologiel");
         var geologie= o['11'];
-        console.log(geologie);
-        console.log("axe");
         var axe= o['12'];
-        console.log(axe);
-        console.log("ville");
         var ville= o['13'];
-        console.log(ville);
-        console.log("zone");
         var zone= o['14'];
-        console.log(zone);
-        console.log("ouvrage");
         var ouvrage= o['15'];
-        console.log(ouvrage);
-        console.log("etiquette");
         var etiquette= o['16'];
-        console.log(etiquette);
-        console.log("idGest");
         var idGest= o['17'];
-        console.log(idGest);
-        console.log("TxtGest");
         var TxtGest= o['18'];
-        console.log(TxtGest);
-        console.log("idFourn");
         var idFourn= o['19'];
-        console.log(idFourn);
-        console.log("TxtFourn");
         var TxtFourn= o['20'];
-        console.log(TxtFourn);
-        console.log("idPos");
         var idPos= o['21'];
-        console.log(idPos);
-        console.log("TxtPos");
         var TxtPos= o['22'];
-        console.log(TxtPos);
-        console.log("materiel");
         var materiel= o['23'];
-        console.log(materiel);
-        console.log("coupure");
         var coupure= o['24'];
-        console.log(coupure);
-        console.log("acces");
         var acces= o['25'];
-        console.log(acces);
         var blob= o['26'];
-        console.log("blob");
-        console.log(blob);
         
-        //, oa_z = '"++"'
-        //, idSituation = '"++"'
-        //, idAcces = '"++"',
-        // , idMaitreOuvrage = '"++"'
-        //, datePose = '"++"'
-        //, PRSens = '"++"'
-        
-        //, modif = '"++"'
-        //, creation = '"++"'
-        //, actif = '"++"'
-        
-        //, materiel = '"+materiel+"     ?
-        //, materiels = '"+materiel+"'   ?
-                console.log("avant sql");
  		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = "+famille+", idType = "+type+", idDepartement = "+departement+", idZone = "+zone+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blob+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
              if (!err) {
                 console.log("true");
@@ -328,30 +260,7 @@ Visits = {
                 cb(err)
             };
         });       
-    }/*,
-    updateBlobVisit: function(o,cb) {
-        
-        console.log("idVisiteOuvrage");
-        var idVisiteOuvrage= o['0'];
-        console.log(idVisiteOuvrage);
-        console.log("blob");
-        var blob= o['1'];
-        console.log(blob);
-        
-        
- 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET _BLOB = '"+blob+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
-             if (!err) {
-                console.log("true");
-                var response=true;
-                cb(response);
-            } else {
-                console.log("false");
-                console.log(err);
-                var err=false;
-                cb(err)
-            };
-        });       
-    }*/
+    }
 };
 
 module.exports = Visits;
