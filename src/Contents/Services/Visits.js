@@ -301,6 +301,7 @@ Visits = {
         var blob= o['24'];
         console.log(blob);
         
+                    var blobJson = JSON.stringify(blob);
         //, oa_z = '"++"'
         //, idSituation = '"++"'
         //, idAcces = '"++"',
@@ -315,7 +316,7 @@ Visits = {
         //, materiel = '"+materiel+"     ?
         //, materiels = '"+materiel+"'   ?
                 console.log("avant sql");
- 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idDepartement = "+departement+", idZone = "+zone+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blob+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
+ 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idDepartement = "+departement+", idZone = "+zone+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+latitude+"', oa_y = '"+longitude+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blobJson+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
              if (!err) {
                 console.log("true");
                 var response=true;
