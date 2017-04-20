@@ -1700,7 +1700,7 @@ App.controller.define('CMain', {
         
         
         
-        App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
+  //      App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
         
             //me.setDisabled(true);
             var store=App.get(me.up('panel'),"treepanel").getStore().data;
@@ -1758,7 +1758,7 @@ App.controller.define('CMain', {
                     });
                 });
             });
-            });
+    //        });
         
         
         
