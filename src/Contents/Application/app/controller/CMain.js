@@ -1715,7 +1715,7 @@ App.controller.define('CMain', {
   /*              console.log("rrrrrrrr");
                 console.log(r);*/
                 //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
-                if (App.get('VUpVisitWork uploadfilemanager#up').getFiles()) App.get('VUpVisitWork uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
+                if (App.get('VUpVisitWork uploadfilemanager#up').getFiles()) App.get('VUpVisitWork uploadfilemanager#up').setFiles(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
                 // On post l'upload
          /*       App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
                     //alert('posté!');
