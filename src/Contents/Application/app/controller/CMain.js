@@ -1745,7 +1745,7 @@ App.controller.define('CMain', {
                             parentOAElement: parent,
                             idVisiteOuvrage: r.insertId,
                             idElement: store.items[i].data.name.split('c')[1],
-                            idType: App.get(me.up('panel'),"combo#type").getValue(),
+                        //    idType: App.get(me.up('panel'),"combo#type").getValue(),
                             _BLOB: JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles())
                         };
                         if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
