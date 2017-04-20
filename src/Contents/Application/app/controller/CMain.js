@@ -1652,43 +1652,17 @@ App.controller.define('CMain', {
         var coupure= form.items.items[3].items.items[1].items.items[0].items.items[1].value;//         coupure route
         var acces= form.items.items[3].items.items[1].items.items[0].items.items[2].value;//         acces
 
-
         var storePanel=App.get(me.up('panel'),"treepanel");
-        console.log("storePanel");
-        console.log(storePanel);
         var storePanelStore=App.get(me.up('panel'),"treepanel").getStore().data;
-        console.log("storePanelStore");
-        console.log(storePanelStore);
-   /*             var blob = [];
-        blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));*/
-
-        //        var blob = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
-
-                    var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+        var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         var blob = blobJson.replace(/\\/g,"\\\\");
+        
         var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
         
-            //me.setDisabled(true);
             var store=App.get(me.up('panel'),"treepanel").getStore().data;
-            console.log("store visit");
-            console.log(store);
-  //          App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
-  /*              console.log("rrrrrrrr");
-                console.log(r);*/
-                //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
-        //        if (App.get('VUpVisitWork uploadfilemanager#up').getFiles()) App.get('VUpVisitWork uploadfilemanager#up').setFiles(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
-                // On post l'upload
                 App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
-      /*                  var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
-            console.log("blob visit");
-            console.log(blob);
-                    var tabUpBlob = [idVisiteOuvrage, blob];
-                     App.Visits.updateBlobVisit(blob,function(response) {
-        
-                     });*/
-                    //alert('posté!');
                 });
 
                 var Post=[];
@@ -1704,9 +1678,7 @@ App.controller.define('CMain', {
                             nomOAElement: descr,
                             parentOAElement: parent,
                             idVisiteOuvrage: idVisiteOuvrage,
-                            idElement: store.items[i].data.name.split('c')[1]//,
-                      /*      idType: App.get(me.up('panel'),"combo#type").getValue(),
-                            _BLOB: App.get('VUpVisitWork uploadfilemanager#up').getFiles()*/
+                            idElement: store.items[i].data.name.split('c')[1]
                         };
                         if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
                         Post.push(dta);
@@ -1718,13 +1690,7 @@ App.controller.define('CMain', {
                         App.get('VUpVisitWork').close();
                     });
                 });
- //           });
         });
-        
-        
-        
-        
-        
         
     },
     VDate_onShow: function(me)
