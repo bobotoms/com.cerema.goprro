@@ -1750,9 +1750,9 @@ App.controller.define('CMain', {
                             nomOAElement: descr,
                             parentOAElement: parent,
                             idVisiteOuvrage: idVisiteOuvrage,
-                            idElement: store.items[i].data.name.split('c')[1],
-                            idType: App.get(me.up('panel'),"combo#type").getValue(),
-                            _BLOB: App.get('VUpVisitWork uploadfilemanager#up').getFiles()
+                            idElement: store.items[i].data.name.split('c')[1]//,
+                      /*      idType: App.get(me.up('panel'),"combo#type").getValue(),
+                            _BLOB: App.get('VUpVisitWork uploadfilemanager#up').getFiles()*/
                         };
                         if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
                         Post.push(dta);
