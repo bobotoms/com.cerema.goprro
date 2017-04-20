@@ -1711,9 +1711,9 @@ App.controller.define('CMain', {
                 console.log(r);
                 //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
                 // On post l'upload
-                /*App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
+                App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
                     //alert('posté!');
-                });*/
+                });
 
                 console.log("me.up('panel') visit");
                 console.log(me.up('panel'));
