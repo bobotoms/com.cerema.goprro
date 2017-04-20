@@ -40,6 +40,7 @@ App.view.define('VAddNews', {
                     displayField: "diffusion",
                     valueField: "diffusion",
                     editable: false,
+                    value: 'DTer',
                     store: App.store.create({fields:["diffusion"],data:[
                         {
                             diffusion: "DTer"
@@ -61,6 +62,7 @@ App.view.define('VAddNews', {
                     valueField: "tag",
                     displayField: "tag",
                     editable: false,
+                    value: 'Important',
                     store: App.store.create({fields:["tag"],data:[
                         {
                             tag: "Urgent"
