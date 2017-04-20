@@ -133,6 +133,7 @@ App.view.define('VUpVisitWork', {
                         bindTo: "idFamille",
                         itemId: "famille",
                         editable: false,
+                        disable: true,
                         store: App.store.create('goprro://familles{nomFamille+,idFamille}', {
                             autoLoad: true
                         }),
@@ -145,6 +146,7 @@ App.view.define('VUpVisitWork', {
                         bindTo: "idType",
                         itemId: "type",
                         editable: false,
+                        disable: true,
                         width: 150,
                         margin: {
                             left: 5
@@ -166,6 +168,7 @@ App.view.define('VUpVisitWork', {
 						itemId: "dpt",
                         fieldLabel: "Département",
                         bindTo: "idDepartement",
+                        disable: true,
                         store: App.store.create("goprro://departements", {
                             autoLoad: true
                         }),
@@ -197,7 +200,7 @@ App.view.define('VUpVisitWork', {
                     items: [{
                         xtype: "combo",
                         fieldLabel: "Axe",
-
+                        disable: true,
                         width: "20%", 
 						bindTo: "idAxe",
                         store: App.store.create("goprro://axes",{autoLoad:true}),
@@ -215,6 +218,7 @@ App.view.define('VUpVisitWork', {
 						itemId: "ville",
                         fieldLabel: "Ville", 
 						bindTo: "idGeologie",
+                        disable: true,
                         store: App.store.create({fields:[],data:[]}),
                         editable: false,
                         width: "80%",
