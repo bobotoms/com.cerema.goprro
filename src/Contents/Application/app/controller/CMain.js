@@ -1720,7 +1720,7 @@ App.controller.define('CMain', {
                     var tabUpBlob = [idVisiteOuvrage, blob];
                      App.Visits.updateBlobVisit(blob,function(response) {
         
-                     }
+                     });
                     //alert('posté!');
                 });
 /*
