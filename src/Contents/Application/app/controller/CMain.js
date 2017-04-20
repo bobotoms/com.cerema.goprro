@@ -1707,7 +1707,7 @@ App.controller.define('CMain', {
             var store=App.get(me.up('panel'),"treepanel").getStore().data;
             console.log("store visit");
             console.log(store);
-            //App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
+            App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
                 
                 //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
                 // On post l'upload
@@ -1759,7 +1759,7 @@ App.controller.define('CMain', {
                     });
                 });
             });
-            //});
+            });
         
         
         
