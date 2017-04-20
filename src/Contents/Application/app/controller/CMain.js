@@ -1682,12 +1682,10 @@ App.controller.define('CMain', {
         
        /*             var blob = [];
             blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));*/
-                    var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+                   
             //        var blob = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
             //var blob = blobJson.replace("\\","\\\\");
-        console.log("blob");
-        console.log(blob);
-            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
+            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
         
         
         
@@ -1718,6 +1716,11 @@ App.controller.define('CMain', {
         //        if (App.get('VUpVisitWork uploadfilemanager#up').getFiles()) App.get('VUpVisitWork uploadfilemanager#up').setFiles(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
                 // On post l'upload
                 App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
+                        var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+                    var tabUpBlob = [idVisiteOuvrage, blob];
+                     App.Visits.updateBlobVisit(blob,function(response) {
+        
+                     }
                     //alert('posté!');
                 });
 /*
