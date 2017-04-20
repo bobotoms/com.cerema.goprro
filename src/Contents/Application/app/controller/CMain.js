@@ -1663,8 +1663,12 @@ App.controller.define('CMain', {
             blob.push(JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles()));*/
                    
             //        var blob = App.get('VUpVisitWork uploadfilemanager#up').getFiles();
-            //var blob = blobJson.replace("\\","\\\\");
-            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces];
+        
+                        var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+            var blob = blobJson.replace("\\","\\\\\\");
+            console.log("blob");
+            console.log(blob);
+            var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         
         
@@ -1693,13 +1697,13 @@ App.controller.define('CMain', {
         //        if (App.get('VUpVisitWork uploadfilemanager#up').getFiles()) App.get('VUpVisitWork uploadfilemanager#up').setFiles(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
                 // On post l'upload
                 App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
-                        var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
+      /*                  var blob = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
             console.log("blob visit");
             console.log(blob);
                     var tabUpBlob = [idVisiteOuvrage, blob];
                      App.Visits.updateBlobVisit(blob,function(response) {
         
-                     });
+                     });*/
                     //alert('posté!');
                 });
 
