@@ -328,7 +328,7 @@ Visits = {
             };
         });       
     },
-    updateOuvrageVisit: function(o,cb) {
+    updateBlobVisit: function(o,cb) {
         
         console.log("idVisiteOuvrage");
         var idVisiteOuvrage= o['0'];
