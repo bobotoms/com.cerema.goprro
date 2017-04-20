@@ -1711,7 +1711,7 @@ App.controller.define('CMain', {
             var store=App.get(me.up('panel'),"treepanel").getStore().data;
             console.log("store visit");
             console.log(store);
-            App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
+  //          App.DB.post('goprro://visite_ouvrages',me.up('panel'),function(r){
                 console.log("rrrrrrrr");
                 console.log(r);
                 //if (re.data[0]._BLOB) App.get(me,'uploadfilemanager#up').setFiles(JSON.parse(re.data[0]._BLOB));
@@ -1719,7 +1719,7 @@ App.controller.define('CMain', {
                 App.Docs.upload(App.get('VUpVisitWork uploadfilemanager#up').getFiles(),0,function() {
                     //alert('posté!');
                 });
-
+/*
                 console.log("me.up('panel') visit");
                 console.log(me.up('panel'));
                 if (!me.up('panel').idVisiteOuvrage) {
@@ -1735,7 +1735,7 @@ App.controller.define('CMain', {
                         return;
                     };
                 } else r.insertId=me.up('panel').idVisiteOuvrage;
-                console.log(" else me.up('panel') visit");
+                console.log(" else me.up('panel') visit");*/
                 var Post=[];
                 for (var i=0;i<store.items.length;i++) {
                     var descr="";
@@ -1763,7 +1763,7 @@ App.controller.define('CMain', {
                         App.get('VUpVisitWork').close();
                     });
                 });
-            });
+ //           });
         });
         
         
