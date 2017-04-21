@@ -1304,6 +1304,8 @@ App.controller.define('CMain', {
                                     console.log("App.get(me.up('panel'),\"grid\").getView().selectedItemCls");
                                     console.log(App.get(me.up('panel'),"grid").getView().selectedItemCls);
                                     App.get(me.up('panel'),"grid").getStore().data.items[i].data.date.selectedItemCls = 'red';
+                                    console.log("App.get(me.up('panel'),"grid").getStore().data.items[i].data.date");
+                                    console.log(App.get(me.up('panel'),"grid").getStore().data.items[i].data.date);
                                     //App.get(me.up('panel'),"grid").getView().selectedItemCls = 'red';
                                     Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour le ou les ouvrage(s) visité(s)");
                                 })
