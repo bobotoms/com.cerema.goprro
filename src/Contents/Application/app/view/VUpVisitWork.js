@@ -25,6 +25,7 @@ App.view.define('VUpVisitWork', {
                 items: [{
                     xtype: "textfield",
                     bindTo: "idOuvrage",
+					itemId: "idOuvrage",
                     hidden: true
                 }, {
                     border: true,
