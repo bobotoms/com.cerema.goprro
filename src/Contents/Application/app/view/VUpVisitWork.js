@@ -298,7 +298,6 @@ App.view.define('VUpVisitWork', {
                     store: App.store.create({fields:[],data:[]}),
                     editable: false,
                     width: "80%",
-                    bindTo: "idVille",
                     displayField: "ville_nom",
                     valueField: "idVille",
                     labelAlign: "top"
