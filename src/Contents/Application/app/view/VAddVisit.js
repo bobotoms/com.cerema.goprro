@@ -103,8 +103,8 @@ App.view.define('VAddVisit', {
                 text: "Ajouter",
                 dataIndex: "select",
                 itemId: "select",
-                /*listeners: {                    
-                        click: function(sm,index,record) {
+                listeners: {                    
+                        checkchange: function(sm,index,record) {
                             console.log("listeners select");
                             var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             
@@ -112,7 +112,7 @@ App.view.define('VAddVisit', {
                             console.log(record);
 
                         }
-                    }*/
+                    }
                 
             }],
         }],
