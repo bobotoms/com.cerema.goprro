@@ -302,6 +302,7 @@ App.view.define('VVisitWork', {
                     displayField: "ville_nom",
                     valueField: "idVille",
                     labelAlign: "top"
+                   
                 }]
 
                 }, 
