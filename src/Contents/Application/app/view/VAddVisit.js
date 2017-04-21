@@ -104,7 +104,7 @@ App.view.define('VAddVisit', {
                 text: "Ajouter",
                 dataIndex: "select",
                 itemId: "select",
-                listeners: {                    
+        /*        listeners: {                    
                     checkchange: function(sm,index,record) {
                         if (sm.up('panel').items.items[0].dataSource.data.items[index].data.select == true)
                         {
@@ -115,62 +115,14 @@ App.view.define('VAddVisit', {
                             else
                             {
                                 console.log("************** PAS date ***********");
-                                sm.up('panel').items.items[0].dataSource.data.items[index].tdCls ='red';
+                                sm.up('panel').items.items[0].dataSource.data.items[index].itemCls ='red';
                             }
                         };
 
-                        console.log("listeners select");
-                        //var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
 
-                        console.log("sm.up('panel'),\"grid\"");
-                        console.log(sm.up('panel'),"grid");
-                   /*     var grid0 = sm.up('panel'),"grid";
-                        console.log("grid0");
-                        console.log(grid0);*/
-
-       /*                 console.log("App.get(sm.up('panel'),\"grid\")");
-                        console.log(App.get(sm.up('panel'),"grid"));
-                        var grid = App.get(sm.up('panel'));
-                        console.log("grid");
-                        console.log(grid);*/
-
-                        console.log("sm.up('panel')");
-                        console.log(sm.up('panel'));                            
-                        var grid2 = sm.up('panel');
-                        console.log("grid2");
-                        console.log(grid2);
-                        console.log("grid2.items");
-                        console.log(grid2.items);                            
-                        var grid3 = sm.up('panel').items;
-                        console.log("grid3");
-                        console.log(grid3);                          
-                        var grid4 = grid2.items;
-                        console.log("grid4");
-                        console.log(grid4);
-
-
-
-
-                        console.log("sm.up('panel'),\"grid\".items.items[0].dataSource.data.items[index].data");
-                        console.log(sm.up('panel').items.items[0].dataSource.data.items[index].data);
-
-
-
-                        //sm.up('panel'),"grid".items.items[0].dataSource.data.items[index].data;
-             /*           console.log("sm.up('panel'),\"grid\".items.items[0].dataSource.data.items[index].data");
-                        console.log(grid.items.items[0].dataSource.data.items[index].data);*/
-
-                        console.log("sm");
-                        console.log(sm);
-
-                        console.log("index");
-                        console.log(index);
-
-                        console.log("record");
-                        console.log(record);
 
                     }
-                }
+                }*/
                 
             }],
         }],
