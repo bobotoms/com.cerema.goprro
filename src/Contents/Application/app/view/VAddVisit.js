@@ -108,14 +108,14 @@ App.view.define('VAddVisit', {
                             if (sm.up('panel').items.items[0].dataSource.data.items[index].data.select == true)
                             {
                                 if (sm.up('panel').items.items[0].dataSource.data.items[index].data.date)
-                                    {
-                                        console.log("************** date ***********");
-                                    }
+                                {
+                                    console.log("************** date ***********");
+                                }
                                 else
-                                    {
-                                        console.log("************** PAS date ***********");
-                                        sm.up('panel').items.items[0].dataSource.data.items[index].tdCls ='red';
-                                    }
+                                {
+                                    console.log("************** PAS date ***********");
+                                    sm.up('panel').items.items[0].dataSource.data.items[index].tdCls ='red';
+                                }
                             };
                             
                             console.log("listeners select");
