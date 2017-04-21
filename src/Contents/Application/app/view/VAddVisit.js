@@ -105,6 +105,18 @@ App.view.define('VAddVisit', {
                 itemId: "select",
                 listeners: {                    
                         checkchange: function(sm,index,record) {
+                            if (sm.up('panel').items.items[0].dataSource.data.items[index].data.select == true)
+                            {
+                                if (sm.up('panel').items.items[0].dataSource.data.items[index].data.date)
+                                    {
+                                        console.log("************** date ***********");
+                                    }
+                                else
+                                    {
+                                        console.log("************** PAS date ***********");
+                                    }
+                            };
+                            
                             console.log("listeners select");
                             //var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             
