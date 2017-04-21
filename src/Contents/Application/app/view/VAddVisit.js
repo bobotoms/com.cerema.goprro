@@ -109,7 +109,9 @@ App.view.define('VAddVisit', {
                             //var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             
                             console.log("App.get(sm.up('panel'),\"grid\")");
-                            console.log(App.get(sm.up('panel'),"grid"));
+                            console.log(sm.up('panel'),"grid");
+                            console.log("sm.up('panel')");
+                            console.log(sm.up('panel'));
                             console.log("sm");
                             console.log(sm);
                             
