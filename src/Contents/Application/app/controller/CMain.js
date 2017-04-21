@@ -1304,8 +1304,10 @@ App.controller.define('CMain', {
                                     console.log("App.get(me.up('panel'),\"grid\").getView().selectedItemCls");
                                     console.log(App.get(me.up('panel'),"grid").getView().selectedItemCls);
                                     //App.get(me.up('panel'),"grid").getStore().data.items[i].data.date.selectedItemCls = 'red';
-                                    console.log("dataStore.items[i].data");
-                                    console.log(dataStore.items[i].data);
+                                    console.log("dataStore");
+                                    console.log(dataStore);
+                                    console.log("dataStore.items[i]");
+                                    console.log(dataStore.items[i]);
                                     console.log("dataStore.items[i].data.getView().selectedItemCls");
                                     console.log(dataStore.items[i].data.getView().selectedItemCls);
                                     console.log("me");
