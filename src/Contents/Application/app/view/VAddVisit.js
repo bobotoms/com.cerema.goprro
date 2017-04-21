@@ -108,6 +108,12 @@ App.view.define('VAddVisit', {
                             console.log("listeners select");
                             //var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             
+                            console.log("sm");
+                            console.log(sm);
+                            
+                            console.log("index");
+                            console.log(index);
+                            
                             console.log("record");
                             console.log(record);
 
