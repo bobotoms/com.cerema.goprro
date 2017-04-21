@@ -103,18 +103,13 @@ App.view.define('VAddVisit', {
                 text: "Ajouter",
                 dataIndex: "select",
                 itemId: "select",
-  /*              editor: {
-                    xtype: "checkbox",
-                    itemId: "select",
-                    cls: 'x-grid-checkheader-editor',singleSelect: true,
-                    
-                },*/
                 listeners: {                    
                         click: function(sm,index,record) {
-                            console.log("listeners select");
-                            var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
-                            console.log("modif id viste ouvrage");
-                            console.log(idVisiteOuvrage);
+                           /* console.log("listeners select");
+                            var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;*/
+                            
+                            console.log("recorde");
+                            console.log(record);
 
                         }
                     }
