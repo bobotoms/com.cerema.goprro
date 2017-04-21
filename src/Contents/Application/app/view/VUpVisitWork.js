@@ -42,79 +42,127 @@ App.view.define('VUpVisitWork', {
                         width: "100%",
                         baseCls: "bridge"
                     }, {
-                        xtype: "textfield",
-                        fieldLabel: "Longitude",
-                        bindTo: "oa_y",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }, {
-                        xtype: "textfield",
-                        fieldLabel: "Latitude",
-                        bindTo: "oa_x",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }, {
-                        xtype: "textfield",
-                        fieldLabel: "PR Début",
-                        bindTo: "PRDebut",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }, {
-                        xtype: "textfield",
-                        fieldLabel: "PR Fin",
-                        bindTo: "PRFin",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }, {
-                        xtype: "textfield",
-
-                        fieldLabel: "Longueur (en m)", 
-						bindTo: "longueur",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }, {
-                        xtype: "textfield",
-
-                        fieldLabel: "Hauteur (en m)", 
-						bindTo: "hauteur",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }, {
-                        xtype: "textfield",
-
-                        fieldLabel: "Surface (en m<sup>2</sup>)", 
-						bindTo: "surface",
-                        width: "100%",
-                        margin: {
-                            left: 10,
-                            top: 10,
-                            right: 10
-                        }
-                    }]
+                    xtype: "combo",
+                    fieldLabel: "Projection",
+                    bindTo: "oa_lambert_proj",
+					itemId: "oa_lambert_proj",
+					editable: false,
+					store: App.store.create('goprro://projections'),
+					displayField: "projection_name",
+					valueField: "idprojections",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "X",
+                    bindTo: "oa_x",
+					itemId: "oa_x",
+                    width: "100%",
+					hidden: true,
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "Y",
+                    bindTo: "oa_y",
+					itemId: "oa_y",
+					hidden: true,
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "X",
+                    bindTo: "oa_lambert_x",
+					itemId: "oa_lambert_x",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "Y",
+                    bindTo: "oa_lambert_y",
+					itemId: "oa_lambert_y",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: "Z",
+                    bindTo: "oa_lambert_z",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: "PR Début",
+                    bindTo: "PRDebut",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: "PR Fin",
+                    bindTo: "PRFin",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: "Longueur (en m)",
+                    bindTo: "longueur",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: "Hauteur (en m)",
+                    bindTo: "hauteur",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }, {
+                    xtype: "textfield",
+                    fieldLabel: "Surface (en m<sup>2</sup>)",
+                    bindTo: "surface",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                }]
 
                 }]
             }, {
@@ -129,118 +177,131 @@ App.view.define('VUpVisitWork', {
                     padding: 10,
                     items: [{
                         xtype: "combo",
-                        fieldLabel: "Famille",
-                        bindTo: "idFamille",
-                        itemId: "famille",
-                        editable: false,
-                        disabled: true,
-                        store: App.store.create('goprro://familles{nomFamille+,idFamille}', {
-                            autoLoad: true
-                        }),
-                        displayField: "nomFamille",
-                        valueField: "idFamille",
-                        labelAlign: "top"
-                    }, {
-                        xtype: "combo",
-                        fieldLabel: "Type",
-                        bindTo: "idType",
-                        itemId: "type",
-                        editable: false,
-                        disabled: true,
-                        width: 150,
-                        margin: {
-                            left: 5
-                        },
-                        store: App.store.create({
-                            fields: [],
-                            data: []
-                        }),
-                        displayField: "nomType",
-                        valueField: "idType",
-                        labelAlign: "top"
-                    }, {
-                        xtype: "combo",
-                        flex: 1,
-                        margin: {
-                            left: 5
-                        },
-
-						itemId: "dpt",
-                        fieldLabel: "Département",
-                        bindTo: "idDepartement",
-                        disabled: true,
-                        store: App.store.create("goprro://departements", {
-                            autoLoad: true
-                        }),
-                        editable: false,
-                        displayField: "nomDepartement",
-                        valueField: "idDepartement",
-                        labelAlign: "top"
-                    }, {
-                        xtype: "combo",
-                        flex: 1,
-                        margin: {
-                            left: 5
-                        },
-                        fieldLabel: "Géologie",
-                        bindTo: "idGeologie",
-                        store: App.store.create("goprro://geologies", {
-                            autoLoad: true
-                        }),
-                        editable: false,
-                        displayField: "nomGeologie",
-                        valueField: "idGeologie",
-                        labelAlign: "top"
-                    }]
+                    fieldLabel: '<span style="color:red"><exp>*&nbsp;</exp></span>Famille',
+					allowBlank: false,
+                    bindTo: "idFamille",
+                    itemId: "famille",
+                    editable: false,
+                    store: App.store.create('goprro://familles{nomFamille+,idFamille}', {
+                        autoLoad: true
+                    }),
+                    displayField: "nomFamille",
+                    valueField: "idFamille",
+                    labelAlign: "top"
                 }, {
-                    layout: "hbox",
-                    border: false,
-                    width: "100%",
-                    padding: 10,
-                    items: [{
-                        xtype: "combo",
-                        fieldLabel: "Axe",
-                        disabled: true,
-                        width: "20%", 
-						bindTo: "idAxe",
-                        store: App.store.create("goprro://axes",{autoLoad:true}),
-                        editable: false,
-                        displayField: "nomAxe",
-                        valueField: "idAxe",
-                        labelAlign: "top"
-                    }, {
-                        xtype: "combo",
-                        flex: 1,
-                        margin: {
-                            left: 5
-                        },
-						itemId: "ville",
-                        fieldLabel: "Ville", 
-						bindTo: "idGeologie",
-                        disabled: true,
-                        store: App.store.create({fields:[],data:[]}),
-                        editable: false,
-                        width: "80%",
-						bindTo: "idVille",
-                        displayField: "ville_nom",
-                        valueField: "idVille",
-                        labelAlign: "top"
-                    }, {
-                        xtype: "combo",
-                        fieldLabel: "Zone",
-						itemId: "zone",
-						editable: false,
-						displayField: "nomZone",
-						valueField: "idZone",
-						bindTo: "idZone",
-						store: App.store.create({fields:[],data:[]}),
-                        margin: {
-                            left: 5
-                        },
-                        labelAlign: "top",
-                        width: "100%",
-                        flex: 1
-                    }]
+                    xtype: "combo",
+                    fieldLabel: '<span style="color:red"><exp>*&nbsp;</exp></span>Type',
+                    bindTo: "idType",
+					allowBlank: false,
+                    itemId: "type",
+                    editable: false,
+                    width: 150,
+                    margin: {
+                        left: 5
+                    },
+                    store: App.store.create({
+                        fields: [],
+                        data: []
+                    }),
+                    displayField: "nomType",
+                    valueField: "idType",
+                    labelAlign: "top"
+                }, {
+                    xtype: "combo",
+                    flex: 1,
+                    margin: {
+                        left: 5
+                    },
+                    itemId: "vgt",
+                    fieldLabel: "Végétation",
+                    bindTo: "idVegetation",
+                    store: App.store.create("goprro://vegetations", {
+                        autoLoad: true
+                    }),
+                    editable: false,
+                    displayField: "nomVegetation",
+                    valueField: "idVegetation",
+                    labelAlign: "top"
+                }, {
+                    xtype: "combo",
+                    flex: 1,
+                    margin: {
+                        left: 5
+                    },
+                    fieldLabel: "Géologie",
+                    bindTo: "idGeologie",
+                    store: App.store.create("goprro://geologies", {
+                        autoLoad: true
+                    }),
+                    editable: false,
+                    displayField: "nomGeologie",
+                    valueField: "idGeologie",
+                    labelAlign: "top"
+                }]
+            }, {
+                layout: "hbox",
+                border: false,
+                width: "100%",
+                padding: 10,
+                items: [{
+                    xtype: "combo",
+                    flex: 1,
+                    itemId: "dpt",
+                    fieldLabel: "Département",
+                    bindTo: "idDepartement",
+                    store: App.store.create("goprro://departements", {
+                        autoLoad: true
+                    }),
+                    editable: false,
+                    displayField: "nomDepartement",
+                    valueField: "idDepartement",
+                    labelAlign: "top"
+                },
+				{
+                    xtype: "combo",
+                    fieldLabel: "Type axe",
+                    width: "20%",
+                    bindTo: "idAxe",
+                    store: App.store.create("goprro://types_axes"),
+                    editable: false,
+					margin: {
+                        left: 5
+                    },
+                    displayField: "axe_name",
+                    valueField: "idtype_axes",
+					width: 100,
+                    labelAlign: "top"
+                }, 						
+				{
+                    xtype: "combo",
+                    fieldLabel: "Axe",
+                    width: "20%",
+                    bindTo: "idAxe",
+                    store: App.store.create("goprro://axes",{autoLoad:true}),
+                    editable: false,
+                    displayField: "nomAxe",
+                    valueField: "idAxe",
+					margin: {
+                        left: 5
+                    },
+                    labelAlign: "top"
+                },{
+                    xtype: "combo",
+                    flex: 1,
+                    margin: {
+                        left: 5
+                    },
+                    itemId: "ville",
+                    fieldLabel: "Ville",
+                    bindTo: "idVille",
+                    store: App.store.create({fields:[],data:[]}),
+                    editable: false,
+                    width: "80%",
+                    bindTo: "idVille",
+                    displayField: "ville_nom",
+                    valueField: "idVille",
+                    labelAlign: "top"
+                }]
 
                 }, 
 				{
