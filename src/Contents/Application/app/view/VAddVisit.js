@@ -103,16 +103,16 @@ App.view.define('VAddVisit', {
                 text: "Ajouter",
                 dataIndex: "select",
                 itemId: "select",
-                listeners: {                    
+                /*listeners: {                    
                         click: function(sm,index,record) {
-                           /* console.log("listeners select");
-                            var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;*/
+                            console.log("listeners select");
+                            var idVisiteOuvrage = sm.store.data.items[record].data.idVisiteOuvrage;
                             
-                            console.log("recorde");
+                            console.log("record");
                             console.log(record);
 
                         }
-                    }
+                    }*/
                 
             }],
         }],
