@@ -1308,8 +1308,8 @@ App.controller.define('CMain', {
                                     console.log(dataStore);
                                     console.log("dataStore.items[i]");
                                     console.log(dataStore.items[i]);
-                                    console.log("dataStore.items[i].data.getView().selectedItemCls");
-                                    console.log(dataStore.items[i].data.getView().selectedItemCls);
+                      //              console.log("dataStore.items[i].data.getView().selectedItemCls");
+                     //               console.log(dataStore.items[i].data.getView().selectedItemCls);
                                     console.log("me");
                                     console.log(me);
                                     //App.get(me.up('panel'),"grid").getView().selectedItemCls = 'red';
