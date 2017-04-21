@@ -50,6 +50,7 @@ App.view.define('VAddVisit', {
             //hidden: true,
             itemId: "gridVisitAdd",
             width: "60%",
+            className : "",
             plugins: [
                 {
                     ptype: "cellediting",
