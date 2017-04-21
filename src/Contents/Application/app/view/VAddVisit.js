@@ -114,7 +114,7 @@ App.view.define('VAddVisit', {
                                 else
                                     {
                                         console.log("************** PAS date ***********");
-                                        sm.up('panel').getView().selectedItemCls = 'red';
+                                        sm.up('panel').getView().ItemCls = 'red';
                                     }
                             };
                             
