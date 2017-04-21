@@ -1,3 +1,9 @@
+.red .x-grid-cell
+{
+background-color: #FFFF66;
+color: Green;
+}
+
 .BackgroundSystem
 {
     background-image:url(webapp/defaultdesktop.png);
