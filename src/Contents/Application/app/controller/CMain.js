@@ -1622,12 +1622,12 @@ App.controller.define('CMain', {
 
         var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
         var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
-        var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
-        var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
+        var vegetation= form.items.items[2].items.items[0].items.items[2].value;////         idVegetation
         var geologie= form.items.items[2].items.items[0].items.items[3].value;////         Geologie
-        var axe= form.items.items[2].items.items[1].items.items[0].value;//         Axe
-        var ville= form.items.items[2].items.items[1].items.items[1].value;//         Ville
-        var zone= form.items.items[2].items.items[1].items.items[2].value;//         Zone
+        var departement= form.items.items[2].items.items[1].items.items[0].value;//         Departement
+        var typeAxe= form.items.items[2].items.items[1].items.items[1].value;//         Type axe
+        var axe= form.items.items[2].items.items[1].items.items[2].value;//         Axe
+        var ville= form.items.items[2].items.items[1].items.items[2].value;//         Ville
 
         var ouvrage= form.items.items[2].items.items[2].items.items[0].value;//         Nom ouvrage
         var etiquette= form.items.items[2].items.items[2].items.items[1].value;//         Etiquette
@@ -1648,7 +1648,7 @@ App.controller.define('CMain', {
         var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         var blob = blobJson.replace(/\\/g,"\\\\");
         
-        var paramUpdate = [idVisiteOuvrage, lambProj, oaX, oaY, lambX, lambY, lambZ, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
+        var paramUpdate = [idVisiteOuvrage, lambProj, oaX, oaY, lambX, lambY, lambZ, debut, fin, longueur, hauteur, surface, famille, type, vegetation, geologie, departement, typeAxe, axe, ville, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
         
