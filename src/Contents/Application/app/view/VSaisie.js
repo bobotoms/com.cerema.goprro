@@ -286,7 +286,6 @@ App.view.define('VSaisie', {
                     store: App.store.create({fields:[],data:[]}),
                     editable: false,
                     width: "80%",
-                    bindTo: "idVille",
                     displayField: "ville_nom",
                     valueField: "idVille",
                     labelAlign: "top"
