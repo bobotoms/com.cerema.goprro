@@ -420,10 +420,8 @@ App.view.define('VAddVisitWork', {
                     items: [{
                             xtype: "combo",
                             fieldLabel: "Gestionnaire",
-                            disabled: true,
                             editable: false,
                             itemId: "cboclient",
-
                             store: App.store.create("goprro://gestionnaires",{autoLoad:true}),
                             displayField: "gest",
                             valueField: "idGestionnaires",
@@ -435,19 +433,15 @@ App.view.define('VAddVisitWork', {
 						{
 							xtype: "textarea",
 							width: "100%",
-
 							bindTo: "txt_gestionnaire",
-                            disabled: true,
 							padding: 4,
 							flex: 1
 						},
 						{
                             xtype: "combo",
                             fieldLabel: "Fournisseur",
-                            disabled: true,
                             itemId: "cboservice",
                             editable: false,
-
                             store: App.store.create("goprro://fournisseurs",{autoLoad:true}),
                             displayField: "fournisseur",
                             valueField: "idFournisseurs",
@@ -457,20 +451,16 @@ App.view.define('VAddVisitWork', {
                             width: "100%"
                         }, {
 							xtype: "textarea",
-                            disabled: true,
 							padding: 4,
 							width: "100%",
-
 							bindTo: "txt_fournisseur",
 							flex: 1
 						},
 						{
                             xtype: "combo",
                             fieldLabel: "Poseur",
-                            disabled: true,
                             itemId: "cboposeur",
                             editable: false,
-
                             store: App.store.create("goprro://poseurs",{autoLoad:true}),
                             displayField: "poseur",
                             valueField: "idPoseurs",
@@ -481,9 +471,7 @@ App.view.define('VAddVisitWork', {
                         },
 						{
 							xtype: "textarea",
-                            disabled: true,
 							width: "100%",
-
 							bindTo: "txt_poseur",
 							padding: 4,
 							flex: 1
@@ -501,7 +489,6 @@ App.view.define('VAddVisitWork', {
                             items: [{
                                     xtype: "htmleditor",
                                     fieldLabel: "Matériel(s) nécessaire(s)",
-                                    disabled: true,
                                     labelAlign: "top",
                                     labelWidth: 150,
                                     padding: 10,
@@ -511,7 +498,6 @@ App.view.define('VAddVisitWork', {
                                 }, {
                                     xtype: "textfield",
                                     fieldLabel: "Nécessité coupure route",
-                                    disabled: true,
                                     labelAlign: "top",
 
                                     bindTo: "coupure_route",
@@ -520,7 +506,6 @@ App.view.define('VAddVisitWork', {
                                     width: "100%"
                                 }, {
 									fieldLabel: "Accès",
-                                    disabled: true,
 									bindTo: "acces",
 									labelAlign: "top",
 									xtype: "htmleditor",
