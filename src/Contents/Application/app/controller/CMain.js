@@ -1605,8 +1605,8 @@ App.controller.define('CMain', {
         console.log(form.idVisiteOuvrage);
 
         var idVisiteOuvrage= form.idVisiteOuvrage;
-        console.log("idVisiteOuvrage");
-        console.log(idVisiteOuvrage);
+        console.log("form");
+        console.log(form);
         var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
         var latitude= form.items.items[0].items.items[1].items.items[2].value;//         latitude
         var debut= form.items.items[0].items.items[1].items.items[3].value;//         pr debut
