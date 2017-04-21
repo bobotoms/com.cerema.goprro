@@ -103,14 +103,19 @@ App.view.define('VMain', {
                             dataIndex: "nomDepartement"
                         },
                         {
-                            text: "Longitude",
+                            text: "X",
+                            width: 150,
+                            dataIndex: "oa_x"
+                        },
+                        {
+                            text: "Y",
                             width: 150,
                             dataIndex: "oa_y"
                         },
-                        {
-                            text: "Latitude",
+						{
+                            text: "Z",
                             width: 150,
-                            dataIndex: "oa_x"
+                            dataIndex: "oa_z"
                         }
                     ],
                     store: App.store.create("App.Ouvrages.getAll",{autoLoad: true})

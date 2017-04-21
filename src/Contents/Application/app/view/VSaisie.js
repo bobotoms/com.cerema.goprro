@@ -6,12 +6,7 @@ App.view.define('VSaisie', {
         this.border = false;
         this.width = "100%";
         this.bodyStyle = "background-color: white";
-        this.bbar = [
-            '->', {
-                text: '<b>Enregistrer</b>',
-                itemId: "Record"
-            }
-        ];
+
         this.items = [{
             region: "west",
             layout: "vbox",
@@ -37,9 +32,60 @@ App.view.define('VSaisie', {
                     width: "100%",
                     baseCls: "bridge"
                 }, {
+                    xtype: "combo",
+                    fieldLabel: "Projection",
+                    bindTo: "oa_lambert_proj",
+					itemId: "oa_lambert_proj",
+					editable: false,
+					store: App.store.create('goprro://projections'),
+					displayField: "projection_name",
+					valueField: "idprojections",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
                     xtype: "textfield",
-                    fieldLabel: "Longitude",
+                    fieldLabel: "X",
+                    bindTo: "oa_x",
+					itemId: "oa_x",
+                    width: "100%",
+					hidden: true,
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "Y",
                     bindTo: "oa_y",
+					itemId: "oa_y",
+					hidden: true,
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "X",
+                    bindTo: "oa_lambert_x",
+					itemId: "oa_lambert_x",
+                    width: "100%",
+                    margin: {
+                        left: 10,
+                        top: 10,
+                        right: 10
+                    }
+                },{
+                    xtype: "textfield",
+                    fieldLabel: "Y",
+                    bindTo: "oa_lambert_y",
+					itemId: "oa_lambert_y",
                     width: "100%",
                     margin: {
                         left: 10,
@@ -48,8 +94,8 @@ App.view.define('VSaisie', {
                     }
                 }, {
                     xtype: "textfield",
-                    fieldLabel: "Latitude",
-                    bindTo: "oa_x",
+                    fieldLabel: "Z",
+                    bindTo: "oa_lambert_z",
                     width: "100%",
                     margin: {
                         left: 10,
@@ -120,7 +166,8 @@ App.view.define('VSaisie', {
                 padding: 10,
                 items: [{
                     xtype: "combo",
-                    fieldLabel: "Famille",
+                    fieldLabel: '<span style="color:red"><exp>*&nbsp;</exp></span>Famille',
+					allowBlank: false,
                     bindTo: "idFamille",
                     itemId: "famille",
                     editable: false,
@@ -132,8 +179,9 @@ App.view.define('VSaisie', {
                     labelAlign: "top"
                 }, {
                     xtype: "combo",
-                    fieldLabel: "Type",
+                    fieldLabel: '<span style="color:red"><exp>*&nbsp;</exp></span>Type',
                     bindTo: "idType",
+					allowBlank: false,
                     itemId: "type",
                     editable: false,
                     width: 150,
@@ -153,15 +201,15 @@ App.view.define('VSaisie', {
                     margin: {
                         left: 5
                     },
-                    itemId: "dpt",
-                    fieldLabel: "Département",
-                    bindTo: "idDepartement",
-                    store: App.store.create("goprro://departements", {
+                    itemId: "vgt",
+                    fieldLabel: "Végétation",
+                    bindTo: "idVegetation",
+                    store: App.store.create("goprro://vegetations", {
                         autoLoad: true
                     }),
                     editable: false,
-                    displayField: "nomDepartement",
-                    valueField: "idDepartement",
+                    displayField: "nomVegetation",
+                    valueField: "idVegetation",
                     labelAlign: "top"
                 }, {
                     xtype: "combo",
@@ -186,6 +234,35 @@ App.view.define('VSaisie', {
                 padding: 10,
                 items: [{
                     xtype: "combo",
+                    flex: 1,
+                    itemId: "dpt",
+                    fieldLabel: "Département",
+                    bindTo: "idDepartement",
+                    store: App.store.create("goprro://departements", {
+                        autoLoad: true
+                    }),
+                    editable: false,
+                    displayField: "nomDepartement",
+                    valueField: "idDepartement",
+                    labelAlign: "top"
+                },
+				{
+                    xtype: "combo",
+                    fieldLabel: "Type axe",
+                    width: "20%",
+                    bindTo: "idAxe",
+                    store: App.store.create("goprro://types_axes"),
+                    editable: false,
+					margin: {
+                        left: 5
+                    },
+                    displayField: "axe_name",
+                    valueField: "idtype_axes",
+					width: 100,
+                    labelAlign: "top"
+                },
+				{
+                    xtype: "combo",
                     fieldLabel: "Axe",
                     width: "20%",
                     bindTo: "idAxe",
@@ -193,8 +270,11 @@ App.view.define('VSaisie', {
                     editable: false,
                     displayField: "nomAxe",
                     valueField: "idAxe",
+					margin: {
+                        left: 5
+                    },
                     labelAlign: "top"
-                }, {
+                },{
                     xtype: "combo",
                     flex: 1,
                     margin: {
@@ -202,7 +282,7 @@ App.view.define('VSaisie', {
                     },
                     itemId: "ville",
                     fieldLabel: "Ville",
-                    bindTo: "idGeologie",
+                    bindTo: "idVille",
                     store: App.store.create({fields:[],data:[]}),
                     editable: false,
                     width: "80%",
@@ -210,21 +290,6 @@ App.view.define('VSaisie', {
                     displayField: "ville_nom",
                     valueField: "idVille",
                     labelAlign: "top"
-                }, {
-                    xtype: "combo",
-                    fieldLabel: "Zone",
-                    itemId: "zone",
-                    editable: false,
-                    displayField: "nomZone",
-                    valueField: "idZone",
-                    bindTo: "idZone",
-                    store: App.store.create({fields:[],data:[]}),
-                    margin: {
-                        left: 5
-                    },
-                    labelAlign: "top",
-                    width: "100%",
-                    flex: 1
                 }]
             },
                 {
@@ -245,7 +310,7 @@ App.view.define('VSaisie', {
                             flex: 1,
                             padding: 10,
                             border: false,
-                            fieldLabel: "Etiquette",
+                            fieldLabel: "Zone",
                             bindTo: "etiquetteOuvrage",
                             labelAlign: "top"
                         }

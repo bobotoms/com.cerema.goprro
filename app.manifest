@@ -1,12 +1,12 @@
 {
-    "namespace": "com.cerema.goprro-greg",
+    "namespace": "com.cerema.goprro-greg-goprro-v0.0.4",
     "git": "https://github.com/cerema/com.cerema.goprro.git",
     "title": "GOPRRO",
     "description": "Suivi des visites des ouvrages de Protection contre les risques rocheux",
     "platform": "desktop",
     "uid": "81a38e9a-fd9f-4326-97e1-d1bf61ee7b46",
     "version": "0.0.2",
-    "build": 13,
+    "build": 33,
     "targets": [
         "webapp"
     ],
@@ -70,14 +70,16 @@
         "MyService",
         "AddNews",
         "Refs",
-        "Visits"
+        "Visits",
+        "GPS"
     ],
     "db": [
         "bpclight",
         "goprro"
     ],
     "packages": [
-        "shortid"
+        "shortid",
+        "proj4"
     ],
     "icon": {
         "background": "#FFFFFF",

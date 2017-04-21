@@ -7,13 +7,11 @@ function hideForms() {
 
 function GMap(l,m)
 {
-
     TMap.map = new google.maps.Map(document.getElementById('TMapPanel'),{
         zoom: 10,
         center: new google.maps.LatLng('43.299999','5.4'),
         mapTypeId: google.maps.MapTypeId.MAP
     });
-
     google.maps.event.trigger(TMap.map, 'resize');
     TMap.markers=[];
     TMap.setMarker=function(l,m,title,idOuvrage, color, param) {
@@ -68,24 +66,18 @@ function GMap(l,m)
         }
         TMap.markers.push(marker);
         return marker;
-  
     };
     TMap.clearMarkers=function() {
-        
         for (var i = 0; i < TMap.markers.length; i++) {
             TMap.markers[i].setMap(null);
         }
     };
 
     App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
-   // App.DB.get("goprro://ouvrages{oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
-        console.log("r map");
-        console.log(r);
         for (var i=0;i<r.data.length;i++) {
             TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
         }
     });
-  
 };
 
 App.controller.define('CMain', {
@@ -304,12 +296,13 @@ App.controller.define('CMain', {
     dpt_onselect: function(me,_store) {
         var store=App.store.create('goprro://villes{idVille,ville_nom+}?ville_departement='+_store.data.codeDepartement);
         App.get('VSaisie combo#ville').bindStore(store);
+        App.get('VSaisie combo#ville').setValue('');
         store.load();
     },
     ville_onselect: function(me,_store) {
-        var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+_store.data.idVille);
+        /*var store=App.store.create('goprro://zones{idZone,nomZone+}?idVille='+_store.data.idVille);
         App.get('VSaisie combo#zone').bindStore(store);
-        store.load();
+        store.load();*/
     },
     propertygrid_edit: function(ed,o) {
         var store=App.get(o.grid.up('panel').up('panel'),"treepanel").getStore().data;
@@ -324,15 +317,16 @@ App.controller.define('CMain', {
         };
     },
     VSaisie_onShow: function(me) {
-        /**/console.log("VSaisie_onShow");
-        /**/console.log("me");
-        /**/console.log(me);
-        /**/console.log("xtype");
-        /**/console.log(me.xtype);
-        var xtype = me.xtype;
         me.element={};
         App.reset(me);
-        App.get(me,"treepanel").getRootNode().removeAll();
+
+
+		App.get('mainform ribbon_button#btxrecord').show();
+		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
+		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+
+
+		App.get(me,"treepanel").getRootNode().removeAll();
         App.get(me,"propertygrid").getStore().removeAll();
         if (me.idOuvrage) {
             function getElements(PARAM,PARAMX,PARAMZ,ndx,cb) {
@@ -394,6 +388,8 @@ App.controller.define('CMain', {
                             for (var i=0;i<store.items.length;i++) {
                                 if (CARACT[store.items[i].data.id]) store.items[i].properties=CARACT[store.items[i].data.id];
                             };
+
+
                             console.log(store);
                         });
                     }
@@ -402,7 +398,6 @@ App.controller.define('CMain', {
         };
     },
     gridO_select: function(me,store) {
-        /**/console.log("gridO_select");
         //App.view.create('VSaisie',{idOuvrage:store.data.idOuvrage,modal: true}).show().center();
         hideForms();
         App.get('mainform panel#southpanel').collapse();
@@ -412,60 +407,80 @@ App.controller.define('CMain', {
     },
     new_ouvrage_record: function(me) {
         me.setDisabled(true);
-        var store=App.get(me.up('panel'),"treepanel").getStore().data;
-            console.log("me.up('panel')");
-            console.log(me.up('panel'));
-        App.DB.post('goprro://ouvrages',me.up('panel'),function(r){
-            console.log("App.get('uploadfilemanager#up').getFiles()");
-            console.log(App.get('uploadfilemanager#up').getFiles());
-            // On post l'upload
-            App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
-                //alert('posté!');
-            });
-            if (!me.up('panel').idOuvrage) {
-                if (!r.insertId) {
-                    App.notify("Impossible d'enregistrer la fiche");
-                    me.setDisabled(false);
-                    return;
-                };
-                if (r.insertId==0) {
-                    App.notify("Impossible d'enregistrer la fiche");
-                    me.setDisabled(false);
-                    return;
-                };
-            } else r.insertId=me.up('panel').idOuvrage;
-            var Post=[];
-            for (var i=0;i<store.items.length;i++) {
-                var descr="";
-                var parent=0;
-                if (store.items[i].data.description) descr=store.items[i].data.description;
-                if (store.items[i].data.parentId) {
-                    if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
-                };
-                if (store.items[i].data.leaf) {
-                    var dta={
-                        nomOAElement: descr,
-                        parentOAElement: parent,
-                        idOuvrage: r.insertId,
-                        idElement: store.items[i].data.name.split('c')[1],
-                        idType: App.get(me.up('panel'),"combo#type").getValue(),
-                        _BLOB: App.get('uploadfilemanager#up').getFiles()
-                    };
-                    if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
-                    Post.push(dta);
-                };
-            };
-            App.Elements.delOuvrage(r.insertId,function(e) {
-                App.DB.post("goprro://oa_elements",Post,function(r){
-                    console.log(r);
-                    App.get('mainform grid#gridO').getStore().load();
-                    me.up('panel').hide();
-                    hideForms();
-                    App.get("mainform grid#gridO").show();
-                    me.setDisabled(false);
-                });
-            });
-        });
+        var store=App.get("VSaisie treepanel").getStore().data;
+		var oap=App.get('VSaisie textfield#oa_lambert_proj').getValue();
+		var oax=App.get('VSaisie textfield#oa_lambert_x').getValue();
+		var oay=App.get('VSaisie textfield#oa_lambert_y').getValue();
+		if (!oap) {
+			if (oax) {
+				alert('Vous devez spécifier une projection.');
+				me.setDisabled(false);
+				return;
+			};
+			if (oay) {
+				alert('Vous devez spécifier une projection.');
+				me.setDisabled(false);
+				return;
+			};
+		};
+		App.GPS.convert(oap,oax,oay,function(response) {
+			if (response) {
+				App.get('VSaisie textfield#oa_x').setValue(response.x);
+				App.get('VSaisie textfield#oa_y').setValue(response.y);
+			};
+				App.DB.post('goprro://ouvrages',App.get('VSaisie'),function(r){
+					// On post l'upload
+					App.Docs.upload(App.get('uploadfilemanager#up').getFiles(),0,function() {
+						//alert('posté!');
+					});
+					if (!App.get('VSaisie').idOuvrage) {
+						if (!r.insertId) {
+							App.notify("Impossible d'enregistrer la fiche");
+							me.setDisabled(false);
+							return;
+						};
+						if (r.insertId==0) {
+							App.notify("Impossible d'enregistrer la fiche");
+							me.setDisabled(false);
+							return;
+						};
+					} else r.insertId=App.get('VSaisie').idOuvrage;
+					var Post=[];
+					for (var i=0;i<store.items.length;i++) {
+						var descr="";
+						var parent=0;
+						if (store.items[i].data.description) descr=store.items[i].data.description;
+						if (store.items[i].data.parentId) {
+							if (store.items[i].data.parentId.split('c').length>1) parent=store.items[i].data.parentId.split('c')[1];
+						};
+						if (store.items[i].data.leaf) {
+							var dta={
+								nomOAElement: descr,
+								parentOAElement: parent,
+								idOuvrage: r.insertId,
+								idElement: store.items[i].data.name.split('c')[1],
+								idType: App.get("VSaisie combo#type").getValue(),
+								_BLOB: App.get('uploadfilemanager#up').getFiles()
+							};
+							if (store.items[i].properties) dta.caracteristiques=JSON.stringify(store.items[i].properties);
+							Post.push(dta);
+						};
+					};
+					App.Elements.delOuvrage(r.insertId,function(e) {
+						App.DB.post("goprro://oa_elements",Post,function(r){
+							console.log(r);
+							App.get('mainform grid#gridO').getStore().load();
+							hideForms();
+							App.get("mainform grid#gridO").show();
+							me.setDisabled(false);
+							App.get('mainform ribbon_button#btxrecord').hide();
+							App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
+							App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+						});
+					});
+				});
+		});
+
     },
     treeSaisie_click: function(me,o) {
         var grid=App.get("mainform propertygrid");
@@ -511,9 +526,7 @@ App.controller.define('CMain', {
                 obj.sourceConfig=sourceConfig;
 
                 var grid2=Ext.create('Ext.grid.property.Grid',obj);
-                console.log('-----');
-                console.log(o.properties);
-                console.log('-----');
+
                 if (o.properties) {
                     for (var i=0;i<o.properties.length;i++) {
                         console.log(o.properties[i]);
@@ -694,7 +707,6 @@ App.controller.define('CMain', {
         App.get('VSaisie combo#type').getStore().load();
     },
     showSaisie: function() {
-        /**/console.log("showSaisie");
         //App.view.create('VSaisie',{modal: true}).show().center();
         hideForms();
         var form=App.get("mainform panel#Saisie");
@@ -722,15 +734,11 @@ App.controller.define('CMain', {
     },
     showMap: function(p)
     {
-        console.log("showMap");
         hideForms();
-        //TMap.clearMarkers();
+        TMap.clearMarkers();
         App.get("mainform panel#map").show();
-        console.log("mainform panel#map");
-        console.log(App.get("mainform panel#map"));
         App.DB.get("goprro://ouvrages{idOuvrage,oa_x,oa_y,nomOuvrage,idOuvrage}",function(r) {
             for (var i=0;i<r.data.length;i++) {
-        console.log("for");
                 TMap.setMarker(r.data[i].oa_y,r.data[i].oa_x,r.data[i].nomOuvrage,r.data[i].idOuvrage);
             }
         });
@@ -943,7 +951,7 @@ App.controller.define('CMain', {
             }
 
             App.get('VZones grid').show();
-        })
+        });
     },
     add_ref: function(me) {
         var grid=me.up('grid');
@@ -1729,9 +1737,11 @@ App.controller.define('CMain', {
             results='<ul class="timeline">'+tpl.join('')+'</ul>';
             App.get('mainform panel#timeline').update(results);
         });
+
         var tab1=Ext.create("Ext.ux.ribbon.Tab", {
             title: 'Général',
             closable: false,
+            itemId: "TAB_GENERAL",
             layout: {
                 type: 'hbox',
                 align: 'stretch'
@@ -1767,7 +1777,16 @@ App.controller.define('CMain', {
                             iconAlign: 'top',
                             rowspan: 3,
                             handler: p.showGrid
-                        }
+                        },
+						{
+							text: "Enregistrer",
+							iconCls: "upload",
+							scale: 'large',
+							iconAlign: 'top',
+							itemId: "btxrecord",
+							rowspan: 3,
+							handler: p.new_ouvrage_record
+						}
                     ]
                 }
             ]
@@ -1776,6 +1795,7 @@ App.controller.define('CMain', {
         var tab2=Ext.create("Ext.ux.ribbon.Tab", {
             title: 'Visites',
             closable: false,
+            itemId: "TAB_VISITES",
             layout: {
                 type: 'hbox',
                 align: 'stretch'
@@ -1876,6 +1896,7 @@ App.controller.define('CMain', {
         App.get('mainform ribbon').addTab(tab2, false);
         App.get('mainform ribbon').addTab(tab3, false);
         App.get('mainform ribbon').addTab(tab4, false);
+		App.get('mainform button#btxrecord').hide();
 
     }
 
