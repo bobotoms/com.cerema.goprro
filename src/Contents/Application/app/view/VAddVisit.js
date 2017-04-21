@@ -125,6 +125,14 @@ App.view.define('VAddVisit', {
                             var grid2 = sm.up('panel');
                             console.log("grid2");
                             console.log(grid2);
+                            console.log("grid2.items");
+                            console.log(grid2.items);                            
+                            var grid3 = sm.up('panel').items;
+                            console.log("grid3");
+                            console.log(grid3);                          
+                            var grid4 = grid2.items);
+                            console.log("grid4");
+                            console.log(grid4);
                             
                             
                             
