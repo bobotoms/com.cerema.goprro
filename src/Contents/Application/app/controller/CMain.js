@@ -1603,6 +1603,9 @@ App.controller.define('CMain', {
 
         var form = App.get("VUpVisitWork");
         console.log(form.idVisiteOuvrage);
+        
+        console.log("form");
+        console.log(form);
 
         var idVisiteOuvrage= form.idVisiteOuvrage;
         var lambProj= form.items.items[0].items.items[1].items.items[1].value;//         oa_lambert_proj
@@ -1619,6 +1622,7 @@ App.controller.define('CMain', {
 
         var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
         var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
+        var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
         var departement= form.items.items[2].items.items[0].items.items[2].value;////         Departement
         var geologie= form.items.items[2].items.items[0].items.items[3].value;////         Geologie
         var axe= form.items.items[2].items.items[1].items.items[0].value;//         Axe
