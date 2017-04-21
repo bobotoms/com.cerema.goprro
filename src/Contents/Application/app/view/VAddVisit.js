@@ -138,7 +138,7 @@ App.view.define('VAddVisit', {
                             
                             
                             console.log("sm.up('panel'),\"grid\".items.items[0].dataSource.data.items[index].data");
-                            console.log(sm.up('panel'),"grid".items.items[0].dataSource.data.items[index].data);
+                            console.log(sm.up('panel').items.items[0].dataSource.data.items[index].data);
                             
                             
 
