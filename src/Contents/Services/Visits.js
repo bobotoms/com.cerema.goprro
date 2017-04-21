@@ -218,24 +218,26 @@ Visits = {
         var surface= o['11'];
         var famille= o['12'];
         var type= o['13'];
-        var departement= o['14'];
+        var vegetation= o['14'];
         var geologie= o['15'];
-        var axe= o['16'];
-        var ville= o['17'];
-        var zone= o['18'];
-        var ouvrage= o['19'];
-        var etiquette= o['20'];
-        var idGest= o['21'];
-        var TxtGest= o['22'];
-        var idFourn= o['23'];
-        var TxtFourn= o['24'];
-        var idPos= o['25'];
-        var TxtPos= o['26'];
-        var materiel= o['27'];
-        var coupure= o['28'];
-        var acces= o['29'];
-        var blob= o['30'];
- 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = "+famille+", idType = "+type+", idDepartement = "+departement+", idZone = "+zone+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+oaX+"', oa_y = '"+oaY+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blob+"', oa_lambert_x = '"+lambX+"',  oa_lambert_y = '"+lambY+"', oa_lambert_z = '"+lambZ+"', oa_lambert_proj = '"+lambProj+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
+        var departement= o['16'];
+        var typeAxe= o['17'];
+        var axe= o['18'];
+        var ville= o['19'];
+        var ouvrage= o['20'];
+        var etiquette= o['21'];
+        var idGest= o['22'];
+        var TxtGest= o['23'];
+        var idFourn= o['24'];
+        var TxtFourn= o['25'];
+        var idPos= o['26'];
+        var TxtPos= o['27'];
+        var materiel= o['28'];
+        var coupure= o['29'];
+        var acces= o['30'];
+        var blob= o['31'];
+        
+ 		Visits.using('db').query("goprro","UPDATE visite_ouvrages SET idFamille = "+famille+", idType = "+type+", idDepartement = "+departement+", idGeologie = "+geologie+",  nomOuvrage = '"+ouvrage+"', etiquetteOuvrage = '"+etiquette+"', idGestionnaire = "+idGest+", idFournisseur = "+idFourn+", idPoseur = "+idPos+", PRDebut = '"+debut+"', PRFin = '"+fin+"', oa_x = '"+oaX+"', oa_y = '"+oaY+"', materiel = '"+materiel+"', idVille = "+ville+", idAxe = "+axe+", longueur = '"+longueur+"', hauteur = '"+hauteur+"', surface = '"+surface+"', id_gestionnaire = "+idGest+", id_fournisseur = "+idFourn+", id_poseur = "+idPos+", coupure_route = '"+coupure+"', acces = '"+acces+"', materiels = '"+materiel+"', txt_fournisseur = '"+TxtFourn+"', txt_poseur = '"+TxtPos+"', txt_gestionnaire = '"+TxtGest+"', _BLOB = '"+blob+"', oa_lambert_x = '"+lambX+"',  oa_lambert_y = '"+lambY+"', oa_lambert_z = '"+lambZ+"', oa_lambert_proj = '"+lambProj+"', idVegetation = '"+vegetation+"' WHERE idVisiteOuvrage='"+idVisiteOuvrage+"'",function(err,result){
              if (!err) {
                 console.log("true");
                 var response=true;
