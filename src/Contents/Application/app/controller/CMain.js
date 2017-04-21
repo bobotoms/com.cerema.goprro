@@ -1302,6 +1302,7 @@ App.controller.define('CMain', {
                             else{
                                 App.Visits.delCampagne(idCampagne,function(response) {
                                     console.log("App.get(me.up('panel'),\"grid\").getView().selectedItemCls");
+                                    console.log(App.get(me.up('panel'),"grid").getView().selectedItemCls);
                                     
                                     //App.get(me.up('panel'),"grid").getView().selectedItemCls = 'red';
                                     Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour le ou les ouvrage(s) visité(s)");
