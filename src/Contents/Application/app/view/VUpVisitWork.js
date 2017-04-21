@@ -181,6 +181,7 @@ App.view.define('VUpVisitWork', {
                     fieldLabel: '<span style="color:red"><exp>*&nbsp;</exp></span>Famille',
 					allowBlank: false,
                     bindTo: "idFamille",
+                    disabled: true,
                     itemId: "famille",
                     editable: false,
                     store: App.store.create('goprro://familles{nomFamille+,idFamille}', {
@@ -193,6 +194,7 @@ App.view.define('VUpVisitWork', {
                     xtype: "combo",
                     fieldLabel: '<span style="color:red"><exp>*&nbsp;</exp></span>Type',
                     bindTo: "idType",
+                    disabled: true,
 					allowBlank: false,
                     itemId: "type",
                     editable: false,
@@ -250,6 +252,7 @@ App.view.define('VUpVisitWork', {
                     itemId: "dpt",
                     fieldLabel: "Département",
                     bindTo: "idDepartement",
+                    disabled: true,
                     store: App.store.create("goprro://departements", {
                         autoLoad: true
                     }),
@@ -263,6 +266,7 @@ App.view.define('VUpVisitWork', {
                     fieldLabel: "Type axe",
                     width: "20%",
                     bindTo: "idAxe",
+                    disabled: true,
                     store: App.store.create("goprro://types_axes"),
                     editable: false,
 					margin: {
@@ -278,6 +282,7 @@ App.view.define('VUpVisitWork', {
                     fieldLabel: "Axe",
                     width: "20%",
                     bindTo: "idAxe",
+                    disabled: true,
                     store: App.store.create("goprro://axes",{autoLoad:true}),
                     editable: false,
                     displayField: "nomAxe",
@@ -295,6 +300,7 @@ App.view.define('VUpVisitWork', {
                     itemId: "ville",
                     fieldLabel: "Ville",
                     bindTo: "idVille",
+                    disabled: true,
                     store: App.store.create({fields:[],data:[]}),
                     editable: false,
                     width: "80%",
