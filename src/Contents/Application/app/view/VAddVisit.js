@@ -113,6 +113,7 @@ App.view.define('VAddVisit', {
                                     }
                                 else
                                     {
+                                        sm.up('panel').getView().selectedItemCls = 'red'
                                         console.log("************** PAS date ***********");
                                     }
                             };
