@@ -1605,15 +1605,17 @@ App.controller.define('CMain', {
         console.log(form.idVisiteOuvrage);
 
         var idVisiteOuvrage= form.idVisiteOuvrage;
-        console.log("form");
-        console.log(form);
-        var longitude= form.items.items[0].items.items[1].items.items[1].value;//         longitude
-        var latitude= form.items.items[0].items.items[1].items.items[2].value;//         latitude
-        var debut= form.items.items[0].items.items[1].items.items[3].value;//         pr debut
-        var fin= form.items.items[0].items.items[1].items.items[4].value;//         pr fin
-        var longueur= form.items.items[0].items.items[1].items.items[5].value;//         longueur
-        var hauteur= form.items.items[0].items.items[1].items.items[6].value;//         hauteur
-        var surface= form.items.items[0].items.items[1].items.items[7].value;//         surface
+        var lambProj= form.items.items[0].items.items[1].items.items[1].value;//         oa_lambert_proj
+        var oaX= form.items.items[0].items.items[1].items.items[2].value;//         oa_x
+        var oaY= form.items.items[0].items.items[1].items.items[3].value;//         oa_y
+        var lambX= form.items.items[0].items.items[1].items.items[4].value;//         oa_lambert_x
+        var lambY= form.items.items[0].items.items[1].items.items[5].value;//         oa_lambert_y
+        var lambZ= form.items.items[0].items.items[1].items.items[6].value;//         oa_lambert_z
+        var debut= form.items.items[0].items.items[1].items.items[7].value;//         pr Debut
+        var fin= form.items.items[0].items.items[1].items.items[8].value;//         pr fin
+        var longueur= form.items.items[0].items.items[1].items.items[9].value;//         longueur
+        var hauteur= form.items.items[0].items.items[1].items.items[10].value;//         hauteur
+        var surface= form.items.items[0].items.items[1].items.items[11].value;//         surface
 
         var famille= form.items.items[2].items.items[0].items.items[0].value;////         Famille ----Grisé----
         var type= form.items.items[2].items.items[0].items.items[1].value;////         Type ----Grisé----
@@ -1642,7 +1644,7 @@ App.controller.define('CMain', {
         var blobJson = JSON.stringify(App.get('VUpVisitWork uploadfilemanager#up').getFiles());
         var blob = blobJson.replace(/\\/g,"\\\\");
         
-        var paramUpdate = [idVisiteOuvrage, longitude, latitude, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
+        var paramUpdate = [idVisiteOuvrage, lambProj, oaX, oaY, lambX, lambY, lambZ, debut, fin, longueur, hauteur, surface, famille, type, departement, geologie, axe, ville, zone, ouvrage, etiquette, idGest, TxtGest, idFourn, TxtFourn, idPos, TxtPos, materiel, coupure, acces, blob];
         
         App.Visits.updateOuvrageVisit(paramUpdate,function(response) {
         
