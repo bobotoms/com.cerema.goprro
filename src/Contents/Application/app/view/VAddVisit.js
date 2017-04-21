@@ -110,9 +110,9 @@ App.view.define('VAddVisit', {
                             
                             console.log("sm.up('panel'),\"grid\"");
                             console.log(sm.up('panel'),"grid");
-                            var grid0 = sm.up('panel'),"grid";
+                       /*     var grid0 = sm.up('panel'),"grid";
                             console.log("grid0");
-                            console.log(grid0);
+                            console.log(grid0);*/
                             
                             console.log("App.get(sm.up('panel'),\"grid\")");
                             console.log(App.get(sm.up('panel'),"grid");
