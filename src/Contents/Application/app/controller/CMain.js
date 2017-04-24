@@ -1183,8 +1183,10 @@ App.controller.define('CMain', {
         });
      
         var dataCombo=[];
-         App.Visits.selectCampagnUser(idUser,function(r){
+         App.Visits.selectCampagneUser(idUser,function(r){
             
+         console.log("response");
+         console.log(response);
             for (var i=0;i<r.data.length;i++) {
                 var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
                 var dateDebut = Ext.Date.format(dateDeb, 'd-m-Y');
