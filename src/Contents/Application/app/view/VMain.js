@@ -150,11 +150,11 @@ App.view.define('VMain', {
                     itemId: "Work",
                     hidden: true
                 },
-                {
+ /*               {
                     xtype: "VAddVisitWork",
                     itemId: "AddWork",
                     hidden: true
-                },
+                },*/
                 {
                     xtype: "VUpVisitWork",
                     itemId: "UpWork",
