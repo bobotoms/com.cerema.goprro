@@ -1,5 +1,5 @@
 {
-    "namespace": "com.cerema.goprro-greg-goprro-v0.0.4",
+    "namespace": "com.cerema.goprro-greg",
     "git": "https://github.com/cerema/com.cerema.goprro.git",
     "title": "GOPRRO",
     "description": "Suivi des visites des ouvrages de Protection contre les risques rocheux",
