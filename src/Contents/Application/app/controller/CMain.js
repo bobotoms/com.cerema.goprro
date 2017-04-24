@@ -1347,7 +1347,7 @@ App.controller.define('CMain', {
 	},
     visit_select: function(me,store) {
 		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+		//App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#UpWork");
         form.idVisiteOuvrage=store.data.idVisiteOuvrage;
@@ -1355,7 +1355,7 @@ App.controller.define('CMain', {
     },
     add_visit_select: function(me,store) {
 		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+		//App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#AddWork");
         form.idOuvrage=store.data.idOuvrage;
