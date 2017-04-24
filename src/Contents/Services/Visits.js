@@ -94,7 +94,7 @@ Visits = {
         var dateFin = o['2'];
         console.log("datefin");
         console.log(dateFin);
-        Visits.using('db').query("goprro","SELECT * FROM campagne WHERE dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' AND idGestionnaire = "+idUser,function(err,result){
+        Visits.using('db').query("goprro","SELECT * FROM campagne WHERE dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' AND WHERE idGestionnaire = "+idUser,function(err,result){
             if (!err) {
                     console.log("result");
                     console.log(result);
