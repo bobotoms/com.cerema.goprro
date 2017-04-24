@@ -49,7 +49,7 @@ App.view.define('VVisitWork', {
                     bindTo: "oa_lambert_proj",
 					itemId: "oa_lambert_proj",
 					editable: false,
-					store: App.store.create('goprro://projections'),
+					store: App.store.create('goprro://projections',{autoLoad:true}),
 					displayField: "projection_name",
 					valueField: "idprojections",
                     width: "100%",
