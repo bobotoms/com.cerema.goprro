@@ -149,10 +149,5 @@ App.view.define('VAddVisit', {
             
         }
         ]
-    },
-                {
-                    xtype: "VAddVisitWork",
-                    itemId: "AddWork",
-                    hidden: true
-                },]
+    }]
 });
