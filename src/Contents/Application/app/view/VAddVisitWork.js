@@ -8,7 +8,7 @@ App.view.define('VAddVisitWork', {
 	closable: true,
     closeAction:'hide',
 	layout: "border",
-	itemId : "VisiteWork", 
+	itemId : "UpVisiteWork", 
     bbar: [
             '->', {
 
@@ -48,7 +48,7 @@ App.view.define('VAddVisitWork', {
                     bindTo: "oa_lambert_proj",
 					itemId: "oa_lambert_proj",
 					editable: false,
-					store: App.store.create('goprro://projections',{autoLoad:true}),
+					store: App.store.create('goprro://projections'),
 					displayField: "projection_name",
 					valueField: "idprojections",
                     width: "100%",
