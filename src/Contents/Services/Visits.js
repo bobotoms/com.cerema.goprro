@@ -3,60 +3,38 @@ Visits = {
         
  		Visits.using('db').query("goprro","SELECT * FROM ouvrages left join familles on ouvrages.idFamille=familles.idFamille left join types on types.idType=ouvrages.idType left join geologies on geologies.idGeologie=ouvrages.idGeologie left join situations on situations.idSituation=ouvrages.idSituation left join acces on acces.idAcces=ouvrages.idAcces left join departements on departements.idDepartement=ouvrages.idDepartement WHERE departements.idDter = "+o,function(err,result){
             if (!err) {
-                    console.log("result");
-                    console.log(result);
 					cb(result);			
 				} else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
         });       
     },
     selectVisit: function(o,cb) {
-                    console.log("o");
-                    console.log(o);
  		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idGestionnaire = "+o,function(err,result){
             if (!err) {
-                    console.log("result");
-                    console.log(result);
 					cb(result);			
 				} else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
         });       
     },
     selectCampagne: function(o,cb) {
-                    console.log("o");
-                    console.log(o);
  		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idcampagne = "+o,function(err,result){
             if (!err) {
-                    console.log("result");
-                    console.log(result);
 					cb(result);			
 				} else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
         });       
     },
     selectCampagneUser: function(o,cb) {
-                    console.log("o");
-                    console.log(o);
  		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idGestionnaire = "+o,function(err,result){
             if (!err) {
-                    console.log("result");
-                    console.log(result);
 					cb(result);			
 				} else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
@@ -66,19 +44,11 @@ Visits = {
         
         var idUser = o['0'];
         var idCampagne = o['1'];
-        console.log("idUser");
-        console.log(idUser);
-        console.log("idCampagne");
-        console.log(idCampagne);
         
  		Visits.using('db').query("goprro","SELECT * FROM visite_ouvrages left join departements on departements.idDepartement=visite_ouvrages.idDepartement WHERE idCampagne = "+idCampagne+" AND idUser = "+idUser,function(err,result){
             if (!err) {
-                    console.log("result");
-                    console.log(result);
 					cb(result);			
 				} else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
@@ -86,46 +56,28 @@ Visits = {
     },
   	insertCampagne: function(o,cb) {
         var idUser = o['0'];
-        console.log("idUser");
-        console.log(idUser);
         var dateDebut = o['1'];
-        console.log("datedebut");
-        console.log(dateDebut);
         var dateFin = o['2'];
-        console.log("datefin");
-        console.log(dateFin);
         Visits.using('db').query("goprro","SELECT * FROM campagne WHERE (dateDebut BETWEEN '"+dateDebut+"' AND  '"+dateFin+"' OR dateFin BETWEEN '"+dateDebut+"' AND  '"+dateFin+"') AND (idGestionnaire = "+idUser+")",function(err,result){
             if (!err) {
-                    console.log("result");
-                    console.log(result);
-                    console.log("result.length");
-                    console.log(result.length);
                 if (result.length === 0)
                 {
                     
                     console.log("avant insert");
                     Visits.using('db').query("goprro","INSERT INTO campagne (idGestionnaire, dateDebut, dateFin) VALUES ("+idUser+", '"+dateDebut+"', '"+dateFin+"')",function(err,result){
                             if (!err) {            
-                                console.log("result");
-                                console.log(result);
                                 cb(result);
                             } else {
-                                console.log("err");
-                                console.log(err);
                                 var err=false;
                                 cb(err)			
                             };
                         });
                 }
                 else {
-                    console.log("err insert date periode");
-                    console.log(err);
                     var err="periode";
 					cb(err)			
 				};
             } else {
-                console.log("err select");
-                console.log(err);
                 var err=false;
                 cb(err)			
             };
@@ -143,26 +95,18 @@ Visits = {
                 {
                     Visits.using('db').query("goprro","INSERT INTO visite_ouvrages (dateVisiteOuvrage, idUser, idOuvrage, idCampagne, idFamille, idType, idDepartement, idZone, idGeologie, idSituation, idAcces, nomOuvrage, etiquetteOuvrage, idGestionnaire, idMaitreOuvrage, idFournisseur, idPoseur, datePose, PRDebut, PRFin, PRSens, oa_x, oa_y, oa_z, materiel, modif, creation, actif, idVille, idAxe, longueur, hauteur, surface, id_gestionnaire, id_fournisseur, id_poseur, coupure_route, acces, materiels, txt_fournisseur, txt_poseur, txt_gestionnaire, _BLOB, oa_lambert_x, oa_lambert_y, oa_lambert_z, oa_lambert_proj, idVegetation ) SELECT '"+date+"', "+idUser+", idOuvrage, "+idCampagne+", idFamille, idType, idDepartement, idZone, idGeologie, idSituation, idAcces, nomOuvrage, etiquetteOuvrage, idGestionnaire, idMaitreOuvrage, idFournisseur, idPoseur, datePose, PRDebut, PRFin, PRSens, oa_x, oa_y, oa_z, materiel, modif, creation, actif, idVille, idAxe, longueur, hauteur, surface, id_gestionnaire, id_fournisseur, id_poseur, coupure_route, acces, materiels, txt_fournisseur, txt_poseur, txt_gestionnaire, _BLOB, oa_lambert_x, oa_lambert_y, oa_lambert_z, oa_lambert_proj, idVegetation FROM ouvrages WHERE idOuvrage='"+numOuvrage+"'",function(err,result){
                             if (!err) {            
-                                console.log("result");
-                                console.log(result);
                                 cb(result);
                             } else {
-                                console.log("err");
-                                console.log(err);
                                 var err=false;
                                 cb(err)			
                             };
                         });
                 }
                 else {
-                    console.log("err");
-                    console.log(err);
                     var err=false;
 					cb(err)			
 				};
             } else {
-                console.log("err");
-                console.log(err);
                 var err=false;
                 cb(err)			
             };
