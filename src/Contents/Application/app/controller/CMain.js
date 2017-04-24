@@ -1187,14 +1187,14 @@ App.controller.define('CMain', {
             
          console.log("r r r r r");
          console.log(r);
-            for (var i=0;i<r.data.length;i++) {
-                var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
+            for (var i=0;i<r.length;i++) {
+                var dateDeb = Ext.Date.parse(r[i].dateDebut,"c");
                 var dateDebut = Ext.Date.format(dateDeb, 'd-m-Y');
-                var dateF = Ext.Date.parse(r.data[i].dateFin,"c");
+                var dateF = Ext.Date.parse(r[i].dateFin,"c");
                 var dateFin = Ext.Date.format(dateF, 'd-m-Y');
                 var periode = dateDebut+' / '+dateFin;
                 dataCombo.push({
-                    idCampagne:r.data[i].idCampagne,
+                    idCampagne:r[i].idCampagne,
                     periode:periode
                 })
             }
