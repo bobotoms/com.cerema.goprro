@@ -1163,6 +1163,7 @@ App.controller.define('CMain', {
         hideForms();
         App.get("mainform panel#visit").show();
         var idDter = Auth.User.idDter;
+        var idUser = Auth.User.idUser;
         
         App.Visits.select(idDter,function(response) {
             
@@ -1182,7 +1183,7 @@ App.controller.define('CMain', {
         });
      
         var dataCombo=[];
-        App.DB.get('goprro://campagne',function(r){
+         App.Visits.selectCampagnUser(idUser,function(r){
             
             for (var i=0;i<r.data.length;i++) {
                 var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
