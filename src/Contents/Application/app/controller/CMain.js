@@ -38,12 +38,6 @@ function GMap(l,m)
                 var form=App.get("mainform panel#Work");
                 form.idOuvrage=this.itemId;
                 form.show();
-                
-        App.get('mainform ribbon').addTab(tab1, false);
-        App.get('mainform ribbon').addTab(tab2, true);
-        App.get('mainform ribbon').addTab(tab3, false);
-        App.get('mainform ribbon').addTab(tab4, false);
-		App.get('mainform button#btxrecord').hide();
             });
         }
         else if (param == "workvisit")
