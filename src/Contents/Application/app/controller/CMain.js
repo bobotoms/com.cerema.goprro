@@ -1715,29 +1715,29 @@ App.controller.define('CMain', {
     {
         Auth.login(function(){
             console.log(Auth.User);
-        });
-        App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
-        // load wiki
-        var html='<li><p class="timeline-date">%DATE%<br><span style="color:#6fc173; font-weight:bold">%TAG%</span></p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
-        var tpl=[];
-        App.Notes.getAll({},function(e,r) {
-            
-            var idDter = Auth.User.idDter;
-            console.log("idDter");
-            console.log(idDter);
-            for (var i=0;i<r.result.data.length;i++) {
-                if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
-                    {
-                        var results=html;
-                        results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
-                        results=results.replace('%POSTER%',r.result.data[i].nomprenom);
-                        results=results.replace('%COMMENT%',r.result.data[i].texteNote);
-                        results=results.replace('%TAG%',r.result.data[i].importance);
-                        tpl.push(results);
-                    }
-            };
-            results='<ul class="timeline">'+tpl.join('')+'</ul>';
-            App.get('mainform panel#timeline').update(results);
+            App.loadAPI("http://maps.google.com/maps/api/js?sensor=false&callback=GMap");
+            // load wiki
+            var html='<li><p class="timeline-date">%DATE%<br><span style="color:#6fc173; font-weight:bold">%TAG%</span></p><div class="timeline-content"><h3>%POSTER%</h3><p>%COMMENT%</p></div></li>';
+            var tpl=[];
+            App.Notes.getAll({},function(e,r) {
+
+                var idDter = Auth.User.idDter;
+                console.log("idDter");
+                console.log(idDter);
+                for (var i=0;i<r.result.data.length;i++) {
+                    if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
+                        {
+                            var results=html;
+                            results=results.replace('%DATE%',r.result.data[i].dateNote.toDate().toString('dd/MM/yyyy hh:mm'));
+                            results=results.replace('%POSTER%',r.result.data[i].nomprenom);
+                            results=results.replace('%COMMENT%',r.result.data[i].texteNote);
+                            results=results.replace('%TAG%',r.result.data[i].importance);
+                            tpl.push(results);
+                        }
+                };
+                results='<ul class="timeline">'+tpl.join('')+'</ul>';
+                App.get('mainform panel#timeline').update(results);
+            });
         });
         var tab1=Ext.create("Ext.ux.ribbon.Tab", {
             title: 'Général',
