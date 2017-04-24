@@ -328,7 +328,7 @@ console.log(me);
 console.log("App.get(me,\"treepanel\")");
 console.log(App.get(me,"treepanel"));
 		App.get('mainform ribbon_button#btxrecord').show();
-        if (xtype == VAddVisitWork)
+        if (xtype == "VAddVisitWork")
         {
 
             App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
@@ -337,7 +337,7 @@ console.log(App.get(me,"treepanel"));
         {
 
             App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
-        }
+        };
 
 
 		App.get(me,"treepanel").getRootNode().removeAll();
