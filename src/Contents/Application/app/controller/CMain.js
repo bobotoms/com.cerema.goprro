@@ -320,13 +320,24 @@ App.controller.define('CMain', {
         me.element={};
         App.reset(me);
 
+        /**/console.log("xtype on show");
+        /**/console.log(me.xtype)
+        var xtype = me.xtype;
 console.log("me");
 console.log(me);
 console.log("App.get(me,\"treepanel\")");
 console.log(App.get(me,"treepanel"));
 		App.get('mainform ribbon_button#btxrecord').show();
-		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-	//	App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+        if (xtype == VAddVisitWork)
+        {
+
+            App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
+        }
+        else 
+        {
+
+            App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+        }
 
 
 		App.get(me,"treepanel").getRootNode().removeAll();
@@ -1316,18 +1327,6 @@ console.log(App.get(me,"treepanel"));
                             }
                             else{
                                 App.Visits.delCampagne(idCampagne,function(response) {
-                                    console.log("App.get(me.up('panel'),\"grid\").getView().selectedItemCls");
-                                    console.log(App.get(me.up('panel'),"grid").getView().selectedItemCls);
-                                    //App.get(me.up('panel'),"grid").getStore().data.items[i].data.date.selectedItemCls = 'red';
-                                    console.log("dataStore");
-                                    console.log(dataStore);
-                                    console.log("dataStore.items[i]");
-                                    console.log(dataStore.items[i]);
-                      //              console.log("dataStore.items[i].data.getView().selectedItemCls");
-                     //               console.log(dataStore.items[i].data.getView().selectedItemCls);
-                                    console.log("me");
-                                    console.log(me);
-                                    //App.get(me.up('panel'),"grid").getView().selectedItemCls = 'red';
                                     Ext.Msg.alert('GOPRRO',"Vous devez indiquer une date de visite pour le ou les ouvrage(s) visité(s)");
                                 })
                             }
@@ -1403,13 +1402,6 @@ console.log(App.get(me,"treepanel"));
         };
     },
     VVisit_onShow: function(me) {
-        /**/console.log("VSaisie_onShow");
-        /**/console.log("me");
-        /**/console.log(me);
-        /**/console.log("me id visite ouvrage");
-        /**/console.log(me.idVisiteOuvrage);
-        /**/console.log("xtype on show");
-        /**/console.log(me.xtype);
         var panel=App.get(me.up('panel'),"grid");
         
         var xtype = me.xtype;
