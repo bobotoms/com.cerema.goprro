@@ -765,14 +765,6 @@ App.controller.define('CMain', {
         var dif = App.get('VAddNews combo#diffusion').getValue();
         var news = App.get('VAddNews textarea#texteNote').getValue();
         var importance = App.get('VAddNews combo#importance').getValue();
-        console.log("idUser");
-        console.log(idUser);
-        console.log("news");
-        console.log(news);
-        console.log("dif");
-        console.log(dif);
-        console.log("importance");
-        console.log(importance);
         if (dif == 'National')
         {
             var diffusion = 0;
