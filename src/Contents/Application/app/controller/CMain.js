@@ -1722,8 +1722,6 @@ App.controller.define('CMain', {
             App.Notes.getAll({},function(e,r) {
 
                 var idDter = Auth.User.idDter;
-                console.log("idDter");
-                console.log(idDter);
                 for (var i=0;i<r.result.data.length;i++) {
                     if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
                         {
