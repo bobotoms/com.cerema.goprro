@@ -46,6 +46,22 @@ Visits = {
 				};
         });       
     },
+    selectCampagneUser: function(o,cb) {
+                    console.log("o");
+                    console.log(o);
+ 		Visits.using('db').query("goprro","SELECT * FROM campagne WHERE idGestionnaire = "+o,function(err,result){
+            if (!err) {
+                    console.log("result");
+                    console.log(result);
+					cb(result);			
+				} else {
+                    console.log("err");
+                    console.log(err);
+                    var err=false;
+					cb(err)			
+				};
+        });       
+    },
     selectVisitDate: function(o,cb) {
         
         var idUser = o['0'];
