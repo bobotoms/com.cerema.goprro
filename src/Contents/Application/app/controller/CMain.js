@@ -1903,7 +1903,7 @@ App.controller.define('CMain', {
         App.get('mainform ribbon').addTab(tab2, false);
         App.get('mainform ribbon').addTab(tab3, false);
         App.get('mainform ribbon').addTab(tab4, false);
-		App.get('mainform button#btxrecord').hide();
+		//App.get('mainform button#btxrecord').hide();
 
     }
 
