@@ -321,7 +321,7 @@ App.controller.define('CMain', {
         App.reset(me);
 
         /**/console.log("xtype on show");
-        /**/console.log(me.xtype)
+        /**/console.log(me.xtype);
         var xtype = me.xtype;
 console.log("me");
 console.log(me);
@@ -420,7 +420,8 @@ console.log(App.get(me,"treepanel"));
         form.show();
     },
     new_ouvrage_record: function(me) {
-        /**/console.log(me.xtype)
+        /**/console.log("me.xtype");
+        /**/console.log(me.xtype);
         var xtype = me.xtype;
 console.log("me");
 console.log(me);
@@ -494,12 +495,10 @@ console.log(me);
 							App.get('mainform ribbon_button#btxrecord').hide();
                             if (xtype == "VVisitWork")
                             {
-
                                 App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
                             }
                             else 
                             {
-
                                 App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
                             };
 						});
