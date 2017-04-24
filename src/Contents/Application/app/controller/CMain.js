@@ -1359,7 +1359,7 @@ App.controller.define('CMain', {
     add_visit_select: function(me,store) {
         App.get('mainform panel#southpanel').collapse();
        // var form=App.get("mainform panel#AddWork");
-        var form=App.get("VAddVisit");
+        var form=App.get("VAddVisit panel#AddWork");
         form.idOuvrage=store.data.idOuvrage;
         form.show();
     },
