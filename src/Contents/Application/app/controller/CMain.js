@@ -771,7 +771,7 @@ App.controller.define('CMain', {
         }
         else
         {
-            var diffusion = Auth.User.idDter;;
+            var diffusion = Auth.User.idDter;
         }
         
         var tabNews = [idUser, diffusion, news, importance];
