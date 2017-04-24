@@ -320,13 +320,8 @@ App.controller.define('CMain', {
         me.element={};
         App.reset(me);
 
-        /**/console.log("xtype on show");
-        /**/console.log(me.xtype);
         var xtype = me.xtype;
-console.log("me");
-console.log(me);
-console.log("App.get(me,\"treepanel\")");
-console.log(App.get(me,"treepanel"));
+        
 		App.get('mainform ribbon_button#btxrecord').show();
         if (xtype == "VAddVisitWork" || xtype == "VVisitWork" )
         {
