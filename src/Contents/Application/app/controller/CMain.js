@@ -418,11 +418,6 @@ console.log(App.get(me,"treepanel"));
         form.show();
     },
     new_ouvrage_record: function(me) {
-        /**/console.log("me.xtype");
-        /**/console.log(me.xtype);
-        var xtype = me.xtype;
-console.log("me");
-console.log(me);
         me.setDisabled(true);
         var store=App.get("VSaisie treepanel").getStore().data;
 		var oap=App.get('VSaisie textfield#oa_lambert_proj').getValue();
@@ -491,16 +486,9 @@ console.log(me);
 							App.get("mainform grid#gridO").show();
 							me.setDisabled(false);
 							App.get('mainform ribbon_button#btxrecord').hide();
-                            if (xtype == "VVisitWork")
-                            {
-console.log("ici VVisitWork");
-                                App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-                            }
-                            else 
-                            {
-console.log("non VVisitWork");
-                                App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
-                            };
+                            App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
+                            App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+                           
 						});
 					});
 				});
