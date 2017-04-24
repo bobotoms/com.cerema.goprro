@@ -1185,6 +1185,8 @@ App.controller.define('CMain', {
         var dataCombo=[];
          App.Visits.selectCampagneUser(idUser,function(r){
             
+         console.log("r r r r r");
+         console.log(r);
             for (var i=0;i<r.data.length;i++) {
                 var dateDeb = Ext.Date.parse(r.data[i].dateDebut,"c");
                 var dateDebut = Ext.Date.format(dateDeb, 'd-m-Y');
