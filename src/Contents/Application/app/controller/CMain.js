@@ -489,7 +489,7 @@ console.log(App.get(me,"treepanel"));
 							me.setDisabled(false);
 							App.get('mainform ribbon_button#btxrecord').hide();
 							App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-					//		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+							App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
 						});
 					});
 				});
