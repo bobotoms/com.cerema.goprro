@@ -1723,6 +1723,8 @@ App.controller.define('CMain', {
         App.Notes.getAll({},function(e,r) {
             
             var idDter = Auth.User.idDter;
+            console.log("idDter");
+            console.log(idDter);
             for (var i=0;i<r.result.data.length;i++) {
                 if ((r.result.data[i].diffusion == 0) || (r.result.data[i].diffusion == idDter))
                     {
@@ -1737,7 +1739,6 @@ App.controller.define('CMain', {
             results='<ul class="timeline">'+tpl.join('')+'</ul>';
             App.get('mainform panel#timeline').update(results);
         });
-
         var tab1=Ext.create("Ext.ux.ribbon.Tab", {
             title: 'Général',
             closable: false,
