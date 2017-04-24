@@ -330,12 +330,10 @@ console.log(App.get(me,"treepanel"));
 		App.get('mainform ribbon_button#btxrecord').show();
         if (xtype == "VAddVisitWork")
         {
-
             App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
         }
         else 
         {
-
             App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
         };
 
@@ -495,10 +493,12 @@ console.log(me);
 							App.get('mainform ribbon_button#btxrecord').hide();
                             if (xtype == "VVisitWork")
                             {
+console.log("ici VVisitWork");
                                 App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
                             }
                             else 
                             {
+console.log("non VVisitWork");
                                 App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
                             };
 						});
