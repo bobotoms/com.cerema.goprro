@@ -8,7 +8,7 @@ App.view.define('VAddVisitWork', {
 	closable: true,
     closeAction:'hide',
 	layout: "border",
-	itemId : "UpVisiteWork", 
+	itemId : "VisiteWork", 
     bbar: [
             '->', {
 
