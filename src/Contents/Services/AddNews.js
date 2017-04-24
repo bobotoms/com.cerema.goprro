@@ -17,9 +17,13 @@ AddNews = {
         
         AddNews.using('db').query("goprro","INSERT INTO notes (dateNote, diffusion, texteNote, importance, idUser) VALUES (NOW(), "+diffusion+", '"+note+"', '"+importance+"', "+idUser+")",function(err,result){
             if (!err) {
+                console.log("result");
+                console.log(result);
                 var response=true;
                 cb(response);
             } else {
+                console.log("err");
+                console.log(err);
                 var err=false;
                 cb(err)
             };
