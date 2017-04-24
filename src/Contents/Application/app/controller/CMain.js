@@ -322,8 +322,8 @@ App.controller.define('CMain', {
 
 
 		App.get('mainform ribbon_button#btxrecord').show();
-	//	App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
+	//	App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
 
 
 		App.get(me,"treepanel").getRootNode().removeAll();
@@ -474,8 +474,8 @@ App.controller.define('CMain', {
 							App.get("mainform grid#gridO").show();
 							me.setDisabled(false);
 							App.get('mainform ribbon_button#btxrecord').hide();
-					//		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
-							App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
+							App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
+					//		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
 						});
 					});
 				});
