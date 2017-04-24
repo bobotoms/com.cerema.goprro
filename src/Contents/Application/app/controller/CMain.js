@@ -1342,11 +1342,11 @@ App.controller.define('CMain', {
     
 	},
     visit_select: function(me,store) {
-        
+  /*      
         App.get('mainform ribbon').addTab(tab1, false);
         App.get('mainform ribbon').addTab(tab2, true);
         App.get('mainform ribbon').addTab(tab3, false);
-        App.get('mainform ribbon').addTab(tab4, false);
+        App.get('mainform ribbon').addTab(tab4, false);*/
         App.get('mainform panel#southpanel').collapse();
         var form=App.get("mainform panel#UpWork");
         form.idVisiteOuvrage=store.data.idVisiteOuvrage;
