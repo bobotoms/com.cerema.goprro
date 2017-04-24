@@ -320,7 +320,10 @@ App.controller.define('CMain', {
         me.element={};
         App.reset(me);
 
-
+console.log("me");
+console.log(me);
+console.log("App.get(me,\"treepanel\")");
+console.log(App.get(me,"treepanel"));
 		App.get('mainform ribbon_button#btxrecord').show();
 		App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
 	//	App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_GENERAL'));
