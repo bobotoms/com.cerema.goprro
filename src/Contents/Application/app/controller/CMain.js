@@ -492,7 +492,7 @@ console.log(me);
 							App.get("mainform grid#gridO").show();
 							me.setDisabled(false);
 							App.get('mainform ribbon_button#btxrecord').hide();
-                            if (xtype == "VAddVisitWork")
+                            if (xtype == "VVisitWork")
                             {
 
                                 App.get('mainform ribbon').setActiveTab(App.get('mainform ribbon_tab#TAB_VISITES'));
