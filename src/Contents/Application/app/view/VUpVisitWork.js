@@ -56,27 +56,7 @@ App.view.define('VUpVisitWork', {
                         left: 10,
                         top: 10,
                         right: 10
-                    }
-                        
-                     /*   
-                            xtype: "combo",
-                            fieldLabel: "Gestionnaire",
-                            editable: false,
-                            itemId: "cboclient",
-
-                            store: App.store.create("goprro://gestionnaires",{autoLoad:true}),
-                            displayField: "gest",
-                            valueField: "idGestionnaires",
-                            bindTo: "id_gestionnaire",
-                            labelAlign: "top",
-                            padding: 4,
-                            width: "100%"
-                        
-                        */
-                        
-                        
-                        
-                        
+                    }                       
                 },{
                     xtype: "textfield",
                     fieldLabel: "X",
